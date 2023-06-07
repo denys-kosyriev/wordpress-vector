@@ -1,0 +1,46 @@
+.settings-iptv {
+  section {
+    padding: 44px 0 54px;
+  }
+  .container {
+    max-width: 1492px;
+  }
+  h2 {
+    margin-bottom: 34px;
+  }
+  p {
+    color:         #7A8781;
+    margin-bottom: 20px;
+    a {
+      color: #03BF6A;
+      &:hover {
+        color: #029c56;
+      }
+      &:active {
+        color: #006939;
+      }
+    }
+  }
+  img {
+    max-width: 466px;
+    margin:    5px 0 20px 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media(min-width: 1200px) {
+  .settings-iptv {
+    section {
+      padding: 88px 0 81px;
+    }
+    h2 {
+      margin-bottom: 45px;
+    }
+    p {
+      margin-bottom: 24px;
+    }
+    img {
+      margin: 82px 0 97px 50%;
+    }
+  }
+}
