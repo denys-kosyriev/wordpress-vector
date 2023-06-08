@@ -23,7 +23,7 @@
       <div class='wrapper'>
         <div class='flex'>
           <ul class='navigation'>
-            <li><a href='./index.html'>
+            <li><a href='index.php'>
                 <img src='./assets/images/icons/logo1.svg' alt=''>
               </a></li>
             <li><a href='tariffs/internet.html'>Тарифи</a></li>
