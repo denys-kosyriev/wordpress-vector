@@ -22,19 +22,26 @@
     <div class="container">
       <div class='wrapper'>
         <div class='flex'>
-          <ul class='navigation'>
-            <li><a href='index.php'>
-                <img src='./assets/images/icons/logo1.svg' alt=''>
-              </a></li>
-            <li><a href='tariffs/internet.html'>Тарифи</a></li>
-            <li><a href='./advertising.html'>Реклама</a></li>
-            <li><a href='./connection.html'>Підключення</a></li>
-            <li><a href='./news.html'>Новини</a></li>
-            <li><a href='./shares.html'>Акції</a></li>
-            <li><a href='./support.html'>Пдтримка</a></li>
-            <li><a href='./contacts.html'>Контакти</a></li>
-            <li><a target='_blank' href='https://lozovaya.net.ua/'>Пульс</a></li>
-          </ul>
+          <?php
+            wp_nav_menu([
+              'theme_location' => 'footer-navigation',
+              'container' => null,
+              'item_wrap' => '<ul>%3$s</ul>',
+            ]);
+          ?>
+          <!--          <ul class='navigation'>-->
+          <!--            <li><a href='index.php'>-->
+          <!--                <img src='./assets/images/icons/logo1.svg' alt=''>-->
+          <!--              </a></li>-->
+          <!--            <li><a href='tariffs/internet.html'>Тарифи</a></li>-->
+          <!--            <li><a href='advertising.php'>Реклама</a></li>-->
+          <!--            <li><a href='connection.php'>Підключення</a></li>-->
+          <!--            <li><a href='news.php'>Новини</a></li>-->
+          <!--            <li><a href='shares.php'>Акції</a></li>-->
+          <!--            <li><a href='support.php'>Пдтримка</a></li>-->
+          <!--            <li><a href='./contacts.html'>Контакти</a></li>-->
+          <!--            <li><a target='_blank' href='https://lozovaya.net.ua/'>Пульс</a></li>-->
+          <!--          </ul>-->
           <div class='phone-numbers'>
             <ul>
               <li><h3>Контактні номери</h3></li>

@@ -23,4 +23,8 @@
   function add_menus() {
     add_theme_support('menus');
     register_nav_menu('header-links', 'Header links');
+    register_nav_menu('header-phones', 'Header phones');
+    register_nav_menu('footer-navigation', 'footer navigation');
+    register_nav_menu('footer-phones', 'footer phones');
+    register_nav_menu('footer-phones-advertising', 'footer phones advertising');
   }

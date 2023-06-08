@@ -526,18 +526,24 @@ button, .btn {
     width: 18px;
     margin-right: 7px;
   }
+  .header .top .right .phones {
+    display: flex;
+  }
   .header .top .right .phones svg path {
     transition: 0.2s linear;
   }
   .header .top .right .phones:hover svg path {
     fill: #006939;
   }
+  .header .top .right .phones ul {
+    display: flex;
+  }
+  .header .top .right .phones li:first-of-type {
+    margin-right: 7px;
+  }
   .header .top .right .phones a {
     color: #03BF6A;
     transition: 0.2s linear;
-  }
-  .header .top .right .phones a:first-of-type {
-    margin-right: 7px;
   }
   .header .top .right .phones a:hover {
     color: #006939;
@@ -632,16 +638,19 @@ button, .btn {
     padding: 0 20px;
   }
   .header .main .logo {
-    margin-right: 30px;
-  }
-  .header .main .logo img {
-    width: 75px;
+    display: none;
   }
   .header .main ul {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .header .main ul img {
+    width: 75px;
+  }
+  .header .main ul span {
+    display: none;
   }
   .header .main li a {
     font-size: 16px;
@@ -664,9 +673,6 @@ button, .btn {
   }
 }
 @media (min-width: 1440px) {
-  .header .main .logo {
-    margin-right: 64px;
-  }
   .header .main li a {
     font-size: 20px;
   }
@@ -1201,36 +1207,39 @@ button, .btn {
   flex-direction: column;
   align-items: center;
 }
-.footer .navigation {
+.footer #menu-footer-navigation {
   padding-bottom: 21px;
 }
-.footer .navigation li:nth-of-type(1) {
+.footer #menu-footer-navigation span {
+  display: none;
+}
+.footer #menu-footer-navigation li:nth-of-type(1) {
   margin-bottom: 40px;
 }
-.footer .navigation li:not(.footer .navigation li:nth-of-type(1)) {
+.footer #menu-footer-navigation li:not(.footer #menu-footer-navigation li:nth-of-type(1)) {
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 21px;
 }
-.footer .navigation li img {
+.footer #menu-footer-navigation li img {
   width: 101px;
   mix-blend-mode: lighten;
   transition: 0.3s linear;
 }
-.footer .navigation li img:hover {
+.footer #menu-footer-navigation li img:hover {
   opacity: 0.7;
 }
-.footer .navigation li img:active {
+.footer #menu-footer-navigation li img:active {
   opacity: 0.5;
 }
-.footer .navigation a {
+.footer #menu-footer-navigation a {
   color: #fff;
   font-size: 16px;
 }
-.footer .navigation a:hover {
+.footer #menu-footer-navigation a:hover {
   color: #006939;
 }
-.footer .navigation a:active {
+.footer #menu-footer-navigation a:active {
   color: #029c56;
 }
 .footer .phone-numbers {
@@ -1372,7 +1381,7 @@ button, .btn {
     display: flex;
     justify-content: space-around;
   }
-  .footer .navigation li:nth-of-type(1) {
+  .footer #menu-footer-navigation li:nth-of-type(1) {
     margin-bottom: 20px;
   }
   .footer .phone-numbers {
@@ -1403,7 +1412,7 @@ button, .btn {
   .footer .flex {
     width: 70%;
   }
-  .footer .navigation a {
+  .footer #menu-footer-navigation a {
     font-size: 20px;
   }
   .footer .phone-numbers ul:nth-of-type(1), .footer .phone-numbers ul:nth-of-type(2) {
@@ -1472,20 +1481,20 @@ button, .btn {
   .footer .flex {
     width: 66%;
   }
-  .footer .navigation {
+  .footer #menu-footer-navigation {
     width: 50%;
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 14px;
   }
-  .footer .navigation li {
+  .footer #menu-footer-navigation li {
     margin-bottom: 24px;
   }
-  .footer .navigation li:nth-of-type(1) {
+  .footer #menu-footer-navigation li:nth-of-type(1) {
     width: 100%;
     margin-bottom: 46px;
   }
-  .footer .navigation li:not(.footer .navigation li:nth-of-type(1)) {
+  .footer #menu-footer-navigation li:not(.footer #menu-footer-navigation li:nth-of-type(1)) {
     width: 45%;
     margin: 0 15px 24px 0;
   }
