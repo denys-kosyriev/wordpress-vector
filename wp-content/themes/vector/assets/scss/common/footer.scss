@@ -62,40 +62,41 @@
     flex-direction: column;
     align-items:    center;
   }
-  #menu-footer-navigation {
-    padding-bottom: 21px;
-    span {
-      display: none;
-    }
-    li {
-      &:nth-of-type(1) {
-        margin-bottom: 40px;
+  .navigation {
+    display:        flex;
+    flex-direction: column;
+    align-items:    center;
+    img {
+      width:          101px;
+      mix-blend-mode: lighten;
+      transition:     .3s linear;
+      margin-bottom:  40px;
+      &:hover {
+        opacity: .7;
       }
-      &:not(&:nth-of-type(1)) {
+      &:active {
+        opacity: .5;
+      }
+    }
+    ul {
+      padding-bottom: 21px;
+      span {
+        display: none;
+      }
+      li {
         font-size:     16px;
         font-weight:   400;
         margin-bottom: 21px;
       }
-      img {
-        width:          101px;
-        mix-blend-mode: lighten;
-        transition:     .3s linear;
+      a {
+        color:     #fff;
+        font-size: 16px;
         &:hover {
-          opacity: .7;
+          color: #006939;
         }
         &:active {
-          opacity: .5;
+          color: #029c56;
         }
-      }
-    }
-    a {
-      color:     #fff;
-      font-size: 16px;
-      &:hover {
-        color: #006939;
-      }
-      &:active {
-        color: #029c56;
       }
     }
   }
@@ -254,8 +255,8 @@
       display:         flex;
       justify-content: space-around;
     }
-    #menu-footer-navigation {
-      li:nth-of-type(1) {
+    .navigation {
+      img {
         margin-bottom: 20px;
       }
     }
@@ -290,11 +291,12 @@
     .wrapper {
       flex-direction: row;
       padding-bottom: 15px;
+      align-items:    start;
     }
     .flex {
       width: 70%;
     }
-    #menu-footer-navigation {
+    .navigation {
       a {
         font-size: 20px;
       }
@@ -323,6 +325,9 @@
           }
         }
       }
+    }
+    .links {
+      padding: 20px 20px 0;
     }
     .addresses {
       a {
@@ -383,21 +388,21 @@
     .flex {
       width: 66%;
     }
-    #menu-footer-navigation {
-      width:          50%;
-      flex-direction: row;
-      flex-wrap:      wrap;
-      padding-top:    14px;
+    .navigation {
+      width:       50%;
+      align-items: start;
+      padding-top: 14px;
+      img {
+        margin-bottom: 46px;
+      }
+      ul {
+        width:          100%;
+        flex-direction: row;
+        flex-wrap:      wrap;
+      }
       li {
-        margin-bottom: 24px;
-        &:nth-of-type(1) {
-          width:         100%;
-          margin-bottom: 46px;
-        }
-        &:not(&:nth-of-type(1)) {
-          width:  45%;
-          margin: 0 15px 24px 0;
-        }
+        width:  45%;
+        margin: 0 15px 24px 0;
       }
     }
     .phone-numbers {

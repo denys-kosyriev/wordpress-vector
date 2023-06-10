@@ -65,9 +65,19 @@
               <li class='languages-list-language'>Рус</li>
             </ul>
           </div>
-          <a href='<?php echo get_field('enter_url') ?>' class='user' target='_blank'>
-            <img src='<?php echo get_field('enter_img') ?>' alt=''>
-            <?php echo get_field('enter_text') ?>
+          <?php
+            $header_enter = get_field('header_enter', 'option');
+          ?>
+          <a href='<?php echo esc_url($header_enter['url']) ?>' class='user' target='_blank'>
+            <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M7.5 9C9.98528 9 12 6.98528 12 4.5C12 2.01472 9.98528 0 7.5 0C5.01472 0 3 2.01472 3 4.5C3 6.98528 5.01472 9 7.5 9Z"
+                fill="white" />
+              <path
+                d="M7.5 10.5C3.77379 10.5041 0.754148 13.5238 0.75 17.25C0.75 17.6642 1.08578 18 1.49999 18H13.5C13.9142 18 14.25 17.6642 14.25 17.25C14.2459 13.5238 11.2262 10.5041 7.5 10.5Z"
+                fill="white" />
+            </svg>
+            <?php echo esc_html($header_enter['title']) ?>
           </a>
         </div>
       </div>
@@ -78,7 +88,7 @@
       <div class='content'>
         <div class='left'>
           <a href='<?php echo home_url() ?>' class='logo'>
-            <img src='<?php echo get_field('logotype') ?>' alt=''>
+            <img src='<?php echo get_field('header_logotype', 'option') ?>' alt=''>
           </a>
           <?php
             wp_nav_menu([
@@ -118,9 +128,12 @@
             </clipPath>
           </defs>
         </svg>
-        <a target="_blank"
-           href='<?php echo get_field('payment_url') ?>'
-           class='btn btn-outlined'><?php echo get_field('payment_text') ?></a>
+        <?php
+          $header_payment = get_field('header_payment', 'option');
+        ?>
+        <a href='<?php echo esc_url($header_payment['url']) ?>' class='btn btn-outlined' target='_blank'>
+          <?php echo esc_html($header_payment['title']) ?>
+        </a>
       </div>
     </div>
   </div>

@@ -132,14 +132,12 @@
           ul {
             display: flex;
           }
-          li {
-            &:first-of-type {
-              margin-right: 7px;
-            }
-          }
           a {
             color:      #03BF6A;
             transition: .2s linear;
+            &:first-of-type {
+              margin-right: 7px;
+            }
             &:hover {
               color: #006939;
             }
@@ -227,7 +225,7 @@
           &:active {
             background: #029c56;
           }
-          img {
+          svg {
             width: 13px;
           }
         }
@@ -247,19 +245,16 @@
         padding:   0 20px;
       }
       .logo {
-        display: none;
+        margin-right: 30px;
+        img {
+          width: 75px;
+        }
       }
       ul {
         width:           100%;
         display:         flex;
         justify-content: space-between;
         align-items:     center;
-        img {
-          width: 75px;
-        }
-        span {
-          display: none;
-        }
       }
       li {
         a {
@@ -289,6 +284,9 @@
 @media(min-width: 1440px) {
   .header {
     .main {
+      .logo {
+        margin-right: 64px;
+      }
       li {
         a {
           font-size: 20px;
