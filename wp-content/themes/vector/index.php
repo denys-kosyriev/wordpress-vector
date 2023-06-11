@@ -64,56 +64,24 @@
     <div class="container">
       <div class='swiper swiper-banners'>
         <div class='swiper-wrapper'>
-          <div class='swiper-slide hidden'>
-            <div class='p-relative'>
-              <h2>Кошик</h2>
-              <p>Шановні абоненти ТРК "Вектор", які мешкають в смт. Краснопавлівка!</p>
-              <a href='#' class='btn-black btn'>
-                Детальніше
-              </a>
-            </div>
-            <img src='./assets/images/basket.png' alt=''>
-          </div>
-          <div class='swiper-slide hidden'>
-            <div class='p-relative'>
-              <h2>Кошик</h2>
-              <p>Шановні абоненти ТРК "Вектор", які мешкають в смт. Краснопавлівка!</p>
-              <a href='#' class='btn-black btn'>
-                Детальніше
-              </a>
-            </div>
-            <img src='./assets/images/basket.png' alt=''>
-          </div>
-          <div class='swiper-slide hidden'>
-            <div class='p-relative'>
-              <h2>Кошик</h2>
-              <p>Шановні абоненти ТРК "Вектор", які мешкають в смт. Краснопавлівка!</p>
-              <a href='#' class='btn-black btn'>
-                Детальніше
-              </a>
-            </div>
-            <img src='./assets/images/basket.png' alt=''>
-          </div>
-          <div class='swiper-slide hidden'>
-            <div class='p-relative'>
-              <h2>Кошик</h2>
-              <p>Шановні абоненти ТРК "Вектор", які мешкають в смт. Краснопавлівка!</p>
-              <a href='#' class='btn-black btn'>
-                Детальніше
-              </a>
-            </div>
-            <img src='./assets/images/basket.png' alt=''>
-          </div>
-          <div class='swiper-slide hidden'>
-            <div class='p-relative'>
-              <h2>Кошик</h2>
-              <p>Шановні абоненти ТРК "Вектор", які мешкають в смт. Краснопавлівка!</p>
-              <a href='#' class='btn-black btn'>
-                Детальніше
-              </a>
-            </div>
-            <img src='./assets/images/basket.png' alt=''>
-          </div>
+          <?php if (have_rows('slider_shares')) :
+            while (have_rows('slider_shares')) :
+              the_row(); ?>
+              <div class='swiper-slide hidden'>
+                <div class='p-relative'>
+                  <h2><?php echo get_sub_field('title') ?></h2>
+                  <p><?php echo get_sub_field('description') ?></p>
+                  <?php
+                    $btn_slider_banners = get_sub_field('button');
+                  ?>
+                  <a href='<?php echo esc_url($btn_slider_banners['url']) ?>' class='btn btn-black'>
+                    <?php echo esc_html($btn_slider_banners['title']) ?>
+                  </a>
+                </div>
+                <img src='<?php echo get_sub_field('image') ?>' alt=''>
+              </div>
+            <?php endwhile;
+          endif; ?>
         </div>
         <div class="swiper-pagination"></div>
       </div>
@@ -227,32 +195,45 @@
   <section class='show-all-tariffs'>
     <div class='container'>
       <div class='content '>
-        <h2>Збільшення абонентської плати</h2>
-        Дякуємо що ви з нами, та хочемо повідомити Вам, що у зв’язку зі збільшенням вартості енергоносіїв та мінімальної
-        заробітної плати, та для подальшого забезпечення якісних послуг, доступу до мережі Інтернет.
-        <a href='./tariffs/internet.php' class='btn btn-outlined'>
-          Переглянути всі тарифи
-        </a>
+        <?php if (have_rows('increase_subscription_fee')) :
+          while (have_rows('increase_subscription_fee')) :
+            the_row(); ?>
+            <h2><?php echo get_sub_field('title') ?></h2>
+            <?php echo get_sub_field('description') ?>
+            <?php
+            $increase_subscription_fee_btn = get_sub_field('button');
+            ?>
+            <a href='<?php echo esc_url($increase_subscription_fee_btn['url']) ?>' class='btn btn-outlined'>
+              <?php echo esc_html($increase_subscription_fee_btn['title']) ?>
+            </a>
+          <?php endwhile;
+        endif; ?>
       </div>
     </div>
   </section>
   <section class='about about-company'>
     <div class='container'>
       <div class='content'>
+        <?php if (have_rows('about_company')) :
+          while (have_rows('about_company')) :
+          the_row(); ?>
         <div class='left p-relative'>
-          <img src='./assets/images/girl.png' alt='' class='main-img'>
+          <img src='<?php echo get_sub_field('image') ?>' alt='' class='main-img'>
           <div>
-            <img src='./assets/images/icons/logo1.svg' alt=''>
+            <img src='<?php echo get_sub_field('logotype') ?>' alt=''>
           </div>
         </div>
         <div class='right'>
-          <h2>Про компанію</h2>
-          Телерадіокомпанія "Вектор", розташована в місті Лозова, Харківської області - одному з 7 міст обласного
-          підпорядкування та є найбільшим районним центром області, що знаходиться в 148 км на південь від Харкова.
-          Загальна площа міста - 18,1 кв.км. Чисельність населення складає 62100 чол.
-          <a href='./company.html' class='btn btn-full'>
-            Детальніше
+          <h2><?php echo get_sub_field('title') ?></h2>
+          <?php echo get_sub_field('description') ?>
+          <?php
+            $about_company_btn = get_sub_field('button');
+          ?>
+          <a href='<?php echo esc_url($about_company_btn['url']) ?>' class='btn btn-outlined'>
+            <?php echo esc_html($about_company_btn['title']) ?>
           </a>
+          <?php endwhile;
+            endif; ?>
         </div>
       </div>
     </div>
@@ -261,13 +242,18 @@
     <div class='container'>
       <div class='wrapper p-relative'>
         <div class='content bg-green'>
-          <img src='./assets/images/devices.png' alt=''>
-          <h2>Інтернет</h2>
-          Підключення інтернету - необхідне для роботи та розваг. Виберіть відповідний тариф і провайдера, враховуючи
-          швидкість, обсяг трафіку та кількість пристроїв.
-          <a href='./tariffs/internet.html' class='btn btn-black'>
-            Детальніше
-          </a>
+          <?php if (have_rows('internet')) :
+            while (have_rows('internet')) :
+              the_row(); ?>
+              <img src='<?php echo get_sub_field('image') ?>' alt=''>
+              <h2><?php echo get_sub_field('title') ?></h2>
+              <?php echo get_sub_field('description') ?>
+              <?php $internet_btn = get_sub_field('button'); ?>
+              <a href='<?php echo esc_url($internet_btn['url']) ?>' class='btn btn-black'>
+                <?php echo esc_html($internet_btn['title']) ?>
+              </a>
+            <?php endwhile;
+          endif; ?>
         </div>
       </div>
     </div>
@@ -275,14 +261,19 @@
   <section class='about about-tv'>
     <div class='container'>
       <div class='content'>
-        <img src='./assets/images/tv.png' alt=''>
+        <?php if (have_rows('tv')) :
+          while (have_rows('tv')) :
+          the_row(); ?>
+        <img src='<?php echo get_sub_field('image') ?>' alt=''>
         <div class='right color-gray'>
-          <h2>Телебачення</h2>
-          Підключення телебачення дозволяє отримати доступ до каналів телевізійного мовлення через провайдера. Виберіть
-          підходящий тариф, встановіть обладнання та налаштуйте канали. Забезпечте конфіденційність та безпеку.
-          <a href='./tariffs/tv/tv.html' class='btn btn-full'>
-            Детальніше
+          <h2><?php echo get_sub_field('title') ?></h2>
+          <?php echo get_sub_field('description') ?>
+          <?php $internet_btn = get_sub_field('button'); ?>
+          <a href='<?php echo esc_url($internet_btn['url']) ?>' class='btn btn-full'>
+            <?php echo esc_html($internet_btn['title']) ?>
           </a>
+          <?php endwhile;
+            endif; ?>
         </div>
       </div>
     </div>
@@ -291,46 +282,20 @@
     <div class='container'>
       <h2>Найчастіші запитання</h2>
       <ul class='questions-list'>
-        <li class='questions-select'>
-          <div class='question'>
-            <h3>Скільки діє акція?</h3>
-            <img class='icon-select' src='./assets/images/icons/angle-right.svg' alt=''>
-          </div>
-          <p class='questions-answer d-none'>
-            Дякуємо що ви з нами, та хочемо повідомити Вам, що у зв’язку зі збільшенням вартості енергоносіїв та
-            мінімальної заробітної плати, та для подальшого забезпечення якісних послуг
-          </p>
-        </li>
-        <li class='questions-select'>
-          <div class='question'>
-            <h3>Скільки діє акція?</h3>
-            <img class='icon-select' src='./assets/images/icons/angle-right.svg' alt=''>
-          </div>
-          <p class='questions-answer d-none'>
-            Дякуємо що ви з нами, та хочемо повідомити Вам, що у зв’язку зі збільшенням вартості енергоносіїв та
-            мінімальної заробітної плати, та для подальшого забезпечення якісних послуг
-          </p>
-        </li>
-        <li class='questions-select'>
-          <div class='question'>
-            <h3>Скільки діє акція?</h3>
-            <img class='icon-select' src='./assets/images/icons/angle-right.svg' alt=''>
-          </div>
-          <p class='questions-answer d-none'>
-            Дякуємо що ви з нами, та хочемо повідомити Вам, що у зв’язку зі збільшенням вартості енергоносіїв та
-            мінімальної заробітної плати, та для подальшого забезпечення якісних послуг
-          </p>
-        </li>
-        <li class='questions-select'>
-          <div class='question'>
-            <h3>Скільки діє акція?</h3>
-            <img class='icon-select' src='./assets/images/icons/angle-right.svg' alt=''>
-          </div>
-          <p class='questions-answer d-none'>
-            Дякуємо що ви з нами, та хочемо повідомити Вам, що у зв’язку зі збільшенням вартості енергоносіїв та
-            мінімальної заробітної плати, та для подальшого забезпечення якісних послуг
-          </p>
-        </li>
+        <?php if (have_rows('accordion')) :
+          while (have_rows('accordion')) :
+            the_row(); ?>
+            <li class='questions-select'>
+              <div class='question'>
+                <h3><?php echo get_sub_field('question') ?></h3>
+                <img class='icon-select' src='./assets/icons/angle-right.svg' alt=''>
+              </div>
+              <p class='questions-answer d-none'>
+                <?php echo get_sub_field('answer') ?>
+              </p>
+            </li>
+          <?php endwhile;
+        endif; ?>
       </ul>
     </div>
   </section>

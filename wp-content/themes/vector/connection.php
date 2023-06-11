@@ -206,7 +206,7 @@
             <li><a href='index.php'>
               <img src='./assets/images/icons/logo1.svg' alt=''>
             </a></li>
-            <li><a href='tariffs/internet.html'>Тарифи</a></li>
+            <li><a href='tariffs/internet.php'>Тарифи</a></li>
             <li><a href='advertising.php'>Реклама</a></li>
             <li><a href='connection.php'>Підключення</a></li>
             <li><a href='news.php'>Новини</a></li>
