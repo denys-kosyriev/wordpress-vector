@@ -2860,6 +2860,19 @@ button, .btn {
   align-items: start;
   background-color: #03BF6A;
 }
+.shares .cart:nth-of-type(2n) a {
+  background-color: #03bf6a;
+  color: #fff;
+  border: 1px solid #03bf6a;
+}
+.shares .cart:nth-of-type(2n) a:hover {
+  background-color: #fff;
+  color: #03bf6a;
+}
+.shares .cart:nth-of-type(2n) a:active {
+  background-color: #006939;
+  color: #006939;
+}
 .shares .cart img {
   transition: 0.2s linear;
 }
