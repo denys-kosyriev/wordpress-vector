@@ -8,8 +8,8 @@
         <div class='container'>
           <h2><?php echo get_sub_field('title') ?></h2>
           <div class='carts'>
-            <?php if (have_rows('action')) :
-              while (have_rows('action')) :
+            <?php if (have_rows('one_news')) :
+              while (have_rows('one_news')) :
                 the_row(); ?>
                 <div class='cart p-relative shadow'>
                   <div class='img'>
