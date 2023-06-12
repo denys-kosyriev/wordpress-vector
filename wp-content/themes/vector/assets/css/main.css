@@ -3192,9 +3192,6 @@ button, .btn {
   text-align: center;
   line-height: 1.6;
 }
-.advertising h2.price-list-title {
-  text-align: start;
-}
 .advertising .table {
   padding-bottom: 33px;
 }
@@ -3318,12 +3315,10 @@ button, .btn {
     padding: 0 20px 0 40px;
   }
   .advertising h2 {
+    max-width: 75%;
     text-align: start;
     margin-bottom: 40px;
     line-height: 1.5;
-  }
-  .advertising h2.price-list-title {
-    max-width: 75%;
   }
   .advertising .table {
     padding-bottom: 42px;

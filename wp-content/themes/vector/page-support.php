@@ -1,3 +1,7 @@
+<?php
+  //Template Name: Підтримка
+?>
+
 <?php get_header(); ?>
 
 <main class='support'>

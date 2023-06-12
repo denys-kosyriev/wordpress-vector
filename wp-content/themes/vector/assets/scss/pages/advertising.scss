@@ -9,9 +9,6 @@
     margin-bottom: 19px;
     text-align:    center;
     line-height:   1.6;
-    &.price-list-title {
-      text-align: start;
-    }
   }
   .table {
     padding-bottom: 33px;
@@ -159,12 +156,10 @@
       padding: 0 20px 0 40px;
     }
     h2 {
+      max-width:     75%;
       text-align:    start;
       margin-bottom: 40px;
       line-height:   1.5;
-      &.price-list-title {
-        max-width: 75%;
-      }
     }
     .table {
       padding-bottom: 42px;

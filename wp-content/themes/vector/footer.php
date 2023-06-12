@@ -167,8 +167,5 @@
   </div>
 </footer>
 
-<script src="./assets/libs/swiper/swiper.js"></script>
-<script src="./assets/js/main.js"></script>
-<script src="./assets/js/home.js"></script>
 </body>
 </html>

@@ -1,3 +1,7 @@
+<?php
+  //Template Name: Підключення
+?>
+
 <?php get_header(); ?>
 
 <main class='connection net'>
