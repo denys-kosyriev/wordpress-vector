@@ -27,6 +27,9 @@
     wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js');
     wp_enqueue_script('home', get_template_directory_uri() . '/assets/js/home.js');
     wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/libs/swiper/swiper.js');
+    wp_enqueue_script('connection', get_template_directory_uri() . '/assets/js/connection.js');
+    wp_enqueue_script('settings', get_template_directory_uri() . '/assets/js/settings.js');
+    wp_enqueue_script('support', get_template_directory_uri() . '/assets/js/support.js');
   }
 
   function add_menus() {

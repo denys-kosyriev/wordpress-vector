@@ -10,17 +10,17 @@
             the_row(); ?>
             <div class='cart p-relative shadow'>
               <div class='img'>
-                <img src='<?php echo get_field('image') ?>' alt='' class='p-relative'>
+                <img src='<?php echo get_sub_field('image') ?>' alt='' class='p-relative'>
               </div>
               <div class='content'>
-                <h3><?php echo get_field('title') ?></h3>
-                <p><?php echo get_field('subtitle') ?></p>
+                <h3><?php echo get_sub_field('title') ?></h3>
+                <p><?php echo get_sub_field('subtitle') ?></p>
                 <div class='bottom'>
-                  <?php $action_btn = get_field('button'); ?>
+                  <?php $action_btn = get_sub_field('button'); ?>
                   <a href='<?php echo esc_url($action_btn['url']) ?>' class='btn btn-full'>
                     <?php echo esc_html($action_btn['title']) ?>
                   </a>
-                  <div><?php echo get_field('date') ?></div>
+                  <div><?php echo get_sub_field('date') ?></div>
                 </div>
               </div>
             </div>

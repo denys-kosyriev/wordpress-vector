@@ -1,54 +1,28 @@
-<?php
-  //Template Name: Підтримка
-?>
-
 <?php get_header(); ?>
 
 <main class='support'>
   <section class='possibilities'>
     <div class='container'>
-      <h2>Підтримка</h2>
+      <h2><?php echo get_field('support_title') ?></h2>
       <div class='swiper swiper-support'>
         <div class='swiper-wrapper'>
-          <div class='swiper-slide'>
-            <div class='possibility'>
-              <div class='circle'>
-                <img src='./assets/images/tv-wifi.png' alt=''>
+          <?php if (have_rows('support_info')) :
+            while (have_rows('support_info')) :
+              the_row(); ?>
+              <div class='swiper-slide'>
+                <div class='possibility'>
+                  <div class='circle'>
+                    <img src='<?php echo get_sub_field('image') ?>' alt=''>
+                  </div>
+                  <?php echo get_sub_field('description') ?>
+                  <?php $link = get_sub_field('link'); ?>
+                  <a href='<?php echo esc_url($link['url']) ?>' target='_blank'>
+                    <?php echo esc_html($link['title']) ?>
+                  </a>
+                </div>
               </div>
-              У цьому розділі ви маєте змогу ознайомитися з налаштуванням усіх послуг і сервісів, що надаються ТОВ ТРК
-              "Вектор".
-            </div>
-          </div>
-          <div class='swiper-slide'>
-            <div class='possibility'>
-              <div class='circle'>
-                <img src='./assets/images/wifi.png' alt=''>
-              </div>
-              Адміністрацією підготовлена і представлена вам інструкція по налаштуванню сервісів, для подальшого
-              докладного ознайомлення і детального вивчення, що надаються ТРК "Вектор". Ви маєте змогу ознайомитися з
-              інструкцією завантаживши її на свій комп'ютер.
-            </div>
-          </div>
-          <div class='swiper-slide'>
-            <div class='possibility'>
-              <div class='circle'>
-                <img src='./assets/images/cable.png' alt=''>
-              </div>
-              Якщо ви бажаєте внести пропозиції або доповнення до цієї інструкції - надсилайте свої пропозиції на нашу
-              поштову скриньку
-              <a type='' href='mailto:vpadmin@vektor-plus.com'>vpadmin@vektor-plus.com</a>
-            </div>
-          </div>
-          <div class='swiper-slide'>
-            <div class='possibility'>
-              <div class='circle'>
-                <img src='./assets/images/modem.png' alt=''>
-              </div>
-              Якщо після ознайомлення з матеріалами у вас усе-одно виникають питання, Ви можете їх задати за тел.
-              (057-45) 5-11-30 консультанту з питань підтримки інтернету та локальної мережі в будні з 8.00 до 18.00; у
-              вихідні дні з 9.00 до 18.00.
-            </div>
-          </div>
+            <?php endwhile;
+          endif; ?>
         </div>
         <div class='swiper-pagination'></div>
       </div>
@@ -56,12 +30,17 @@
   </section>
   <section class='help'>
     <div class='container'>
-      <h2>Що хотіли б дізнатись?</h2>
+      <h2><?php echo get_field('support_title2') ?></h2>
       <div class='content'>
-        <a href='payment-description.php'>Як оплатити?</a>
-        <a href='connection-problems.php'>Проблеми при підключенні</a>
-        <a href='settings.php'>Налаштування</a>
-        <a href='settings-iptv.php'>Налаштування IPTV телебачення</a>
+        <?php if (have_rows('support_questions')) :
+          while (have_rows('support_questions')) :
+            the_row(); ?>
+            <?php $question = get_sub_field('question'); ?>
+            <a href='<?php echo esc_url($question['url']) ?>'>
+              <?php echo esc_html($question['title']) ?>
+            </a>
+          <?php endwhile;
+        endif; ?>
       </div>
     </div>
   </section>
