@@ -1,12 +1,12 @@
 <?php
 
-    acf_add_options_page(array(
-      'page_title' => 'Theme General Settings',
-      'menu_title' => 'Theme Settings',
-      'menu_slug' => 'theme-general-settings',
-      'capability' => 'edit_posts',
-      'redirect' => false,
-    ));
+  acf_add_options_page(array(
+    'page_title' => 'Theme General Settings',
+    'menu_title' => 'Theme Settings',
+    'menu_slug' => 'theme-general-settings',
+    'capability' => 'edit_posts',
+    'redirect' => false,
+  ));
 
 
   function add_file_types_to_uploads($file_types) {

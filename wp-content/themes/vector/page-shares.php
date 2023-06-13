@@ -1,15 +1,12 @@
 <?php get_header(); ?>
 
 <main class='shares'>
-  <?php if (have_rows('shares')) :
-    while (have_rows('shares')) :
-    the_row(); ?>
   <section>
     <div class='container'>
-      <h2><?php echo get_sub_field('title') ?></h2>
+      <h2><?php echo get_field('shares_title') ?></h2>
       <div class='carts'>
-        <?php if (have_rows('action')) :
-          while (have_rows('action')) :
+        <?php if (have_rows('shares_action')) :
+          while (have_rows('shares_action')) :
             the_row(); ?>
             <div class='cart p-relative'>
               <p><?php echo get_sub_field('title1') ?></p>
@@ -25,8 +22,6 @@
       </div>
     </div>
   </section>
-    <?php endwhile;
-  endif; ?>
 </main>
 
 <?php get_footer(); ?>

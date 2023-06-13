@@ -195,45 +195,35 @@
   <section class='show-all-tariffs'>
     <div class='container'>
       <div class='content '>
-        <?php if (have_rows('increase_subscription_fee')) :
-          while (have_rows('increase_subscription_fee')) :
-            the_row(); ?>
-            <h2><?php echo get_sub_field('title') ?></h2>
-            <?php echo get_sub_field('description') ?>
-            <?php
-            $increase_subscription_fee_btn = get_sub_field('button');
-            ?>
-            <a href='<?php echo esc_url($increase_subscription_fee_btn['url']) ?>' class='btn btn-outlined'>
-              <?php echo esc_html($increase_subscription_fee_btn['title']) ?>
-            </a>
-          <?php endwhile;
-        endif; ?>
+        <h2><?php echo get_field('fee_increase_title') ?></h2>
+        <?php echo get_field('fee_increase_description') ?>
+        <?php
+          $increase_subscription_fee_btn = get_field('fee_increase_button');
+        ?>
+        <a href='<?php echo esc_url($increase_subscription_fee_btn['url']) ?>' class='btn btn-outlined'>
+          <?php echo esc_html($increase_subscription_fee_btn['title']) ?>
+        </a>
       </div>
     </div>
   </section>
   <section class='about about-company'>
     <div class='container'>
       <div class='content'>
-        <?php if (have_rows('about_company')) :
-          while (have_rows('about_company')) :
-          the_row(); ?>
         <div class='left p-relative'>
-          <img src='<?php echo get_sub_field('image') ?>' alt='' class='main-img'>
+          <img src='<?php echo get_field('about_company_image') ?>' alt='' class='main-img'>
           <div>
-            <img src='<?php echo get_sub_field('logotype') ?>' alt=''>
+            <img src='<?php echo get_field('about_company_logotype') ?>' alt=''>
           </div>
         </div>
         <div class='right'>
-          <h2><?php echo get_sub_field('title') ?></h2>
-          <?php echo get_sub_field('description') ?>
+          <h2><?php echo get_field('about_company_title') ?></h2>
+          <?php echo get_field('about_company_description') ?>
           <?php
-            $about_company_btn = get_sub_field('button');
+            $about_company_btn = get_field('about_company_button');
           ?>
           <a href='<?php echo esc_url($about_company_btn['url']) ?>' class='btn btn-outlined'>
             <?php echo esc_html($about_company_btn['title']) ?>
           </a>
-          <?php endwhile;
-            endif; ?>
         </div>
       </div>
     </div>
@@ -242,18 +232,13 @@
     <div class='container'>
       <div class='wrapper p-relative'>
         <div class='content bg-green'>
-          <?php if (have_rows('internet')) :
-            while (have_rows('internet')) :
-              the_row(); ?>
-              <img src='<?php echo get_sub_field('image') ?>' alt=''>
-              <h2><?php echo get_sub_field('title') ?></h2>
-              <?php echo get_sub_field('description') ?>
-              <?php $internet_btn = get_sub_field('button'); ?>
-              <a href='<?php echo esc_url($internet_btn['url']) ?>' class='btn btn-black'>
-                <?php echo esc_html($internet_btn['title']) ?>
-              </a>
-            <?php endwhile;
-          endif; ?>
+          <img src='<?php echo get_field('internet_image') ?>' alt=''>
+          <h2><?php echo get_field('internet_title') ?></h2>
+          <?php echo get_field('internet_description') ?>
+          <?php $internet_btn = get_field('internet_button'); ?>
+          <a href='<?php echo esc_url($internet_btn['url']) ?>' class='btn btn-black'>
+            <?php echo esc_html($internet_btn['title']) ?>
+          </a>
         </div>
       </div>
     </div>
@@ -261,19 +246,14 @@
   <section class='about about-tv'>
     <div class='container'>
       <div class='content'>
-        <?php if (have_rows('tv')) :
-          while (have_rows('tv')) :
-          the_row(); ?>
-        <img src='<?php echo get_sub_field('image') ?>' alt=''>
+        <img src='<?php echo get_field('tv_image') ?>' alt=''>
         <div class='right color-gray'>
-          <h2><?php echo get_sub_field('title') ?></h2>
-          <?php echo get_sub_field('description') ?>
-          <?php $internet_btn = get_sub_field('button'); ?>
+          <h2><?php echo get_field('tv_title') ?></h2>
+          <?php echo get_field('tv_description') ?>
+          <?php $internet_btn = get_field('tv_button'); ?>
           <a href='<?php echo esc_url($internet_btn['url']) ?>' class='btn btn-full'>
             <?php echo esc_html($internet_btn['title']) ?>
           </a>
-          <?php endwhile;
-            endif; ?>
         </div>
       </div>
     </div>

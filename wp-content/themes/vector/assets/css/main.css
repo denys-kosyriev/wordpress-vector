@@ -2490,10 +2490,21 @@ button, .btn {
     padding: 79px 126px 0 0;
   }
 }
-.blog p {
+.blog .content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.blog p, .blog a {
   color: #7A8781;
   line-height: 1.6;
   margin-bottom: 19px;
+}
+.blog a:hover {
+  color: #03bf6a;
+}
+.blog a:active {
+  color: #006939;
 }
 .blog .top {
   padding: 35px 0 22px;
@@ -2541,8 +2552,9 @@ button, .btn {
   }
 }
 @media (min-width: 1024px) {
-  .blog p {
+  .blog p, .blog a {
     margin-bottom: 39px;
+    font-size: 24px;
   }
   .blog .top {
     padding: 0;
