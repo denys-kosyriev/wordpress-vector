@@ -4252,22 +4252,6 @@ button, .btn {
   background-color: #fff;
   border-radius: 20px;
   padding: 19px 15px;
-  position: relative;
-  left: 0;
-  top: 0;
-  z-index: 0;
-}
-.contacts .location div:hover a {
-  color: #029c56;
-}
-.contacts .location div:hover path {
-  fill: #029c56;
-}
-.contacts .location div:active a {
-  color: #006939;
-}
-.contacts .location div:active path {
-  color: #006939;
 }
 .contacts .location div::after {
   width: 17px;
@@ -4276,12 +4260,27 @@ button, .btn {
   background-color: #fff;
   transform: rotate(45deg);
   position: absolute;
-  bottom: -7px;
-  left: 15%;
+  bottom: 12px;
+  left: 20%;
   z-index: 1;
 }
 .contacts .location svg {
   display: none;
+}
+.contacts .location svg path {
+  transition: 0.3s linear;
+}
+.contacts .location a:hover {
+  color: #029c56;
+}
+.contacts .location a:hover path {
+  fill: #029c56;
+}
+.contacts .location a:active {
+  color: #006939;
+}
+.contacts .location a:active path {
+  fill: #006939;
 }
 .contacts .location::before, .contacts .location::after {
   content: "";
@@ -4376,12 +4375,7 @@ button, .btn {
   .contacts .location div::after {
     width: 25px;
     height: 25px;
-    bottom: -12px;
-    left: 12%;
-  }
-  .contacts .location div {
-    display: flex;
-    align-items: start;
+    left: 16%;
   }
   .contacts .location svg {
     display: block;
@@ -4390,6 +4384,8 @@ button, .btn {
   }
   .contacts .location a {
     font-size: 16px;
+    display: flex;
+    align-items: start;
   }
   .contacts .form {
     padding: 44px 62px 46px;
@@ -4438,8 +4434,7 @@ button, .btn {
   .contacts .location div::after {
     width: 25px;
     height: 25px;
-    bottom: -12px;
-    left: 12%;
+    bottom: 7px;
   }
   .contacts .location svg {
     margin: 5px 8px 0 0;

@@ -26,26 +26,6 @@
       background-color: #fff;
       border-radius:    20px;
       padding:          19px 15px;
-      position:         relative;
-      left:             0;
-      top:              0;
-      z-index:          0;
-      &:hover {
-        a {
-          color: #029c56;
-        }
-        path {
-          fill: #029c56;
-        }
-      }
-      &:active {
-        a {
-          color: #006939;
-        }
-        path {
-          color: #006939;
-        }
-      }
       &::after {
         width:            17px;
         height:           17px;
@@ -53,13 +33,30 @@
         background-color: #fff;
         transform:        rotate(45deg);
         position:         absolute;
-        bottom:           -7px;
-        left:             15%;
+        bottom:           12px;
+        left:             20%;
         z-index:          1;
       }
     }
     svg {
       display: none;
+      path {
+        transition: .3s linear;
+      }
+    }
+    a {
+      &:hover {
+        color: #029c56;
+        path {
+          fill: #029c56;
+        }
+      }
+      &:active {
+        color: #006939;
+        path {
+          fill: #006939;
+        }
+      }
     }
     &::before, &::after {
       content:       '';
@@ -158,13 +155,8 @@
         &::after {
           width:  25px;
           height: 25px;
-          bottom: -12px;
-          left:   12%;
+          left:   16%;
         }
-      }
-      div {
-        display:     flex;
-        align-items: start;
       }
       svg {
         display: block;
@@ -172,7 +164,9 @@
         margin:  0 8px 0 0;
       }
       a {
-        font-size: 16px;
+        font-size:   16px;
+        display:     flex;
+        align-items: start;
       }
     }
     .form {
@@ -226,8 +220,7 @@
         &::after {
           width:  25px;
           height: 25px;
-          bottom: -12px;
-          left:   12%;
+          bottom: 7px;
         }
       }
       svg {
