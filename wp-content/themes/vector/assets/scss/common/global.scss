@@ -19,8 +19,7 @@ body {
 }
 
 main {
-  flex:        1 0 auto;
-  padding-top: 52px;
+  flex: 1 0 auto;
 }
 
 section {
@@ -81,7 +80,7 @@ label {
   width: 100%;
 }
 
-input, select {
+input, select, textarea {
   width:         100%;
   padding:       14px 27px;
   display:       inline-flex;
@@ -102,6 +101,10 @@ input, select {
   .error {
     border-color: #FF2F2F;
   }
+}
+
+textarea {
+  border-radius: 13px;
 }
 
 select {
@@ -345,7 +348,7 @@ button, .btn {
   p {
     font-size: 18px;
   }
-  input, select {
+  input, select, textarea {
     font-size: 18px;
   }
   .btn, button {
@@ -399,7 +402,7 @@ button, .btn {
     font-size: 24px;
   }
 
-  input, select {
+  input, select, textarea {
     padding:       21px 32px;
     border:        2px solid #d2dbdb;
     border-radius: 40px;
@@ -445,6 +448,6 @@ button, .btn {
 
 @media(min-width: 1200px) {
   main {
-    padding-top: 139px;
+    padding-top: 109px;
   }
 }

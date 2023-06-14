@@ -20,7 +20,6 @@ body {
 
 main {
   flex: 1 0 auto;
-  padding-top: 52px;
 }
 
 section {
@@ -80,7 +79,7 @@ label {
   width: 100%;
 }
 
-input, select {
+input, select, textarea {
   width: 100%;
   padding: 14px 27px;
   display: inline-flex;
@@ -93,14 +92,18 @@ input, select {
   font-weight: 500;
   transition: 0.3s linear;
 }
-input:hover, select:hover {
+input:hover, select:hover, textarea:hover {
   border: 1px solid #03BF6A;
 }
-input:focus, select:focus {
+input:focus, select:focus, textarea:focus {
   border-color: #03BF6A;
 }
-input .error, select .error {
+input .error, select .error, textarea .error {
   border-color: #FF2F2F;
+}
+
+textarea {
+  border-radius: 13px;
 }
 
 select {
@@ -338,7 +341,7 @@ button, .btn {
   p {
     font-size: 18px;
   }
-  input, select {
+  input, select, textarea {
     font-size: 18px;
   }
   .btn, button {
@@ -378,7 +381,7 @@ button, .btn {
   .btn-switch {
     font-size: 24px;
   }
-  input, select {
+  input, select, textarea {
     padding: 21px 32px;
     border: 2px solid #d2dbdb;
     border-radius: 40px;
@@ -386,7 +389,7 @@ button, .btn {
     font-size: 24px;
     font-weight: 500;
   }
-  input:hover, select:hover {
+  input:hover, select:hover, textarea:hover {
     border: 2px solid #03BF6A;
   }
   select {
@@ -415,7 +418,7 @@ button, .btn {
 }
 @media (min-width: 1200px) {
   main {
-    padding-top: 139px;
+    padding-top: 109px;
   }
 }
 .header {
@@ -4217,6 +4220,282 @@ button, .btn {
   }
   .connection-problems .accordion {
     padding: 0 0 60px;
+  }
+}
+.contacts {
+  overflow: hidden;
+}
+.contacts .content {
+  padding: 283px 0 0;
+  display: flex;
+  justify-content: center;
+}
+.contacts .back {
+  width: 100vw;
+  object-fit: cover;
+  zoom: 2.1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.contacts .location {
+  width: 78%;
+  max-width: 320px;
+  position: absolute;
+  left: 22%;
+  top: 98px;
+  z-index: 0;
+  padding: 0 20px 20px;
+}
+.contacts .location div {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 19px 15px;
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+.contacts .location div:hover a {
+  color: #029c56;
+}
+.contacts .location div:hover path {
+  fill: #029c56;
+}
+.contacts .location div:active a {
+  color: #006939;
+}
+.contacts .location div:active path {
+  color: #006939;
+}
+.contacts .location div::after {
+  width: 17px;
+  height: 17px;
+  content: "";
+  background-color: #fff;
+  transform: rotate(45deg);
+  position: absolute;
+  bottom: -7px;
+  left: 15%;
+  z-index: 1;
+}
+.contacts .location svg {
+  display: none;
+}
+.contacts .location::before, .contacts .location::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+.contacts .location::before {
+  width: 38px;
+  height: 38px;
+  left: 17.5%;
+  bottom: -39px;
+  z-index: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.contacts .location::after {
+  width: 12px;
+  height: 12px;
+  left: 17%;
+  bottom: -40px;
+  margin: 7px;
+  border: 7px solid rgba(255, 255, 255, 0.6);
+  background-color: #03bf6a;
+  z-index: 1;
+}
+.contacts .location a {
+  font-size: 14px;
+  color: #03bf6a;
+  font-weight: 600;
+}
+.contacts .form {
+  max-width: 525px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  border-radius: 20px;
+  padding: 25px 20px 20px;
+  background-color: #fff;
+}
+.contacts .form h2 {
+  padding-bottom: 22px;
+  text-align: center;
+}
+.contacts .form input {
+  margin-bottom: 10px;
+}
+.contacts .form textarea {
+  height: 105px;
+  margin-bottom: 20px;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+@media (min-width: 500px) {
+  .contacts .content {
+    padding: 315px 0 0;
+  }
+  .contacts .back {
+    zoom: 1.5;
+  }
+  .contacts .location {
+    left: 18%;
+  }
+}
+@media (min-width: 700px) {
+  .contacts .content {
+    padding: 375px 0 0;
+  }
+  .contacts .back {
+    zoom: 1.3;
+  }
+  .contacts .location {
+    top: 138px;
+  }
+  .contacts .location::before {
+    width: 56px;
+    height: 56px;
+    left: 13%;
+    bottom: -68px;
+  }
+  .contacts .location::after {
+    border-width: 10px;
+    width: 18px;
+    height: 18px;
+    bottom: -67px;
+    left: 13.5%;
+  }
+  .contacts .location div {
+    padding: 20px 19px;
+  }
+  .contacts .location div::after {
+    width: 25px;
+    height: 25px;
+    bottom: -12px;
+    left: 12%;
+  }
+  .contacts .location div {
+    display: flex;
+    align-items: start;
+  }
+  .contacts .location svg {
+    display: block;
+    width: 28px;
+    margin: 0 8px 0 0;
+  }
+  .contacts .location a {
+    font-size: 16px;
+  }
+  .contacts .form {
+    padding: 44px 62px 46px;
+  }
+  .contacts .form input {
+    margin-bottom: 15px;
+    font-size: 20px;
+    padding: 17px 24px;
+  }
+  .contacts .form textarea {
+    height: 130px;
+  }
+}
+@media (min-width: 880px) {
+  .contacts .content {
+    padding: 415px 0 0;
+  }
+}
+@media (min-width: 1024px) {
+  .contacts .content {
+    padding: 385px 0 0;
+  }
+  .contacts .back {
+    zoom: 1;
+  }
+  .contacts .location {
+    max-width: 436px;
+    left: 13%;
+  }
+  .contacts .location::before {
+    width: 86px;
+    height: 86px;
+    left: 8%;
+    bottom: -100px;
+  }
+  .contacts .location::after {
+    border-width: 15px;
+    width: 33px;
+    height: 33px;
+    bottom: -95px;
+    left: 9%;
+  }
+  .contacts .location div {
+    padding: 20px 19px;
+  }
+  .contacts .location div::after {
+    width: 25px;
+    height: 25px;
+    bottom: -12px;
+    left: 12%;
+  }
+  .contacts .location svg {
+    margin: 5px 8px 0 0;
+  }
+  .contacts .location a {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  .contacts .form {
+    max-width: 744px;
+    border-radius: 40px;
+  }
+  .contacts .form h2 {
+    padding-bottom: 61px;
+  }
+  .contacts .form input {
+    margin-bottom: 25px;
+    font-size: 24px;
+  }
+  .contacts .form textarea {
+    height: 180px;
+    margin-bottom: 45px;
+  }
+  .contacts .form .btn {
+    padding: 25px 66px;
+  }
+}
+@media (min-width: 1200px) {
+  .contacts .content {
+    padding: 435px 0 0;
+  }
+}
+@media (min-width: 1440px) {
+  .contacts .content {
+    padding: 135px 0 0;
+    justify-content: flex-end;
+  }
+  .contacts .back {
+    zoom: 1;
+  }
+  .contacts .location {
+    top: 263px;
+    left: 15%;
+  }
+  .contacts .form {
+    margin-right: 2%;
+  }
+}
+@media (min-width: 1800px) {
+  .contacts .location {
+    left: 18%;
+  }
+  .contacts .form {
+    max-width: 844px;
+    padding: 68px 125px 95px;
+    margin-right: 12%;
   }
 }
 
