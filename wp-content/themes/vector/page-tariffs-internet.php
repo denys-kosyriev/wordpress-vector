@@ -63,20 +63,18 @@
         <div class='wrapper'>
           <div class='buttons'>
             <ul>
+              <?php if (have_rows('switch')) :
+                while (have_rows('switch')) :
+                the_row(); ?>
               <li>
-                <a href='internet.html' class='btn btn-switch btn-small active'>
-                  Інтернет
+                <?php
+                  $btn = get_sub_field('button');
+                ?>
+                <a href='<?php echo esc_url($btn['url']) ?>' class='btn btn-switch btn-small'>
+                  <?php echo esc_html($btn['title']) ?>
                 </a>
-              <li>
-                <a href='./tv/tv.html' class='btn btn-switch btn-small'>
-                  Телебачення
-                </a>
-              </li>
-              <li>
-                <a href='./all/all.html' class='btn btn-switch btn-small btn-all'>
-                  Все разом
-                </a>
-              </li>
+                <?php endwhile;
+                  endif; ?>
             </ul>
           </div>
         </div>
