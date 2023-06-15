@@ -89,108 +89,97 @@
   </section>
   <section class='action'>
     <div class='container'>
-      <h2>Акції</h2>
+      <h2><?php echo get_field('tariffs_title') ?></h2>
+      <?php if (have_rows('tariffs_types')) :
+        while (have_rows('tariffs_types')) :
+        the_row(); ?>
       <div class='swiper tariffs-slider action-section'>
         <div class='swiper-wrapper tariffs-wrapper'>
-          <div class='swiper-slide '>
-            <div class='tariff tariff-internet'>
-              <div class='modal-net-info d-none'>
-                <div>!</div>
-                <p>
-                  Вартість реальної динамічної ІР адреси + 20,00грн до щомісячної абонплати.
-                </p>
+          <?php if (have_rows('tariffs_net')) :
+            while (have_rows('tariffs_net')) :
+              the_row(); ?>
+              <div class='swiper-slide '>
+                <div class='tariff tariff-internet'>
+                  <div class='modal-net-info d-none'>
+                    <div>!</div>
+                    <p><?php echo get_sub_field('info_net') ?></p>
+                  </div>
+                  <img src='./assets/icons/info.svg' alt='' class='info'>
+                  <h4><?php echo get_sub_field('title') ?></h4>
+                  <p class='speed'>
+                    до
+                    <span><?php echo get_sub_field('speed') ?></span>
+                    Мбіт
+                  </p>
+                  <p class='no-limited'><?php echo get_sub_field('speed_limit') ?></p>
+                  <?php if (have_rows('type_net')) :
+                    while (have_rows('type_net')) :
+                      the_row(); ?>
+                      <div class='network'>
+                        <img src='<?php echo get_sub_field('icon') ?>' alt=''>
+                        <?php echo get_sub_field('title') ?>
+                        <span><?php echo get_sub_field('type_speed') ?></span>
+                      </div>
+                    <?php endwhile;
+                  endif; ?>
+                  <div class='price'>
+                    <span><?php echo get_sub_field('price') ?></span>
+                    <?php echo get_sub_field('currency_term') ?>
+                  </div>
+                  <button class='btn btn-full'>
+                    <?php echo get_sub_field('button') ?>
+                  </button>
+                </div>
               </div>
-              <img src='./assets/images/icons/info.svg' alt='' class='info'>
-              <h4>Інтернет</h4>
-              <p class='speed'>до <span>50</span> Мбіт</p>
-              <p class='no-limited'>не обмежена</p>
-              <div class='network network1'>
-                <img class='icon-15' src='./assets/images/icons/language.svg' alt=''>
-                Безлімітний
-                <span>170</span>
+            <?php endwhile;
+          endif; ?>
+          <?php if (have_rows('tariffs_tv_or_all')) :
+            while (have_rows('tariffs_tv_or_all')) :
+              the_row(); ?>
+              <div class='swiper-slide'>
+                <div class='tariff tariff-tv'>
+                  <h4><?php echo get_sub_field('title') ?></h4>
+                  <p class='desc'><?php echo get_sub_field('characteristics_television') ?></p>
+                  <div class='bottom'>
+                    <p class='speed'>
+                      до
+                      <span><?php echo get_sub_field('speed') ?></span>
+                      Мбіт
+                    </p>
+                    <p class='no-limited'><?php echo get_sub_field('speed_limit') ?>а</p>
+                    <div class='header-network'>
+                      <p><?php echo get_sub_field('title_tv') ?></p>
+                      <p><?php echo get_sub_field('title_channels') ?></p>
+                    </div>
+                    <?php if (have_rows('tariffs_net')) :
+                      while (have_rows('tariffs_net')) :
+                        the_row(); ?>
+                        <div class='network'>
+                          <?php echo get_sub_field('type') ?>
+                          <span> <?php echo get_sub_field('number') ?></span>
+                        </div>
+                      <?php endwhile;
+                    endif; ?>
+                    <p class='price'>
+                      <span> <?php echo get_sub_field('price') ?></span>
+                      <?php echo get_sub_field('currency_term') ?>
+                    </p>
+                    <button class='btn btn-full'>
+                      <?php echo get_sub_field('button') ?>
+                    </button>
+                    <p class='detail'> <?php echo get_sub_field('details') ?></p>
+                  </div>
+                </div>
               </div>
-              <div class='network network2'>
-                <img src='./assets/images/icons/house-chimney-crack.svg' alt=''>
-                Домашній
-                <span>50</span>
-              </div>
-              <div class='price'>
-                <span>170</span>
-                грн/міс
-              </div>
-              <button class='btn btn-full'>
-                Підключити
-              </button>
-            </div>
-          </div>
-          <div class='swiper-slide '>
-            <div class='tariff tariff-internet'>
-              <div class='modal-net-info d-none'>
-                <div>!</div>
-                <p>
-                  Вартість реальної динамічної ІР адреси + 20,00грн до щомісячної абонплати.
-                </p>
-              </div>
-              <img src='./assets/images/icons/info.svg' alt='' class='info'>
-              <h4>Інтернет</h4>
-              <p class='speed'>до <span>70</span> Мбіт</p>
-              <p class='no-limited'>не обмежена</p>
-              <div class='network network1'>
-                <img src='./assets/images/icons/language.svg' alt=''>
-                Безлімітний
-                <span>180</span>
-              </div>
-              <div class='network network2'>
-                <img class='icon-15' src='./assets/images/icons/house-chimney-crack.svg' alt=''>
-                Домашній
-                <span>70</span>
-              </div>
-              <div class='price'>
-                <span>180</span>
-                грн/міс
-              </div>
-              <button class='btn btn-full'>
-                Підключити
-              </button>
-            </div>
-          </div>
-          <div class='swiper-slide'>
-            <div class='tariff tariff-internet'>
-              <div class='modal-net-info d-none'>
-                <div>!</div>
-                <p>
-                  Вартість реальної динамічної ІР адреси + 20,00грн до щомісячної абонплати.
-                </p>
-              </div>
-              <img src='./assets/images/icons/info.svg' alt='' class='info'>
-              <h4>Інтернет</h4>
-              <p class='speed'>до <span>100</span> Мбіт</p>
-              <p class='no-limited'>не обмежена</p>
-              <div class='network network1'>
-                <img class='icon-15' src='./assets/images/icons/language.svg' alt=''>
-                Безлімітний
-                <span>180</span>
-              </div>
-              <div class='network network2'>
-                <img class='icon-15' src='./assets/images/icons/house-chimney-crack.svg' alt=''>
-                Домашній
-                <span>100</span>
-              </div>
-              <div class='price'>
-                <span>185</span>
-                грн/міс
-              </div>
-              <button class='btn btn-full'>
-                Підключити
-              </button>
-            </div>
-          </div>
+            <?php endwhile;
+          endif; ?>
         </div>
         <div class='swiper-button-prev swiper-button-tariffs d-none'></div>
         <div class='swiper-button-next swiper-button-tariffs d-none'></div>
         <div class='swiper-pagination'></div>
+        <?php endwhile;
+          endif; ?>
       </div>
-    </div>
   </section>
   <section class='show-all-tariffs'>
     <div class='container'>

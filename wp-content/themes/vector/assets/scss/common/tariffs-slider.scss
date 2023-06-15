@@ -54,12 +54,7 @@
       justify-content: center;
       font-weight:     400;
       font-size:       16px;
-      &.network1 {
-        margin: 0 0 10px;
-      }
-      &.network2 {
-        margin: 0 0 22px;
-      }
+      margin:          0 0 10px;
       img {
         width: 15px;
       }
@@ -71,7 +66,7 @@
     .price {
       font-weight:     500;
       font-size:       14px;
-      margin-bottom:   25px;
+      margin:          15px 0 25px;
       display:         flex;
       align-items:     flex-end;
       justify-content: center;
@@ -289,22 +284,17 @@
         align-items: center;
         font-size:   24px;
         font-weight: 400;
-        &:nth-of-type(1) {
-          margin: 0 0 14px;
-        }
-        &:nth-of-type(2) {
-          margin: 0 0 46px;
-        }
+        margin:      0 0 14px;
         span {
           font-weight:  700;
           padding-left: 10px;
         }
       }
       .price {
-        font-size:     24px;
-        margin-bottom: 48px;
-        display:       flex;
-        align-items:   flex-end;
+        font-size:   24px;
+        margin:      32px 0 48px;
+        display:     flex;
+        align-items: flex-end;
         span {
           font-size:   50px;
           line-height: .8;
