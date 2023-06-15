@@ -3,73 +3,57 @@
     <div class='wrapper'>
       <div class='left'>
         <div class='content'>
-          <h2>Умови підключення</h2>
-          Можливість підключення до мережі "Вектор" і поповнити ряди користувачів глобальної мережі Інтернет, якщо
-          ви
-          проживаєте на 1-6, 9 м-ні, а також центаральній частини міста, та приватного сектора* Підключення
-          здійснюється
-          протягом 5 робочих днів після подачі заявки.
+          <h2><?php echo get_field('connecting_internet_title', 'option') ?></h2>
+          <?php echo get_field('connecting_internet_description1', 'option') ?>
           <p>
-            Підключення до кабельної мережі <span>Інтернет безкоштовно!</span>
+            <?php echo get_field('connecting_internet_description2', 'option') ?>
+            <span><?php echo get_field('connecting_internet_description2-1', 'option') ?></span>
           </p>
           <p>
-            Вартість одного метра кабелю: <span>3,00 грн.</span>
+            <?php echo get_field('connecting_internet_description3', 'option') ?>
+            <span><?php echo get_field('connecting_internet_price', 'option') ?></span>
           </p>
-          <a href='#' class='btn btn-full'>
-            Подати заявку
-          </a>
+          <button class='btn btn-full'>
+            <?php echo get_field('connecting_internet_button', 'option') ?>
+          </button>
         </div>
       </div>
       <div class='right p-relative'>
         <div class='green-circle'></div>
         <div class='references shadow'>
-          Довідки за тел
+          <?php echo get_field('connecting_internet_references', 'option') ?>
           <ul>
-            <li class='tel-link'>
-              <a href='tel:(057-45) 5-11-30'>
-                (057-45) 5-11-30
-                <img src='../assets/images/icons/phone.svg' alt=''>
-              </a>
-            </li>
-            <li class='tel-link'>
-              <a href='tel:099-34-34-593'>
-                099-34-34-593
-                <img src='../assets/images/icons/phone.svg' alt=''>
-              </a>
-            </li>
-            <li class='tel-link'>
-              <a href='tel:050-34-34-593'>
-                050-34-34-593
-                <img src='../assets/images/icons/phone.svg' alt=''>
-              </a>
-            </li>
+            <?php if (have_rows('connecting_internet_phones1', 'option')) :
+              while (have_rows('connecting_internet_phones1', 'option')) :
+                the_row(); ?>
+                <li class='tel-link'>
+                  <?php
+                    $phone_references = get_sub_field('connecting_internet_phone');
+                  ?>
+                  <a href='<?php echo esc_url($phone_references['url']) ?>'>
+                    <?php echo esc_html($phone_references['title']) ?>
+                    <img src='./assets/icons/phone.svg' alt=''>
+                  </a>
+                </li>
+              <?php endwhile;
+            endif; ?>
           </ul>
-          Детальніше за тел
+          <?php echo get_field('connecting_internet_details', 'option') ?>
           <ul>
-            <li class='tel-link'>
-              <a href='tel:(057-45) 5-11-30'>
-                (057-45) 5-11-30
-                <img src='../assets/images/icons/phone.svg' alt=''>
-              </a>
-            </li>
-            <li class='tel-link'>
-              <a href='tel:(057-45) 5-11-18'>
-                (057-45) 5-11-18
-                <img src='../assets/images/icons/phone.svg' alt=''>
-              </a>
-            </li>
-            <li class='tel-link'>
-              <a href='tel:050-34-34-593'>
-                050-34-34-593
-                <img src='../assets/images/icons/phone.svg' alt=''>
-              </a>
-            </li>
-            <li class='tel-link'>
-              <a href='tel:099-34-34-593'>
-                099-34-34-593
-                <img src='../assets/images/icons/phone.svg' alt=''>
-              </a>
-            </li>
+            <?php if (have_rows('connecting_internet_phones2', 'option')) :
+              while (have_rows('connecting_internet_phones2', 'option')) :
+                the_row(); ?>
+                <li class='tel-link'>
+                  <?php
+                    $phone_details = get_sub_field('connecting_internet_phone', 'option');
+                  ?>
+                  <a href=' <?php echo esc_url($phone_details['url']) ?>'>
+                    <?php echo esc_html($phone_details['title']) ?>
+                    <img src='./assets/icons/phone.svg' alt=''>
+                  </a>
+                </li>
+              <?php endwhile;
+            endif; ?>
           </ul>
         </div>
       </div>
