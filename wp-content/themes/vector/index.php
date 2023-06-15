@@ -190,12 +190,12 @@
               <?php endif ?>
             <?php endwhile;
           endif; ?>
+        <?php endwhile;
+          endif; ?>
         </div>
         <div class='swiper-button-prev swiper-button-tariffs d-none'></div>
         <div class='swiper-button-next swiper-button-tariffs d-none'></div>
         <div class='swiper-pagination'></div>
-        <?php endwhile;
-          endif; ?>
       </div>
   </section>
   <section class='show-all-tariffs'>

@@ -1,7 +1,3 @@
-<?php
-  //Template Name: Інтернет
-?>
-
 <?php get_header(); ?>
 
 <main class='tariffs-page internet'>
@@ -65,16 +61,17 @@
             <ul>
               <?php if (have_rows('switch')) :
                 while (have_rows('switch')) :
-                the_row(); ?>
-              <li>
-                <?php
-                  $btn = get_sub_field('button');
-                ?>
-                <a href='<?php echo esc_url($btn['url']) ?>' class='btn btn-switch btn-small'>
-                  <?php echo esc_html($btn['title']) ?>
-                </a>
+                  the_row(); ?>
+                  <li>
+                    <?php
+                      $btn = get_sub_field('button');
+                    ?>
+                    <a href='<?php echo esc_url($btn['url']) ?>' class='btn btn-switch btn-small'>
+                      <?php echo esc_html($btn['title']) ?>
+                    </a>
+                  </li>
                 <?php endwhile;
-                  endif; ?>
+              endif; ?>
             </ul>
           </div>
         </div>
@@ -145,6 +142,9 @@
                 <?php endwhile;
               endif; ?>
             </div>
+            <div class='swiper-button-prev d-none'></div>
+            <div class='swiper-button-next d-none'></div>
+            <div class='swiper-pagination'></div>
           </div>
         <?php endwhile;
       endif; ?>
