@@ -55,7 +55,7 @@
   <section class='top-radio-buttons'>
     <div>
       <div class='container'>
-        <h2>Тарифи</h2>
+        <h2><?php echo get_field('tariffs_title') ?></h2>
       </div>
     </div>
     <div class='flex'>
@@ -85,344 +85,71 @@
   </section>
   <section class='internet'>
     <div class='container'>
-      <div class='swiper tariffs-slider'>
-        <div class='swiper-wrapper tariffs-wrapper'>
-          <div class='swiper-slide '>
-            <div class='tariff tariff-internet'>
-              <div class='modal-net-info d-none'>
-                <div>!</div>
-                <p>
-                  Вартість реальної динамічної ІР адреси + 20,00грн до щомісячної абонплати.
-                </p>
-              </div>
-              <img src='../assets/images/icons/info.svg' alt='' class='info'>
-              <h4>Інтернет</h4>
-              <p class='speed'>до <span>50</span> Мбіт</p>
-              <p class='no-limited'>не обмежена</p>
-              <div class='network network1'>
-                <img src='../assets/images/icons/language.svg' alt=''>
-                Безлімітний
-                <span>170</span>
-              </div>
-              <div class='network network2'>
-                <img src='../assets/images/icons/house-chimney-crack.svg' alt=''>
-                Домашній
-                <span>50</span>
-              </div>
-              <p class='price'>
-                <span>170</span>
-                грн/міс
-              </p>
-              <button class='btn btn-full'>
-                Підключити
-              </button>
+      <?php if (have_rows('tariffs_types')) :
+        while (have_rows('tariffs_types')) :
+          the_row(); ?>
+          <div>
+            <div class='container'>
+              <h3>
+                <?php echo get_sub_field('title') ?>
+                <span><?php echo get_sub_field('title2') ?></span>
+              </h3>
             </div>
           </div>
-          <div class='swiper-slide '>
-            <div class='tariff tariff-internet'>
-              <div class='modal-net-info d-none'>
-                <div>!</div>
-                <p>
-                  Вартість реальної динамічної ІР адреси + 20,00грн до щомісячної абонплати.
-                </p>
-              </div>
-              <img src='../assets/images/icons/info.svg' alt='' class='info'>
-              <h4>Інтернет</h4>
-              <p class='speed'>до <span>70</span> Мбіт</p>
-              <p class='no-limited color-gray'>не обмежена</p>
-              <div class='network network1'>
-                <img src='../assets/images/icons/language.svg' alt=''>
-                Безлімітний
-                <span>180</span>
-              </div>
-              <div class='network network2'>
-                <img src='../assets/images/icons/house-chimney-crack.svg' alt=''>
-                Домашній
-                <span>70</span>
-              </div>
-              <p class='price'>
-                <span>180</span>
-                грн/міс
-              </p>
-              <button class='btn btn-full'>
-                Підключити
-              </button>
+          <div class='swiper tariffs-slider action-section'>
+            <div class='swiper-wrapper tariffs-wrapper'>
+              <?php if (have_rows('select_net_or_tv_and_all')) :
+                while (have_rows('select_net_or_tv_and_all')) :
+                  the_row(); ?>
+                  <?php if (have_rows('net')) :
+                  while (have_rows('net')) :
+                    the_row(); ?>
+                    <div class='swiper-slide '>
+                      <div class='tariff tariff-internet'>
+                        <div class='modal-net-info d-none'>
+                          <div>!</div>
+                          <p><?php echo get_sub_field('info_net') ?></p>
+                        </div>
+                        <img src='./assets/icons/info.svg' alt='' class='info'>
+                        <h4><?php echo get_sub_field('title') ?></h4>
+                        <div class='company'>
+                          <?php echo get_sub_field('company') ?>
+                        </div>
+                        <div class='bottom'>
+                          <p class='speed'>
+                            до
+                            <span><?php echo get_sub_field('speed') ?></span>
+                            Мбіт
+                          </p>
+                          <p class='no-limited'><?php echo get_sub_field('speed_limit') ?></p>
+                          <?php if (have_rows('type_net')) :
+                            while (have_rows('type_net')) :
+                              the_row(); ?>
+                              <div class='network'>
+                                <img src='<?php echo get_sub_field('icon') ?>' alt=''>
+                                <?php echo get_sub_field('title') ?>
+                                <span><?php echo get_sub_field('type_speed') ?></span>
+                              </div>
+                            <?php endwhile;
+                          endif; ?>
+                          <div class='price'>
+                            <span><?php echo get_sub_field('price') ?></span>
+                            <?php echo get_sub_field('currency_term') ?>
+                          </div>
+                          <button class='btn btn-full'>
+                            <?php echo get_sub_field('button') ?>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  <?php endwhile;
+                endif; ?>
+                <?php endwhile;
+              endif; ?>
             </div>
           </div>
-          <div class='swiper-slide'>
-            <div class='tariff tariff-internet'>
-              <div class='modal-net-info d-none'>
-                <div>!</div>
-                <p>
-                  Вартість реальної динамічної ІР адреси + 20,00грн до щомісячної абонплати.
-                </p>
-              </div>
-              <img src='../assets/images/icons/info.svg' alt='' class='info'>
-              <h4>Інтернет</h4>
-              <p class='speed'>до <span>100</span> Мбіт</p>
-              <p class='no-limited color-gray'>не обмежена</p>
-              <div class='network network1'>
-                <img class='icon-15' src='../assets/images/icons/language.svg' alt=''>
-                Безлімітний
-                <span>180</span>
-              </div>
-              <div class='network network2'>
-                <img class='icon-15' src='../assets/images/icons/house-chimney-crack.svg' alt=''>
-                Домашній
-                <span>100</span>
-              </div>
-              <p class='price'>
-                <span>185</span>
-                грн/міс
-              </p>
-              <button class='btn btn-full'>
-                Підключити
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class='swiper-button-prev d-none d-none'></div>
-        <div class='swiper-button-next d-none d-none'></div>
-        <div class='swiper-pagination'></div>
-      </div>
-      <div>
-        <div class='container'>
-          <h3>Інтернет <span>(Gpon)</span></h3>
-        </div>
-      </div>
-      <div class='swiper tariffs-slider'>
-        <div class='swiper-wrapper tariffs-wrapper'>
-          <div class='swiper-slide '>
-            <div class='tariff tariff-internet'>
-              <div class='modal-net-info d-none'>
-                <div>!</div>
-                <p>
-                  Вартість реальної динамічної ІР адреси + 20,00грн до щомісячної абонплати.
-                </p>
-              </div>
-              <img src='../assets/images/icons/info.svg' alt='' class='info'>
-              <h4 class='uppercase'>Gpon</h4>
-              <p class='speed'>до <span>50</span> Мбіт</p>
-              <p class='no-limited color-gray'>не обмежена</p>
-              <div class='network network1'>
-                <img class='icon-15' src='../assets/images/icons/language.svg' alt=''>
-                Безлімітний
-                <span>170</span>
-              </div>
-              <div class='network network2'>
-                <img class='icon-15' src='../assets/images/icons/house-chimney-crack.svg' alt=''>
-                Домашній
-                <span>50+</span>
-              </div>
-              <p class='price'>
-                <span>170</span>
-                грн/міс
-              </p>
-              <button class='btn btn-full'>
-                Підключити
-              </button>
-            </div>
-          </div>
-          <div class='swiper-slide'>
-            <div class='tariff tariff-internet'>
-              <div class='modal-net-info d-none'>
-                <div>!</div>
-                <p>
-                  Вартість реальної динамічної ІР адреси + 2 class='info'0,00грн до щомісячної абонплати.
-                </p>
-              </div>
-              <img src='../assets/images/icons/info.svg' alt='' class='info'>
-              <h4 class='gpon uppercase'>Gpon</h4>
-              <p class='speed'>до <span>100</span> Мбіт</p>
-              <p class='no-limited color-gray'>не обмежена</p>
-              <div class='network network1'>
-                <img class='icon-15' src='../assets/images/icons/language.svg' alt=''>
-                Безлімітний
-                <span>185</span>
-              </div>
-              <div class='network network2'>
-                <img class='icon-15' src='../assets/images/icons/house-chimney-crack.svg' alt=''>
-                Домашній
-                <span>100+</span>
-              </div>
-              <p class='price'>
-                <span>185</span>
-                грн/міс
-              </p>
-              <button class='btn btn-full'>
-                Підключити
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class='swiper-button-prev d-none'></div>
-        <div class='swiper-button-next d-none'></div>
-        <div class='swiper-pagination'></div>
-      </div>
-      <div>
-        <div class='container'>
-          <h3>Інтернет <span>(Wi-fi)</span></h3>
-        </div>
-      </div>
-      <div class='swiper tariffs-slider'>
-        <div class='swiper-wrapper tariffs-wrapper'>
-          <div class='swiper-slide'>
-            <div class='tariff tariff-internet'>
-              <div class='modal-net-info d-none'>
-                <div>!</div>
-                <p>
-                  Вартість реальної динамічної ІР адреси + 20,00грн до щомісячної абонплати.
-                </p>
-              </div>
-              <img src='../assets/images/icons/info.svg' alt='' class='info'>
-              <h4>120 Wi-Fi</h4>
-              <p class='speed'>до <span>2</span> Мбіт</p>
-              <p class='no-limited'>не обмежена</p>
-              <div class='network network1'>
-                <img class='icon-15' src='../assets/images/icons/language.svg' alt=''>
-                Безлімітний
-              </div>
-              <div class='network network2'>
-                <img class='icon- network215' src='../assets/images/icons/house-chimney-crack.svg' alt=''>
-                Домашній
-                <span>2048170</span>
-              </div>
-              <p class='price'>
-                <span>120</span>
-                грн/міс
-              </p>
-              <button class='btn btn-full'>
-                Підключити
-              </button>
-            </div>
-          </div>
-          <div class='swiper-slide '>
-            <div class='tariff tariff-internet'>
-              <div class='modal-net-info d-none'>
-                <div>!</div>
-                <p>
-                  Вартість реальної динамічної ІР адреси + 20,00грн до щомісячної абонплати.
-                </p>
-              </div>
-              <img src='../assets/images/icons/info.svg' alt='' class='info'>
-              <h4>150 Wi-Fi</h4>
-              <p class='speed'>до <span>5</span> Мбіт</p>
-              <p class='no-limited'>не обмежена</p>
-              <div class='network network1'>
-                <img class='icon-15' src='../assets/images/icons/language.svg' alt=''>
-                Безлімітний
-              </div>
-              <div class='network network2'>
-                <img class='icon- network215' src='../assets/images/icons/house-chimney-crack.svg' alt=''>
-                Домашній
-                <span>5120</span>
-              </div>
-              <p class='price'>
-                <span>150</span>
-                грн/міс
-              </p>
-              <button class='btn btn-full'>
-                Підключити
-              </button>
-            </div>
-          </div>
-          <div class='swiper-slide '>
-            <div class='tariff tariff-internet'>
-              <div class='modal-net-info d-none'>
-                <div>!</div>
-                <p>
-                  Вартість реальної динамічної ІР адреси + 20,00грн до щомісячної абонплати.
-                </p>
-              </div>
-              <img src='../assets/images/icons/info.svg' alt='' class='info'>
-              <h4>220 Wi-Fi</h4>
-              <p class='speed'>до <span>10</span> Мбіт</p>
-              <p class='no-limited'>не обмежена</p>
-              <div class='network network1'>
-                <img class='icon-15' src='../assets/images/icons/language.svg' alt=''>
-                Безлімітний
-              </div>
-              <div class='network network2'>
-                <img class='icon- network215' src='../assets/images/icons/house-chimney-crack.svg' alt=''>
-                Домашній
-                <span>10</span>
-              </div>
-              <p class='price'>
-                <span>220</span>
-                грн/міс
-              </p>
-              <button class='btn btn-full'>
-                Підключити
-              </button>
-            </div>
-          </div>
-          <div class='swiper-slide '>
-            <div class='tariff tariff-internet'>
-              <div class='modal-net-info d-none'>
-                <div>!</div>
-                <p>
-                  Вартість реальної динамічної ІР адреси + 20,00грн до щомісячної абонплати.
-                </p>
-              </div>
-              <img src='../assets/images/icons/info.svg' alt='' class='info'>
-              <h4>Wi-Fi</h4>
-              <p class='speed'>до <span>70</span> Мбіт</p>
-              <p class='no-limited'>не обмежена</p>
-              <div class='network network1'>
-                <img class='icon-15' src='../assets/images/icons/language.svg' alt=''>
-                Безлімітний
-                <span>180</span>
-              </div>
-              <div class='network network2'>
-                <img class='icon-15' src='../assets/images/icons/house-chimney-crack.svg' alt=''>
-                Домашній
-                <span>70</span>
-              </div>
-              <p class='price'>
-                <span>180</span>
-                грн/міс
-              </p>
-              <button class='btn btn-full'>
-                Підключити
-              </button>
-            </div>
-          </div>
-          <div class='swiper-slide'>
-            <div class='tariff tariff-internet'>
-              <div class='modal-net-info d-none'>
-                <div>!</div>
-                <p>
-                  Вартість реальної динамічної ІР адреси + 20,00грн до щомісячної абонплати.
-                </p>
-              </div>
-              <img src='../assets/images/icons/info.svg' alt='' class='info'>
-              <h4>Wi-Fi</h4>
-              <p class='speed'>до <span>100</span> Мбіт</p>
-              <p class='no-limited'>не обмежена</p>
-              <div class='network network1'>
-                <img class='icon-15' src='../assets/images/icons/language.svg' alt=''>
-                Безлімітний
-                <span>180</span>
-              </div>
-              <div class='network network2'>
-                <img class='icon-15' src='../assets/images/icons/house-chimney-crack.svg' alt=''>
-                Домашній
-                <span>100</span>
-              </div>
-              <p class='price'>
-                <span>185</span>
-                грн/міс
-              </p>
-              <button class='btn btn-full'>
-                Підключити
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class='swiper-button-prev d-none'></div>
-        <div class='swiper-button-next d-none'></div>
-        <div class='swiper-pagination'></div>
-      </div>
+        <?php endwhile;
+      endif; ?>
     </div>
   </section>
   <?php get_template_part('connection-internet') ?>

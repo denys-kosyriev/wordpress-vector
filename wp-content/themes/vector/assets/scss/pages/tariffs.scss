@@ -14,9 +14,6 @@
     font-size:     19px;
   }
   &.internet {
-    .buttons {
-      padding-bottom: 46px;
-    }
     h3 {
       span {
         color:          #03BF6A;
@@ -70,7 +67,7 @@
   .tariffs-page {
     &.internet {
       .buttons {
-        padding-bottom: 60px;
+        padding-bottom: 20px;
       }
     }
     h3 {
@@ -131,6 +128,11 @@
 
 @media(min-width: 1440px) {
   .tariffs-page {
+    &.internet {
+      .buttons {
+        padding-bottom: 0;
+      }
+    }
     h3 {
       margin: 40px 0 89px;
     }

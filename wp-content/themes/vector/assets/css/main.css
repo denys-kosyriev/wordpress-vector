@@ -2058,9 +2058,6 @@ button, .btn {
 .top-radio-buttons .selected select {
   margin: 13px 0 25px;
 }
-.top-radio-buttons .buttons {
-  padding-bottom: 46px;
-}
 .top-radio-buttons .buttons .container {
   padding: 0;
 }
@@ -3084,9 +3081,6 @@ button, .btn {
   font-weight: 700;
   font-size: 19px;
 }
-.tariffs-page.internet .buttons {
-  padding-bottom: 46px;
-}
 .tariffs-page.internet h3 span {
   color: #03BF6A;
   text-transform: uppercase;
@@ -3132,7 +3126,7 @@ button, .btn {
 
 @media (min-width: 567px) {
   .tariffs-page.internet .buttons {
-    padding-bottom: 60px;
+    padding-bottom: 20px;
   }
   .tariffs-page h3 {
     font-size: 28px;
@@ -3177,6 +3171,9 @@ button, .btn {
   }
 }
 @media (min-width: 1440px) {
+  .tariffs-page.internet .buttons {
+    padding-bottom: 0;
+  }
   .tariffs-page h3 {
     margin: 40px 0 89px;
   }
