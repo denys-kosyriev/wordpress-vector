@@ -268,6 +268,7 @@
       </ul>
     </div>
   </section>
+  <?php get_template_part('payment') ?>
 </main>
 
 <?php get_footer(); ?>

@@ -1,50 +1,6 @@
 .footer {
   overflow:   hidden;
   margin-top: auto;
-  &.with-payment {
-    padding: 248px 0 0;
-    .payment {
-      width:    100%;
-      padding:  49px 0 0;
-      position: absolute;
-      top:      0;
-      left:     0;
-      z-index:  1;
-      .payment-content {
-        padding:          126px 27px 41px;
-        border-radius:    20px;
-        background-color: #F2F8F8;
-      }
-      img {
-        width:     179px;
-        position:  absolute;
-        top:       0;
-        left:      50%;
-        z-index:   2;
-        transform: translateX(-50%);
-      }
-      h2 {
-        font-weight: 700;
-        font-size:   28px;
-        margin:      0 11px 44px;
-        line-height: 1.2;
-        span {
-          display: inline;
-          color:   #03BF6A;
-        }
-      }
-      a {
-        max-width:   272px;
-        width:       100%;
-        font-size:   15px;
-        margin-left: 50%;
-        transform:   translateX(-50%);
-      }
-    }
-    .content {
-      padding: 174px 0 34px;
-    }
-  }
   .content {
     padding:    34px 0 34px;
     background: linear-gradient(114.04deg, #03BF6A 24.98%, #6AE37E 101.83%);
@@ -214,42 +170,8 @@
   }
 }
 
-@media(min-width: 567px) {
-  .footer {
-    &.with-payment {
-      .content {
-        padding: 135px 0 21px;
-      }
-    }
-  }
-}
-
 @media(min-width: 768px) {
   .footer {
-    &.with-payment {
-      padding: 188px 0 0;
-      .content {
-        padding: 165px 0 21px;
-      }
-      .payment {
-        padding: 63px 0 0;
-        .container {
-          max-width: 900px;
-        }
-        .payment-content {
-          min-height: 230px;
-          padding:    41px 20px 41px 50%;
-        }
-        img {
-          width:     300px;
-          transform: translateX(-340px);
-        }
-        a {
-          margin-left: 0;
-          transform:   translateX(0);
-        }
-      }
-    }
     .flex {
       width:           100%;
       display:         flex;
@@ -274,17 +196,6 @@
 
 @media(min-width: 1024px) {
   .footer {
-    &.with-payment {
-      .payment {
-        .btn {
-          max-width: 272px;
-          font-size: 24px;
-        }
-      }
-      .content {
-        padding: 168px 0 60px;
-      }
-    }
     .content {
       padding: 44px 0 60px;
     }
@@ -360,31 +271,6 @@
 
 @media(min-width: 1440px) {
   .footer {
-    &.with-payment {
-      padding: 280px 0 0;
-      .payment {
-        padding: 102px 0 0;
-        .container {
-          max-width: 1480px;
-        }
-        .payment-content {
-          min-height: 376px;
-          padding:    61px 20px 68px 51%;
-        }
-        img {
-          width:     508px;
-          transform: translateX(-580px);
-        }
-        h2 {
-          font-size:     59px;
-          margin-bottom: 42px;
-          line-height:   1.1;
-        }
-      }
-      .content {
-        padding: 309px 0 60px;
-      }
-    }
     .flex {
       width: 66%;
     }

@@ -1,23 +1,4 @@
-<footer class="footer with-payment p-relative">
-  <div class='payment'>
-    <div class='container'>
-      <div class='payment-content shadow'>
-        <img src='<?php echo get_field('privat_img') ?>' alt=''>
-        <h2>
-          <?php echo get_field('footer_payment_text') ?>
-          <span>
-          <span><?php echo get_field('bank_payment_footer') ?></span>
-          </span>
-        </h2>
-        <a
-          target='_blank'
-          href='<?php echo get_field('payment_url-btn', 'option') ?>'
-          class='btn btn-full'>
-          <?php echo get_field('payment_text_btn', 'option') ?>
-        </a>
-      </div>
-    </div>
-  </div>
+<footer class="footer p-relative">
   <div class='content'>
     <div class="container">
       <div class='wrapper'>
