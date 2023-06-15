@@ -783,6 +783,9 @@ button, .btn {
 .swiper.tariffs-slider .tariff .detail:active {
   color: #029c56;
 }
+.swiper.tariffs-slider .tariff .bottom {
+  margin-top: auto;
+}
 .swiper.tariffs-slider .tariff-internet h4 {
   margin-bottom: 25px;
 }
@@ -854,9 +857,6 @@ button, .btn {
   font-weight: 400;
   opacity: 0.4;
   line-height: 1.8;
-}
-.swiper.tariffs-slider .tariff-tv .bottom, .swiper.tariffs-slider .tariff-all .bottom {
-  margin-top: auto;
 }
 
 @media (min-width: 567px) {
@@ -950,6 +950,9 @@ button, .btn {
     font-size: 24px;
     font-weight: 400;
     margin: 0 0 14px;
+  }
+  .swiper.tariffs-slider .tariff .network img {
+    width: 20px;
   }
   .swiper.tariffs-slider .tariff .network span {
     font-weight: 700;

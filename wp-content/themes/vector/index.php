@@ -95,82 +95,99 @@
         the_row(); ?>
       <div class='swiper tariffs-slider action-section'>
         <div class='swiper-wrapper tariffs-wrapper'>
-          <?php if (have_rows('tariffs_net')) :
-            while (have_rows('tariffs_net')) :
+          <?php if (have_rows('select_net_or_tv_and_all')) :
+            while (have_rows('select_net_or_tv_and_all')) :
               the_row(); ?>
-              <div class='swiper-slide '>
-                <div class='tariff tariff-internet'>
-                  <div class='modal-net-info d-none'>
-                    <div>!</div>
-                    <p><?php echo get_sub_field('info_net') ?></p>
-                  </div>
-                  <img src='./assets/icons/info.svg' alt='' class='info'>
-                  <h4><?php echo get_sub_field('title') ?></h4>
-                  <p class='speed'>
-                    до
-                    <span><?php echo get_sub_field('speed') ?></span>
-                    Мбіт
-                  </p>
-                  <p class='no-limited'><?php echo get_sub_field('speed_limit') ?></p>
-                  <?php if (have_rows('type_net')) :
-                    while (have_rows('type_net')) :
-                      the_row(); ?>
-                      <div class='network'>
-                        <img src='<?php echo get_sub_field('icon') ?>' alt=''>
-                        <?php echo get_sub_field('title') ?>
-                        <span><?php echo get_sub_field('type_speed') ?></span>
-                      </div>
-                    <?php endwhile;
-                  endif; ?>
-                  <div class='price'>
-                    <span><?php echo get_sub_field('price') ?></span>
-                    <?php echo get_sub_field('currency_term') ?>
-                  </div>
-                  <button class='btn btn-full'>
-                    <?php echo get_sub_field('button') ?>
-                  </button>
-                </div>
-              </div>
-            <?php endwhile;
-          endif; ?>
-          <?php if (have_rows('tariffs_tv_or_all')) :
-            while (have_rows('tariffs_tv_or_all')) :
-              the_row(); ?>
-              <div class='swiper-slide'>
-                <div class='tariff tariff-tv'>
-                  <h4><?php echo get_sub_field('title') ?></h4>
-                  <p class='desc'><?php echo get_sub_field('characteristics_television') ?></p>
-                  <div class='bottom'>
-                    <p class='speed'>
-                      до
-                      <span><?php echo get_sub_field('speed') ?></span>
-                      Мбіт
-                    </p>
-                    <p class='no-limited'><?php echo get_sub_field('speed_limit') ?>а</p>
-                    <div class='header-network'>
-                      <p><?php echo get_sub_field('title_tv') ?></p>
-                      <p><?php echo get_sub_field('title_channels') ?></p>
-                    </div>
-                    <?php if (have_rows('tariffs_net')) :
-                      while (have_rows('tariffs_net')) :
-                        the_row(); ?>
-                        <div class='network'>
-                          <?php echo get_sub_field('type') ?>
-                          <span> <?php echo get_sub_field('number') ?></span>
+              <?php
+              if (get_sub_field('Select_type_tariff') === 'Internet'): ?>
+                <?php if (have_rows('net')) :
+                  while (have_rows('net')) :
+                    the_row(); ?>
+                    <div class='swiper-slide '>
+                      <div class='tariff tariff-internet'>
+                        <div class='modal-net-info d-none'>
+                          <div>!</div>
+                          <p><?php echo get_sub_field('info_net') ?></p>
                         </div>
-                      <?php endwhile;
-                    endif; ?>
-                    <p class='price'>
-                      <span> <?php echo get_sub_field('price') ?></span>
-                      <?php echo get_sub_field('currency_term') ?>
-                    </p>
-                    <button class='btn btn-full'>
-                      <?php echo get_sub_field('button') ?>
-                    </button>
-                    <p class='detail'> <?php echo get_sub_field('details') ?></p>
-                  </div>
-                </div>
-              </div>
+                        <img src='./assets/icons/info.svg' alt='' class='info'>
+                        <h4><?php echo get_sub_field('title') ?></h4>
+                        <div class='company'>
+                          <?php echo get_sub_field('company') ?>
+                        </div>
+                        <div class='bottom'>
+                          <p class='speed'>
+                            до
+                            <span><?php echo get_sub_field('speed') ?></span>
+                            Мбіт
+                          </p>
+                          <p class='no-limited'><?php echo get_sub_field('speed_limit') ?></p>
+                          <?php if (have_rows('type_net')) :
+                            while (have_rows('type_net')) :
+                              the_row(); ?>
+                              <div class='network'>
+                                <img src='<?php echo get_sub_field('icon') ?>' alt=''>
+                                <?php echo get_sub_field('title') ?>
+                                <span><?php echo get_sub_field('type_speed') ?></span>
+                              </div>
+                            <?php endwhile;
+                          endif; ?>
+                          <div class='price'>
+                            <span><?php echo get_sub_field('price') ?></span>
+                            <?php echo get_sub_field('currency_term') ?>
+                          </div>
+                          <button class='btn btn-full'>
+                            <?php echo get_sub_field('button') ?>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  <?php endwhile;
+                endif; ?>
+              <?php else: ?>
+                <?php if (have_rows('tv_and_all')) :
+                  while (have_rows('tv_and_all')) :
+                    the_row(); ?>
+                    <div class='swiper-slide'>
+                      <div class='tariff tariff-tv'>
+                        <h4><?php echo get_sub_field('title') ?></h4>
+                        <p class='desc'><?php echo get_sub_field('characteristics_television') ?></p>
+                        <div class='company'>
+                          <?php echo get_sub_field('company') ?>
+                        </div>
+                        <div class='bottom'>
+                          <p class='speed'>
+                            до
+                            <span><?php echo get_sub_field('speed') ?></span>
+                            Мбіт
+                          </p>
+                          <p class='no-limited'><?php echo get_sub_field('speed_limit') ?>а</p>
+                          <div class='header-network'>
+                            <p><?php echo get_sub_field('title_tv') ?></p>
+                            <p><?php echo get_sub_field('title_channels') ?></p>
+                          </div>
+                          <?php if (have_rows('type_tv')) :
+                            while (have_rows('type_tv')) :
+                              the_row(); ?>
+                              <div class='network'>
+                                <?php echo get_sub_field('type') ?>
+                                <span> <?php echo get_sub_field('numbers') ?></span>
+                              </div>
+                            <?php endwhile;
+                          endif; ?>
+                          <p class='price'>
+                            <span> <?php echo get_sub_field('price') ?></span>
+                            <?php echo get_sub_field('currency_term') ?>
+                          </p>
+                          <button class='btn btn-full'>
+                            <?php echo get_sub_field('button') ?>
+                          </button>
+                          <p class='detail'> <?php echo get_sub_field('details') ?></p>
+                        </div>
+                      </div>
+                    </div>
+                  <?php endwhile;
+                endif; ?>
+              <?php endif ?>
             <?php endwhile;
           endif; ?>
         </div>

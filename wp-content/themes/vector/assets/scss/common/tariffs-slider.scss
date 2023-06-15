@@ -101,6 +101,9 @@
         color: #029c56;
       }
     }
+    .bottom {
+      margin-top: auto;
+    }
   }
   .tariff-internet {
     h4 {
@@ -180,9 +183,6 @@
         opacity:     .4;
         line-height: 1.8;
       }
-    }
-    .bottom {
-      margin-top: auto;
     }
   }
 }
@@ -285,6 +285,9 @@
         font-size:   24px;
         font-weight: 400;
         margin:      0 0 14px;
+        img {
+          width: 20px;
+        }
         span {
           font-weight:  700;
           padding-left: 10px;
