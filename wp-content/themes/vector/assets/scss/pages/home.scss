@@ -201,10 +201,10 @@
         }
       }
     }
-  }
-  .payment {
-    h2 {
-      text-align: center;
+    .payment {
+      h2 {
+        text-align: center;
+      }
     }
   }
 }
@@ -226,23 +226,26 @@
         }
       }
     }
-  }
-  .payment {
-    padding: 63px 0 0;
-    .container {
-      max-width: 900px;
-    }
-    .payment-content {
-      min-height: 230px;
-      padding:    41px 20px 41px 50%;
-    }
-    img {
-      width:     300px;
-      transform: translateX(-340px);
-    }
-    a {
-      margin-left: 0;
-      transform:   translateX(0);
+    .payment {
+      padding: 63px 0 0;
+      .container {
+        max-width: 900px;
+      }
+      .payment-content {
+        min-height: 230px;
+        padding:    41px 20px 41px 50%;
+      }
+      h2 {
+        text-align: start;
+      }
+      img {
+        width:     300px;
+        transform: translateX(-340px);
+      }
+      a {
+        margin-left: 0;
+        transform:   translateX(0);
+      }
     }
   }
 }
@@ -305,11 +308,11 @@
         }
       }
     }
-  }
-  .payment {
-    .btn {
-      max-width: 272px;
-      font-size: 24px;
+    .payment {
+      .btn {
+        max-width: 272px;
+        font-size: 24px;
+      }
     }
   }
 }
@@ -375,24 +378,24 @@
         }
       }
     }
-  }
-  .payment {
-    padding: 102px 0 0;
-    .container {
-      max-width: 1480px;
-    }
-    .payment-content {
-      min-height: 376px;
-      padding:    61px 20px 68px 51%;
-    }
-    img {
-      width:     508px;
-      transform: translateX(-580px);
-    }
-    h2 {
-      font-size:     59px;
-      margin-bottom: 42px;
-      line-height:   1.1;
+    .payment {
+      padding: 102px 0 0;
+      .container {
+        max-width: 1480px;
+      }
+      .payment-content {
+        min-height: 376px;
+        padding:    61px 20px 68px 51%;
+      }
+      img {
+        width:     508px;
+        transform: translateX(-580px);
+      }
+      h2 {
+        font-size:     59px;
+        margin-bottom: 42px;
+        line-height:   1.1;
+      }
     }
   }
 }
