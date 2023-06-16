@@ -6,86 +6,45 @@
       <div class='flex'>
         <div>
           <h2>
-            Помилки при підключенні PPPoE-з'єднання
+            <?php echo get_field('connection_problems_title') ?>
           </h2>
-          При встановленні з'єднання можуть виникати помилки. Це буває пов'язано з неправильним налаштування мережевих
-          параметрів, самого з'єднання. Нижче наводяться найбільш часто виникаючі за статистикою техпідтримки помилки
-          з
-          коментарями та рекомендаціями щодо усунення.
+          <?php echo get_field('connection_problems_description') ?>
         </div>
-        <img src='./assets/images/errors.png' alt=''>
+        <img src='<?php echo get_field('connection_problems_image') ?>' alt=''>
       </div>
     </div>
   </section>
   <section class='accordion p-relative'>
     <div class='container'>
       <div class='search bg-green'>
-        Введіть код помилки
+        <?php echo get_field('connection_problems_title_search_error') ?>
         <label>
           <input type='number' placeholder='код'>
         </label>
       </div>
       <ul class='questions-list'>
-        <li class='questions-select'>
-          <div class='question'>
-            <h3>Помилка: 633</h3>
-            <img class='icon-select' src='./assets/images/icons/angle-right.svg' alt=''>
-          </div>
-          <div class='questions-answer d-none'>
-            <h3>Рішення:</h3>
-            <p>
-              1. Перезавантажити комп'ютер. Повторити спробу підключення.
-            </p>
-            <p>
-              2. Відновити підключення.
-            </p>
-          </div>
-        </li>
-        <li class='questions-select'>
-          <div class='question'>
-            <h3>Помилка: 633</h3>
-            <img class='icon-select' src='./assets/images/icons/angle-right.svg' alt=''>
-          </div>
-          <div class='questions-answer d-none'>
-            <h3>Рішення:</h3>
-            <p>
-              1. Перезавантажити комп'ютер. Повторити спробу підключення.
-            </p>
-            <p>
-              2. Відновити підключення.
-            </p>
-          </div>
-        </li>
-        <li class='questions-select'>
-          <div class='question'>
-            <h3>Помилка: 633</h3>
-            <img class='icon-select' src='./assets/images/icons/angle-right.svg' alt=''>
-          </div>
-          <div class='questions-answer d-none'>
-            <h3>Рішення:</h3>
-            <p>
-              1. Перезавантажити комп'ютер. Повторити спробу підключення.
-            </p>
-            <p>
-              2. Відновити підключення.
-            </p>
-          </div>
-        </li>
-        <li class='questions-select'>
-          <div class='question'>
-            <h3>Помилка: 633</h3>
-            <img class='icon-select' src='./assets/images/icons/angle-right.svg' alt=''>
-          </div>
-          <div class='questions-answer d-none'>
-            <h3>Рішення:</h3>
-            <p>
-              1. Перезавантажити комп'ютер. Повторити спробу підключення.
-            </p>
-            <p>
-              2. Відновити підключення.
-            </p>
-          </div>
-        </li>
+        <?php if (have_rows('connection_problems_errors')) :
+          while (have_rows('connection_problems_errors')) :
+            the_row(); ?>
+            <li class='questions-select'>
+              <div class='question'>
+                <h3>Помилка: <?php echo get_sub_field('number_error') ?></h3>
+                <img class='icon-select' src='./assets/icons/angle-right.svg' alt=''>
+              </div>
+              <div class='questions-answer d-none'>
+                <h3>Рішення:</h3>
+                <?php if (have_rows('decision')) :
+                  while (have_rows('decision')) :
+                    the_row(); ?>
+                    <p>
+                      <?php echo get_sub_field('item') ?>
+                    </p>
+                  <?php endwhile;
+                endif; ?>
+              </div>
+            </li>
+          <?php endwhile;
+        endif; ?>
       </ul>
     </div>
   </section>
