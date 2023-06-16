@@ -350,30 +350,7 @@
       </div>
     </div>
   </section>
-  <section class='connection-tv'>
-    <div class='container'>
-      <div class='content'>
-        <img src='../../assets/images/tv-2.png' alt=''>
-        <div>
-          <h2>
-            Підключення <span>2х чи більше телевізорів</span>
-          </h2>
-          <p>
-            Надаємо послуги по підключенню декількох телевізора.
-            <span>Вартість підключення - 30 грн</span>
-            , та вартість кабелю для кожного окремого телевізора.
-          </p>
-          <p>
-            Телевізійний кабель підключається безпосередньо до розподільної телевізійної коробки.
-            <span>Абонентська плата при підключенні додаткових телевізорів не змінюється.</span>
-          </p>
-          <a href='#' class='btn btn-full'>
-            Підключити
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <?php get_template_part('connection-internet') ?>
 </main>
 
 <?php get_footer(); ?>

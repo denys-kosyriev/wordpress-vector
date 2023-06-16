@@ -3088,6 +3088,18 @@ button, .btn {
 .tariffs-page .description {
   margin-bottom: 42px;
 }
+.tariffs-page .description:nth-of-type(1) {
+  display: none !important;
+}
+.tariffs-page .description:first-of-type {
+  display: none !important;
+}
+.tariffs-page .description:nth-child(1) {
+  display: none !important;
+}
+.tariffs-page .description:nth-child(1) {
+  display: none !important;
+}
 .tariffs-page .description .container {
   max-width: 996px;
   padding: 0;
