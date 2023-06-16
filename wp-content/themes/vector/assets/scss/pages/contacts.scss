@@ -1,7 +1,7 @@
 .contacts {
   overflow: hidden;
   .content {
-    padding:         283px 0 0;
+    padding:         283px 0 70px;
     display:         flex;
     justify-content: center;
   }
@@ -101,11 +101,8 @@
       padding-bottom: 22px;
       text-align:     center;
     }
-    input {
-      margin-bottom: 10px;
-    }
     textarea {
-      height:        105px;
+      height:        87px;
       margin-bottom: 20px;
       overflow:      auto;
       border-radius: 10px;
@@ -116,7 +113,7 @@
 @media(min-width: 500px) {
   .contacts {
     .content {
-      padding: 315px 0 0;
+      padding: 315px 0 70px;
     }
     .back {
       zoom: 1.5;
@@ -130,7 +127,7 @@
 @media(min-width: 700px) {
   .contacts {
     .content {
-      padding: 375px 0 0;
+      padding: 375px 0 70px;
     }
     .back {
       zoom: 1.3;
@@ -172,9 +169,8 @@
     .form {
       padding: 44px 62px 46px;
       input {
-        margin-bottom: 15px;
-        font-size:     20px;
-        padding:       17px 24px;
+        font-size: 20px;
+        padding:   17px 24px;
       }
       textarea {
         height: 130px;
@@ -186,7 +182,7 @@
 @media(min-width: 880px) {
   .contacts {
     .content {
-      padding: 415px 0 0;
+      padding: 415px 0 70px;
     }
   }
 }
@@ -194,7 +190,7 @@
 @media(min-width: 1024px) {
   .contacts {
     .content {
-      padding: 385px 0 0;
+      padding: 385px 0 90px;
     }
     .back {
       zoom: 1;
@@ -238,8 +234,8 @@
         padding-bottom: 61px;
       }
       input {
-        margin-bottom: 25px;
         font-size:     24px;
+        margin-bottom: 28px;
       }
       textarea {
         height:        180px;
@@ -255,7 +251,7 @@
 @media(min-width: 1200px) {
   .contacts {
     .content {
-      padding: 435px 0 0;
+      padding: 435px 0 70px;
     }
   }
 }
@@ -263,7 +259,7 @@
 @media(min-width: 1440px) {
   .contacts {
     .content {
-      padding:         135px 0 0;
+      padding:         135px 0 130px;
       justify-content: flex-end;
     }
     .back {
@@ -286,7 +282,7 @@
     }
     .form {
       max-width:    844px;
-      padding:      68px 125px 95px;
+      padding:      68px 125px 65px;
       margin-right: 12%;
     }
   }

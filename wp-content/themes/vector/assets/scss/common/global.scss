@@ -103,6 +103,10 @@ input, select, textarea {
   }
 }
 
+input {
+  margin-bottom: 11px;
+}
+
 textarea {
   border-radius: 13px;
 }
@@ -378,6 +382,12 @@ button, .btn {
   }
 }
 
+@media(min-width: 768px) {
+  input {
+    margin-bottom: 15px;
+  }
+}
+
 @media (min-width: 1024px) {
   h2 {
     font-size: 56px;
@@ -412,6 +422,10 @@ button, .btn {
     &:hover {
       border: 2px solid #03BF6A;
     }
+  }
+
+  input {
+    margin-bottom: 21px;
   }
 
   select {
