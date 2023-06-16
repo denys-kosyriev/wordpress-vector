@@ -1,54 +1,42 @@
 <?php get_header(); ?>
 
-<main class='tariffs-page all'>
+<main class='tariffs-page internet'>
   <div class='modal section-form modal-form d-none'>
     <div class='form p-relative modal-content'>
       <div class='close-modal'>
-        <img src='../../assets/images/icons/close.svg' alt=''>
+        <img src='../assets/images/icons/close.svg' alt=''>
       </div>
       <h3>Назва пакету</h3>
-      <form>
+      <form class='form-order'>
         <label class='initials'>
           <input type='text' placeholder="ПІБ*">
           <span class='error-message d-none'>
-                          <span>!</span>
-                          Введіть ініціали
-                        </span>
+                <span>!</span>
+                Введіть ініціали
+              </span>
         </label>
         <label class='address'>
           <input type='text' placeholder="Адреса*">
           <span class='error-message d-none'>
-                          <span>!</span>
-                          Введіть адресу
-                        </span>
+                <span>!</span>
+                Введіть адресу
+              </span>
         </label>
         <label class='phone'>
           <input type='number' placeholder="Телефон*">
           <span class='error-message d-none'>
-                          <span>!</span>
-                          Введіть телефон
-                        </span>
+                <span>!</span>
+                Введіть телефон
+              </span>
         </label>
         <label class='email'>
           <input type='email' placeholder="Email*">
           <span class='error-message d-none'>
-                          <span>!</span>
-                          Введіть імейл
-                        </span>
+                <span>!</span>
+                Введіть імейл
+              </span>
         </label>
-        <div class='router'>
-          <div class='block-checkbox'>
-            <label class='checkbox p-relative'>
-              <input type='checkbox'>
-              <span>з Роутером</span>
-            </label>
-          </div>
-          <div class='price-router'>
-            <div>!</div>
-            Вартість Роутера 750 грн.
-          </div>
-        </div>
-        <button type='submit' class='btn btn-full shadow'>
+        <button type='submit' class='btn btn-full btn-big shadow'>
           Відправити
         </button>
         <div class='download-receipt'>
@@ -214,7 +202,7 @@
   <section class='top-radio-buttons'>
     <div>
       <div class='container'>
-        <h2>Тарифи</h2>
+        <h2><?php echo get_field('tariffs_title') ?></h2>
       </div>
     </div>
     <div class='flex'>
@@ -222,20 +210,19 @@
         <div class='wrapper'>
           <div class='buttons'>
             <ul>
-              <li>
-                <a href='../internet.php' class='btn btn-switch'>
-                  Інтернет
-                </a>
-              <li>
-                <a href='../tv/tv.html' class='btn btn-switch'>
-                  Телебачення
-                </a>
-              </li>
-              <li>
-                <a href='./all.html' class='btn btn-switch active'>
-                  Все разом
-                </a>
-              </li>
+              <?php if (have_rows('switch')) :
+                while (have_rows('switch')) :
+                  the_row(); ?>
+                  <li>
+                    <?php
+                      $btn = get_sub_field('button');
+                    ?>
+                    <a href='<?php echo esc_url($btn['url']) ?>' class='btn btn-switch btn-small'>
+                      <?php echo esc_html($btn['title']) ?>
+                    </a>
+                  </li>
+                <?php endwhile;
+              endif; ?>
             </ul>
           </div>
           <div class='selected'>
@@ -257,100 +244,96 @@
       </div>
     </div>
   </section>
-  <section class='all'>
+  <section class='tariffs-page tv'>
     <div class='container'>
-      <div>
-        <div class='container'>
-          <h3>Загальний пакет</h3>
-        </div>
-      </div>
-      <div class='swiper tariffs-slider'>
-        <div class='swiper-wrapper tariffs-wrapper'>
-          <div class='swiper-slide '>
-            <div class='tariff tariff-all'>
-              <h4>Загальний пакет</h4>
-              <p class='desc'>200 Iнтернет + Цифра + HD</p>
-              <div class='bottom'>
-                <p class='speed'>до <span>50</span> Мбіт</p>
-                <p class='no-limited'>не обмежена</p>
-                <div class='header-network'>
-                  <p>Телебачення</p>
-                  <p>Каналів</p>
-                </div>
-                <div class='network network1'>
-                  Аналогове
-                  <span>59</span>
-                </div>
-                <div class='network network2'>
-                  Цифрове
-                  <span>120</span>
-                </div>
-                <p class='price'>
-                  <span>250</span>
-                  грн/міс
-                </p>
-                <button class='btn btn-full'>
-                  Підключити
-                </button>
-                <p class='detail'>Детальніше</p>
+      <?php if (have_rows('tariffs_types')) :
+        while (have_rows('tariffs_types')) :
+          the_row(); ?>
+          <div>
+            <div class='container'>
+              <h3>
+                <?php echo get_sub_field('title') ?>
+                <span><?php echo get_sub_field('title2') ?></span>
+              </h3>
+            </div>
+          </div>
+          <div class='swiper tariffs-slider action-section'>
+            <div class='swiper-wrapper tariffs-wrapper'>
+              <?php if (have_rows('select_net_or_tv_and_all')) :
+                while (have_rows('select_net_or_tv_and_all')) :
+                  the_row(); ?>
+                  <?php if (have_rows('tv_and_all')) :
+                  while (have_rows('tv_and_all')) :
+                    the_row(); ?>
+                    <div class='swiper-slide'>
+                      <div class='tariff tariff-tv'>
+                        <h4><?php echo get_sub_field('title') ?></h4>
+                        <p class='desc'><?php echo get_sub_field('characteristics_television') ?></p>
+                        <div class='company'>
+                          <?php echo get_sub_field('company') ?>
+                        </div>
+                        <div class='bottom'>
+                          <p class='speed'>
+                            до
+                            <span><?php echo get_sub_field('speed') ?></span>
+                            Мбіт
+                          </p>
+                          <p class='no-limited'><?php echo get_sub_field('speed_limit') ?>а</p>
+                          <div class='header-network'>
+                            <p><?php echo get_sub_field('title_tv') ?></p>
+                            <p><?php echo get_sub_field('title_channels') ?></p>
+                          </div>
+                          <?php if (have_rows('type_tv')) :
+                            while (have_rows('type_tv')) :
+                              the_row(); ?>
+                              <div class='network'>
+                                <?php echo get_sub_field('type') ?>
+                                <span> <?php echo get_sub_field('numbers') ?></span>
+                              </div>
+                            <?php endwhile;
+                          endif; ?>
+                          <p class='price'>
+                            <span> <?php echo get_sub_field('price') ?></span>
+                            <?php echo get_sub_field('currency_term') ?>
+                          </p>
+                          <button class='btn btn-full'>
+                            <?php echo get_sub_field('button') ?>
+                          </button>
+                          <p class='detail'><?php echo get_sub_field('details') ?></p>
+                        </div>
+                      </div>
+                    </div>
+                  <?php endwhile;
+                endif; ?>
+                <?php endwhile;
+              endif; ?>
+            </div>
+            <div class='swiper-button-prev d-none'></div>
+            <div class='swiper-button-next d-none'></div>
+            <div class='swiper-pagination'></div>
+          </div>
+          <div class='description'>
+            <div class='container'>
+              <div class='description-content'>
+                <div>!</div>
+                <ul>
+                  <?php if (have_rows('info')) :
+                    while (have_rows('info')) :
+                      the_row(); ?>
+                      <li>
+                        <?php echo get_sub_field('item') ?>
+                      </li>
+                    <?php endwhile;
+                  endif; ?>
+                </ul>
               </div>
             </div>
           </div>
-          <div class='swiper-slide'>
-            <div class='tariff tariff-all'>
-              <h4>Загальний пакет</h4>
-              <p class='desc'>225 Iнтернет (100 +АТВ + Ц + HD)</p>
-              <div class='bottom'>
-                <p class='speed'>до <span>100</span> Мбіт</p>
-                <p class='no-limited'>не обмежена</p>
-                <div class='header-network'>
-                  <p>Телебачення</p>
-                  <p>Каналів</p>
-                </div>
-                <div class='network network1'>
-                  Аналогове
-                  <span>66</span>
-                </div>
-                <div class='network network2'>
-                  Цифрове
-                  <span>120</span>
-                </div>
-                <p class='price'>
-                  <span>265</span>
-                  грн/міс
-                </p>
-                <button class='btn btn-full'>
-                  Підключити
-                </button>
-                <p class='detail'>Детальніше</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class='swiper-button-prev d-none'></div>
-        <div class='swiper-button-next d-none'></div>
-        <div class='swiper-pagination'></div>
-      </div>
-      <div class='description'>
-        <div class='container'>
-          <div class='description-content'>
-            <div>!</div>
-            <ul>
-              <li>
-                1. За умови розкодування каналів для дорослих, до звичайної абон. плати додається 10,00грн/міс (1САМ
-                модуль
-                +10,00грн; 2САМ модуля + 20,00грн);
-              </li>
-              <li>
-                2. Якщо канали для дорослих залишаються закодованими, абон. плата не змінюється.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+        <?php endwhile;
+      endif; ?>
     </div>
   </section>
-  <?php get_template_part('connection-internet') ?>
+  <?php get_template_part('connection-tv') ?>
 </main>
 
 <?php get_footer(); ?>
