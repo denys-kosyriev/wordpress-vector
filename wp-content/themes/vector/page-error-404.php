@@ -4,10 +4,11 @@
   <section>
     <div class='container'>
       <div class='content'>
-        <img src='./assets/images/404.png' alt=''>
-        Сторінка не найдена
-        <a href='index.php' class='btn btn-full'>
-          На головну
+        <img src='<?php echo get_field('error_404_image') ?>' alt=''>
+        <?php echo get_field('error_404_text') ?>
+        <?php $link = get_field('error_404_link'); ?>
+        <a href='<?php echo esc_url($link['url']) ?>' class='btn btn-full'>
+          <?php echo esc_html($link['title']) ?>
         </a>
       </div>
     </div>
