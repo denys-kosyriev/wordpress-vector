@@ -244,7 +244,7 @@
       </div>
     </div>
   </section>
-  <section class='tariffs-page tv'>
+  <section class='tariffs-page all'>
     <div class='container'>
       <?php if (have_rows('tariffs_types')) :
         while (have_rows('tariffs_types')) :

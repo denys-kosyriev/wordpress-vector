@@ -78,7 +78,7 @@
       </div>
     </div>
   </section>
-  <section class='internet'>
+  <section class='tariffs-page internet'>
     <div class='container'>
       <?php if (have_rows('tariffs_types')) :
         while (have_rows('tariffs_types')) :
