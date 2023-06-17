@@ -1,3 +1,7 @@
+<?php
+  //Template Name: Settings-iptv
+?>
+
 <?php get_header(); ?>
 
   <main class='settings-iptv'>

@@ -1,3 +1,7 @@
+<?php
+  //Template Name: Contacts
+?>
+
 <?php get_header(); ?>
 
 <main class='contacts'>

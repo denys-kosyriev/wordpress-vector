@@ -1,3 +1,7 @@
+<?php
+  //Template Name: Connection
+?>
+
 <?php get_header(); ?>
 
 <main class='connection net'>
@@ -15,7 +19,7 @@
                   the_row(); ?>
                   <li>
                     <?php $btn = get_sub_field('button'); ?>
-                    <a href='<?php echo esc_url($btn['url']) ?>' class='btn btn-switch btn-small'>
+                    <a href='<?php echo esc_url($btn['url']) ?>' class='btn btn-switch btn-small <?php echo get_sub_field('class_name') ?>'>
                       <?php echo esc_html($btn['title']) ?>
                     </a>
                   </li>
@@ -33,10 +37,7 @@
         <div class='circle'></div>
         <div class='circle'></div>
         <div class='circle'></div>
-        <div class='form p-relative'>
-          <h3>Назва пакету</h3>
-          <?php echo do_shortcode('[contact-form-7 id="854" title="Form tariffs"]'); ?>
-        </div>
+        <?php get_template_part('Tariffs-form') ?>
       </div>
     </div>
   </section>

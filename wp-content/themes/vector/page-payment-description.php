@@ -1,3 +1,7 @@
+<?php
+  //Template Name: Payment-description
+?>
+
 <?php get_header(); ?>
 
   <main class='payment-description'>

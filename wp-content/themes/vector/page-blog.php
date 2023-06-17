@@ -1,3 +1,7 @@
+<?php
+  //Template Name: Blog
+?>
+
 <?php get_header(); ?>
 
 <main class='blog'>

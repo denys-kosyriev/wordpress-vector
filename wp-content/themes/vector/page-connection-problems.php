@@ -1,3 +1,7 @@
+<?php
+  //Template Name: Connection-problem
+?>
+
 <?php get_header(); ?>
 
 <main class='connection-problems'>

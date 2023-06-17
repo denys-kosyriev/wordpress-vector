@@ -1,5 +1,11 @@
 <?php
 
+  add_filter('wpcf7_form_elements', function ($content) {
+    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+
+    return $content;
+  });
+
   acf_add_options_page(array(
     'page_title' => 'Theme General Settings',
     'menu_title' => 'Theme Settings',

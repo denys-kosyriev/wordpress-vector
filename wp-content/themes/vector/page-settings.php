@@ -1,3 +1,7 @@
+<?php
+  //Template Name: Settings
+?>
+
 <?php get_header(); ?>
 
   <main class='settings'>

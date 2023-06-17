@@ -1,3 +1,7 @@
+<?php
+  //Template Name: Shares
+?>
+
 <?php get_header(); ?>
 
 <main class='shares'>

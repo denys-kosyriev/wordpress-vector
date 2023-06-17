@@ -1,3 +1,7 @@
+<?php
+  //Template Name: Support
+?>
+
 <?php get_header(); ?>
 
 <main class='support'>

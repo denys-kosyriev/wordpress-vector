@@ -1,3 +1,7 @@
+<?php
+  //Template Name: Advertising
+?>
+
 <?php get_header(); ?>
 
 <main class='blog'>

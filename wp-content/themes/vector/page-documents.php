@@ -1,3 +1,7 @@
+<?php
+  //Template Name: Documents
+?>
+
 <?php get_header(); ?>
 
   <main class='documents'>

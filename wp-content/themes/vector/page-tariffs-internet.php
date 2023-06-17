@@ -1,3 +1,7 @@
+<?php
+  //Template Name: Tariffs-internet
+?>
+
 <?php get_header(); ?>
 
 <main class='tariffs-page internet'>

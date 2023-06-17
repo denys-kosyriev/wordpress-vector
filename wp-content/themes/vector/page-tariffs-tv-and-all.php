@@ -1,52 +1,12 @@
+<?php
+  //Template Name: Tariffs-tv-and-all
+?>
+
 <?php get_header(); ?>
 
 <main class='tariffs-page internet'>
   <div class='modal section-form modal-form d-none'>
-    <div class='form p-relative modal-content'>
-      <div class='close-modal'>
-        <img src='../assets/images/icons/close.svg' alt=''>
-      </div>
-      <h3>Назва пакету</h3>
-      <form class='form-order'>
-        <label class='initials'>
-          <input type='text' placeholder="ПІБ*">
-          <span class='error-message d-none'>
-                <span>!</span>
-                Введіть ініціали
-              </span>
-        </label>
-        <label class='address'>
-          <input type='text' placeholder="Адреса*">
-          <span class='error-message d-none'>
-                <span>!</span>
-                Введіть адресу
-              </span>
-        </label>
-        <label class='phone'>
-          <input type='number' placeholder="Телефон*">
-          <span class='error-message d-none'>
-                <span>!</span>
-                Введіть телефон
-              </span>
-        </label>
-        <label class='email'>
-          <input type='email' placeholder="Email*">
-          <span class='error-message d-none'>
-                <span>!</span>
-                Введіть імейл
-              </span>
-        </label>
-        <button type='submit' class='btn btn-full btn-big shadow'>
-          Відправити
-        </button>
-        <div class='download-receipt'>
-          <label for='download-receipt'>
-            <input type='file' id='download-receipt'>
-            Завантажити Квитанцію
-          </label>
-        </div>
-      </form>
-    </div>
+    <?php get_template_part('Tariffs-form') ?>
   </div>
   <div class='modal modal-channels d-none'>
     <div class='channels p-relative modal-content'>
@@ -244,7 +204,7 @@
       </div>
     </div>
   </section>
-  <section class='tariffs-page all'>
+  <section class='tariffs-page tv'>
     <div class='container'>
       <?php if (have_rows('tariffs_types')) :
         while (have_rows('tariffs_types')) :

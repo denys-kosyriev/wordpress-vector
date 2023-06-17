@@ -1,3 +1,7 @@
+<?php
+  //Template Name: Error-404
+?>
+
 <?php get_header(); ?>
 
 <main class='error-404'>
