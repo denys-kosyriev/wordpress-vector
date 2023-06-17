@@ -1017,12 +1017,6 @@ button, .btn {
   .swiper.tariffs-slider .swiper-slide {
     padding: 0 20px;
   }
-  .swiper.tariffs-slider .swiper-slide:first-of-type {
-    padding-left: 30px;
-  }
-  .swiper.tariffs-slider .swiper-slide:last-of-type {
-    padding-right: 30px;
-  }
   .swiper.tariffs-slider .modal-net-info {
     padding: 20px;
   }
@@ -1739,7 +1733,7 @@ button, .btn {
   background-color: #fff;
 }
 .modal-channels h2 {
-  margin: 0 30px 16px;
+  padding: 0 30px 16px;
 }
 .modal-channels .buttons {
   display: flex;
@@ -1810,10 +1804,11 @@ button, .btn {
   background-color: rgba(3, 191, 106, 0.5);
 }
 .modal-channels .table-body .table-row:last-of-type div:last-of-type {
+  min-height: 27px;
   border-radius: 0 0 6px 6px;
 }
 .modal-channels .table-body .table-row div:first-of-type span {
-  min-width: 33px;
+  min-width: 37px;
   font-size: 13px;
   font-weight: 500;
   text-align: center;
@@ -1851,6 +1846,7 @@ button, .btn {
     font-size: 16px;
   }
   .modal-channels .table-body .table-row div:last-of-type {
+    min-height: 51px;
     font-size: 18px;
     padding: 15px 30px;
   }
@@ -1877,7 +1873,7 @@ button, .btn {
     padding: 0 50px 0;
   }
   .modal-channels .modal-channels-header {
-    padding: 97px 0 0;
+    padding: 67px 0 0;
   }
   .modal-channels .buttons {
     gap: 44px;
@@ -1890,7 +1886,7 @@ button, .btn {
     padding: 0 30px 48px;
   }
   .modal-channels .scroll {
-    padding: 51px 21px 0 22px;
+    padding: 31px 21px 0 22px;
   }
   .modal-channels .table {
     padding: 0 79px 0 59px;
@@ -1916,9 +1912,11 @@ button, .btn {
     border-radius: 20px 20px 0 0;
   }
   .modal-channels .table-body .table-row:last-of-type div:last-of-type {
+    min-height: 74px;
     border-radius: 0 0 20px 20px;
   }
   .modal-channels .table-body .table-row div:first-of-type span {
+    min-width: 50px;
     font-size: 24px;
   }
   .modal-channels .table-body .table-row div:nth-of-type(2) {

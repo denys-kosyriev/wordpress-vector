@@ -36,6 +36,7 @@
     wp_enqueue_script('connection', get_template_directory_uri() . '/assets/js/connection.js');
     wp_enqueue_script('settings', get_template_directory_uri() . '/assets/js/settings.js');
     wp_enqueue_script('support', get_template_directory_uri() . '/assets/js/support.js');
+    wp_enqueue_script('modal-channels', get_template_directory_uri() . '/assets/js/modal-channels.js');
   }
 
   function add_menus() {
