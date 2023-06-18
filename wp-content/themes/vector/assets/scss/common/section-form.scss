@@ -1,0 +1,106 @@
+.section-form {
+  overflow: hidden;
+  &.block-form {
+    padding: 0 0 20px;
+    .container {
+      max-width: 1345px;
+      padding:   0;
+    }
+    .wrapper-form {
+      padding: 58px 20px 0;
+    }
+    .circle {
+      background-color: #03BF6A;
+      border-radius:    50%;
+      position:         absolute;
+      &:first-of-type {
+        width:   27px;
+        height:  27px;
+        top:     4px;
+        right:   -15px;
+        opacity: .4;
+      }
+      &:nth-of-type(2) {
+        width:  94px;
+        height: 94px;
+        top:    24px;
+        right:  -3px;
+      }
+      &:nth-of-type(3) {
+        width:   160px;
+        height:  160px;
+        bottom:  41px;
+        left:    -40px;
+        opacity: .4;
+      }
+    }
+    .form {
+      background:      linear-gradient(145.02deg, rgba(255, 255, 255, 0.105) 22.92%, rgba(106, 227, 126, 0.021) 105.13%);
+      backdrop-filter: blur(35px);
+      border-radius:   20px;
+      border:          1px solid #03BF6A;
+      margin:          0 auto;
+    }
+  }
+}
+
+@media(min-width: 567px) {
+  .section-form {
+    &.modal-form {
+      align-items: center;
+    }
+  }
+}
+
+@media(min-width: 768px) {
+  .section-form {
+    &.block-form {
+      .circle {
+        &:first-of-type {
+          width:   75px;
+          height:  75px;
+          top:     152px;
+          right:   19px;
+          opacity: .4;
+        }
+        &:nth-of-type(2) {
+          width:  153px;
+          height: 153px;
+          top:    233px;
+          right:  55px;
+        }
+        &:nth-of-type(3) {
+          width:   260px;
+          height:  260px;
+          bottom:  86px;
+          left:    -40px;
+          opacity: .4;
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 1024px) {
+  .section-form {
+    &.block-form {
+      .wrapper-form {
+        padding: 81px 20px 0;
+      }
+      .circle {
+        &:nth-of-type(2) {
+          width:  253px;
+          height: 253px;
+        }
+        &:nth-of-type(3) {
+          width:  360px;
+          height: 360px;
+        }
+      }
+      .form {
+        border-radius: 40px;
+        border-width:  2px;
+      }
+    }
+  }
+}

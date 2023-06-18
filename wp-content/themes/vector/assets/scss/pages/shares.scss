@@ -1,0 +1,129 @@
+.shares {
+  section {
+    padding: 41px 0 80px;
+  }
+  .container {
+    max-width: 1480px;
+  }
+  h2 {
+    margin-bottom: 21px;
+    text-align:    center;
+  }
+  .carts {
+    gap:       21px;
+    display:   flex;
+    flex-wrap: wrap;
+  }
+  .cart {
+    min-height:       59vw;
+    width:            100%;
+    padding:          55px 24px 0;
+    border-radius:    20px;
+    overflow:         hidden;
+    display:          flex;
+    flex-direction:   column;
+    align-items:      start;
+    background-color: #03BF6A;
+    &:nth-of-type(2n) {
+      a {
+        background-color: #03bf6a;
+        color:            #fff;
+        border:           1px solid #03bf6a;
+        &:hover {
+          background-color: #fff;
+          color:            #03bf6a;
+        }
+        &:active {
+          background-color: #006939;
+          color:            #006939;
+        }
+      }
+    }
+    img {
+      transition: .2s linear;
+    }
+    p {
+      color:          #fff;
+      line-height:    0.8;
+      display:        flex;
+      flex-direction: column;
+      font-size:      28px;
+    }
+    a {
+      min-width: 0;
+      font-size: 12px;
+      padding:   12px 29px;
+      margin:    auto 0 29px;
+    }
+  }
+}
+
+@media(min-width: 567px) {
+  .shares {
+    .cart {
+      min-height: 44vw;
+      p {
+        font-size: 36px;
+      }
+      a {
+        padding:       14px 32px;
+        border-radius: 25px;
+        font-size:     14px;
+      }
+    }
+  }
+}
+
+@media(min-width: 768px) {
+  .shares {
+    .cart {
+      width:      48%;
+      min-height: 250px;
+    }
+  }
+}
+
+@media(min-width: 1024px) {
+  .shares {
+    h2 {
+      text-align:    start;
+      margin-bottom: 55px;
+    }
+    .cart {
+      min-height: 27vw;
+      padding:    55px 40px 0;
+      &:hover {
+        img {
+          scale: 1.2;
+        }
+      }
+      p {
+        font-size: 42px;
+      }
+      a {
+        margin:    auto 0 49px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+  .shares {
+    section {
+      padding: 80px 0 84px;
+    }
+    .cart {
+      width:      31%;
+      min-height: 300px;
+    }
+  }
+}
+
+@media(min-width: 1440px) {
+  .shares {
+    .carts {
+      gap: 42px;
+    }
+  }
+}

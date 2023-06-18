@@ -1,0 +1,82 @@
+.connection {
+  .top-radio-buttons {
+    padding: 23px 0 0;
+    .container {
+      max-width: 1500px;
+    }
+    .btn {
+      background-color: #F2F8F8;
+      color:            #324035;
+      &:hover {
+        background-color: #03BF6A;
+        color:            #fff;
+      }
+      &:active {
+        background-color: #006939;
+      }
+    }
+  }
+  .tariffs-form {
+    border-radius: 20px;
+    margin:        66px auto 0;
+  }
+  &.net {
+    .top-radio-buttons {
+      li {
+        .btn-net {
+          background-color: #03BF6A;
+          color:            #fff;
+        }
+      }
+    }
+    .tariffs-form {
+      .router {
+        display: none;
+      }
+    }
+    .connection-tv {
+      display: none;
+    }
+  }
+  &.tv, &.all {
+    .tariffs-form {
+      .router {
+        display: block;
+      }
+    }
+    .connection-internet {
+      display: none;
+    }
+  }
+  &.tv {
+    .top-radio-buttons {
+      li {
+        .btn-tv {
+          background-color: #03BF6A;
+          color:            #fff;
+        }
+      }
+    }
+  }
+  &.all {
+    .top-radio-buttons {
+      li {
+        .btn-all {
+          background-color: #03BF6A;
+          color:            #fff;
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 1024px) {
+  .connection {
+    .top-radio-buttons {
+      padding: 57px 0 0;
+    }
+    .tariffs-form {
+      border-radius: 40px;
+    }
+  }
+}
