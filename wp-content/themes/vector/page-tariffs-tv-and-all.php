@@ -1,5 +1,5 @@
 <?php
-  //Template Name: Tariffs-tv-and-all
+  //Template Name: Tariffs tv and all
 ?>
 
 <?php get_header(); ?>
@@ -72,9 +72,6 @@
               <?php if (have_rows('select_net_or_tv_and_all')) :
                 while (have_rows('select_net_or_tv_and_all')) :
                   the_row(); ?>
-                  <?php if (have_rows('tv_and_all')) :
-                  while (have_rows('tv_and_all')) :
-                    the_row(); ?>
                     <div class='swiper-slide'>
                       <div class='tariff tariff-tv'>
                         <h4><?php echo get_sub_field('title') ?></h4>
@@ -113,8 +110,6 @@
                         </div>
                       </div>
                     </div>
-                  <?php endwhile;
-                endif; ?>
                 <?php endwhile;
               endif; ?>
             </div>

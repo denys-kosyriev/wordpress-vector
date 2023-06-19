@@ -1,5 +1,5 @@
 <?php
-  //Template Name: Settings-iptv
+  //Template Name: Settings iptv
 ?>
 
 <?php get_header(); ?>

@@ -6,10 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const btnDigital = document.getElementsByClassName('btn-digital')[0];
   const analogChannels = document.getElementsByClassName('analog-channels')[0];
   const digitalChannels = document.getElementsByClassName('digital-channels')[0];
-  console.log(btnAnalog)
-  console.log(btnDigital)
-  console.log(analogChannels)
-  console.log(digitalChannels)
   document.addEventListener('click', (e) => {
     const clickBtnAnalog = e.composedPath().includes(btnAnalog);
     const clickBtnDigital = e.composedPath().includes(btnDigital);

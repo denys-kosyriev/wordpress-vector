@@ -1,5 +1,5 @@
 <?php
-  //Template Name: Error-404
+  //Template Name: Error 404
 ?>
 
 <?php get_header(); ?>

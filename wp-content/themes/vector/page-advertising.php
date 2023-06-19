@@ -4,61 +4,74 @@
 
 <?php get_header(); ?>
 
-<main class='blog'>
-  <section class='top'>
-    <div class='container'>
-      <div class='content'>
-        <h1><?php echo get_field('blog_title') ?></h1>
-        <?php if (have_rows('blog_text_before_image')) :
-          while (have_rows('blog_text_before_image')) :
-            the_row(); ?>
-            <p>
-              <?php echo get_sub_field('text') ?>
-            </p>
-          <?php endwhile;
-        endif; ?>
-        <?php if (have_rows('blog_link_before_image')) :
-          while (have_rows('blog_link_before_image')) :
-            the_row(); ?>
-            <?php
-            $link = get_sub_field('link');
-            ?>
-            <a href='<?php echo esc_url($link['url']) ?>' target='_blank'>
-              <?php echo esc_html($link['title']) ?>
-            </a>
-          <?php endwhile;
-        endif; ?>
-      </div>
-    </div>
-  </section>
-  <section>
-    <img src='<?php echo get_field('blog_image') ?>' alt='' class='blog-img'>
-  </section>
-  <section class='bottom'>
-    <div class='container'>
-      <div class='content'>
-        <?php if (have_rows('blog_text_after_image')) :
-          while (have_rows('blog_text_after_image')) :
-            the_row(); ?>
-            <p>
-              <?php echo get_sub_field('text') ?>
-            </p>
-          <?php endwhile;
-        endif; ?>
-        <?php if (have_rows('blog_link_after_image')) :
-          while (have_rows('blog_link_after_image')) :
-            the_row(); ?>
-            <?php
-            $link = get_sub_field('link');
-            ?>
-            <a href='<?php echo esc_url($link['url']) ?>' target='_blank'>
-              <?php echo esc_html($link['title']) ?>
-            </a>
-          <?php endwhile;
-        endif; ?>
-      </div>
-    </div>
-  </section>
-</main>
+  <main class='advertising'>
+    <?php if (have_rows('advertising_services')) :
+      while (have_rows('advertising_services')) :
+        the_row(); ?>
+        <section class='advertising-services'>
+          <div class='container'>
+            <h2><?php echo get_sub_field('title') ?></h2>
+            <div class='table'>
+              <?php if (have_rows('table_header')):
+                while (have_rows('table_header')):
+                  the_row() ?>
+                  <div class='table-header'>
+                    <div class='table-row'>
+                      <div><span><?php echo get_sub_field('column_title_service') ?></span></div>
+                      <div><span><?php echo get_sub_field('column_number') ?></span></div>
+                      <div><span><?php echo get_sub_field('column_cost') ?></span></div>
+                    </div>
+                  </div>
+                <?php endwhile;
+              endif; ?>
+              <div class='table-body'>
+                <?php if (have_rows('table_body')):
+                  while (have_rows('table_body')):
+                    the_row() ?>
+                    <div class='table-row'>
+                      <div>
+                        <span><?php echo get_sub_field('title_service') ?></span>
+                        <span><?php echo get_sub_field('service_description') ?></span>
+                      </div>
+                      <div>
+                        <span><?php echo get_sub_field('number') ?></span>
+                        <span><?php echo get_sub_field('number_plus') ?></span>
+                      </div>
+                      <div><span><?php echo get_sub_field('cost') ?></span></div>
+                    </div>
+                  <?php endwhile;
+                endif; ?>
+              </div>
+            </div>
+          </div>
+        </section>
+      <?php endwhile;
+    endif; ?>
+    <?php if (have_rows('advertising')):
+      while (have_rows('advertising')):
+        the_row() ?>
+        <section class='billboard'>
+          <div class='container'>
+            <div class='wrapper p-relative'>
+              <div class='content'>
+                <div class='left'>
+                  <h2><?php echo get_sub_field('title') ?></h2>
+                  <p class='subtitle'><?php echo get_sub_field('description') ?></p>
+                  <p class='subtitle'>
+                    <?php echo get_sub_field('districts') ?>
+                  </p>
+                  <?php $internet_btn = get_sub_field('button'); ?>
+                  <a href='<?php echo esc_url($internet_btn['url']) ?>' class='btn btn-black'>
+                    <?php echo esc_html($internet_btn['title']) ?>
+                  </a>
+                </div>
+                <img src='<?php echo get_sub_field('image') ?>' alt=''>
+              </div>
+            </div>
+          </div>
+        </section>
+      <?php endwhile;
+    endif; ?>
+  </main>
 
 <?php get_footer(); ?>

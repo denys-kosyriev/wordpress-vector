@@ -1,4 +1,19 @@
-<div class='modal modal-channels'>
+<?php
+  ////wp_enqueue_style('main-css', get_template_directory_uri() . '/assets/css/main.css');
+  ////wp_enqueue_style('swiper-css', get_template_directory_uri() . '/assets/libs/swiper/swiper.css');
+  ////wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js');
+  ////wp_enqueue_script('home', get_template_directory_uri() . '/assets/js/home.js');
+  ////wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/libs/swiper/swiper.js');
+  ////wp_enqueue_script('connection', get_template_directory_uri() . '/assets/js/connection.js');
+  ////wp_enqueue_script('settings', get_template_directory_uri() . '/assets/js/settings.js');
+    function my_script() {
+  if (is_page('Tariffs-tv-and-all')) {
+      wp_enqueue_script('modal-channels', get_template_directory_uri() . './assets/js/modal-channels.js');
+    }
+  }
+?>
+
+<div class='modal modal-channels d-none'>
   <div class='channels p-relative modal-content'>
     <div class='modal-channels-header'>
       <div class='close-modal'>

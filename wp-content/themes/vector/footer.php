@@ -98,20 +98,15 @@
             </li>
           </ul>
           <ul class='socials'>
-            <?php if (have_rows('footer_socials', 'option')) :
-              while (have_rows('footer_socials', 'option')) :
-                the_row(); ?>
-                <?php if (have_rows('social', 'option')):
-                while (have_rows('social', 'option')):
-                  the_row() ?>
-                  <li>
-                    <a href='<?php echo get_sub_field(' link') ?>'>
-                      <img src='<?php echo get_sub_field('icon') ?>' alt=''>
-                    </a>
-                  </li>
-                <?php endwhile;
-              endif;
-              endwhile;
+            <?php if (have_rows('footer_socials', 'option')):
+              while (have_rows('footer_socials', 'option')):
+                the_row() ?>
+                <li>
+                  <a href='<?php echo get_sub_field(' link') ?>'>
+                    <img src='<?php echo get_sub_field('icon') ?>' alt=''>
+                  </a>
+                </li>
+              <?php endwhile;
             endif; ?>
           </ul>
         </div>

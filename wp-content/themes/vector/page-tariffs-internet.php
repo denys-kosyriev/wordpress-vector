@@ -1,56 +1,12 @@
 <?php
-  //Template Name: Tariffs-internet
+  //Template Name: Tariffs internet
 ?>
 
 <?php get_header(); ?>
 
 <main class='tariffs-page internet'>
   <div class='modal section-form modal-form d-none'>
-    <div class='form p-relative modal-content'>
-      <div class='close-modal'>
-        <img src='../assets/images/icons/close.svg' alt=''>
-      </div>
-      <h3>Назва пакету</h3>
-      <form class='form-order'>
-        <label class='initials'>
-          <input type='text' placeholder="ПІБ*">
-          <span class='error-message d-none'>
-                <span>!</span>
-                Введіть ініціали
-              </span>
-        </label>
-        <label class='address'>
-          <input type='text' placeholder="Адреса*">
-          <span class='error-message d-none'>
-                <span>!</span>
-                Введіть адресу
-              </span>
-        </label>
-        <label class='phone'>
-          <input type='number' placeholder="Телефон*">
-          <span class='error-message d-none'>
-                <span>!</span>
-                Введіть телефон
-              </span>
-        </label>
-        <label class='email'>
-          <input type='email' placeholder="Email*">
-          <span class='error-message d-none'>
-                <span>!</span>
-                Введіть імейл
-              </span>
-        </label>
-        <button type='submit' class='btn btn-full btn-big shadow'>
-          Відправити
-        </button>
-        <div class='download-receipt'>
-          <label for='download-receipt'>
-            <input type='file' id='download-receipt'>
-            Завантажити Квитанцію
-          </label>
-        </div>
-      </form>
-    </div>
+    <?php get_template_part('Tariffs-form') ?>
   </div>
   <section class='top-radio-buttons'>
     <div>
@@ -100,49 +56,44 @@
               <?php if (have_rows('select_net_or_tv_and_all')) :
                 while (have_rows('select_net_or_tv_and_all')) :
                   the_row(); ?>
-                  <?php if (have_rows('net')) :
-                  while (have_rows('net')) :
-                    the_row(); ?>
-                    <div class='swiper-slide '>
-                      <div class='tariff tariff-internet'>
-                        <div class='modal-net-info d-none'>
-                          <div>!</div>
-                          <p><?php echo get_sub_field('info_net') ?></p>
+                  <div class='swiper-slide '>
+                    <div class='tariff tariff-internet'>
+                      <div class='modal-net-info d-none'>
+                        <div>!</div>
+                        <p><?php echo get_sub_field('info_net') ?></p>
+                      </div>
+                      <img src='./assets/icons/info.svg' alt='' class='info'>
+                      <h4><?php echo get_sub_field('title') ?></h4>
+                      <div class='company'>
+                        <?php echo get_sub_field('company') ?>
+                      </div>
+                      <div class='bottom'>
+                        <p class='speed'>
+                          до
+                          <span><?php echo get_sub_field('speed') ?></span>
+                          Мбіт
+                        </p>
+                        <p class='no-limited'><?php echo get_sub_field('speed_limit') ?></p>
+                        <?php if (have_rows('type_net')) :
+                          while (have_rows('type_net')) :
+                            the_row(); ?>
+                            <div class='network'>
+                              <img src='<?php echo get_sub_field('icon') ?>' alt=''>
+                              <?php echo get_sub_field('title') ?>
+                              <span><?php echo get_sub_field('type_speed') ?></span>
+                            </div>
+                          <?php endwhile;
+                        endif; ?>
+                        <div class='price'>
+                          <span><?php echo get_sub_field('price') ?></span>
+                          <?php echo get_sub_field('currency_term') ?>
                         </div>
-                        <img src='./assets/icons/info.svg' alt='' class='info'>
-                        <h4><?php echo get_sub_field('title') ?></h4>
-                        <div class='company'>
-                          <?php echo get_sub_field('company') ?>
-                        </div>
-                        <div class='bottom'>
-                          <p class='speed'>
-                            до
-                            <span><?php echo get_sub_field('speed') ?></span>
-                            Мбіт
-                          </p>
-                          <p class='no-limited'><?php echo get_sub_field('speed_limit') ?></p>
-                          <?php if (have_rows('type_net')) :
-                            while (have_rows('type_net')) :
-                              the_row(); ?>
-                              <div class='network'>
-                                <img src='<?php echo get_sub_field('icon') ?>' alt=''>
-                                <?php echo get_sub_field('title') ?>
-                                <span><?php echo get_sub_field('type_speed') ?></span>
-                              </div>
-                            <?php endwhile;
-                          endif; ?>
-                          <div class='price'>
-                            <span><?php echo get_sub_field('price') ?></span>
-                            <?php echo get_sub_field('currency_term') ?>
-                          </div>
-                          <button class='btn btn-full'>
-                            <?php echo get_sub_field('button') ?>
-                          </button>
-                        </div>
+                        <button class='btn btn-full'>
+                          <?php echo get_sub_field('button') ?>
+                        </button>
                       </div>
                     </div>
-                  <?php endwhile;
-                endif; ?>
+                  </div>
                 <?php endwhile;
               endif; ?>
             </div>

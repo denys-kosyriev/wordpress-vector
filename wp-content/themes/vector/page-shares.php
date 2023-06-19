@@ -16,7 +16,8 @@
               <p><?php echo get_sub_field('title1') ?></p>
               <p><?php echo get_sub_field('title2') ?></p>
               <?php $action_btn = get_sub_field('button'); ?>
-              <a href='<?php echo esc_url($action_btn['url']) ?>' class='btn btn-black'>
+              <a href='<?php echo esc_url($action_btn['url']) ?>'
+                 class='btn <?php echo get_sub_field('choice_color_button') ?>'>
                 <?php echo esc_html($action_btn['title']) ?>
               </a>
               <img src='<?php echo get_sub_field('image') ?>' alt='' class='bg-cover-absolute'>

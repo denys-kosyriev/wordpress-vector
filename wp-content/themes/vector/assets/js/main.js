@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })
 
-  // Work tariffs
+  // Open modal tariff
 
   const modals = document.getElementsByClassName('modal');
   const tariffs = document.getElementsByClassName('tariff');
@@ -160,6 +160,25 @@ document.addEventListener('DOMContentLoaded', function () {
         modal.classList.add('d-none');
       }
     })
+  })
+
+  // Open and close burger menu
+
+  const btnBurgerOpen = document.getElementsByClassName('burger-open')[0];
+  const btnBurgerClose = document.getElementsByClassName('burger-close')[0];
+  const burgerMenu = document.getElementsByClassName('burger-menu')[0];
+  document.addEventListener('click', (e) => {
+    const clickBtnOpen = e.composedPath().includes(btnBurgerOpen);
+    const clickBtnClose = e.composedPath().includes(btnBurgerClose);
+    if (clickBtnOpen) {
+      btnBurgerOpen.classList.add('d-none');
+      btnBurgerClose.classList.remove('d-none');
+      burgerMenu.classList.remove('d-none');
+    } else if (clickBtnClose) {
+      btnBurgerOpen.classList.remove('d-none');
+      btnBurgerClose.classList.add('d-none');
+      burgerMenu.classList.add('d-none');
+    }
   })
 
 });

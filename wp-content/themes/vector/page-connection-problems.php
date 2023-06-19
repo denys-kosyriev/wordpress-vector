@@ -1,5 +1,5 @@
 <?php
-  //Template Name: Connection-problem
+  //Template Name: Connection problem
 ?>
 
 <?php get_header(); ?>

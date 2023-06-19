@@ -393,6 +393,10 @@ button, .btn {
   background-position: center;
 }
 
+#menu-header-links-1 {
+  margin-bottom: 7px;
+}
+
 @media (min-width: 567px) {
   h2 {
     font-size: 36px;
@@ -589,6 +593,75 @@ button, .btn {
 .header .main .btn {
   display: none;
 }
+.header .burger-menu {
+  height: calc(100vh - 52px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px 0 0;
+  overflow: auto;
+  text-align: center;
+}
+.header .burger-menu svg {
+  margin-right: 8px;
+}
+.header .burger-menu li {
+  margin-bottom: 32px;
+}
+.header .burger-menu li a {
+  color: #324035;
+  font-weight: 500;
+}
+.header .burger-menu li a:hover {
+  color: #03bf6a;
+}
+.header .burger-menu li a:active {
+  color: #006939;
+}
+.header .burger-menu .user {
+  min-width: 271px;
+  margin-bottom: 20px;
+}
+.header .burger-menu .user svg {
+  width: 13px;
+}
+.header .burger-menu .btn-payment {
+  min-width: 271px;
+  margin-bottom: 42px;
+}
+.header .burger-menu .left {
+  font-size: 14px;
+  margin-bottom: 21px;
+  color: #03bf6a;
+}
+.header .burger-menu .left svg {
+  width: 13px;
+}
+.header .burger-menu .phones {
+  display: flex;
+  align-items: start;
+}
+.header .burger-menu .phones svg {
+  width: 14px;
+}
+.header .burger-menu .phones ul {
+  margin-bottom: 7px;
+}
+.header .burger-menu .phones li {
+  margin-bottom: 10px;
+}
+.header .burger-menu .phones a {
+  font-size: 14px;
+  color: #03bf6a;
+}
+.header .burger-menu .language {
+  display: flex;
+  margin-right: 8px;
+  color: #03bf6a;
+}
+.header .burger-menu .language svg {
+  width: 13px;
+}
 
 @media (min-width: 1200px) {
   .header {
@@ -779,6 +852,9 @@ button, .btn {
     color: #029c56;
   }
   .header .main .burger {
+    display: none;
+  }
+  .header .main .burger-open {
     display: none;
   }
   .header .main .btn {
@@ -1168,6 +1244,7 @@ button, .btn {
   text-align: center;
 }
 .about .right a {
+  min-width: 270px;
   margin-top: 36px;
 }
 
@@ -1936,9 +2013,6 @@ button, .btn {
   padding-bottom: 32px;
   text-align: center;
 }
-.top-radio-buttons .flex .container {
-  padding: 0;
-}
 .top-radio-buttons .selected {
   text-align: center;
   font-size: 14px;
@@ -2289,7 +2363,7 @@ button, .btn {
   margin-bottom: 19px;
 }
 .blog a:hover {
-  color: #03bf6a;
+  text-decoration: underline;
 }
 .blog a:active {
   color: #006939;
@@ -2619,6 +2693,7 @@ button, .btn {
   margin-bottom: 24px;
 }
 .home .show-all-tariffs a {
+  min-width: 270px;
   margin-top: 35px;
 }
 .home .about-internet {
@@ -2641,8 +2716,8 @@ button, .btn {
   color: #fff;
 }
 .home .about-internet .content img {
-  height: 245px;
-  max-width: 357px;
+  height: 202px;
+  max-width: 293px;
   position: absolute;
   top: 0;
   right: -22px;
@@ -2925,19 +3000,6 @@ button, .btn {
   align-items: start;
   background-color: #03BF6A;
 }
-.shares .cart:nth-of-type(2n) a {
-  background-color: #03bf6a;
-  color: #fff;
-  border: 1px solid #03bf6a;
-}
-.shares .cart:nth-of-type(2n) a:hover {
-  background-color: #fff;
-  color: #03bf6a;
-}
-.shares .cart:nth-of-type(2n) a:active {
-  background-color: #006939;
-  color: #006939;
-}
 .shares .cart img {
   transition: 0.2s linear;
 }
@@ -3215,7 +3277,7 @@ button, .btn {
 }
 @media (min-width: 1024px) {
   .tariffs-page.internet h2 {
-    margin-bottom: 45px;
+    padding-bottom: 45px;
   }
   .tariffs-page.internet .top .buttons {
     padding-bottom: 106px;

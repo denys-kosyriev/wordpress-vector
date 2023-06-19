@@ -24,21 +24,6 @@
     flex-direction:   column;
     align-items:      start;
     background-color: #03BF6A;
-    &:nth-of-type(2n) {
-      a {
-        background-color: #03bf6a;
-        color:            #fff;
-        border:           1px solid #03bf6a;
-        &:hover {
-          background-color: #fff;
-          color:            #03bf6a;
-        }
-        &:active {
-          background-color: #006939;
-          color:            #006939;
-        }
-      }
-    }
     img {
       transition: .2s linear;
     }
