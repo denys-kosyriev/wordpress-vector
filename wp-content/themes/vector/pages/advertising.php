@@ -47,31 +47,26 @@
         </section>
       <?php endwhile;
     endif; ?>
-    <?php if (have_rows('advertising')):
-      while (have_rows('advertising')):
-        the_row() ?>
-        <section class='billboard'>
-          <div class='container'>
-            <div class='wrapper p-relative'>
-              <div class='content'>
-                <div class='left'>
-                  <h2><?php echo get_sub_field('title') ?></h2>
-                  <p class='subtitle'><?php echo get_sub_field('description') ?></p>
-                  <p class='subtitle'>
-                    <?php echo get_sub_field('districts') ?>
-                  </p>
-                  <?php $internet_btn = get_sub_field('button'); ?>
-                  <a href='<?php echo esc_url($internet_btn['url']) ?>' class='btn btn-black'>
-                    <?php echo esc_html($internet_btn['title']) ?>
-                  </a>
-                </div>
-                <img src='<?php echo get_sub_field('image') ?>' alt=''>
-              </div>
+    <section class='billboard'>
+      <div class='container'>
+        <div class='wrapper p-relative'>
+          <div class='content'>
+            <div class='left'>
+              <h2><?php echo get_field('advertising_title') ?></h2>
+              <p class='subtitle'><?php echo get_field('advertising_description') ?></p>
+              <p class='subtitle'>
+                <?php echo get_field('advertising_districts') ?>
+              </p>
+              <?php $internet_btn = get_field('advertising_button'); ?>
+              <a href='<?php echo esc_url($internet_btn['url']) ?>' class='btn btn-black'>
+                <?php echo esc_html($internet_btn['title']) ?>
+              </a>
             </div>
+            <img src='<?php echo get_field('advertising_image') ?>' alt=''>
           </div>
-        </section>
-      <?php endwhile;
-    endif; ?>
+        </div>
+      </div>
+    </section>
   </main>
 
 <?php get_footer(); ?>

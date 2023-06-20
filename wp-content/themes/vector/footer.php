@@ -67,7 +67,7 @@
                   while (have_rows('footer_links_sites', 'option')):
                     the_row();
                     $link = get_sub_field('link'); ?>
-                    <a href='tel: <?php echo $link ?>'>
+                    <a href='<?php echo $link ?>'>
                       <?php echo $link ?>
                     </a>
                   <?php endwhile;
@@ -102,7 +102,7 @@
               while (have_rows('footer_socials', 'option')):
                 the_row() ?>
                 <li>
-                  <a href='<?php echo get_sub_field(' link') ?>'>
+                  <a href='<?php echo get_sub_field(' link') ?>' target='_blank'>
                     <img src='<?php echo get_sub_field('icon') ?>' alt=''>
                   </a>
                 </li>

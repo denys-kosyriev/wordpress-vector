@@ -98,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
         questionsIconSelect[index].classList.toggle('open');
       }
       question[index].classList.remove('active');
-      console.log(!questionsAnswer[index].className.includes('d-none'))
       if (!questionsAnswer[index].className.includes('d-none')) {
         question[index].classList.add('active');
       }
@@ -107,46 +106,63 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Open modal tariff
 
-  const modals = document.getElementsByClassName('modal');
-  const tariffs = document.getElementsByClassName('tariff');
   const modalForm = document.getElementsByClassName('modal-form')[0];
+  const modalContent = document.getElementsByClassName('modal-content')[0];
+  const tariffNetBtn = document.getElementsByClassName('open-connect-net-modal-js');
+  const titleTariffForModal = document.getElementsByClassName('title-tariff-for-modal');
+  const titleTariffModal = document.getElementsByClassName('title-tariff-modal');
 
-  Array.from(tariffs).map((tariff) => {
-
-    const connectionButton = tariff.getElementsByClassName('btn')[0];
-    connectionButton.addEventListener('click', () => {
-      if (tariff.className.includes('tariff-internet')) {
-        modalForm.classList.remove('d-none');
-      } else if (tariff.className.includes('tariff-tv')) {
-        modalForm.classList.remove('d-none');
-        modalForm.classList.add('modal-tv');
-      } else if (tariff.className.includes('tariff-all')) {
-        modalForm.classList.remove('d-none');
-        modalForm.classList.add('modal-all');
-      }
+  for (let i = 0; i < tariffNetBtn.length; i++) {
+    tariffNetBtn[i].addEventListener('click', function () {
+      modalContent.classList.remove('form-tv');
+      modalForm.classList.remove('d-none');
+      titleTariffModal[i].innerHTML = titleTariffForModal[i].innerHTML
     })
+  }
 
-    const modalChannels = document.getElementsByClassName('modal-channels')[0];
-    const detail = tariff.getElementsByClassName('detail');
-    if (detail) {
-      detail.addEventListener('click', () => {
-        modalChannels.classList.remove('d-none');
-      })
-    }
-    const infoBtn = tariff.getElementsByClassName('info')[0];
-    const modalInfo = tariff.getElementsByClassName('modal-net-info')[0];
-    infoBtn.addEventListener('click', () => {
-      modalInfo.classList.remove('d-none');
+  // Open modal form TV and All
+
+  const tariffTVBtn = document.getElementsByClassName('open-connect-tv-modal-js');
+
+  for (let i = 0; i < tariffTVBtn.length; i++) {
+    tariffTVBtn[i].addEventListener('click', function () {
+      modalContent.classList.add('form-tv');
+      modalForm.classList.remove('d-none');
+      titleTariffModal[i].innerHTML = titleTariffForModal[i].innerHTML
+    })
+  }
+
+  // Open modal channels
+
+  const modalChannels = document.getElementsByClassName('modal-channels')[0];
+  const openDetailsTv = document.getElementsByClassName('open-details-tv');
+
+  for (let i = 0; i < openDetailsTv.length; i++) {
+    openDetailsTv[i].addEventListener('click', function () {
+      modalChannels.classList.remove('d-none');
+    })
+  }
+
+  // Open modal info Internet tariff
+
+  const openInfoNetBtn = document.getElementsByClassName('open-info-net-btn');
+  const modalInfo = document.getElementsByClassName('modal-net-info');
+  for (let i = 0; i < openInfoNetBtn.length; i++) {
+    openInfoNetBtn[i].addEventListener('click', function () {
+      modalInfo[i].classList.remove('d-none');
       const timeShowModalInfo = setTimeout(() => {
-        modalInfo.classList.add('d-none');
+        modalInfo[i].classList.add('d-none');
       }, 3000)
-      modalInfo.addEventListener('click', () => {
+      modalInfo[i].addEventListener('click', () => {
         clearTimeout(timeShowModalInfo)
-        modalInfo.classList.add('d-none');
+        modalInfo[i].classList.add('d-none');
       });
     })
+  }
 
-  })
+  // Close modals
+
+  const modals = document.getElementsByClassName('modal');
 
   Array.from(modals).map((modal, index) => {
     const closeButton = document.getElementsByClassName('close-modal')[index];

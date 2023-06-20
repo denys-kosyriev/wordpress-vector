@@ -1,5 +1,5 @@
 <?php
-  //Template Name: Payment description
+  //Template Name: Payment Description
 ?>
 
 <?php get_header(); ?>

@@ -19,10 +19,6 @@
                     <img src='<?php echo get_sub_field('image') ?>' alt=''>
                   </div>
                   <?php echo get_sub_field('description') ?>
-                  <?php $link = get_sub_field('link'); ?>
-                  <a href='<?php echo esc_url($link['url']) ?>' target='_blank'>
-                    <?php echo esc_html($link['title']) ?>
-                  </a>
                 </div>
               </div>
             <?php endwhile;

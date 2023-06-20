@@ -14,12 +14,13 @@
         <div class='wrapper'>
           <div class='buttons'>
             <ul>
-              <?php if (have_rows('switch')) :
-                while (have_rows('switch')) :
+              <?php if (have_rows('tabs')) :
+                while (have_rows('tabs')) :
                   the_row(); ?>
                   <li>
-                    <?php $btn = get_sub_field('button'); ?>
-                    <a href='<?php echo esc_url($btn['url']) ?>' class='btn btn-switch btn-small <?php echo get_sub_field('class_name') ?>'>
+                    <?php $btn = get_sub_field('tab'); ?>
+                    <a href='<?php echo esc_url($btn['url']) ?>'
+                       class='btn btn-switch btn-small <?php echo get_sub_field('class_name') ?>'>
                       <?php echo esc_html($btn['title']) ?>
                     </a>
                   </li>
@@ -37,12 +38,14 @@
         <div class='circle'></div>
         <div class='circle'></div>
         <div class='circle'></div>
-        <?php get_template_part('Tariffs-form') ?>
+        <?php get_template_part('./common/tariffs-form') ?>
       </div>
     </div>
   </section>
-  <?php get_template_part('connection-internet') ?>
-  <?php get_template_part('connection-tv') ?>
+<?php var_dump(get_field('tab')); ?>
+<!--  --><?php //if(get_field('tab') === "Інтернет")
+//    get_template_part('./sections/connection-internet')
+//  get_template_part('./sections/connection-tv') ?>
 </main>
 
 <?php get_footer(); ?>

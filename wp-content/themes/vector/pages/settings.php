@@ -19,7 +19,7 @@
                     <div class='swiper-slide'>
                       <div class='setting'>
                         <img src='<?php echo get_sub_field('logotype') ?>' alt=''>
-                        <?php echo get_sub_field('settings') ?>
+                        <?php echo get_sub_field('setting') ?>
                         <h3><?php echo get_sub_field('title_program') ?></h3>
                         <?php $link = get_sub_field('button'); ?>
                         <a href='<?php echo esc_url($link['url']) ?>' target='_blank' class='btn btn-full'>

@@ -187,15 +187,6 @@
     .close-modal {
       top:   90px;
       right: 22px;
-      img {
-        width: 51px;
-      }
-      &:active {
-        margin: 2px;
-        img {
-          width: 48px;
-        }
-      }
     }
     .channels {
       border-radius: 60px;

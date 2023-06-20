@@ -308,27 +308,21 @@ button, .btn {
 }
 
 .close-modal {
-  padding: 10px 10px 6px;
+  width: 18px;
   position: absolute;
   top: 21px;
   right: 16px;
   z-index: 0;
   cursor: pointer;
-  border-radius: 10px;
+}
+.close-modal path {
   transition: 0.2s linear;
 }
-.close-modal:hover {
-  background-color: #d2dbdb;
+.close-modal:hover path {
+  fill: #006939;
 }
-.close-modal:active {
-  margin: 1px;
-}
-.close-modal:active img {
-  width: 16px;
-}
-.close-modal img {
-  width: 18px;
-  transition: 0.2s linear;
+.close-modal:active path {
+  fill: #029c56;
 }
 
 .d-none {
@@ -421,10 +415,7 @@ button, .btn {
   .tel-link a img, .tel-link a svg {
     width: 18px;
   }
-  .close-modal:active img {
-    width: 23px;
-  }
-  .close-modal img {
+  .close-modal {
     width: 26px;
   }
   .wpcf7-list-item-label {
@@ -492,17 +483,9 @@ button, .btn {
     margin: 0 15px;
   }
   .close-modal {
+    width: 35px;
     top: 82px;
     right: 44px;
-  }
-  .close-modal:active {
-    margin: 2px;
-  }
-  .close-modal:active img {
-    width: 32px;
-  }
-  .close-modal img {
-    width: 35px;
   }
   .wpcf7-list-item-label {
     padding-left: 20px;
@@ -876,13 +859,10 @@ button, .btn {
   margin-bottom: 30px;
 }
 .swiper.tariffs-slider.action-section {
-  margin-bottom: 7px;
+  margin-bottom: 20px;
 }
 .swiper.tariffs-slider .swiper-wrapper {
   padding-bottom: 34px;
-}
-.swiper.tariffs-slider .swiper-wrapper.without-pagination {
-  margin-bottom: 13px;
 }
 .swiper.tariffs-slider .swiper-wrapper.center {
   justify-content: center;
@@ -961,17 +941,23 @@ button, .btn {
   background-color: #fff;
   color: #324035;
 }
-.swiper.tariffs-slider .tariff .detail {
+.swiper.tariffs-slider .tariff .open-details-tv-block {
+  display: flex;
+  justify-content: center;
+}
+.swiper.tariffs-slider .tariff .open-details-tv {
   margin-top: 15px;
   font-weight: 500;
   font-size: 14px;
   color: #03BF6A;
   display: block;
+  cursor: pointer;
+  transition: 0.2s linear;
 }
-.swiper.tariffs-slider .tariff .detail:hover {
+.swiper.tariffs-slider .tariff .open-details-tv:hover {
   color: #006939;
 }
-.swiper.tariffs-slider .tariff .detail:active {
+.swiper.tariffs-slider .tariff .open-details-tv:active {
   color: #029c56;
 }
 .swiper.tariffs-slider .tariff .bottom {
@@ -1004,7 +990,7 @@ button, .btn {
   align-items: center;
   line-height: 1;
 }
-.swiper.tariffs-slider .tariff-internet .info {
+.swiper.tariffs-slider .tariff-internet .open-info-net-btn {
   width: 24px;
   position: absolute;
   top: 35px;
@@ -1013,14 +999,18 @@ button, .btn {
   transition: 0.2s linear;
   cursor: pointer;
 }
-.swiper.tariffs-slider .tariff-internet .info:hover {
+.swiper.tariffs-slider .tariff-internet .open-info-net-btn:hover {
   opacity: 0.7;
 }
-.swiper.tariffs-slider .tariff-internet .info:active {
+.swiper.tariffs-slider .tariff-internet .open-info-net-btn:active {
   transform: rotate(45deg);
 }
 .swiper.tariffs-slider .tariff-internet .network img {
   margin-right: 8px;
+}
+.swiper.tariffs-slider .tariff-internet .open-details-tv {
+  opacity: 0;
+  pointer-events: none;
 }
 .swiper.tariffs-slider .tariff-tv h4, .swiper.tariffs-slider .tariff-all h4 {
   margin-bottom: 0;
@@ -1051,6 +1041,9 @@ button, .btn {
 }
 
 @media (min-width: 567px) {
+  .swiper.tariffs-slider.action-section {
+    margin-bottom: 15px;
+  }
   .swiper.tariffs-slider .tariff h4 {
     font-size: 32px;
   }
@@ -1075,7 +1068,7 @@ button, .btn {
   .swiper.tariffs-slider .tariff .price span {
     font-size: 40px;
   }
-  .swiper.tariffs-slider .tariff .detail {
+  .swiper.tariffs-slider .tariff .open-details-tv {
     font-size: 16px;
   }
   .swiper.tariffs-slider .tariff-tv .header-network p, .swiper.tariffs-slider .tariff-all .header-network p {
@@ -1085,6 +1078,9 @@ button, .btn {
 @media (min-width: 1024px) {
   .swiper.tariffs-slider {
     margin-bottom: 23px;
+  }
+  .swiper.tariffs-slider.action-section {
+    margin-bottom: 0;
   }
   .swiper.tariffs-slider .swiper-wrapper {
     padding: 0;
@@ -1153,12 +1149,12 @@ button, .btn {
     font-size: 50px;
     line-height: 0.8;
   }
-  .swiper.tariffs-slider .tariff .detail {
+  .swiper.tariffs-slider .tariff .open-details-tv {
     margin-top: 23px;
     font-weight: 500;
     font-size: 20px;
   }
-  .swiper.tariffs-slider .tariff-internet .info {
+  .swiper.tariffs-slider .tariff-internet .open-info-net-btn {
     width: 30px;
     top: 55px;
     right: 23px;
@@ -1176,6 +1172,9 @@ button, .btn {
 @media (min-width: 1440px) {
   .swiper.tariffs-slider {
     padding: 0 37px;
+  }
+  .swiper.tariffs-slider.action-section {
+    margin-bottom: 0;
   }
   .swiper.tariffs-slider .tariff button {
     font-size: 24px;
@@ -1355,6 +1354,7 @@ button, .btn {
   mix-blend-mode: lighten;
   transition: 0.3s linear;
   margin-bottom: 40px;
+  cursor: pointer;
 }
 .footer .navigation img:hover {
   opacity: 0.7;
@@ -1672,9 +1672,6 @@ button, .btn {
   }
   .accordion .question {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 37px 32px 31px;
   }
   .accordion .question.active {
@@ -1936,15 +1933,6 @@ button, .btn {
     top: 90px;
     right: 22px;
   }
-  .modal-channels .close-modal img {
-    width: 51px;
-  }
-  .modal-channels .close-modal:active {
-    margin: 2px;
-  }
-  .modal-channels .close-modal:active img {
-    width: 48px;
-  }
   .modal-channels .channels {
     border-radius: 60px;
     padding: 0 50px 0;
@@ -2030,8 +2018,12 @@ button, .btn {
 .top-radio-buttons .selected select {
   margin: 13px 0 25px;
 }
-.top-radio-buttons .buttons .container {
-  padding: 0;
+.top-radio-buttons .buttons {
+  width: 100vw;
+  position: relative;
+  left: -20px;
+  top: 0;
+  z-index: 0;
 }
 .top-radio-buttons ul {
   display: flex;
@@ -2456,6 +2448,9 @@ button, .btn {
 .tariffs-form h3 {
   padding-bottom: 25px;
   text-align: center;
+}
+.tariffs-form .router {
+  display: none;
 }
 .tariffs-form label {
   white-space: nowrap;
@@ -3198,20 +3193,25 @@ button, .btn {
   }
 }
 .tariffs-page .top-radio-buttons {
-  padding: 41px 0 0;
+  padding: 41px 0 20px;
 }
 .tariffs-page .top-radio-buttons .container, .tariffs-page div .container {
   max-width: 1504px;
 }
 .tariffs-page h3 {
-  margin-bottom: 25px;
+  padding-bottom: 25px;
   text-align: center;
-  font-weight: 700;
+}
+.tariffs-page h3 p {
   font-size: 19px;
+  font-weight: 700;
 }
 .tariffs-page.internet h3 span {
   color: #03BF6A;
   text-transform: uppercase;
+}
+.tariffs-page.internet .description {
+  display: none;
 }
 .tariffs-page .description {
   margin-bottom: 42px;
@@ -3268,7 +3268,7 @@ button, .btn {
   .tariffs-page.internet .buttons {
     padding-bottom: 20px;
   }
-  .tariffs-page h3 {
+  .tariffs-page h3 p {
     font-size: 28px;
   }
   .tariffs-page .description ul {
@@ -3300,14 +3300,16 @@ button, .btn {
     line-height: 1.5;
   }
   .tariffs-page h3 {
-    margin: 35px 0 40px;
-    font-size: 40px;
+    padding: 15px 0 40px;
     text-align: start;
+  }
+  .tariffs-page h3 p {
+    font-size: 40px;
   }
 }
 @media (min-width: 1200px) {
   .tariffs-page .top-radio-buttons {
-    padding: 80px 0 0;
+    padding: 80px 0 30px;
   }
 }
 @media (min-width: 1440px) {
@@ -3315,7 +3317,10 @@ button, .btn {
     padding-bottom: 0;
   }
   .tariffs-page h3 {
-    margin: 40px 0 89px;
+    padding: 0 0 40px;
+  }
+  .tariffs-page .top-radio-buttons {
+    padding: 80px 0 60px;
   }
   .tariffs-page .top-radio-buttons .selected {
     padding: 0;
@@ -3328,6 +3333,9 @@ button, .btn {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+  }
+  .tariffs-page .flex .wrapper .buttons {
+    width: 50%;
   }
   .tariffs-page.all .connection-tv {
     padding: 40px 0 130px;
@@ -3818,7 +3826,7 @@ button, .btn {
   color: #03BF6A;
 }
 .payment-description li a:hover {
-  color: #029c56;
+  text-decoration: underline;
 }
 .payment-description li a:active {
   color: #006939;
@@ -3870,7 +3878,7 @@ button, .btn {
   color: #03BF6A;
 }
 .settings-iptv p a:hover {
-  color: #029c56;
+  text-decoration: underline;
 }
 .settings-iptv p a:active {
   color: #006939;
@@ -4203,6 +4211,9 @@ button, .btn {
     margin-top: 38px;
   }
 }
+.connection-problems {
+  overflow: hidden;
+}
 .connection-problems .error {
   padding: 22px 0 0;
 }
@@ -4270,8 +4281,16 @@ button, .btn {
   display: flex;
   flex-direction: column;
 }
+.connection-problems .accordion li .question-select {
+  display: flex;
+  align-items: center;
+}
 .connection-problems .accordion li h3 {
-  font-size: 24px;
+  font-size: 20px;
+}
+.connection-problems .accordion li h3 p {
+  padding-left: 5px;
+  font-size: 20px;
 }
 
 @media (min-width: 567px) {

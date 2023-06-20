@@ -74,11 +74,8 @@
       margin-bottom: 19px;
     }
     .question {
-      width:           100%;
-      display:         flex;
-      justify-content: space-between;
-      align-items:     center;
-      padding:         37px 32px 31px;
+      width:   100%;
+      padding: 37px 32px 31px;
       &.active {
         padding: 37px 32px 19px;
       }

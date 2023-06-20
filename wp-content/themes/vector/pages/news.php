@@ -5,6 +5,27 @@
 <?php get_header(); ?>
 
 <main class='news'>
+  <?php
+$arg = [
+  'post_type'=>'news',
+  'post_status'=>'public',
+  'post_per_page'=>10,
+  ];
+
+
+    $loop = new WP_Query($arg);
+
+
+    if ($loop->have_posts()) {
+      while ( $loop->have_posts()):$loop->the_post();
+        $title = get_the_title();
+        var_dump($title);
+
+      endwhile;
+      wp_reset_postdata();
+    }
+
+  ?>
   <section>
     <div class='container'>
       <h2><?php echo get_field('news_title') ?></h2>

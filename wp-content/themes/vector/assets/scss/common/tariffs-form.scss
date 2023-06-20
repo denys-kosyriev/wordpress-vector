@@ -9,6 +9,9 @@
     padding-bottom: 25px;
     text-align:     center;
   }
+  .router {
+    display: none;
+  }
   label {
     white-space: nowrap;
     &:nth-of-type(4) {

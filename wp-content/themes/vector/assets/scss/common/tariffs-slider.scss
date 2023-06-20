@@ -2,13 +2,10 @@
   max-width:     1573px;
   margin-bottom: 30px;
   &.action-section {
-    margin-bottom: 7px;
+    margin-bottom: 20px;
   }
   .swiper-wrapper {
     padding-bottom: 34px;
-    &.without-pagination {
-      margin-bottom: 13px;
-    }
     &.center {
       justify-content: center;
     }
@@ -88,12 +85,18 @@
         color:            #324035;
       }
     }
-    .detail {
+    .open-details-tv-block {
+      display:         flex;
+      justify-content: center;
+    }
+    .open-details-tv {
       margin-top:  15px;
       font-weight: 500;
       font-size:   14px;
       color:       #03BF6A;
       display:     block;
+      cursor:      pointer;
+      transition:  .2s linear;
       &:hover {
         color: #006939;
       }
@@ -133,7 +136,7 @@
         line-height:     1;
       }
     }
-    .info {
+    .open-info-net-btn {
       width:      24px;
       position:   absolute;
       top:        35px;
@@ -152,6 +155,10 @@
       img {
         margin-right: 8px;
       }
+    }
+    .open-details-tv {
+      opacity:        0;
+      pointer-events: none;
     }
   }
   .tariff-tv, .tariff-all {
@@ -189,6 +196,9 @@
 
 @media(min-width: 567px) {
   .swiper.tariffs-slider {
+    &.action-section {
+      margin-bottom: 15px;
+    }
     .tariff {
       h4 {
         font-size: 32px;
@@ -214,7 +224,7 @@
           font-size: 40px;
         }
       }
-      .detail {
+      .open-details-tv {
         font-size: 16px;
       }
     }
@@ -231,6 +241,9 @@
 @media(min-width: 1024px) {
   .swiper.tariffs-slider {
     margin-bottom: 23px;
+    &.action-section {
+      margin-bottom: 0;
+    }
     .swiper-wrapper {
       padding: 0;
       margin:  0 0 70px 0;
@@ -297,14 +310,14 @@
           line-height: .8;
         }
       }
-      .detail {
+      .open-details-tv {
         margin-top:  23px;
         font-weight: 500;
         font-size:   20px;
       }
     }
     .tariff-internet {
-      .info {
+      .open-info-net-btn {
         width: 30px;
         top:   55px;
         right: 23px;
@@ -331,6 +344,9 @@
 @media(min-width: 1440px) {
   .swiper.tariffs-slider {
     padding: 0 37px;
+    &.action-section {
+      margin-bottom: 0;
+    }
     .tariff {
       button {
         font-size: 24px;
