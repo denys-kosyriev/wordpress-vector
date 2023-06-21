@@ -1,5 +1,5 @@
 .modal-channels {
-  padding: 107px 0 10px;
+  padding: 10px 0;
   .channels {
     height:             100%;
     max-width:          1416px;
@@ -108,7 +108,6 @@
       &:last-of-type {
         div {
           &:last-of-type {
-            min-height:    27px;
             border-radius: 0 0 6px 6px;
           }
         }
@@ -130,11 +129,12 @@
           padding:     5px 0;
         }
         &:last-of-type {
+          min-height:       27px;
           width:            35px;
           justify-content:  center;
           font-size:        11px;
           font-weight:      500;
-          background-color: rgba(#03BF6A, .8);
+          background-color: rgba(#03bf6a4d, .3);
           padding:          8px 0 7px;
         }
       }
@@ -171,9 +171,9 @@
             font-size: 16px;
           }
           &:last-of-type {
-            min-height: 51px;
+            min-height: 48px;
             font-size:  18px;
-            padding:    15px 30px;
+            padding:    13px 30px;
           }
         }
       }
@@ -183,7 +183,7 @@
 
 @media(min-width: 1024px) {
   .modal-channels {
-    padding: 107px 80px 20px;
+    padding: 20px;
     .close-modal {
       top:   90px;
       right: 22px;
@@ -246,7 +246,6 @@
         &:last-of-type {
           div {
             &:last-of-type {
-              min-height:    74px;
               border-radius: 0 0 20px 20px;
             }
           }
@@ -262,8 +261,9 @@
             font-size: 24px;
           }
           &:last-of-type {
-            font-size: 24px;
-            padding:   23px 51px;
+            min-height: 65px;
+            font-size:  24px;
+            padding:    19px 51px;
           }
         }
       }
@@ -273,6 +273,6 @@
 
 @media(min-width: 1440px) {
   .modal-channels {
-    padding: 160px 233px 20px;
+    padding: 20px;
   }
 }

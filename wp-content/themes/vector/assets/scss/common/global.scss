@@ -10,6 +10,10 @@ body {
   width: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height:     100vh;
   display:        flex;
@@ -45,6 +49,9 @@ a {
   }
 }
 
+strong {
+  color: #03bf6a;
+}
 
 .container {
   max-width: 1920px;
@@ -391,7 +398,7 @@ button, .btn {
     background-color:    #6BC2BB;
     border:              1px solid #03BF6A;
     border-radius:       2px;
-    background-image:    url("../icons/ready.svg");
+    background-image:    url("../images/icons/ready.svg");
     background-size:     12px;
     background-repeat:   no-repeat;
     background-position: center;

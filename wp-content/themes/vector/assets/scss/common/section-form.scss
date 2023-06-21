@@ -1,13 +1,16 @@
 .section-form {
   overflow: hidden;
   &.block-form {
-    padding: 0 0 20px;
+    padding: 20px 0 60px;
     .container {
       max-width: 1345px;
       padding:   0;
     }
     .wrapper-form {
       padding: 58px 20px 0;
+      .tariffs-form {
+        margin: 0 auto;
+      }
     }
     .circle {
       background-color: #03BF6A;
@@ -84,6 +87,7 @@
 @media(min-width: 1024px) {
   .section-form {
     &.block-form {
+      padding: 0 0 80px;
       .wrapper-form {
         padding: 81px 20px 0;
       }

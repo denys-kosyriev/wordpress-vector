@@ -1,31 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   // Languages list 'header'
-  const language = document.getElementsByClassName('language')[0];
-  const languageName = document.getElementsByClassName('language-name')[0];
-  const languagesList = document.getElementsByClassName('languages-list')[0];
+  const language = document.getElementsByClassName('language');
+  const languageName = document.getElementsByClassName('language-name');
+  const languagesList = document.getElementsByClassName('languages-list');
   const languagesListLanguage = document.getElementsByClassName('languages-list-language');
 
-  document.addEventListener('click', (e) => {
-    const closeLanguagesList = e.composedPath().includes(language);
-    if (!closeLanguagesList) {
-      languagesList.classList.add('d-none');
-    } else if (closeLanguagesList) {
-      languagesList.classList.toggle('d-none');
-    }
+  for(let i = 0; i< language[i]; i++) {
+  language[i].addEventListener('click', (e) => {
+      languagesList[i].classList.toggle('d-none');
+    // const closeLanguagesList = e.composedPath().includes(language[i]);
+    // if (!closeLanguagesList) {
+    //   languagesList.classList.add('d-none');
+    // } else if (closeLanguagesList) {
+    // }
   })
+  }
 
-  Array.from(languagesListLanguage).map(languageItem => {
-    languageItem.addEventListener('click', () => {
-      languageName.innerHTML = languageItem.innerHTML;
-      Array.from(languagesListLanguage).map(item => {
-        item.classList.remove('active');
-      });
-      if (languageName.innerHTML === languageItem.innerHTML) {
-        languageItem.classList.add('active');
-      }
-    })
-  })
+  // Array.from(languagesListLanguage).map(languageItem => {
+  //   languageItem.addEventListener('click', () => {
+  //     languageName.innerHTML = languageItem.innerHTML;
+  //     Array.from(languagesListLanguage).map(item => {
+  //       item.classList.remove('active');
+  //     });
+  //     if (languageName.innerHTML === languageItem.innerHTML) {
+  //       languageItem.classList.add('active');
+  //     }
+  //   })
+  // })
 
   // Position of tariffs and position of pagination tariffs
   const tariffsSlider = document.getElementsByClassName('tariffs-slider');
@@ -52,10 +54,12 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 
   // Show the current year
+
   const currentYear = new Date;
   document.getElementsByClassName('currentYear')[0].textContent = `${currentYear.getFullYear()}`;
 
   // Slider 'tariffs-slider'
+
   if (document.getElementsByClassName('tariffs-slider')[0]) {
     new Swiper(".tariffs-slider", {
       slidesPerView: 1,
@@ -80,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Work accordion
-  const questionsList = document.getElementsByClassName('questions-list')[0];
+
   const questionsSelects = document.getElementsByClassName('questions-select');
   const questionsAnswer = document.getElementsByClassName('questions-answer');
   const questionsIconSelect = document.getElementsByClassName('icon-select');
@@ -88,14 +92,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   Array.from(questionsSelects).map((select, index) => {
     document.addEventListener('click', (e) => {
-      const closeAnswer = e.composedPath().includes(questionsList);
       const clickSQuestion = e.composedPath().includes(question[index]);
-      if (!closeAnswer) {
-        questionsAnswer[index].classList.add('d-none');
-        questionsIconSelect[index].classList.remove('open');
-      } else if (clickSQuestion) {
+      if (clickSQuestion) {
         questionsAnswer[index].classList.toggle('d-none');
         questionsIconSelect[index].classList.toggle('open');
+        select.classList.toggle('active');
       }
       question[index].classList.remove('active');
       if (!questionsAnswer[index].className.includes('d-none')) {
@@ -196,5 +197,42 @@ document.addEventListener('DOMContentLoaded', function () {
       burgerMenu.classList.add('d-none');
     }
   })
+
+  // Click scroll top
+
+  const scrollUpBtn = document.getElementsByClassName('scroll-up')[0];
+  if (scrollUpBtn) {
+    scrollUpBtn.addEventListener('click', () => {
+      window.scrollTo(0, 0);
+    });
+  }
+
+  // Work channel list changes
+
+  const tariffsForm = document.getElementsByClassName('tariffs-form')[0];
+  const buttons = document.getElementsByClassName('btn-switch');
+
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', (e) => {
+        for (let t = 0; t < buttons.length; t++) {
+          buttons[t].classList.remove('active');
+        }
+        buttons[i].classList.add('active');
+        // console.log(buttons[i].innerHTML)
+        console.log(e)
+        console.log(buttons[i].innerHTML === 'Телебачення')
+        if (buttons[i].innerHTML === 'Інтернет') {
+          tariffsForm.classList.remove('form-tv');
+          //   } else if (buttons[i].innerHTML === 'Телебачення' ||
+          //     buttons[i].innerHTML === 'Все разом') {
+          // console.log(tariffsForm)
+          //     tariffsForm.classList.add('form-tv');
+        } else if (buttons[i].innerHTML === 'Телебачення') {
+          console.log(tariffsForm)
+          tariffsForm.classList.add('form-tv')
+        }
+      }
+    )
+  }
 
 });

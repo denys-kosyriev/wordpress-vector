@@ -20,7 +20,11 @@
                   <li>
                     <?php $btn = get_sub_field('tab'); ?>
                     <a href='<?php echo esc_url($btn['url']) ?>'
-                       class='btn btn-switch btn-small <?php echo get_sub_field('class_name') ?>'>
+                       class='btn btn-switch btn-small
+                   <?php if (get_sub_field('action_tab') === 'Активна'): ?>
+                       active
+                       <?php endif; ?>
+                    '>
                       <?php echo esc_html($btn['title']) ?>
                     </a>
                   </li>
@@ -42,10 +46,6 @@
       </div>
     </div>
   </section>
-<?php var_dump(get_field('tab')); ?>
-<!--  --><?php //if(get_field('tab') === "Інтернет")
-//    get_template_part('./sections/connection-internet')
-//  get_template_part('./sections/connection-tv') ?>
 </main>
 
 <?php get_footer(); ?>

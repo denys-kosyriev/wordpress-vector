@@ -20,6 +20,9 @@
     &:active {
       border-color: #006939;
     }
+    &.active {
+      border-color: #03BF6A;
+    }
   }
   .question {
     width:           100%;
@@ -31,8 +34,9 @@
     &.active {
       padding: 23px 19px 11px;
     }
-    h3 {
-      font-size: 18px;
+    p {
+      font-size:   18px;
+      font-weight: 600;
     }
     .icon-select {
       width:      10px;
@@ -79,7 +83,7 @@
       &.active {
         padding: 37px 32px 19px;
       }
-      h3 {
+      p {
         font-size: 32px;
       }
     }

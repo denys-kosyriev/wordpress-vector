@@ -6,11 +6,11 @@
     max-width: 1492px;
   }
   h2 {
-    margin-bottom: 34px;
+    padding-bottom: 34px;
   }
   p {
-    color:         #7A8781;
-    margin-bottom: 20px;
+    color:          #7A8781;
+    padding-bottom: 20px;
     a {
       color: #03BF6A;
       &:hover {
@@ -34,10 +34,10 @@
       padding: 88px 0 81px;
     }
     h2 {
-      margin-bottom: 45px;
+      padding-bottom: 45px;
     }
     p {
-      margin-bottom: 24px;
+      padding-bottom: 24px;
     }
     img {
       margin: 82px 0 97px 50%;

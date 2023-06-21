@@ -10,25 +10,16 @@
     align-items:    center;
   }
   img {
-    max-width:     400px;
-    margin-bottom: 16px;
+    max-width: 400px;
+    margin:    60px 0 16px;
   }
   h2 {
-    line-height:   1.4;
-    margin-bottom: 27px;
-    color:         #03BF6A;
-    span {
-      color: #03BF6A;
-    }
+    line-height:    1.4;
+    padding-bottom: 14px;
+    font-size:      28px;
   }
   p {
-    margin-bottom: 20px;
-    span {
-      color: #7A8781;
-    }
-    &:last-of-type {
-      margin-bottom: 46px;
-    }
+    padding-bottom: 20px;
   }
   button {
     margin-left: 50%;
@@ -40,6 +31,9 @@
   .connection-tv {
     a {
       min-width: 0;
+    }
+    h2 {
+      font-size: 34px;
     }
   }
 }
@@ -62,13 +56,11 @@
       padding-right: 20px;
     }
     h2 {
-      margin-bottom: 26px;
+      padding-bottom: 13px;
+      font-size:      40px;
     }
     p {
-      margin-bottom: 28px;
-      &:last-of-type {
-        margin-bottom: 66px;
-      }
+      padding-bottom: 28px;
     }
     button {
       min-width: 272px;
@@ -81,7 +73,7 @@
 
 @media(min-width: 1440px) {
   .connection-tv {
-    padding: 80px 0 90px;
+    padding: 40px 0 90px;
     img {
       max-width: 700px;
     }

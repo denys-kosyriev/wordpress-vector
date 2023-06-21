@@ -13,8 +13,8 @@
     <div class="container">
       <div class='swiper swiper-banners'>
         <div class='swiper-wrapper'>
-          <?php if (have_rows('slider_shares')) :
-            while (have_rows('slider_shares')) :
+          <?php if (have_rows('main_slider')) :
+            while (have_rows('main_slider')) :
               the_row(); ?>
               <div class='swiper-slide hidden'>
                 <div class='p-relative'>
@@ -71,7 +71,7 @@
           <?php
             $about_company_btn = get_field('about_company_button');
           ?>
-          <a href='<?php echo esc_url($about_company_btn['url']) ?>' class='btn btn-outlined'>
+          <a href='<?php echo esc_url($about_company_btn['url']) ?>' class='btn btn-full'>
             <?php echo esc_html($about_company_btn['title']) ?>
           </a>
         </div>
@@ -110,14 +110,14 @@
   </section>
   <section class='accordion'>
     <div class='container'>
-      <h2><?php echo get_sub_field('accordion_title') ?></h2>
+      <h2><?php echo get_field('accordion_title') ?></h2>
       <ul class='questions-list'>
         <?php if (have_rows('accordion')) :
           while (have_rows('accordion')) :
             the_row(); ?>
             <li class='questions-select'>
               <div class='question'>
-                <h3><?php echo get_sub_field('question') ?></h3>
+                <?php echo get_sub_field('question') ?>
                 <svg class='icon-select' width="25" height="24" viewBox="0 0 25 24" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                   <path

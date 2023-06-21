@@ -20,6 +20,12 @@
   </section>
   <section class='accordion p-relative'>
     <div class='container'>
+      <div class='search bg-green'>
+        <?php echo get_field('connection_problems_title_search_error') ?>
+        <label class='p-relative'>
+          <input type='number' class='search-error'>
+        </label>
+      </div>
       <ul class='questions-list'>
         <?php if (have_rows('accordion')) :
           while (have_rows('accordion')) :

@@ -10,8 +10,8 @@
   // Create Setting Page
 
   acf_add_options_page(array(
-    'page_title' => 'Theme General Settings',
-    'menu_title' => 'Theme Settings',
+    'page_title' => 'Глобальні налаштування теми',
+    'menu_title' => 'Налаштування теми',
     'menu_slug' => 'theme-general-settings',
     'capability' => 'edit_posts',
     'redirect' => false,
@@ -48,30 +48,28 @@
   function add_menus() {
     add_theme_support('menus');
     register_nav_menu('header-links', 'Header links');
-    register_nav_menu('header-phones', 'Header phones');
     register_nav_menu('footer-navigation', 'footer navigation');
-    register_nav_menu('footer-phones', 'footer phones');
-    register_nav_menu('footer-phones-advertising', 'footer phones advertising');
   }
 
   // add custom type "News"
   add_action('init', 'register_post_types_news');
+
   function register_post_types_news() {
     register_post_type('news', [
       'label' => null,
       'labels' => [
-        'name' => 'News', // основное название для типа записи
-        'singular_name' => 'News', // название для одной записи этого типа
-        'add_new' => 'Add news', // для добавления новой записи
-        'add_new_item' => 'Add news', // заголовка у вновь создаваемой записи в админ-панели.
-        'edit_item' => 'Edit news', // для редактирования типа записи
-        'new_item' => 'New news', // текст новой записи
-        'view_item' => 'Look news', // для просмотра записи этого типа.
-        'search_items' => 'Search news', // для поиска по этим типам записи
+        'name' => 'Новини', // основное название для типа записи
+        'singular_name' => 'Новини', // название для одной записи этого типа
+        'add_new' => 'Добавити Новину', // для добавления новой записи
+        'add_new_item' => 'Добавити Новину', // заголовка у вновь создаваемой записи в админ-панели.
+        'edit_item' => 'Редагувати Новину', // для редактирования типа записи
+        'new_item' => 'Нова Новина', // текст новой записи
+        'view_item' => 'Переглянути Новину', // для просмотра записи этого типа.
+        'search_items' => 'Шукати Новину', // для поиска по этим типам записи
         'not_found' => 'Not found', // если в результате поиска ничего не было найдено
         'not_found_in_trash' => 'Not found in basket', // если не было найдено в корзине
         'parent_item_colon' => '', // для родителей (у древовидных типов)
-        'menu_name' => 'News', // название меню
+        'menu_name' => 'Новини', // название меню
       ],
       'description' => '',
       'public' => true,
@@ -81,10 +79,86 @@
       'menu_position' => null,
       'menu_icon' => null,
       'hierarchical' => false,
-      'supports' => ['title', 'editor'], // 'author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+      'supports' => ['title', 'editor', 'thumbnail'], // 'author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
       'taxonomies' => [],
       'has_archive' => false,
       'rewrite' => true,
       'query_var' => true,
     ]);
   }
+
+  add_theme_support('post-thumbnails', array('news'));
+
+  // add custom type "Tariffs"
+  add_action('init', 'register_post_types_tariffs');
+  function register_post_types_tariffs() {
+    register_post_type('tariffs', [
+      'label' => null,
+      'labels' => [
+        'name' => 'Тарифи', // основное название для типа записи
+        'singular_name' => 'Тарифи', // название для одной записи этого типа
+        'add_new' => 'Добавити Тариф', // для добавления новой записи
+        'add_new_item' => 'Добавити Тариф', // заголовка у вновь создаваемой записи в админ-панели.
+        'edit_item' => 'Редагувати Тариф', // для редактирования типа записи
+        'new_item' => 'Новий Тариф', // текст новой записи
+        'view_item' => 'Переглянути Тариф', // для просмотра записи этого типа.
+        'search_items' => 'Пошук Тарифа', // для поиска по этим типам записи
+        'not_found' => 'Not found', // если в результате поиска ничего не было найдено
+        'not_found_in_trash' => 'Not found in basket', // если не было найдено в корзине
+        'parent_item_colon' => '', // для родителей (у древовидных типов)
+        'menu_name' => 'Тарифи', // название меню
+      ],
+      'description' => '',
+      'public' => true,
+      'show_in_menu' => null, // показывать ли в меню адмнки
+      'show_in_rest' => null, // добавить в REST API. C WP 4.7
+      'rest_base' => null, // $post_type. C WP 4.7
+      'menu_position' => null,
+      'menu_icon' => null,
+      'hierarchical' => false,
+      'supports' => ['title', 'editor', 'thumbnail'], // 'author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+      'taxonomies' => [],
+      'has_archive' => false,
+      'rewrite' => true,
+      'query_var' => true,
+    ]);
+  }
+
+  add_theme_support('post-thumbnails', array('tariffs'));
+
+  // add custom type "Shares"
+  add_action('init', 'register_post_types_shares');
+  function register_post_types_shares() {
+    register_post_type('shares', [
+      'label' => null,
+      'labels' => [
+        'name' => 'Акції', // основное название для типа записи
+        'singular_name' => 'Акції', // название для одной записи этого типа
+        'add_new' => 'Добавити Акцію', // для добавления новой записи
+        'add_new_item' => 'Добавити Акцію', // заголовка у вновь создаваемой записи в админ-панели.
+        'edit_item' => 'Редагувати Акцію', // для редактирования типа записи
+        'new_item' => 'Нова Акція', // текст новой записи
+        'view_item' => 'Переглянути Акцію', // для просмотра записи этого типа.
+        'search_items' => 'Шукати Акцію', // для поиска по этим типам записи
+        'not_found' => 'Not found', // если в результате поиска ничего не было найдено
+        'not_found_in_trash' => 'Not found in basket', // если не было найдено в корзине
+        'parent_item_colon' => '', // для родителей (у древовидных типов)
+        'menu_name' => 'Акції', // название меню
+      ],
+      'description' => '',
+      'public' => true,
+      'show_in_menu' => null, // показывать ли в меню адмнки
+      'show_in_rest' => null, // добавить в REST API. C WP 4.7
+      'rest_base' => null, // $post_type. C WP 4.7
+      'menu_position' => null,
+      'menu_icon' => null,
+      'hierarchical' => false,
+      'supports' => ['title', 'editor', 'thumbnail'], // 'author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+      'taxonomies' => [],
+      'has_archive' => false,
+      'rewrite' => true,
+      'query_var' => true,
+    ]);
+  }
+
+  add_theme_support('post-thumbnails', array('shares'));

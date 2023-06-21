@@ -5,8 +5,8 @@
       max-width: 1500px;
     }
     .btn {
-      background-color: #F2F8F8;
-      color:            #324035;
+      //background-color: #F2F8F8;
+      //color:            #324035;
       &:hover {
         background-color: #03BF6A;
         color:            #fff;
@@ -19,6 +19,9 @@
   .tariffs-form {
     border-radius: 20px;
     margin:        66px auto 0;
+    .close-modal {
+      display: none;
+    }
   }
   &.net {
     .top-radio-buttons {
@@ -66,6 +69,14 @@
           color:            #fff;
         }
       }
+    }
+  }
+}
+
+@media(min-width: 768px) {
+  .connection {
+    .top-radio-buttons {
+      padding: 35px 0 0;
     }
   }
 }

@@ -20,7 +20,7 @@
           while (have_rows('modal_channels_tabs', 'option')) :
             the_row(); ?>
             <li>
-              <button class='btn btn-switch btn-big <?php echo get_sub_field('class-name') ?>'>
+              <button class='btn btn-switch btn-big'>
                 <?php echo get_sub_field('tab') ?>
               </button>
             </li>

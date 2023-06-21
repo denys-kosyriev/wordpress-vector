@@ -30,7 +30,7 @@
                     <a href='<?php echo esc_url($btn['url']) ?>'
                        class='btn btn-switch btn-small
                       <?php
-                         if (get_sub_field('action_tab' === 'Активна')): ?>
+                         if (get_sub_field('action_tab') === 'Активна'): ?>
                           active
                       <?php endif; ?>
                     '>
@@ -60,12 +60,27 @@
       </div>
     </div>
   </section>
-  <section class='tariffs-page tv all'>
+  <section class='tv all'>
     <div class='container'>
       <?php get_template_part('./common/slider-tariffs') ?>
     </div>
   </section>
-  <?php get_template_part('./sections/connection-tv') ?>
+  <section class='connection-tv'>
+    <div class='container'>
+      <div class='content'>
+        <img src='<?php echo get_field('connection_tv_image') ?>' alt=''>
+        <div>
+          <?php echo get_field('connection_tv_title') ?>
+          <p>
+            <?php echo get_field('connection_tv_description') ?>
+          </p>
+          <button class='btn btn-full scroll-up'>
+            <?php echo get_field('connection_tv_button') ?>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <?php get_footer(); ?>

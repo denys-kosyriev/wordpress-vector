@@ -7,7 +7,7 @@
   <main class='documents'>
     <section>
       <div class='container'>
-        <h2><?php echo get_field('documents_title') ?></h2>
+        <h2><?php echo get_the_title() ?></h2>
         <div class='content'>
           <?php if (have_rows('documents_document')) :
             while (have_rows('documents_document')) :

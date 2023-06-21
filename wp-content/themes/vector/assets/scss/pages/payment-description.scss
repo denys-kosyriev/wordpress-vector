@@ -1,6 +1,6 @@
 .payment-description {
   section {
-    padding: 37px 0 69px;
+    padding: 27px 0 69px;
   }
   .container {
     max-width: 1307px;
@@ -17,8 +17,14 @@
     margin:      0 0 3px;
     line-height: 1.4;
     color:       #7A8781;
+    div {
+      display:     flex;
+      flex-wrap:   wrap;
+      align-items: center;
+    }
     a {
-      color: #03BF6A;
+      color:        #03BF6A;
+      padding-left: 10px;
       &:hover {
         text-decoration: underline;
       }
@@ -48,7 +54,7 @@
 @media(min-width: 1024px) {
   .payment-description {
     section {
-      padding: 86px 0 75px;
+      padding: 56px 0 75px;
     }
     h2 {
       line-height:   1;

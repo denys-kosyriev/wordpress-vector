@@ -5,52 +5,33 @@
 <?php get_header(); ?>
 
 <main class='news'>
-  <?php
-$arg = [
-  'post_type'=>'news',
-  'post_status'=>'public',
-  'post_per_page'=>10,
-  ];
-
-
-    $loop = new WP_Query($arg);
-
-
-    if ($loop->have_posts()) {
-      while ( $loop->have_posts()):$loop->the_post();
-        $title = get_the_title();
-        var_dump($title);
-
-      endwhile;
-      wp_reset_postdata();
-    }
-
-  ?>
   <section>
     <div class='container'>
-      <h2><?php echo get_field('news_title') ?></h2>
+      <h2><?php echo get_the_title() ?></h2>
       <div class='carts'>
-        <?php if (have_rows('news')) :
-          while (have_rows('news')) :
-            the_row(); ?>
+        <?php
+          query_posts(array(
+            'post_type' => 'news'
+          ));
+          while (have_posts()) : the_post(); ?>
             <div class='cart p-relative shadow'>
               <div class='img'>
-                <img src='<?php echo get_sub_field('image') ?>' alt='' class='p-relative'>
+                <?php the_post_thumbnail() ?>
               </div>
               <div class='content'>
-                <h3><?php echo get_sub_field('title') ?></h3>
-                <p><?php echo get_sub_field('subtitle') ?></p>
+                <h3><?php the_title() ?></h3>
+                <p><?php the_excerpt(); ?></p>
                 <div class='bottom'>
-                  <?php $action_btn = get_sub_field('button'); ?>
-                  <a href='<?php echo esc_url($action_btn['url']) ?>' class='btn btn-full'>
-                    <?php echo esc_html($action_btn['title']) ?>
+                  <a href='<?php the_permalink() ?>' class='btn btn-full'>
+                    Детальніше
                   </a>
-                  <div><?php echo get_sub_field('date') ?></div>
+                  <div><?php the_date() ?></div>
                 </div>
               </div>
             </div>
           <?php endwhile;
-        endif; ?>
+          wp_reset_postdata();
+        ?>
       </div>
     </div>
   </section>

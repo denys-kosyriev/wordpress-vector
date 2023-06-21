@@ -7,7 +7,7 @@
 <main class='support'>
   <section class='possibilities'>
     <div class='container'>
-      <h2><?php echo get_field('support_title') ?></h2>
+      <h2><?php echo get_the_title() ?></h2>
       <div class='swiper swiper-support'>
         <div class='swiper-wrapper'>
           <?php if (have_rows('support_info')) :
