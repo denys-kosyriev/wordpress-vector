@@ -79,7 +79,7 @@
       'menu_position' => null,
       'menu_icon' => null,
       'hierarchical' => false,
-      'supports' => ['title', 'editor', 'thumbnail'], // 'author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+      'supports' => ['title', 'editor', 'thumbnail', 'excerpt'], // 'author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
       'taxonomies' => [],
       'has_archive' => false,
       'rewrite' => true,
@@ -116,7 +116,7 @@
       'menu_position' => null,
       'menu_icon' => null,
       'hierarchical' => false,
-      'supports' => ['title', 'editor', 'thumbnail'], // 'author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+      'supports' => ['title', 'thumbnail'], // 'author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
       'taxonomies' => [],
       'has_archive' => false,
       'rewrite' => true,

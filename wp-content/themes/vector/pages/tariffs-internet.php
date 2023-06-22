@@ -11,7 +11,7 @@
   <section class='top-radio-buttons'>
     <div>
       <div class='container'>
-        <h2><?php echo get_field('tariffs_title') ?></h2>
+        <h2><?php echo get_field('slider_tariffs_title') ?></h2>
       </div>
     </div>
     <div class='flex'>

@@ -11,8 +11,11 @@
         <div class='content'>
           <?php if (have_rows('documents_document')) :
             while (have_rows('documents_document')) :
-              the_row(); ?>
-              <a href='<?php echo get_sub_field('link') ?>' target='_blank' class='shadow'>
+              the_row();
+              $file = get_field('document');
+              var_dump($file);
+              ?>
+              <a href='<?php echo get_sub_field('document') ?>' target='_blank' class='shadow'>
                 <h3>
                   <?php echo get_sub_field('title') ?>
                 </h3>

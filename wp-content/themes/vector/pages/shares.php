@@ -9,13 +9,14 @@
     <div class='container'>
       <h2><?php echo get_the_title() ?></h2>
       <div class='carts'>
-        <?php if (have_rows('shares_action')) :
-          while (have_rows('shares_action')) :
-            the_row(); ?>
+        <?php query_posts(array(
+          'post_type' => 'shares'
+        ));
+          while (have_posts()) : the_post(); ?>
             <div class='cart p-relative'>
-              <p><?php echo get_sub_field('title') ?></p>
+              <p><?php the_title() ?></p>
               <?php $action_btn = get_sub_field('button'); ?>
-              <a href='<?php echo esc_url($action_btn['url']) ?>'
+              <a href='<?php the_permalink() ?>'
                  class='btn
                   <?php
                    if (get_sub_field('choice_color_button') === 'Зелена'): ?>
@@ -24,12 +25,13 @@
                       btn-black
                 <?php endif; ?>
                   '>
-                <?php echo esc_html($action_btn['title']) ?>
+                Детальніше
               </a>
-              <img src='<?php echo get_sub_field('image') ?>' alt='' class='bg-cover-absolute'>
+              <div class='img'>
+                <?php the_post_thumbnail() ?>
+              </div>
             </div>
-          <?php endwhile;
-        endif; ?>
+          <?php endwhile; ?>
       </div>
     </div>
   </section>

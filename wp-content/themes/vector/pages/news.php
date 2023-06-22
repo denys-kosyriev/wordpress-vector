@@ -20,12 +20,12 @@
               </div>
               <div class='content'>
                 <h3><?php the_title() ?></h3>
-                <p><?php the_excerpt(); ?></p>
+                <p><?php echo get_the_excerpt(); ?></p>
                 <div class='bottom'>
                   <a href='<?php the_permalink() ?>' class='btn btn-full'>
                     Детальніше
                   </a>
-                  <div><?php the_date() ?></div>
+                  <div><?php echo get_the_date() ?></div>
                 </div>
               </div>
             </div>

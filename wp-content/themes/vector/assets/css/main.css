@@ -925,7 +925,7 @@ button, .btn {
   font-size: 16px;
   margin: 0 0 10px;
 }
-.swiper.tariffs-slider .tariff .network img {
+.swiper.tariffs-slider .tariff .network svg {
   width: 15px;
 }
 .swiper.tariffs-slider .tariff .network span {
@@ -945,6 +945,9 @@ button, .btn {
   font-size: 32px;
   line-height: 0.8;
   padding-right: 5px;
+}
+.swiper.tariffs-slider .tariff button {
+  width: 90%;
 }
 .swiper.tariffs-slider .tariff button:hover {
   background-color: #324035;
@@ -1004,22 +1007,7 @@ button, .btn {
   align-items: center;
   line-height: 1;
 }
-.swiper.tariffs-slider .tariff-internet .open-info-net-btn {
-  width: 24px;
-  position: absolute;
-  top: 35px;
-  right: 19px;
-  z-index: 1;
-  transition: 0.2s linear;
-  cursor: pointer;
-}
-.swiper.tariffs-slider .tariff-internet .open-info-net-btn:hover {
-  opacity: 0.7;
-}
-.swiper.tariffs-slider .tariff-internet .open-info-net-btn:active {
-  transform: rotate(45deg);
-}
-.swiper.tariffs-slider .tariff-internet .network img {
+.swiper.tariffs-slider .tariff-internet .network svg {
   margin-right: 8px;
 }
 .swiper.tariffs-slider .tariff-internet .open-details-tv {
@@ -1073,7 +1061,7 @@ button, .btn {
   .swiper.tariffs-slider .tariff .network {
     font-size: 20px;
   }
-  .swiper.tariffs-slider .tariff .network img {
+  .swiper.tariffs-slider .tariff .network svg {
     width: 18px;
   }
   .swiper.tariffs-slider .tariff .price {
@@ -1146,7 +1134,7 @@ button, .btn {
     font-weight: 400;
     margin: 0 0 14px;
   }
-  .swiper.tariffs-slider .tariff .network img {
+  .swiper.tariffs-slider .tariff .network svg {
     width: 20px;
   }
   .swiper.tariffs-slider .tariff .network span {
@@ -1176,7 +1164,7 @@ button, .btn {
   .swiper.tariffs-slider .tariff-internet h4 {
     margin-bottom: 24px;
   }
-  .swiper.tariffs-slider .tariff-internet .network img {
+  .swiper.tariffs-slider .tariff-internet .network svg {
     margin-right: 11px;
   }
   .swiper.tariffs-slider .tariff-tv .header-network p, .swiper.tariffs-slider .tariff-all .header-network p {
@@ -2365,7 +2353,7 @@ button, .btn {
 .blog p, .blog a {
   color: #7A8781;
   line-height: 1.6;
-  margin-bottom: 19px;
+  padding-bottom: 19px;
 }
 .blog a:hover {
   text-decoration: underline;
@@ -2374,7 +2362,7 @@ button, .btn {
   color: #006939;
 }
 .blog .top {
-  padding: 35px 0 22px;
+  padding: 35px 0 30px;
 }
 .blog .top .container {
   max-width: 1307px;
@@ -2382,7 +2370,7 @@ button, .btn {
 .blog .top h1 {
   font-size: 35px;
   line-height: 1.3;
-  margin-bottom: 22px;
+  padding-bottom: 22px;
 }
 .blog .top .date {
   background: #F3F8F8;
@@ -2392,14 +2380,14 @@ button, .btn {
   color: #324035;
   display: inline-flex;
 }
-.blog .blog-img {
+.blog .blog-img img {
   height: 67vw;
   max-height: 551px;
   object-fit: cover;
   margin: 0 0 28px;
 }
 .blog h2 {
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 .blog .bottom {
   padding: 0 0 28px;
@@ -2409,6 +2397,9 @@ button, .btn {
 }
 
 @media (min-width: 567px) {
+  .blog .top {
+    padding: 35px 0 35px;
+  }
   .blog .top .date {
     font-size: 16px;
   }
@@ -2420,34 +2411,40 @@ button, .btn {
 }
 @media (min-width: 1024px) {
   .blog p, .blog a {
-    margin-bottom: 39px;
+    padding-bottom: 39px;
     font-size: 24px;
   }
   .blog .top {
-    padding: 0;
+    padding: 50px 0;
   }
   .blog .top h1 {
-    font-size: 100px;
+    font-size: 75px;
     line-height: 1;
-    margin-bottom: 57px;
+    padding-bottom: 30px;
   }
   .blog .top .date {
     font-size: 18px;
     padding: 10px 29px;
   }
-  .blog .blog-img {
+  .blog .blog-img img {
     margin: 0 0 53px;
   }
   .blog h2 {
-    margin-bottom: 40px;
+    padding-bottom: 40px;
   }
 }
 @media (min-width: 1200px) {
   .blog .top {
-    padding: 80px 0 0;
+    padding: 60px 0 50px;
   }
   .blog .bottom {
     padding: 0 0 47px;
+  }
+}
+@media (min-width: 1440px) {
+  .blog .top h1 {
+    font-size: 100px;
+    padding-bottom: 50px;
   }
 }
 .tariffs-form {
@@ -2685,6 +2682,9 @@ button, .btn {
 .home .action h2 {
   margin-bottom: 24px;
   text-align: center;
+}
+.home .action .relevant-price {
+  display: none;
 }
 .home .show-all-tariffs {
   padding: 18px 0 14px;
@@ -3014,6 +3014,12 @@ button, .btn {
 }
 .shares .cart img {
   transition: 0.2s linear;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  object-fit: cover;
 }
 .shares .cart p {
   color: #fff;
@@ -3120,6 +3126,7 @@ button, .btn {
   transition: 0.2s linear;
 }
 .news .cart .content {
+  width: 100%;
   padding: 0 19px 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -3223,12 +3230,12 @@ button, .btn {
   font-size: 19px;
   font-weight: 700;
 }
+.tariffs-page .action-price {
+  display: none;
+}
 .tariffs-page.internet h3 span {
   color: #03BF6A;
   text-transform: uppercase;
-}
-.tariffs-page.internet .description {
-  display: none;
 }
 .tariffs-page .description {
   margin-bottom: 42px;
@@ -3250,7 +3257,7 @@ button, .btn {
   padding: 0;
 }
 .tariffs-page .description .description-content {
-  padding: 27px 24px 38px;
+  padding: 27px 24px;
   display: flex;
   align-items: start;
   gap: 8px;
@@ -3266,6 +3273,7 @@ button, .btn {
   align-items: center;
   padding: 3px 10px;
   font-size: 16px;
+  margin-right: 8px;
 }
 .tariffs-page .description ul {
   font-size: 14px;
@@ -3303,7 +3311,6 @@ button, .btn {
     margin-bottom: 67px;
   }
   .tariffs-page .description .description-content {
-    padding: 42px 24px 23px;
     gap: 22px;
   }
   .tariffs-page .description .description-content div {

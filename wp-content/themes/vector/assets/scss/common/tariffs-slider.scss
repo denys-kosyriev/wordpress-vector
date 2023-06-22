@@ -52,7 +52,7 @@
       font-weight:     400;
       font-size:       16px;
       margin:          0 0 10px;
-      img {
+      svg {
         width: 15px;
       }
       span {
@@ -75,6 +75,7 @@
       }
     }
     button {
+      width: 90%;
       &:hover {
         background-color: #324035;
         color:            #fff;
@@ -136,23 +137,8 @@
         line-height:     1;
       }
     }
-    .open-info-net-btn {
-      width:      24px;
-      position:   absolute;
-      top:        35px;
-      right:      19px;
-      z-index:    1;
-      transition: .2s linear;
-      cursor:     pointer;
-      &:hover {
-        opacity: .7;
-      }
-      &:active {
-        transform: rotate(45deg);
-      }
-    }
     .network {
-      img {
+      svg {
         margin-right: 8px;
       }
     }
@@ -214,7 +200,7 @@
       }
       .network {
         font-size: 20px;
-        img {
+        svg {
           width: 18px;
         }
       }
@@ -292,7 +278,7 @@
         font-size:   24px;
         font-weight: 400;
         margin:      0 0 14px;
-        img {
+        svg {
           width: 20px;
         }
         span {
@@ -326,7 +312,7 @@
         margin-bottom: 24px;
       }
       .network {
-        img {
+        svg {
           margin-right: 11px;
         }
       }
