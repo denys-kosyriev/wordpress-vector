@@ -28,21 +28,6 @@
   }
   .description {
     margin-bottom: 42px;
-    //&:not(&:nth-of-type(1)) {
-    //  display: none;
-    //}
-    &:nth-of-type(1) {
-      display: none !important;
-    }
-    &:first-of-type {
-      display: none !important;
-    }
-    &:nth-child(1) {
-      display: none !important;
-    }
-    &:nth-child(1) {
-      display: none !important;
-    }
     .container {
       max-width: 996px;
       padding:   0;

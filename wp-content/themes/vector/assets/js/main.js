@@ -6,15 +6,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const languagesList = document.getElementsByClassName('languages-list');
   const languagesListLanguage = document.getElementsByClassName('languages-list-language');
 
-  for(let i = 0; i< language[i]; i++) {
-  language[i].addEventListener('click', (e) => {
+  for (let i = 0; i < language[i]; i++) {
+    language[i].addEventListener('click', (e) => {
       languagesList[i].classList.toggle('d-none');
-    // const closeLanguagesList = e.composedPath().includes(language[i]);
-    // if (!closeLanguagesList) {
-    //   languagesList.classList.add('d-none');
-    // } else if (closeLanguagesList) {
-    // }
-  })
+      // const closeLanguagesList = e.composedPath().includes(language[i]);
+      // if (!closeLanguagesList) {
+      //   languagesList.classList.add('d-none');
+      // } else if (closeLanguagesList) {
+      // }
+    })
   }
 
   // Array.from(languagesListLanguage).map(languageItem => {
@@ -90,20 +90,20 @@ document.addEventListener('DOMContentLoaded', function () {
   const questionsIconSelect = document.getElementsByClassName('icon-select');
   const question = document.getElementsByClassName('question');
 
-  Array.from(questionsSelects).map((select, index) => {
-    document.addEventListener('click', (e) => {
-      const clickSQuestion = e.composedPath().includes(question[index]);
+  for (let i = 0; i < questionsSelects.length; i++) {
+    questionsSelects[i].addEventListener('click', (e) => {
+      const clickSQuestion = e.composedPath().includes(question[i]);
       if (clickSQuestion) {
-        questionsAnswer[index].classList.toggle('d-none');
-        questionsIconSelect[index].classList.toggle('open');
-        select.classList.toggle('active');
+        questionsAnswer[i].style.maxHeight = questionsAnswer[i].scrollHeight + 'px';
+        questionsAnswer[i].classList.toggle('show-answer');
+        questionsIconSelect[i].classList.toggle('open');
+        questionsSelects[i].classList.toggle('active');
       }
-      question[index].classList.remove('active');
-      if (!questionsAnswer[index].className.includes('d-none')) {
-        question[index].classList.add('active');
+      if (!questionsAnswer[i].className.includes('show-answer')) {
+        questionsAnswer[i].style.maxHeight = 0;
       }
     })
-  })
+  }
 
   // Open modal tariff
 
@@ -144,23 +144,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
-  // Open modal info Internet tariff
-
-  const openInfoNetBtn = document.getElementsByClassName('open-info-net-btn');
-  const modalInfo = document.getElementsByClassName('modal-net-info');
-  for (let i = 0; i < openInfoNetBtn.length; i++) {
-    openInfoNetBtn[i].addEventListener('click', function () {
-      modalInfo[i].classList.remove('d-none');
-      const timeShowModalInfo = setTimeout(() => {
-        modalInfo[i].classList.add('d-none');
-      }, 3000)
-      modalInfo[i].addEventListener('click', () => {
-        clearTimeout(timeShowModalInfo)
-        modalInfo[i].classList.add('d-none');
-      });
-    })
-  }
-
   // Close modals
 
   const modals = document.getElementsByClassName('modal');
@@ -181,21 +164,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Open and close burger menu
 
-  const btnBurgerOpen = document.getElementsByClassName('burger-open')[0];
-  const btnBurgerClose = document.getElementsByClassName('burger-close')[0];
+  const burgerBtn = document.getElementsByClassName('burger-btn')[0];
   const burgerMenu = document.getElementsByClassName('burger-menu')[0];
-  document.addEventListener('click', (e) => {
-    const clickBtnOpen = e.composedPath().includes(btnBurgerOpen);
-    const clickBtnClose = e.composedPath().includes(btnBurgerClose);
-    if (clickBtnOpen) {
-      btnBurgerOpen.classList.add('d-none');
-      btnBurgerClose.classList.remove('d-none');
-      burgerMenu.classList.remove('d-none');
-    } else if (clickBtnClose) {
-      btnBurgerOpen.classList.remove('d-none');
-      btnBurgerClose.classList.add('d-none');
-      burgerMenu.classList.add('d-none');
-    }
+
+  burgerBtn.addEventListener('click', (e) => {
+    burgerBtn.classList.toggle('active');
+    burgerMenu.classList.toggle('open-burger');
   })
 
   // Click scroll top
@@ -207,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Work channel list changes
+  // Work channels list changes
 
   const tariffsForm = document.getElementsByClassName('tariffs-form')[0];
   const buttons = document.getElementsByClassName('btn-switch');

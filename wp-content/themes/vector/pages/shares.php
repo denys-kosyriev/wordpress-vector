@@ -15,13 +15,12 @@
           while (have_posts()) : the_post(); ?>
             <div class='cart p-relative'>
               <p><?php the_title() ?></p>
-              <?php $action_btn = get_sub_field('button'); ?>
               <a href='<?php the_permalink() ?>'
                  class='btn
                   <?php
-                   if (get_sub_field('choice_color_button') === 'Зелена'): ?>
+                   if (get_field('choice_color_button') === 'Зелена'): ?>
                    btn-full
-                   <?php elseif (get_sub_field('choice_color_button') === 'Чорна'): ?>
+                   <?php elseif (get_field('choice_color_button') === 'Чорна'): ?>
                       btn-black
                 <?php endif; ?>
                   '>

@@ -23,7 +23,12 @@ body {
 }
 
 main {
-  flex: 1 0 auto;
+  flex:        1 0 auto;
+  padding-top: 52px;
+}
+
+main ~ :not(footer) {
+  display: none;
 }
 
 section {
@@ -251,7 +256,7 @@ button, .btn {
     }
   }
   & &-pagination.swiper-pagination-bullets {
-    bottom: 0;
+    bottom: 6px;
     span {
       cursor:           pointer;
       height:           8px;
@@ -544,7 +549,7 @@ button, .btn {
 
 @media(min-width: 1200px) {
   main {
-    padding-top: 109px;
+    padding-top: 139px;
   }
 }
 

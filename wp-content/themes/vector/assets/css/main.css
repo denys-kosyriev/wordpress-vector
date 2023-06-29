@@ -24,6 +24,11 @@ body {
 
 main {
   flex: 1 0 auto;
+  padding-top: 52px;
+}
+
+main ~ :not(footer) {
+  display: none;
 }
 
 section {
@@ -248,7 +253,7 @@ button, .btn {
   z-index: 0;
 }
 .swiper .swiper-pagination.swiper-pagination-bullets {
-  bottom: 0;
+  bottom: 6px;
 }
 .swiper .swiper-pagination.swiper-pagination-bullets span {
   cursor: pointer;
@@ -512,7 +517,7 @@ button, .btn {
 }
 @media (min-width: 1200px) {
   main {
-    padding-top: 109px;
+    padding-top: 139px;
   }
 }
 @media (min-width: 1440px) {
@@ -542,6 +547,12 @@ button, .btn {
 .header .top {
   display: none;
 }
+.header .main {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
 .header .main .content {
   min-height: 52px;
   display: flex;
@@ -564,6 +575,25 @@ button, .btn {
 .header .main .logo:active {
   opacity: 0.5;
 }
+.header .main .burger-btn svg:nth-of-type(1) {
+  display: block;
+}
+.header .main .burger-btn svg:nth-of-type(2) {
+  display: none;
+}
+.header .main .burger-btn.active svg:nth-of-type(1) {
+  display: none;
+}
+.header .main .burger-btn.active svg:nth-of-type(2) {
+  display: block;
+}
+.header .main .burger-open {
+  height: 30px;
+  width: 35px;
+}
+.header .main .burger-close {
+  margin-right: 5px;
+}
 .header .main ul {
   display: none;
 }
@@ -585,13 +615,24 @@ button, .btn {
   display: none;
 }
 .header .burger-menu {
-  height: calc(100vh - 52px);
+  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3px 0 30px;
+  padding: 52px 0 30px;
   overflow: auto;
   text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  background-color: #F2F8F8;
+  transition: 0.3s linear;
+  transform: translateY(calc(-100% - 52px));
+}
+.header .burger-menu.open-burger {
+  transform: translateY(0);
 }
 .header .burger-menu svg {
   margin-right: 8px;
@@ -848,10 +889,7 @@ button, .btn {
   .header .main li a:active {
     color: #029c56;
   }
-  .header .main .burger {
-    display: none;
-  }
-  .header .main .burger-open {
+  .header .main .burger-btn {
     display: none;
   }
   .header .main .btn {
@@ -1201,7 +1239,7 @@ button, .btn {
   margin: 0 auto 36px;
 }
 .about.about-company .left .main-img {
-  max-width: 360px;
+  max-width: 460px;
 }
 .about.about-company .left div {
   min-width: 133px;
@@ -1618,6 +1656,7 @@ button, .btn {
   margin-bottom: 8px;
   border: 2px solid transparent;
   transition: 0.3s linear;
+  padding: 0 19px;
 }
 .accordion .questions-select:hover {
   border-color: #03BF6A;
@@ -1627,21 +1666,20 @@ button, .btn {
 }
 .accordion .questions-select.active {
   border-color: #03BF6A;
+  padding: 0 19px 19px;
 }
 .accordion .question {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 23px 19px 16px;
+  padding: 23px 0;
   cursor: pointer;
-}
-.accordion .question.active {
-  padding: 23px 19px 11px;
 }
 .accordion .question p {
   font-size: 18px;
   font-weight: 600;
+  line-height: 1;
 }
 .accordion .question .icon-select {
   width: 10px;
@@ -1651,8 +1689,13 @@ button, .btn {
   transform: rotate(90deg);
 }
 .accordion .questions-answer {
+  max-height: 0;
+  overflow: hidden;
   line-height: 1.6;
-  padding: 0 19px 13px;
+  transition: 0.2s linear;
+}
+.accordion .questions-answer.show-answer {
+  max-height: 400px;
 }
 
 @media (min-width: 768px) {
@@ -1675,19 +1718,22 @@ button, .btn {
     border-radius: 20px;
     border-width: 4px;
     margin-bottom: 19px;
+    padding: 0 32px;
+  }
+  .accordion .questions-select.active {
+    padding: 0 32px 24px;
   }
   .accordion .question {
     width: 100%;
-    padding: 37px 32px 31px;
+    padding: 37px 0;
   }
-  .accordion .question.active {
-    padding: 37px 32px 19px;
+  .accordion .question.open {
+    padding: 37px 0 24px;
   }
   .accordion .question p {
     font-size: 32px;
   }
   .accordion .questions-answer {
-    padding: 0 32px 24px;
     line-height: 1.8;
   }
 }
@@ -2279,7 +2325,7 @@ button, .btn {
 }
 .connection-tv img {
   max-width: 400px;
-  margin: 60px 0 16px;
+  margin: 0 0 16px;
 }
 .connection-tv h2 {
   line-height: 1.4;
@@ -2304,7 +2350,7 @@ button, .btn {
 }
 @media (min-width: 1024px) {
   .connection-tv {
-    padding: 50px 0 80px;
+    padding: 0 0 80px;
   }
   .connection-tv .content {
     padding: 0 0 0 42px;
@@ -2336,7 +2382,7 @@ button, .btn {
 }
 @media (min-width: 1440px) {
   .connection-tv {
-    padding: 40px 0 90px;
+    padding: 0 0 90px;
   }
   .connection-tv img {
     max-width: 700px;
@@ -2449,9 +2495,7 @@ button, .btn {
 }
 .tariffs-form {
   max-width: 566px;
-  max-height: 100vh;
   width: 100%;
-  overflow: auto;
   padding: 26px 21px 24px;
   background-color: #fff;
   border-radius: 20px 20px 0 0;
@@ -2627,7 +2671,7 @@ button, .btn {
   }
 }
 .home .banners {
-  padding: 45px 0 34px;
+  padding: 25px 0 34px;
 }
 .home .banners .container {
   max-width: 1488px;
@@ -2654,8 +2698,8 @@ button, .btn {
   transition: 0.3s linear;
 }
 .home .banners .swiper-banners .swiper-slide p {
-  width: 50%;
-  font-size: 10px;
+  width: 75%;
+  font-size: 12px;
   font-weight: 400;
   color: #fff;
   margin-bottom: 18px;
@@ -2684,6 +2728,9 @@ button, .btn {
   text-align: center;
 }
 .home .action .relevant-price {
+  display: none;
+}
+.home .action .description-content {
   display: none;
 }
 .home .show-all-tariffs {
@@ -2746,49 +2793,58 @@ button, .btn {
 }
 .home .payment {
   width: 100%;
-  padding: 49px 0 0;
+  padding: 30px 0 0;
   overflow: hidden;
 }
-.home .payment .payment-content {
-  padding: 126px 27px 41px;
-  border-radius: 20px;
-  background-color: #F2F8F8;
-}
-.home .payment .payment-content::before {
+.home .payment::before {
   content: "";
-  height: 100%;
+  height: 30%;
   width: 100%;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   z-index: -1;
-  background: linear-gradient(114.04deg, #03BF6A 24.98%, #6AE37E 101.83%);
-  margin-top: 247px;
+  background: #03bf6a;
 }
-.home .payment img {
-  width: 179px;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  z-index: 2;
-  transform: translateX(-50%);
+.home .payment .payment-content {
+  padding: 20px 27px 41px;
+  border-radius: 20px;
+  background-color: #F2F8F8;
 }
 .home .payment h2 {
   font-weight: 700;
   font-size: 28px;
-  margin: 0 11px 44px;
+  margin: 0 11px 24px;
   line-height: 1.2;
+  text-align: center;
 }
-.home .payment h2 span {
-  display: inline;
-  color: #03BF6A;
+.home .payment .banks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
 .home .payment a {
-  max-width: 272px;
-  width: 100%;
-  font-size: 15px;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  min-height: 60px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #03bf6a;
+  padding: 15px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  transition: 0.3s linear;
+}
+.home .payment a:hover {
+  border-color: #000;
+}
+.home .payment img {
+  max-width: 60px;
+  max-height: 60px;
+  margin-right: 15px;
 }
 
 @media (min-width: 400px) {
@@ -2829,26 +2885,26 @@ button, .btn {
     right: 0;
     transform: translateX(0);
   }
-  .home .payment {
-    padding: 63px 0 0;
+  .home .payment::before {
+    background: linear-gradient(114.04deg, #03BF6A 24.98%, #6AE37E 101.83%);
   }
   .home .payment .container {
     max-width: 900px;
   }
   .home .payment .payment-content {
-    min-height: 230px;
-    padding: 41px 20px 41px 50%;
+    padding: 41px 20px 41px;
   }
-  .home .payment h2 {
-    text-align: start;
-  }
-  .home .payment img {
-    width: 300px;
-    transform: translateX(-340px);
+  .home .payment .banks {
+    gap: 25px;
   }
   .home .payment a {
-    margin-left: 0;
-    transform: translateX(0);
+    font-size: 30px;
+    padding: 20px 30px;
+    border-radius: 20px;
+  }
+  .home .payment img {
+    max-width: 80px;
+    max-height: 80px;
   }
 }
 @media (min-width: 1024px) {
@@ -2873,7 +2929,7 @@ button, .btn {
     font-size: 24px;
   }
   .home .action {
-    padding: 60px 0 0;
+    padding: 40px 0 0;
   }
   .home .action h2 {
     margin-bottom: 56px;
@@ -2904,9 +2960,21 @@ button, .btn {
     max-width: 481px;
     height: 31vw;
   }
-  .home .payment .btn {
-    max-width: 272px;
-    font-size: 24px;
+  .home .payment h2 {
+    font-size: 40px;
+  }
+  .home .payment .banks {
+    gap: 30px;
+  }
+  .home .payment a {
+    font-size: 40px;
+    padding: 20px 40px;
+    border-width: 4px;
+  }
+  .home .payment img {
+    max-width: 120px;
+    max-height: 120px;
+    margin-right: 20px;
   }
 }
 @media (min-width: 1125px) {
@@ -2953,24 +3021,27 @@ button, .btn {
     max-width: 778px;
     height: 554px;
   }
-  .home .payment {
-    padding: 102px 0 0;
-  }
   .home .payment .container {
     max-width: 1480px;
   }
   .home .payment .payment-content {
-    min-height: 376px;
-    padding: 61px 20px 68px 51%;
-  }
-  .home .payment img {
-    width: 508px;
-    transform: translateX(-580px);
+    padding: 40px 20px 60px;
   }
   .home .payment h2 {
     font-size: 59px;
     margin-bottom: 42px;
     line-height: 1.1;
+  }
+  .home .payment .banks {
+    gap: 40px;
+  }
+  .home .payment a {
+    font-size: 44px;
+  }
+  .home .payment img {
+    max-width: 140px;
+    max-height: 140px;
+    margin-right: 30px;
   }
 }
 @media (min-width: 1800px) {
@@ -3068,6 +3139,7 @@ button, .btn {
   }
   .shares .cart p {
     font-size: 42px;
+    line-height: 1.2;
   }
   .shares .cart a {
     margin: auto 0 49px;
@@ -3076,7 +3148,7 @@ button, .btn {
 }
 @media (min-width: 1200px) {
   .shares section {
-    padding: 80px 0 84px;
+    padding: 60px 0 84px;
   }
   .shares .cart {
     width: 31%;
@@ -3208,7 +3280,7 @@ button, .btn {
 }
 @media (min-width: 1200px) {
   .news section {
-    padding: 79px 0 100px;
+    padding: 59px 0 100px;
   }
 }
 @media (min-width: 1440px) {
@@ -3239,18 +3311,6 @@ button, .btn {
 }
 .tariffs-page .description {
   margin-bottom: 42px;
-}
-.tariffs-page .description:nth-of-type(1) {
-  display: none !important;
-}
-.tariffs-page .description:first-of-type {
-  display: none !important;
-}
-.tariffs-page .description:nth-child(1) {
-  display: none !important;
-}
-.tariffs-page .description:nth-child(1) {
-  display: none !important;
 }
 .tariffs-page .description .container {
   max-width: 996px;
@@ -3791,11 +3851,11 @@ button, .btn {
 }
 @media (min-width: 1024px) {
   .support .possibilities {
-    padding: 85px 0 0;
+    padding: 65px 0 0;
   }
   .support .possibilities h2 {
     text-align: start;
-    margin: 0 28px 91px;
+    margin: 0 28px 71px;
   }
   .support .possibilities .swiper-pagination {
     bottom: 0;
@@ -3831,7 +3891,7 @@ button, .btn {
   }
 }
 .payment-description section {
-  padding: 27px 0 69px;
+  padding: 12px 0 69px;
 }
 .payment-description .container {
   max-width: 1307px;
@@ -3880,7 +3940,7 @@ button, .btn {
 }
 @media (min-width: 1024px) {
   .payment-description section {
-    padding: 56px 0 75px;
+    padding: 26px 0 75px;
   }
   .payment-description h2 {
     line-height: 1;
@@ -3924,7 +3984,7 @@ button, .btn {
 
 @media (min-width: 1200px) {
   .settings-iptv section {
-    padding: 88px 0 81px;
+    padding: 68px 0 81px;
   }
   .settings-iptv h2 {
     padding-bottom: 45px;
@@ -4056,6 +4116,11 @@ button, .btn {
     margin-left: 12px;
   }
 }
+@media (min-width: 1200px) {
+  .documents section {
+    padding: 60px 0;
+  }
+}
 @media (min-width: 1440px) {
   .documents .content {
     gap: 30px;
@@ -4087,7 +4152,7 @@ button, .btn {
 }
 .settings h2 {
   text-align: center;
-  padding-bottom: 27px;
+  margin: 0 20px 27px;
   line-height: 1.4;
 }
 .settings .swiper-pagination.swiper-pagination-bullets {
@@ -4117,7 +4182,7 @@ button, .btn {
   object-fit: contain;
 }
 .settings h3 {
-  padding: 4px 0 16px;
+  margin: 4px 0 16px;
 }
 .settings a {
   min-width: 0;
@@ -4130,15 +4195,15 @@ button, .btn {
     font-size: 16px;
   }
   .settings h2 {
-    padding-bottom: 37px;
+    margin-bottom: 37px;
   }
 }
 @media (min-width: 1200px) {
   .settings section {
-    padding: 93px 0 75px;
+    padding: 63px 0 75px;
   }
   .settings h2 {
-    padding-bottom: 76px;
+    margin-bottom: 76px;
     text-align: start;
   }
   .settings .swiper-pagination.swiper-pagination-bullets {
@@ -4150,7 +4215,7 @@ button, .btn {
     font-size: 20px;
   }
   .settings h3 {
-    padding: 18px 0 30px;
+    margin: 18px 0 30px;
   }
   .settings img {
     height: 110px;
@@ -4275,6 +4340,11 @@ button, .btn {
   padding: 0 20px;
   object-fit: cover;
 }
+.connection-problems .no-errors-found {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
 .connection-problems .accordion {
   padding: 0 0 40px;
 }
@@ -4350,6 +4420,9 @@ button, .btn {
   .connection-problems input {
     font-size: 16px;
   }
+  .connection-problems .no-errors-found {
+    font-size: 24px;
+  }
 }
 @media (min-width: 768px) {
   .connection-problems .error {
@@ -4400,6 +4473,9 @@ button, .btn {
   .connection-problems .error .flex img {
     height: 310px;
     max-width: 468px;
+  }
+  .connection-problems .no-errors-found {
+    font-size: 30px;
   }
   .connection-problems .accordion .search {
     padding: 67px 10px 72px;
@@ -4452,7 +4528,6 @@ button, .btn {
 .contacts .back {
   width: 100vw;
   object-fit: cover;
-  zoom: 2.1;
   position: absolute;
   top: 0;
   left: 0;
@@ -4560,7 +4635,8 @@ button, .btn {
     padding: 315px 0 70px;
   }
   .contacts .back {
-    zoom: 1.5;
+    height: 100vh;
+    object-position: top center;
   }
   .contacts .location {
     left: 18%;

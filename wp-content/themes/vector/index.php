@@ -125,7 +125,7 @@
                     fill="#03BF6A" />
                 </svg>
               </div>
-              <div class='questions-answer d-none'>
+              <div class='questions-answer'>
                 <?php echo get_sub_field('answer') ?>
               </div>
             </li>
@@ -137,20 +137,20 @@
   <section class='payment'>
     <div class='container'>
       <div class='payment-content shadow'>
-        <img src='<?php echo get_field('payment_image') ?>' alt=''>
-        <h2>
-          <?php echo get_field('payment_text') ?>
-          <span>
-          <span><?php echo get_field('payment_bank') ?></span>
-          </span>
-        </h2>
-        <?php $link = get_field('payment_link'); ?>
-        <a
-          target='_blank'
-          class='btn btn-full'
-          href='<?php echo esc_url($link['url']) ?>' class='btn btn-full'>
-          <?php echo esc_html($link['title']) ?>
-        </a>
+        <h2><?php echo get_field('payment_text') ?></h2>
+        <div class='banks'>
+          <?php if (have_rows('payment_banks')) :
+            while (have_rows('payment_banks')) :
+              the_row(); ?>
+              <a
+                target='_blank'
+                href='<?php echo get_sub_field('link') ?>'>
+                <img src='<?php echo get_sub_field('logotype') ?>' alt=''>
+                <?php echo get_sub_field('title') ?>
+              </a>
+            <?php endwhile;
+          endif; ?>
+        </div>
       </div>
     </div>
   </section>

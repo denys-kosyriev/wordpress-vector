@@ -11,7 +11,7 @@
   }
   img {
     max-width: 400px;
-    margin:    60px 0 16px;
+    margin:    0 0 16px;
   }
   h2 {
     line-height:    1.4;
@@ -40,7 +40,7 @@
 
 @media(min-width: 1024px) {
   .connection-tv {
-    padding: 50px 0 80px;
+    padding: 0 0 80px;
     .content {
       padding:         0 0 0 42px;
       flex-direction:  row;
@@ -73,7 +73,7 @@
 
 @media(min-width: 1440px) {
   .connection-tv {
-    padding: 40px 0 90px;
+    padding: 0 0 90px;
     img {
       max-width: 700px;
     }

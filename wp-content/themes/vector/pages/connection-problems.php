@@ -26,6 +26,7 @@
           <input type='number' class='search-error'>
         </label>
       </div>
+      <p class='no-errors-found d-none'>Помилок не знайдено</p>
       <ul class='questions-list'>
         <?php if (have_rows('accordion')) :
           while (have_rows('accordion')) :
@@ -43,7 +44,7 @@
                     fill="#03BF6A" />
                 </svg>
               </div>
-              <div class='questions-answer d-none'>
+              <div class='questions-answer'>
                 <h3>Рішення:</h3>
                 <?php echo get_sub_field('answer') ?>
             </li>

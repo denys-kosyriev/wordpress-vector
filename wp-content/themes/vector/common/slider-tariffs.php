@@ -1,4 +1,5 @@
 <?php
+  var_dump($_GET['location']);
   if (have_rows('slider_tariffs')) :
     while (have_rows('slider_tariffs')) :
       the_row(); ?>
@@ -92,10 +93,10 @@
                         <p class='price'>
                           <span class='relevant-price'><?php echo get_field('tariffs_price') ?></span>
                           <span class='action-price'><?php echo get_field('tariffs_action_price') ?></span>
-                          <?php echo get_field('tariffs_currency_term') ?>
+                          грн/міс
                         </p>
                         <button class='btn btn-full open-connect-tv-modal-js'>
-                          <?php echo get_field('tariffs_button') ?>
+                          Підключити
                         </button>
                         <div class='open-details-tv-block'>
                           <p class='open-details-tv'>Детальніше</p>

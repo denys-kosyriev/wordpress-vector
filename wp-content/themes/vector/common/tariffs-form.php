@@ -12,5 +12,5 @@
     </defs>
   </svg>
   <h3 class='title-tariff-modal'>Назва пакету</h3>
-  <?php echo do_shortcode('[contact-form-7 id="854" title="Tariffs-form"]'); ?>
+  <?php echo do_shortcode('[contact-form-7 id="854" title="Tariffs Form"]'); ?>
 </div>

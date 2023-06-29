@@ -7,9 +7,9 @@
     padding:   0;
   }
   h2 {
-    text-align:     center;
-    padding-bottom: 27px;
-    line-height:    1.4;
+    text-align:  center;
+    margin:      0 20px 27px;
+    line-height: 1.4;
   }
   .swiper-pagination.swiper-pagination-bullets {
     bottom: 35px;
@@ -38,7 +38,7 @@
     object-fit:    contain;
   }
   h3 {
-    padding: 4px 0 16px;
+    margin: 4px 0 16px;
   }
   a {
     min-width:  0;
@@ -53,7 +53,7 @@
       font-size: 16px;
     }
     h2 {
-      padding-bottom: 37px;
+      margin-bottom: 37px;
     }
   }
 }
@@ -61,11 +61,11 @@
 @media(min-width: 1200px) {
   .settings {
     section {
-      padding: 93px 0 75px;
+      padding: 63px 0 75px;
     }
     h2 {
-      padding-bottom: 76px;
-      text-align:     start;
+      margin-bottom: 76px;
+      text-align:    start;
     }
     .swiper-pagination.swiper-pagination-bullets {
       bottom: 0;
@@ -76,7 +76,7 @@
       font-size:     20px;
     }
     h3 {
-      padding: 18px 0 30px;
+      margin: 18px 0 30px;
     }
     img {
       height: 110px;

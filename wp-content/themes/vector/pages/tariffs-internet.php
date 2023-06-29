@@ -1,5 +1,5 @@
 <?php
-  //Template Name: Tariffs Internet
+  //Template Name: Tariffs
 ?>
 
 <?php get_header(); ?>
@@ -23,22 +23,80 @@
                 while (have_rows('tabs')) :
                   the_row(); ?>
                   <li>
-                    <?php
-                      $btn = get_sub_field('tab');
-                    ?>
-                    <a href='<?php echo esc_url($btn['url']) ?>'
-                       class='btn btn-switch btn-small
-                      <?php
-                         if (get_sub_field('action_tab') === 'Активна'): ?>
-                          active
-                      <?php endif; ?>
-                    '>
-                      <?php echo esc_html($btn['title']) ?>
-                    </a>
+                    <div class='btn btn-switch'>
+                      <!--                      --><?php
+                        //                         if (get_sub_field('action_tab') === 'Активна'):
+                      ?>
+                      <!--                          active-->
+                      <!--                      --><?php //endif;
+                      ?>
+                      <?php echo get_sub_field('tab') ?>
+                    </div>
                   </li>
                 <?php endwhile;
               endif; ?>
             </ul>
+          </div>
+          <div class='selected'>
+            <?php
+              $locations = [];
+              //              $locations['address'] = [];
+              if (have_rows('slider_tariffs')) :
+                while (have_rows('slider_tariffs')) :
+                  the_row(); ?>
+                  <?php $tariffs_posts = get_sub_field('selected_tariff');
+                  if ($tariffs_posts): ?>
+                    <?php foreach ($tariffs_posts as $post):
+                      setup_postdata($post);
+                      $locations_posts = get_field('tariffs_selected_location');
+                      if (get_field('tariffs_select_type_tariff') === 'Інтернет' ||
+                        get_field('tariffs_select_type_tariff') === 'Інтернет GPON'):
+                        ?>
+                        <?php
+                        if ($locations_posts): ?>
+                          <?php foreach ($locations_posts as $post):
+                            setup_postdata($post); ?>
+                            <?php array_push($locations, ["title" => get_the_title(), "link" => get_field('select_location')]) ?>
+                          <?php endforeach; ?>
+                          <?php wp_reset_postdata(); ?>
+                        <?php endif; ?>
+                      <?php endif; ?>
+                    <?php endforeach; ?>
+                    <?php wp_reset_postdata(); ?>
+                  <?php endif; ?>
+                <?php endwhile;
+              endif;
+            ?>
+            <div class='select'>
+              <p>Для мешканців</p>
+              <label>
+                <?php
+                  $titles = [];
+                  $newLocations = [];
+                  $newLocations = ["title" => "Всі локації", "link" => "allLocations"];
+                  foreach ($locations as $location) {
+                    if (!in_array($location['title'], $titles)) {
+                      $newLocations[] = $location;
+                      $titles[] = $location['title'];
+                    }
+                  }
+                  var_dump($newLocations);
+                ?>
+                <select class='change-location' name='address'>
+                  <?php foreach ($newLocations as $location) { ?>
+                    <option <?php
+                      if ($location[0]) {
+                        echo "selected disabled hidden";
+                      } else if ($_GET && $_GET['location'] === $location['link']) {
+                      echo 'selected';
+                    }
+                    ?> value='<?php echo $location['link']; ?>'>
+                      <?php echo $location['title']; ?>
+                    </option>
+                  <?php } ?>
+                </select>
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -73,7 +131,7 @@
                     while (have_rows('phones')) :
                       the_row(); ?>
                       <li class='tel-link'>
-                        <a href='<?php echo get_sub_field('phone') ?>'>
+                        <a href='tel:<?php echo get_sub_field('phone') ?>'>
                           <?php echo get_sub_field('phone') ?>
                           <svg width="19" height="18" viewBox="0 0 19 18" fill="none"
                                xmlns="http://www.w3.org/2000/svg">

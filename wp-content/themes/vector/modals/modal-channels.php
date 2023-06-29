@@ -1,4 +1,4 @@
-<div class='modal modal-channels d-none'>
+ <div class='modal modal-channels d-none'>
   <div class='channels p-relative modal-content'>
     <div class='modal-channels-header'>
       <svg class='close-modal' width="35" height="36" viewBox="0 0 35 36" fill="none"

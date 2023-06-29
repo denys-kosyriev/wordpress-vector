@@ -10,8 +10,8 @@
   // Create Setting Page
 
   acf_add_options_page(array(
-    'page_title' => 'Глобальні налаштування теми',
-    'menu_title' => 'Налаштування теми',
+    'page_title' => 'Глобальні налаштування секції',
+    'menu_title' => 'Налаштування секцій',
     'menu_slug' => 'theme-general-settings',
     'capability' => 'edit_posts',
     'redirect' => false,
@@ -38,8 +38,8 @@
     wp_enqueue_script('connection', get_template_directory_uri() . '/assets/js/connection.js');
     wp_enqueue_script('settings', get_template_directory_uri() . '/assets/js/settings.js');
     wp_enqueue_script('support', get_template_directory_uri() . '/assets/js/support.js');
-    wp_enqueue_script('modal-channels', get_template_directory_uri() . '/assets/js/modal-channels.js');
     wp_enqueue_script('connection-problem', get_template_directory_uri() . '/assets/js/connection-problem.js');
+    wp_enqueue_script('tariffs', get_template_directory_uri() . '/assets/js/tariffs.js');
   }
 
   // Connecting Munus
@@ -161,4 +161,78 @@
     ]);
   }
 
-  add_theme_support('post-thumbnails', array('shares'));
+  add_theme_support('post-thumbnails', array('locations'));
+
+  // add custom type "Shares"
+  add_action('init', 'register_post_types_locations');
+  function register_post_types_locations() {
+    register_post_type('locations', [
+      'label' => null,
+      'labels' => [
+        'name' => 'Локації', // основное название для типа записи
+        'singular_name' => 'Локації', // название для одной записи этого типа
+        'add_new' => 'Добавити Локацію', // для добавления новой записи
+        'add_new_item' => 'Добавити Локацію', // заголовка у вновь создаваемой записи в админ-панели.
+        'edit_item' => 'Редагувати Локацію', // для редактирования типа записи
+        'new_item' => 'Нова Локація', // текст новой записи
+        'view_item' => 'Переглянути Локацію', // для просмотра записи этого типа.
+        'search_items' => 'Шукати Локацію', // для поиска по этим типам записи
+        'not_found' => 'Not found', // если в результате поиска ничего не было найдено
+        'not_found_in_trash' => 'Not found in basket', // если не было найдено в корзине
+        'parent_item_colon' => '', // для родителей (у древовидных типов)
+        'menu_name' => 'Локації', // название меню
+      ],
+      'description' => '',
+      'public' => true,
+      'show_in_menu' => null, // показывать ли в меню адмнки
+      'show_in_rest' => null, // добавить в REST API. C WP 4.7
+      'rest_base' => null, // $post_type. C WP 4.7
+      'menu_position' => null,
+      'menu_icon' => null,
+      'hierarchical' => false,
+      'supports' => ['title'], // 'author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+      'taxonomies' => [],
+      'has_archive' => false,
+      'rewrite' => true,
+      'query_var' => true,
+    ]);
+  }
+
+  add_theme_support('post-thumbnails', array('support'));
+
+  // add custom type "Shares"
+  add_action('init', 'register_post_types_support');
+  function register_post_types_support() {
+    register_post_type('support', [
+      'label' => null,
+      'labels' => [
+        'name' => 'Підтримка', // основное название для типа записи
+        'singular_name' => 'Підтримка', // название для одной записи этого типа
+        'add_new' => 'Добавити Питання', // для добавления новой записи
+        'add_new_item' => 'Добавити Питання', // заголовка у вновь создаваемой записи в админ-панели.
+        'edit_item' => 'Редагувати Питання', // для редактирования типа записи
+        'new_item' => 'Нова Питання', // текст новой записи
+        'view_item' => 'Переглянути Питання', // для просмотра записи этого типа.
+        'search_items' => 'Шукати Питання', // для поиска по этим типам записи
+        'not_found' => 'Not found', // если в результате поиска ничего не было найдено
+        'not_found_in_trash' => 'Not found in basket', // если не было найдено в корзине
+        'parent_item_colon' => '', // для родителей (у древовидных типов)
+        'menu_name' => 'Підтримка', // название меню
+      ],
+      'description' => '',
+      'public' => true,
+      'show_in_menu' => null, // показывать ли в меню адмнки
+      'show_in_rest' => null, // добавить в REST API. C WP 4.7
+      'rest_base' => null, // $post_type. C WP 4.7
+      'menu_position' => null,
+      'menu_icon' => null,
+      'hierarchical' => false,
+      'supports' => ['title', 'editor', 'thumbnail'], // 'author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+      'taxonomies' => [],
+      'has_archive' => false,
+      'rewrite' => true,
+      'query_var' => true,
+    ]);
+  }
+
+  add_theme_support('post-thumbnails', array('support'));

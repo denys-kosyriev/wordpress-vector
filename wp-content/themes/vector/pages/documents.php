@@ -13,7 +13,6 @@
             while (have_rows('documents_document')) :
               the_row();
               $file = get_field('document');
-              var_dump($file);
               ?>
               <a href='<?php echo get_sub_field('document') ?>' target='_blank' class='shadow'>
                 <h3>

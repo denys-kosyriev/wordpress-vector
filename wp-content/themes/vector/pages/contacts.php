@@ -36,7 +36,7 @@
           <h2>
             <?php echo get_field('contacts_title') ?>
           </h2>
-          <?php echo do_shortcode('[contact-form-7 id="157" title="Contacts-form"]'); ?>
+          <?php echo do_shortcode('[contact-form-7 id="157" title="Contacts Form"]'); ?>
         </div>
       </div>
     </div>

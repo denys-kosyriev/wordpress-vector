@@ -8,7 +8,6 @@
   .back {
     width:      100vw;
     object-fit: cover;
-    zoom:       2.1;
     position:   absolute;
     top:        0;
     left:       0;
@@ -120,7 +119,8 @@
       padding: 315px 0 70px;
     }
     .back {
-      zoom: 1.5;
+      height:          100vh;
+      object-position: top center;
     }
     .location {
       left: 18%;

@@ -131,6 +131,14 @@
   }
 }
 
+@media(min-width: 1200px) {
+  .documents {
+    section {
+      padding: 60px 0;
+    }
+  }
+}
+
 @media(min-width: 1440px) {
   .documents {
     .content {

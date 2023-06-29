@@ -28,7 +28,7 @@
                       the_row(); ?>
                       <li class='tel-link'>
                         <?php $phone = get_sub_field('phone'); ?>
-                        <a href='<?php echo get_sub_field('phone') ?>'>
+                        <a href='tel:<?php echo get_sub_field('phone') ?>'>
                           <?php echo get_sub_field('phone') ?>
                           <svg viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
