@@ -97,6 +97,8 @@ li a {
 
 label {
   width: 100%;
+  display: inline-flex;
+  margin-bottom: 11px;
 }
 
 input, select, textarea {
@@ -120,10 +122,6 @@ input:focus, select:focus, textarea:focus {
 }
 input .error, select .error, textarea .error {
   border-color: #FF2F2F;
-}
-
-input {
-  margin-bottom: 11px;
 }
 
 textarea {
@@ -324,7 +322,7 @@ button, .btn {
   z-index: 1000;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .close-modal {
@@ -471,7 +469,7 @@ button, .btn {
   }
 }
 @media (min-width: 768px) {
-  input {
+  label {
     margin-bottom: 15px;
   }
   .wpcf7 form .wpcf7-response-output,
@@ -511,7 +509,7 @@ button, .btn {
   input:hover, select:hover, textarea:hover {
     border: 2px solid #03BF6A;
   }
-  input {
+  label {
     margin-bottom: 21px;
   }
   select {
@@ -1823,7 +1821,7 @@ button, .btn {
   padding: 10px 0;
 }
 .modal-channels .channels {
-  height: 100%;
+  max-height: 100%;
   max-width: 1416px;
   width: 100%;
   background: #FFFFFF;
@@ -1866,7 +1864,6 @@ button, .btn {
   font-size: 12px;
 }
 .modal-channels .scroll {
-  display: none;
   padding: 1px 21px 0 25px;
 }
 .modal-channels .title-channels {
@@ -2052,8 +2049,12 @@ button, .btn {
   flex-direction: column;
   align-items: start;
 }
+.top-radio-buttons .selected .select p {
+  margin: 0;
+}
 .top-radio-buttons .selected label {
   max-width: 412px;
+  margin: 0;
 }
 .top-radio-buttons .selected select {
   margin: 13px 0 25px;
@@ -2493,7 +2494,7 @@ button, .btn {
 .tariffs-form label {
   white-space: nowrap;
 }
-.tariffs-form label:nth-of-type(4) input {
+.tariffs-form label:nth-of-type(4) {
   margin-bottom: 13px;
 }
 .tariffs-form label input::placeholder {
@@ -2609,7 +2610,7 @@ button, .btn {
     padding-bottom: 64px;
     font-size: 45px;
   }
-  .tariffs-form.form-tv label:nth-of-type(4) input, .tariffs-form.form-all label:nth-of-type(4) input {
+  .tariffs-form.form-tv label:nth-of-type(4), .tariffs-form.form-all label:nth-of-type(4) {
     margin-bottom: 30px;
   }
   .tariffs-form .block-checkbox {
@@ -2640,11 +2641,11 @@ button, .btn {
     padding: 1px 10px;
     margin-right: 21px;
   }
-  .tariffs-form label:nth-of-type(4) input {
-    margin-bottom: 27px;
-  }
-  .tariffs-form label input {
+  .tariffs-form label {
     margin-bottom: 21px;
+  }
+  .tariffs-form label:nth-of-type(4) {
+    margin-bottom: 27px;
   }
   .tariffs-form label:last-of-type {
     font-size: 24px;
@@ -2785,20 +2786,9 @@ button, .btn {
   padding: 30px 0 0;
   overflow: hidden;
 }
-.home .payment::before {
-  content: "";
-  height: 30%;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  background: #03bf6a;
-}
 .home .payment .payment-content {
   padding: 20px 27px 41px;
   border-radius: 20px;
-  background-color: #F2F8F8;
 }
 .home .payment h2 {
   font-weight: 700;
@@ -2825,7 +2815,7 @@ button, .btn {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border: 2px solid transparent;
+  border: 2px solid #f2dede;
   transition: 0.3s linear;
 }
 .home .payment a:hover {
@@ -2834,9 +2824,15 @@ button, .btn {
 .home .payment a:active {
   border-color: #006939;
 }
+.home .payment a div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
 .home .payment img {
+  max-width: 160px;
   max-height: 60px;
-  margin: auto 0 15px;
+  margin: 0 0 15px;
   object-fit: contain;
 }
 
@@ -2878,9 +2874,6 @@ button, .btn {
     right: 0;
     transform: translateX(0);
   }
-  .home .payment::before {
-    background: linear-gradient(114.04deg, #03BF6A 24.98%, #6AE37E 101.83%);
-  }
   .home .payment .container {
     max-width: 900px;
   }
@@ -2896,6 +2889,7 @@ button, .btn {
     border-radius: 20px;
   }
   .home .payment img {
+    max-width: 200px;
     max-height: 80px;
   }
 }
@@ -2964,8 +2958,9 @@ button, .btn {
     border-width: 4px;
   }
   .home .payment img {
+    max-width: 300px;
     max-height: 120px;
-    margin: auto 0 20px;
+    margin: 0 0 20px;
   }
 }
 @media (min-width: 1125px) {
@@ -3031,7 +3026,7 @@ button, .btn {
   }
   .home .payment img {
     max-height: 140px;
-    margin: auto 0 30px;
+    margin: 0 0 30px;
   }
 }
 @media (min-width: 1800px) {
@@ -3284,20 +3279,19 @@ button, .btn {
 .tariffs-page .top-radio-buttons .container, .tariffs-page div .container {
   max-width: 1504px;
 }
+.tariffs-page .buttons {
+  padding-bottom: 10px;
+}
 .tariffs-page h3 {
   padding-bottom: 25px;
   text-align: center;
 }
-.tariffs-page h3 p {
-  font-size: 19px;
-  font-weight: 700;
+.tariffs-page h3 span {
+  color: #03BF6A;
+  text-transform: uppercase;
 }
 .tariffs-page .action-price {
   display: none;
-}
-.tariffs-page.internet h3 span {
-  color: #03BF6A;
-  text-transform: uppercase;
 }
 .tariffs-page .description {
   margin-bottom: 42px;
@@ -3338,12 +3332,12 @@ button, .btn {
   line-height: 1.3;
   color: #7A8781;
 }
-.tariffs-page.all .connection-tv {
+.tariffs-page .connection-tv {
   padding: 0 0 52px;
 }
 
 @media (min-width: 567px) {
-  .tariffs-page.internet .buttons {
+  .tariffs-page .buttons {
     padding-bottom: 20px;
   }
   .tariffs-page h3 p {
@@ -3354,10 +3348,10 @@ button, .btn {
   }
 }
 @media (min-width: 1024px) {
-  .tariffs-page.internet h2 {
+  .tariffs-page h2 {
     padding-bottom: 45px;
   }
-  .tariffs-page.internet .top .buttons {
+  .tariffs-page .top .buttons {
     padding-bottom: 106px;
   }
   .tariffs-page .description {
@@ -3390,7 +3384,7 @@ button, .btn {
   }
 }
 @media (min-width: 1440px) {
-  .tariffs-page.internet .buttons {
+  .tariffs-page .buttons {
     padding-bottom: 0;
   }
   .tariffs-page h3 {
@@ -3414,7 +3408,7 @@ button, .btn {
   .tariffs-page .flex .wrapper .buttons {
     width: 50%;
   }
-  .tariffs-page.all .connection-tv {
+  .tariffs-page .connection-tv {
     padding: 40px 0 130px;
   }
 }
@@ -3500,12 +3494,7 @@ button, .btn {
 }
 .advertising .billboard p {
   color: #fff;
-}
-.advertising .billboard p:first-of-type {
-  margin-bottom: 17px;
-}
-.advertising .billboard p:last-of-type {
-  margin-bottom: 39px;
+  margin-bottom: 20px;
 }
 .advertising .billboard a {
   margin-left: 50%;
@@ -3536,9 +3525,6 @@ button, .btn {
   }
   .advertising .table-body .table-row div:last-of-type span {
     font-size: 20px;
-  }
-  .advertising .billboard p:last-of-type {
-    margin-bottom: 20px;
   }
   .advertising .billboard img {
     height: 100%;
@@ -3690,22 +3676,16 @@ button, .btn {
   }
   .advertising .billboard p {
     line-height: 1.3;
-  }
-  .advertising .billboard p:first-of-type {
     font-size: 24px;
     margin-bottom: 29px;
   }
-  .advertising .billboard p:nth-of-type(2) {
-    font-size: 18px;
-    margin-bottom: 65px;
-  }
-  .advertising .billboard a {
+  .advertising a {
     min-width: 385px;
     margin: 0;
     transform: translateX(0);
     padding: 33px 15px;
   }
-  .advertising .billboard img {
+  .advertising img {
     height: 32vw;
   }
 }
@@ -4619,13 +4599,14 @@ button, .btn {
   .contacts .form h2 {
     padding-bottom: 61px;
   }
+  .contacts .form label {
+    margin-bottom: 28px;
+  }
   .contacts .form input {
     font-size: 24px;
-    margin-bottom: 28px;
   }
   .contacts .form textarea {
     height: 180px;
-    margin-bottom: 45px;
     font-size: 28px;
     padding: 21px 26px;
   }

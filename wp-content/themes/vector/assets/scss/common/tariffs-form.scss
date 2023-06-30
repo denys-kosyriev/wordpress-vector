@@ -15,9 +15,7 @@
   label {
     white-space: nowrap;
     &:nth-of-type(4) {
-      input {
-        margin-bottom: 13px;
-      }
+      margin-bottom: 13px;
     }
     input {
       &::placeholder {
@@ -151,9 +149,7 @@
     }
     &.form-tv, &.form-all {
       label:nth-of-type(4) {
-        input {
-          margin-bottom: 30px;
-        }
+        margin-bottom: 30px;
       }
     }
     .block-checkbox {
@@ -187,13 +183,9 @@
       }
     }
     label {
+      margin-bottom: 21px;
       &:nth-of-type(4) {
-        input {
-          margin-bottom: 27px;
-        }
-      }
-      input {
-        margin-bottom: 21px;
+        margin-bottom: 27px;
       }
       &:last-of-type {
         font-size: 24px;

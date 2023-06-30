@@ -33,7 +33,7 @@
     <?php if (have_rows('modal_channels_channel_network', 'option')) :
       while (have_rows('modal_channels_channel_network', 'option')) :
         the_row(); ?>
-        <div class='scroll <?php echo get_sub_field('class-name') ?>'>
+        <div class='scroll d-none'>
           <?php if (have_rows('table')) :
             while (have_rows('table')) :
               the_row(); ?>

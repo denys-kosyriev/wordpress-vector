@@ -96,7 +96,9 @@ li {
 }
 
 label {
-  width: 100%;
+  width:         100%;
+  display:       inline-flex;
+  margin-bottom: 11px;
 }
 
 input, select, textarea {
@@ -120,10 +122,6 @@ input, select, textarea {
   .error {
     border-color: #FF2F2F;
   }
-}
-
-input {
-  margin-bottom: 11px;
 }
 
 textarea {
@@ -328,7 +326,7 @@ button, .btn {
   z-index:          1000;
   display:          flex;
   justify-content:  center;
-  align-items:      flex-end;
+  align-items:      center;
 }
 
 .close-modal {
@@ -488,7 +486,7 @@ button, .btn {
 }
 
 @media(min-width: 768px) {
-  input {
+  label {
     margin-bottom: 15px;
   }
   .wpcf7 form .wpcf7-response-output,
@@ -535,7 +533,7 @@ button, .btn {
     }
   }
 
-  input {
+  label {
     margin-bottom: 21px;
   }
 

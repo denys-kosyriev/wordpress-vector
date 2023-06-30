@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?>
 <head>
   <meta charset="<?php bloginfo('charset') ?>" />
   <meta
@@ -195,7 +195,7 @@
           if (have_rows('header_phones', 'option')):
             while (have_rows('header_phones', 'option')):
               the_row(); ?>
-              <a href='<?php echo get_sub_field('phone') ?>'>
+              <a href='tel:<?php echo get_sub_field('phone') ?>'>
                 <?php echo get_sub_field('phone') ?>
               </a>
             <?php endwhile;

@@ -135,9 +135,10 @@
       </ul>
     </div>
   </section>
+
   <section class='payment'>
     <div class='container'>
-      <div class='payment-content shadow'>
+      <div class='payment-content'>
         <h2><?php echo get_field('payment_text') ?></h2>
         <div class='banks'>
           <?php if (have_rows('payment_banks')) :
@@ -146,7 +147,9 @@
               <a
                 target='_blank'
                 href='<?php echo get_sub_field('link') ?>'>
-                <img src='<?php echo get_sub_field('logotype') ?>' alt=''>
+                <div>
+                  <img src='<?php echo get_sub_field('logotype') ?>' alt=''>
+                </div>
                 <?php echo get_sub_field('title') ?>
               </a>
             <?php endwhile;

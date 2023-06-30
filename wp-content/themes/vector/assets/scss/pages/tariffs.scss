@@ -7,24 +7,19 @@
       max-width: 1504px;
     }
   }
+  .buttons {
+    padding-bottom: 10px;
+  }
   h3 {
     padding-bottom: 25px;
     text-align:     center;
-    p {
-      font-size:   19px;
-      font-weight: 700;
+    span {
+      color:          #03BF6A;
+      text-transform: uppercase;
     }
   }
   .action-price {
     display: none;
-  }
-  &.internet {
-    h3 {
-      span {
-        color:          #03BF6A;
-        text-transform: uppercase;
-      }
-    }
   }
   .description {
     margin-bottom: 42px;
@@ -65,19 +60,15 @@
       color:         #7A8781;
     }
   }
-  &.all {
-    .connection-tv {
-      padding: 0 0 52px;
-    }
+  .connection-tv {
+    padding: 0 0 52px;
   }
 }
 
 @media(min-width: 567px) {
   .tariffs-page {
-    &.internet {
-      .buttons {
-        padding-bottom: 20px;
-      }
+    .buttons {
+      padding-bottom: 20px;
     }
     h3 {
       p {
@@ -94,14 +85,12 @@
 
 @media(min-width: 1024px) {
   .tariffs-page {
-    &.internet {
-      h2 {
-        padding-bottom: 45px;
-      }
-      .top {
-        .buttons {
-          padding-bottom: 106px;
-        }
+    h2 {
+      padding-bottom: 45px;
+    }
+    .top {
+      .buttons {
+        padding-bottom: 106px;
       }
     }
     .description {
@@ -140,10 +129,8 @@
 
 @media(min-width: 1440px) {
   .tariffs-page {
-    &.internet {
-      .buttons {
-        padding-bottom: 0;
-      }
+    .buttons {
+      padding-bottom: 0;
     }
     h3 {
       padding: 0 0 40px;
@@ -168,10 +155,8 @@
         }
       }
     }
-    &.all {
-      .connection-tv {
-        padding: 40px 0 130px;
-      }
+    .connection-tv {
+      padding: 40px 0 130px;
     }
   }
 }

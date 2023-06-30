@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const buttons = document.getElementsByClassName('btn-switch');
   const tableChannels = document.getElementsByClassName('scroll');
+  tableChannels[0].classList.remove('d-none')
 
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', () => {

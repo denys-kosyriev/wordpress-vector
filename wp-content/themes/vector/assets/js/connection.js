@@ -12,10 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         buttons[i].classList.add('active');
         if (buttons[i].innerHTML === 'Інтернет') {
-          console.log('net')
           tariffsForm.classList.remove('form-tv');
         } else if (buttons[i].innerHTML === 'Телебачення') {
-          console.log('tv')
           tariffsForm.classList.add('form-tv')
         }
       }
