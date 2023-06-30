@@ -1866,6 +1866,7 @@ button, .btn {
   font-size: 12px;
 }
 .modal-channels .scroll {
+  display: none;
   padding: 1px 21px 0 25px;
 }
 .modal-channels .title-channels {
@@ -4130,9 +4131,6 @@ button, .btn {
 .connection.net .top-radio-buttons li .btn-net {
   background-color: #03BF6A;
   color: #fff;
-}
-.connection.net .tariffs-form .router {
-  display: none;
 }
 .connection.net .connection-tv {
   display: none;

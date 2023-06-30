@@ -16,22 +16,15 @@
         <div class='wrapper'>
           <div class='buttons'>
             <ul>
-              <?php if (have_rows('tabs')) :
-                while (have_rows('tabs')) :
-                  the_row(); ?>
-                  <li>
-                    <?php $btn = get_sub_field('tab'); ?>
-                    <a href='<?php echo esc_url($btn['url']) ?>'
-                       class='btn btn-switch
-                   <?php if (get_sub_field('action_tab') === 'Активна'): ?>
-                       active
-                       <?php endif; ?>
-                    '>
-                      <?php echo esc_html($btn['title']) ?>
-                    </a>
-                  </li>
-                <?php endwhile;
-              endif; ?>
+              <li>
+                <button class='btn btn-switch active'>Інтернет</button>
+              </li>
+              <li>
+                <button class='btn btn-switch'>Телебачення</button>
+              </li>
+              <li>
+                <button class='btn btn-switch'>Все разом</button>
+              </li>
             </ul>
           </div>
         </div>
