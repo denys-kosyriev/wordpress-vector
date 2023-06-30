@@ -22,7 +22,7 @@
                   <li>
                     <?php $btn = get_sub_field('tab'); ?>
                     <a href='<?php echo esc_url($btn['url']) ?>'
-                       class='btn btn-switch btn-small
+                       class='btn btn-switch
                    <?php if (get_sub_field('action_tab') === 'Активна'): ?>
                        active
                        <?php endif; ?>

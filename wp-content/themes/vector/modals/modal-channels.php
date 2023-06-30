@@ -1,4 +1,6 @@
- <div class='modal modal-channels d-none'>
+<?php wp_enqueue_script('modal-channels', get_template_directory_uri() . '/assets/js/modal-channels.js'); ?>
+
+<div class='modal modal-channels d-none'>
   <div class='channels p-relative modal-content'>
     <div class='modal-channels-header'>
       <svg class='close-modal' width="35" height="36" viewBox="0 0 35 36" fill="none"
@@ -16,16 +18,16 @@
       </svg>
       <h2><?php echo get_field('modal_channels_title', 'option') ?></h2>
       <ul class='buttons'>
-        <?php if (have_rows('modal_channels_tabs', 'option')) :
-          while (have_rows('modal_channels_tabs', 'option')) :
-            the_row(); ?>
-            <li>
-              <button class='btn btn-switch btn-big'>
-                <?php echo get_sub_field('tab') ?>
-              </button>
-            </li>
-          <?php endwhile;
-        endif; ?>
+        <li>
+          <button class='btn btn-switch analog-btn active'>
+            Аналогові канали
+          </button>
+        </li>
+        <li>
+          <button class='btn btn-switch digital-btn'>
+            Цифрові канали
+          </button>
+        </li>
       </ul>
     </div>
     <?php if (have_rows('modal_channels_channel_network', 'option')) :
