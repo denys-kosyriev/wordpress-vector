@@ -79,13 +79,20 @@ h3 {
 }
 
 p {
-  font-weight: 400;
-  font-size:   14px;
-  line-height: 1.5;
+  font-weight:   400;
+  font-size:     14px;
+  line-height:   1.5;
+  margin-bottom: 10px;
+  a {
+    color: #03bf6a;
+  }
 }
 
 li {
   list-style: none;
+  a {
+    color: #03bf6a;
+  }
 }
 
 label {
@@ -414,6 +421,18 @@ button, .btn {
   margin-bottom: 7px;
 }
 
+.wpcf7-spinner {
+  display: none;
+}
+
+.wpcf7 form .wpcf7-response-output,
+.wpcf7 form.failed .wpcf7-response-output {
+  padding:       10px;
+  border-radius: 20px;
+  margin:        10px 0;
+  font-size:     16px;
+}
+
 @media(min-width: 567px) {
   h2 {
     font-size: 36px;
@@ -424,7 +443,8 @@ button, .btn {
   }
 
   p {
-    font-size: 18px;
+    font-size:     18px;
+    margin-bottom: 15px;
   }
   input, select, textarea {
     font-size: 18px;
@@ -461,11 +481,19 @@ button, .btn {
       top:    0;
     }
   }
+  .wpcf7 form .wpcf7-response-output,
+  .wpcf7 form.failed .wpcf7-response-output {
+    font-size: 20px;
+  }
 }
 
 @media(min-width: 768px) {
   input {
     margin-bottom: 15px;
+  }
+  .wpcf7 form .wpcf7-response-output,
+  .wpcf7 form.failed .wpcf7-response-output {
+    font-size: 24px;
   }
 }
 
@@ -479,8 +507,9 @@ button, .btn {
   }
 
   p {
-    font-size:   24px;
-    line-height: 1.5;
+    font-size:     24px;
+    line-height:   1.5;
+    margin-bottom: 20px;
   }
 
   button, .btn {
@@ -545,6 +574,11 @@ button, .btn {
       top:    4px;
     }
   }
+  .wpcf7 form .wpcf7-response-output,
+  .wpcf7 form.failed .wpcf7-response-output {
+    padding:   20px;
+    font-size: 28px;
+  }
 }
 
 @media(min-width: 1200px) {
@@ -554,7 +588,8 @@ button, .btn {
 }
 
 @media(min-width: 1440px) {
-  .wpcf7-list-item-label {
+  .wpcf7-list-item-label,
+  .wpcf7 form.failed .wpcf7-response-output {
     padding-left: 30px;
     font-size:    24px;
     &::before {

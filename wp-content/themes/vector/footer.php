@@ -1,3 +1,5 @@
+<?php wp_footer(); ?>
+
 <footer class="footer p-relative">
   <div class='content'>
     <div class="container">

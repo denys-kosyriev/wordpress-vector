@@ -1,5 +1,7 @@
 <?php
   //Template Name: Connection Problem
+
+  wp_enqueue_script('connection-problem', get_template_directory_uri() . '/assets/js/connection-problem.js');
 ?>
 
 <?php get_header(); ?>

@@ -1,5 +1,7 @@
 <?php
   //Template Name: Connection
+
+  wp_enqueue_script('connection', get_template_directory_uri() . '/assets/js/connection.js');
 ?>
 
 <?php get_header(); ?>

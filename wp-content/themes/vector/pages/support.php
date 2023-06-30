@@ -1,5 +1,7 @@
 <?php
   //Template Name: Support
+
+  wp_enqueue_script('support', get_template_directory_uri() . '/assets/js/support.js');
 ?>
 
 <?php get_header(); ?>

@@ -1,5 +1,4 @@
 <?php
-  var_dump($_GET['location']);
   if (have_rows('slider_tariffs')) :
     while (have_rows('slider_tariffs')) :
       the_row(); ?>

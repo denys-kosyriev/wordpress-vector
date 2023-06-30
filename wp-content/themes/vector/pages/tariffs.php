@@ -1,5 +1,7 @@
 <?php
   //Template Name: Tariffs
+
+  wp_enqueue_script('tariffs', get_template_directory_uri() . '/assets/js/tariffs.js');
 ?>
 
 <?php get_header(); ?>
@@ -19,28 +21,26 @@
         <div class='wrapper'>
           <div class='buttons'>
             <ul>
-              <?php if (have_rows('tabs')) :
-                while (have_rows('tabs')) :
-                  the_row(); ?>
-                  <li>
-                    <div class='btn btn-switch'>
-                      <!--                      --><?php
-                        //                         if (get_sub_field('action_tab') === 'Активна'):
-                      ?>
-                      <!--                          active-->
-                      <!--                      --><?php //endif;
-                      ?>
-                      <?php echo get_sub_field('tab') ?>
-                    </div>
-                  </li>
-                <?php endwhile;
-              endif; ?>
+              <li>
+                <div class='btn btn-switch btn-net'>
+                  Інтернет
+                </div>
+              </li>
+              <li>
+                <div class='btn btn-switch btn-tv'>
+                  Телебачення
+                </div>
+              </li>
+              <li>
+                <div class='btn btn-switch active btn-all'>
+                  Все разом
+                </div>
+              </li>
             </ul>
           </div>
           <div class='selected'>
             <?php
               $locations = [];
-              //              $locations['address'] = [];
               if (have_rows('slider_tariffs')) :
                 while (have_rows('slider_tariffs')) :
                   the_row(); ?>
@@ -73,24 +73,20 @@
                 <?php
                   $titles = [];
                   $newLocations = [];
-                  $newLocations = ["title" => "Всі локації", "link" => "allLocations"];
                   foreach ($locations as $location) {
                     if (!in_array($location['title'], $titles)) {
                       $newLocations[] = $location;
                       $titles[] = $location['title'];
                     }
                   }
-                  var_dump($newLocations);
                 ?>
                 <select class='change-location' name='address'>
+                  <option value=''>Всі локації</option>
                   <?php foreach ($newLocations as $location) { ?>
                     <option <?php
-                      if ($location[0]) {
-                        echo "selected disabled hidden";
-                      } else if ($_GET && $_GET['location'] === $location['link']) {
-                      echo 'selected';
-                    }
-                    ?> value='<?php echo $location['link']; ?>'>
+                      if ($_GET && $_GET['location'] === $location['link']) {
+                        echo 'selected';
+                      } ?> value='<?php echo $location['link']; ?>'>
                       <?php echo $location['title']; ?>
                     </option>
                   <?php } ?>
@@ -147,6 +143,22 @@
               <?php endwhile;
             endif; ?>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='connection-tv'>
+    <div class='container'>
+      <div class='content'>
+        <img src='<?php echo get_field('connection_tv_image') ?>' alt=''>
+        <div>
+          <?php echo get_field('connection_tv_title') ?>
+          <p>
+            <?php echo get_field('connection_tv_description') ?>
+          </p>
+          <button class='btn btn-full scroll-up'>
+            <?php echo get_field('connection_tv_button') ?>
+          </button>
         </div>
       </div>
     </div>

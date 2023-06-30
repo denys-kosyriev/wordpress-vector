@@ -1,3 +1,5 @@
+<?php wp_enqueue_script('form-js', get_template_directory_uri() . '/assets/js/form.js'); ?>
+
 <div class='tariffs-form p-relative modal-content'>
   <svg class='close-modal' width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_201_888)">

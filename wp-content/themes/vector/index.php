@@ -1,8 +1,9 @@
 <?php
   //Template Name: Home
-?>
 
-<?php get_header(); ?>
+  get_header();
+  wp_enqueue_script('home11111', get_stylesheet_directory_uri() . '/assets/js/home.js');
+?>
 
 <main class='home'>
   <div class='modal section-form modal-form d-none'>

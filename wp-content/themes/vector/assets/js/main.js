@@ -1,34 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  // Languages list 'header'
-  const language = document.getElementsByClassName('language');
-  const languageName = document.getElementsByClassName('language-name');
-  const languagesList = document.getElementsByClassName('languages-list');
-  const languagesListLanguage = document.getElementsByClassName('languages-list-language');
-
-  for (let i = 0; i < language[i]; i++) {
-    language[i].addEventListener('click', (e) => {
-      languagesList[i].classList.toggle('d-none');
-      // const closeLanguagesList = e.composedPath().includes(language[i]);
-      // if (!closeLanguagesList) {
-      //   languagesList.classList.add('d-none');
-      // } else if (closeLanguagesList) {
-      // }
-    })
-  }
-
-  // Array.from(languagesListLanguage).map(languageItem => {
-  //   languageItem.addEventListener('click', () => {
-  //     languageName.innerHTML = languageItem.innerHTML;
-  //     Array.from(languagesListLanguage).map(item => {
-  //       item.classList.remove('active');
-  //     });
-  //     if (languageName.innerHTML === languageItem.innerHTML) {
-  //       languageItem.classList.add('active');
-  //     }
-  //   })
-  // })
-
   // Position of tariffs and position of pagination tariffs
   const tariffsSlider = document.getElementsByClassName('tariffs-slider');
   const screenWidth = window.screen.width;

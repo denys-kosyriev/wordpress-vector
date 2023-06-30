@@ -1,5 +1,7 @@
 <?php
   //Template Name: Settings
+
+  wp_enqueue_script('settings', get_template_directory_uri() . '/assets/js/settings.js');
 ?>
 
 <?php get_header(); ?>

@@ -45,12 +45,19 @@
         }
       }
     }
-    &.download-receipt {
-      display: inline-flex;
-      label {
-        color:  #03BF6A;
-        cursor: pointer;
-      }
+  }
+  .download-receipt {
+    display:       inline-flex;
+    margin-bottom: 10px;
+    label {
+      color:          #03BF6A;
+      cursor:         pointer;
+      display:        flex;
+      flex-direction: column;
+      align-items:    center;
+    }
+    span {
+      color: #006939;
     }
   }
 
