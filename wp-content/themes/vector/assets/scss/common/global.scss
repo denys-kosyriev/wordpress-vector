@@ -10,6 +10,10 @@ body {
   width: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height:     100vh;
   display:        flex;
@@ -19,7 +23,12 @@ body {
 }
 
 main {
-  flex: 1 0 auto;
+  flex:        1 0 auto;
+  padding-top: 52px;
+}
+
+main ~ :not(footer) {
+  display: none;
 }
 
 section {
@@ -45,6 +54,9 @@ a {
   }
 }
 
+strong {
+  color: #03bf6a;
+}
 
 .container {
   max-width: 1920px;
@@ -67,17 +79,26 @@ h3 {
 }
 
 p {
-  font-weight: 400;
-  font-size:   14px;
-  line-height: 1.5;
+  font-weight:   400;
+  font-size:     14px;
+  line-height:   1.5;
+  margin-bottom: 10px;
+  a {
+    color: #03bf6a;
+  }
 }
 
 li {
   list-style: none;
+  a {
+    color: #03bf6a;
+  }
 }
 
 label {
-  width: 100%;
+  width:         100%;
+  display:       block;
+  margin-bottom: 11px;
 }
 
 input, select, textarea {
@@ -101,10 +122,6 @@ input, select, textarea {
   .error {
     border-color: #FF2F2F;
   }
-}
-
-input {
-  margin-bottom: 11px;
 }
 
 textarea {
@@ -244,7 +261,7 @@ button, .btn {
     }
   }
   & &-pagination.swiper-pagination-bullets {
-    bottom: 0;
+    bottom: 6px;
     span {
       cursor:           pointer;
       height:           8px;
@@ -307,38 +324,160 @@ button, .btn {
   top:              0;
   left:             0;
   z-index:          1000;
-  display:          flex;
-  justify-content:  center;
-  align-items:      flex-end;
+  text-align:       center;
+  &::after {
+    display:        inline-block;
+    vertical-align: middle;
+    width:          0;
+    height:         100%;
+    content:        '';
+  }
 }
 
 .close-modal {
-  padding:       10px 10px 6px;
-  position:      absolute;
-  top:           21px;
-  right:         16px;
-  z-index:       0;
-  cursor:        pointer;
-  border-radius: 10px;
-  transition:    .2s linear;
-  &:hover {
-    background-color: #d2dbdb;
+  width:    18px;
+  position: absolute;
+  top:      21px;
+  right:    16px;
+  z-index:  0;
+  cursor:   pointer;
+  path {
+    transition: .2s linear;
   }
-  &:active {
-    margin: 1px;
-    img {
-      width: 16px;
+  &:hover {
+    path {
+      fill: #006939;
     }
   }
-  img {
-    width:      18px;
-    transition: .2s linear;
+  &:active {
+    path {
+      fill: #029c56;
+    }
   }
 }
 
 .d-none {
   display: none !important;
 }
+
+@media(min-width: 567px) {
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size:     18px;
+    margin-bottom: 15px;
+  }
+  input, select, textarea {
+    font-size: 18px;
+  }
+  .btn, button {
+    min-width: 0;
+    padding:   19px 50px;
+    font-size: 20px;
+  }
+  .btn-switch {
+    font-size: 18px;
+  }
+  .tel-link {
+    a {
+      img, svg {
+        width: 18px;
+      }
+    }
+  }
+  .close-modal {
+    width: 26px;
+    right: 22px;
+  }
+
+}
+
+@media(min-width: 768px) {
+  label {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 56px;
+  }
+
+  h3 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size:     24px;
+    line-height:   1.5;
+    margin-bottom: 20px;
+  }
+
+  button, .btn {
+    border-width: 4px;
+    font-size:    24px;
+    padding:      19px 66px;
+  }
+
+  .btn-switch {
+    font-size: 24px;
+    padding:   16px 42px;
+  }
+
+  input, select, textarea {
+    padding:       21px 32px;
+    border:        2px solid #d2dbdb;
+    border-radius: 40px;
+    color:         #324035;
+    font-size:     24px;
+    font-weight:   500;
+    &:hover {
+      border: 2px solid #03BF6A;
+    }
+  }
+
+  label {
+    margin-bottom: 21px;
+  }
+
+  select {
+    background-position-x: 90%;
+    background-position-y: 54%;
+    background-size:       13px;
+  }
+
+  .swiper {
+    & &-pagination.swiper-pagination-bullets {
+      margin-bottom: 10px;
+      span {
+        height: 20px;
+        width:  20px;
+        margin: 0 15px;
+      }
+    }
+  }
+
+  .close-modal {
+    width: 35px;
+    top:   82px;
+    right: 44px;
+  }
+
+}
+
+@media(min-width: 1200px) {
+  main {
+    padding-top: 139px;
+  }
+}
+
+// ACF styles
 
 .wpcf7-list-item.first.last {
   margin: 0 0 0 21px;
@@ -393,7 +532,7 @@ button, .btn {
     background-color:    #6BC2BB;
     border:              1px solid #03BF6A;
     border-radius:       2px;
-    background-image:    url("../icons/ready.svg");
+    background-image:    url("../images/icons/ready.svg");
     background-size:     12px;
     background-repeat:   no-repeat;
     background-position: center;
@@ -404,46 +543,24 @@ button, .btn {
   margin-bottom: 7px;
 }
 
+.wpcf7-spinner {
+  display: none;
+}
+
+.wpcf7 form .wpcf7-response-output,
+.wpcf7 form.failed .wpcf7-response-output {
+  padding:       10px;
+  border-radius: 100px;
+  margin:        10px 0;
+  font-size:     16px;
+  text-align:    center;
+}
+
+.wpcf7-not-valid-tip {
+  margin-left: 10px;
+}
+
 @media(min-width: 567px) {
-  h2 {
-    font-size: 36px;
-  }
-
-  h3 {
-    font-size: 32px;
-  }
-
-  p {
-    font-size: 18px;
-  }
-  input, select, textarea {
-    font-size: 18px;
-  }
-  .btn, button {
-    min-width: 0;
-    padding:   19px 50px;
-    font-size: 20px;
-  }
-  .btn-switch {
-    font-size: 18px;
-  }
-  .tel-link {
-    a {
-      img, svg {
-        width: 18px;
-      }
-    }
-  }
-  .close-modal {
-    &:active {
-      img {
-        width: 23px;
-      }
-    }
-    img {
-      width: 26px;
-    }
-  }
   .wpcf7-list-item-label {
     padding-left: 16px;
     font-size:    16px;
@@ -458,90 +575,31 @@ button, .btn {
       top:    0;
     }
   }
+  .wpcf7 form .wpcf7-response-output,
+  .wpcf7 form.failed .wpcf7-response-output {
+    font-size: 20px;
+  }
+
+  .wpcf7-not-valid-tip {
+    margin-left: 15px;
+    font-size:   18px;
+  }
 }
 
 @media(min-width: 768px) {
-  input {
-    margin-bottom: 15px;
+  .wpcf7 form .wpcf7-response-output,
+  .wpcf7 form.failed .wpcf7-response-output {
+    font-size: 24px;
   }
 }
 
-@media (min-width: 1024px) {
-  h2 {
-    font-size: 56px;
-  }
-
-  h3 {
-    font-size: 40px;
-  }
-
-  p {
-    font-size:   24px;
-    line-height: 1.5;
-  }
-
-  button, .btn {
-    border-width: 4px;
-    font-size:    24px;
-    padding:      19px 66px;
-  }
-
-  .btn-switch {
-    font-size: 24px;
-    padding:   16px 42px;
-  }
-
-  input, select, textarea {
-    padding:       21px 32px;
-    border:        2px solid #d2dbdb;
-    border-radius: 40px;
-    color:         #324035;
-    font-size:     24px;
-    font-weight:   500;
-    &:hover {
-      border: 2px solid #03BF6A;
-    }
-  }
-
-  input {
-    margin-bottom: 21px;
-  }
-
-  select {
-    background-position-x: 90%;
-    background-position-y: 54%;
-    background-size:       13px;
-  }
-
-  .swiper {
-    & &-pagination.swiper-pagination-bullets {
-      span {
-        height: 20px;
-        width:  20px;
-        margin: 0 15px;
-      }
-    }
-  }
-
-  .close-modal {
-    top:   82px;
-    right: 44px;
-    &:active {
-      margin: 2px;
-      img {
-        width: 32px;
-      }
-    }
-    img {
-      width: 35px;
-    }
-  }
+@media(min-width: 1024px) {
   .wpcf7-list-item-label {
     padding-left: 20px;
     font-size:    20px;
     &::before {
-      height: 17px;
-      width:  17px;
+      height: 19px;
+      width:  19px;
       top:    4px;
     }
     &::after {
@@ -550,16 +608,21 @@ button, .btn {
       top:    4px;
     }
   }
-}
+  .wpcf7 form .wpcf7-response-output,
+  .wpcf7 form.failed .wpcf7-response-output {
+    padding:   20px;
+    font-size: 28px;
+  }
 
-@media(min-width: 1200px) {
-  main {
-    padding-top: 109px;
+  .wpcf7-not-valid-tip {
+    margin-left: 20px;
+    font-size:   24px;
   }
 }
 
 @media(min-width: 1440px) {
-  .wpcf7-list-item-label {
+  .wpcf7-list-item-label,
+  .wpcf7 form.failed .wpcf7-response-output {
     padding-left: 30px;
     font-size:    24px;
     &::before {
@@ -574,3 +637,4 @@ button, .btn {
     }
   }
 }
+

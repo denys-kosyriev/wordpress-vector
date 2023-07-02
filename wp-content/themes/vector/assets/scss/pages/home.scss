@@ -1,6 +1,6 @@
 .home {
   .banners {
-    padding: 45px 0 34px;
+    padding: 25px 0 34px;
     .container {
       max-width: 1488px;
     }
@@ -26,8 +26,8 @@
           transition:     .3s linear;
         }
         p {
-          width:         50%;
-          font-size:     10px;
+          width:         75%;
+          font-size:     12px;
           font-weight:   400;
           color:         #fff;
           margin-bottom: 18px;
@@ -56,6 +56,12 @@
     h2 {
       margin-bottom: 24px;
       text-align:    center;
+    }
+    .relevant-price {
+      display: none;
+    }
+    .description-content {
+      display: none;
     }
   }
   .show-all-tariffs {
@@ -118,48 +124,56 @@
   }
   .payment {
     width:    100%;
-    padding:  49px 0 0;
+    padding:  30px 0 0;
     overflow: hidden;
     .payment-content {
-      padding:          126px 27px 41px;
-      border-radius:    20px;
-      background-color: #F2F8F8;
-      &::before {
-        content:    '';
-        height:     100%;
-        width:      100%;
-        position:   absolute;
-        top:        0;
-        left:       0;
-        z-index:    -1;
-        background: linear-gradient(114.04deg, #03BF6A 24.98%, #6AE37E 101.83%);
-        margin-top: 247px;
-      }
-    }
-    img {
-      width:     179px;
-      position:  absolute;
-      top:       0;
-      left:      50%;
-      z-index:   2;
-      transform: translateX(-50%);
+      padding:       20px 27px 41px;
+      border-radius: 20px;
     }
     h2 {
       font-weight: 700;
       font-size:   28px;
-      margin:      0 11px 44px;
+      margin:      0 11px 24px;
       line-height: 1.2;
-      span {
-        display: inline;
-        color:   #03BF6A;
-      }
+      text-align:  center;
+    }
+    .banks {
+      display:         flex;
+      flex-wrap:       wrap;
+      justify-content: center;
+      gap:             15px;
     }
     a {
-      max-width:   272px;
-      width:       100%;
-      font-size:   15px;
-      margin-left: 50%;
-      transform:   translateX(-50%);
+      min-height:       60px;
+      font-size:        24px;
+      font-weight:      600;
+      color:            #000;
+      padding:          15px 20px;
+      background-color: #fff;
+      border-radius:    10px;
+      display:          flex;
+      flex-direction:   column;
+      align-items:      center;
+      justify-content:  space-between;
+      border:           2px solid #f2dede;
+      transition:       .3s linear;
+      &:hover {
+        border-color: #03bf6a;
+      }
+      &:active {
+        border-color: #006939;
+      }
+      div {
+        height:      100%;
+        display:     flex;
+        align-items: center;
+      }
+    }
+    img {
+      max-width:  160px;
+      max-height: 60px;
+      margin:     0 0 15px;
+      object-fit: contain;
     }
   }
 }
@@ -228,24 +242,23 @@
       }
     }
     .payment {
-      padding: 63px 0 0;
       .container {
         max-width: 900px;
       }
       .payment-content {
-        min-height: 230px;
-        padding:    41px 20px 41px 50%;
+        padding: 41px 20px 41px;
       }
-      h2 {
-        text-align: start;
-      }
-      img {
-        width:     300px;
-        transform: translateX(-340px);
+      .banks {
+        gap: 25px;
       }
       a {
-        margin-left: 0;
-        transform:   translateX(0);
+        font-size:     30px;
+        padding:       20px 30px;
+        border-radius: 20px;
+      }
+      img {
+        max-width:  200px;
+        max-height: 80px;
       }
     }
   }
@@ -278,7 +291,7 @@
       }
     }
     .action {
-      padding: 60px 0 0;
+      padding: 40px 0 0;
       h2 {
         margin-bottom: 56px;
       }
@@ -310,9 +323,21 @@
       }
     }
     .payment {
-      .btn {
-        max-width: 272px;
-        font-size: 24px;
+      h2 {
+        font-size: 40px;
+      }
+      .banks {
+        gap: 30px;
+      }
+      a {
+        font-size:    40px;
+        padding:      20px 40px;
+        border-width: 4px;
+      }
+      img {
+        max-width:  300px;
+        max-height: 120px;
+        margin:     0 0 20px;
       }
     }
   }
@@ -380,22 +405,26 @@
       }
     }
     .payment {
-      padding: 102px 0 0;
       .container {
         max-width: 1480px;
       }
       .payment-content {
-        min-height: 376px;
-        padding:    61px 20px 68px 51%;
-      }
-      img {
-        width:     508px;
-        transform: translateX(-580px);
+        padding: 40px 20px 60px;
       }
       h2 {
         font-size:     59px;
         margin-bottom: 42px;
         line-height:   1.1;
+      }
+      .banks {
+        gap: 40px;
+      }
+      a {
+        font-size: 44px;
+      }
+      img {
+        max-height: 140px;
+        margin:     0 0 30px;
       }
     }
   }

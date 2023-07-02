@@ -1,20 +1,21 @@
 <?php
   //Template Name: Home
-?>
 
-<?php get_header(); ?>
+  get_header();
+  wp_enqueue_script('home11111', get_stylesheet_directory_uri() . '/assets/js/home.js');
+?>
 
 <main class='home'>
   <div class='modal section-form modal-form d-none'>
-    <?php get_template_part('Tariffs-form') ?>
+    <?php get_template_part('./common/tariffs-form') ?>
   </div>
-  <?php get_template_part('modal-channels') ?>
+  <?php get_template_part('./modals/modal-channels') ?>
   <section class='banners'>
     <div class="container">
       <div class='swiper swiper-banners'>
         <div class='swiper-wrapper'>
-          <?php if (have_rows('slider_shares')) :
-            while (have_rows('slider_shares')) :
+          <?php if (have_rows('main_slider')) :
+            while (have_rows('main_slider')) :
               the_row(); ?>
               <div class='swiper-slide hidden'>
                 <div class='p-relative'>
@@ -38,104 +39,9 @@
   </section>
   <section class='action'>
     <div class='container'>
-      <h2><?php echo get_field('tariffs_title') ?></h2>
-      <?php if (have_rows('tariffs_types')) :
-        while (have_rows('tariffs_types')) :
-        the_row(); ?>
-      <div class='swiper tariffs-slider action-section'>
-        <div class='swiper-wrapper tariffs-wrapper'>
-          <?php if (have_rows('select_net_or_tv_and_all')) :
-            while (have_rows('select_net_or_tv_and_all')) :
-              the_row(); ?>
-              <?php
-              if (get_sub_field('Select_type_tariff') === 'Internet'): ?>
-                <div class='swiper-slide '>
-                  <div class='tariff tariff-internet'>
-                    <div class='modal-net-info d-none'>
-                      <div>!</div>
-                      <p><?php echo get_sub_field('info_net') ?></p>
-                    </div>
-                    <img src='./assets/icons/info.svg' alt='' class='info'>
-                    <h4><?php echo get_sub_field('title') ?></h4>
-                    <div class='company'>
-                      <?php echo get_sub_field('company') ?>
-                    </div>
-                    <div class='bottom'>
-                      <p class='speed'>
-                        до
-                        <span><?php echo get_sub_field('speed') ?></span>
-                        Мбіт
-                      </p>
-                      <p class='no-limited'><?php echo get_sub_field('speed_limit') ?></p>
-                      <?php if (have_rows('type_net')) :
-                        while (have_rows('type_net')) :
-                          the_row(); ?>
-                          <div class='network'>
-                            <img src='<?php echo get_sub_field('icon') ?>' alt=''>
-                            <?php echo get_sub_field('title') ?>
-                            <span><?php echo get_sub_field('type_speed') ?></span>
-                          </div>
-                        <?php endwhile;
-                      endif; ?>
-                      <div class='price'>
-                        <span><?php echo get_sub_field('price') ?></span>
-                        <?php echo get_sub_field('currency_term') ?>
-                      </div>
-                      <button class='btn btn-full'>
-                        <?php echo get_sub_field('button') ?>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              <?php else: ?>
-                <div class='swiper-slide'>
-                  <div class='tariff tariff-tv'>
-                    <h4><?php echo get_sub_field('title') ?></h4>
-                    <p class='desc'><?php echo get_sub_field('characteristics_television') ?></p>
-                    <div class='company'>
-                      <?php echo get_sub_field('company') ?>
-                    </div>
-                    <div class='bottom'>
-                      <p class='speed'>
-                        до
-                        <span><?php echo get_sub_field('speed') ?></span>
-                        Мбіт
-                      </p>
-                      <p class='no-limited'><?php echo get_sub_field('speed_limit') ?>а</p>
-                      <div class='header-network'>
-                        <p><?php echo get_sub_field('title_tv') ?></p>
-                        <p><?php echo get_sub_field('title_channels') ?></p>
-                      </div>
-                      <?php if (have_rows('type_tv')) :
-                        while (have_rows('type_tv')) :
-                          the_row(); ?>
-                          <div class='network'>
-                            <?php echo get_sub_field('type') ?>
-                            <span> <?php echo get_sub_field('numbers') ?></span>
-                          </div>
-                        <?php endwhile;
-                      endif; ?>
-                      <p class='price'>
-                        <span> <?php echo get_sub_field('price') ?></span>
-                        <?php echo get_sub_field('currency_term') ?>
-                      </p>
-                      <button class='btn btn-full'>
-                        <?php echo get_sub_field('button') ?>
-                      </button>
-                      <p class='detail'> <?php echo get_sub_field('details') ?></p>
-                    </div>
-                  </div>
-                </div>
-              <?php endif ?>
-            <?php endwhile;
-          endif; ?>
-          <?php endwhile;
-            endif; ?>
-        </div>
-        <div class='swiper-button-prev swiper-button-tariffs d-none'></div>
-        <div class='swiper-button-next swiper-button-tariffs d-none'></div>
-        <div class='swiper-pagination'></div>
-      </div>
+      <h2><?php echo get_field('slider_tariffs_title') ?></h2>
+      <?php get_template_part('./common/slider-tariffs') ?>
+    </div>
   </section>
   <section class='show-all-tariffs'>
     <div class='container'>
@@ -166,7 +72,7 @@
           <?php
             $about_company_btn = get_field('about_company_button');
           ?>
-          <a href='<?php echo esc_url($about_company_btn['url']) ?>' class='btn btn-outlined'>
+          <a href='<?php echo esc_url($about_company_btn['url']) ?>' class='btn btn-full'>
             <?php echo esc_html($about_company_btn['title']) ?>
           </a>
         </div>
@@ -205,42 +111,50 @@
   </section>
   <section class='accordion'>
     <div class='container'>
-      <h2>Найчастіші запитання</h2>
+      <h2><?php echo get_field('accordion_title') ?></h2>
       <ul class='questions-list'>
         <?php if (have_rows('accordion')) :
           while (have_rows('accordion')) :
             the_row(); ?>
             <li class='questions-select'>
               <div class='question'>
-                <h3><?php echo get_sub_field('question') ?></h3>
-                <img class='icon-select' src='./assets/icons/angle-right.svg' alt=''>
+                <?php echo get_sub_field('question') ?>
+                <svg class='icon-select' width="25" height="24" viewBox="0 0 25 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.45888 24L6.04688 22.588L15.9279 12.707C16.1153 12.5195 16.2207 12.2652 16.2207 12C16.2207 11.7349 16.1153 11.4806 15.9279 11.293L6.06388 1.43103L7.47788 0.0170288L17.3399 9.87903C17.9023 10.4416 18.2182 11.2045 18.2182 12C18.2182 12.7955 17.9023 13.5584 17.3399 14.121L7.45888 24Z"
+                    fill="#03BF6A" />
+                </svg>
               </div>
-              <p class='questions-answer d-none'>
+              <div class='questions-answer'>
                 <?php echo get_sub_field('answer') ?>
-              </p>
+              </div>
             </li>
           <?php endwhile;
         endif; ?>
       </ul>
     </div>
   </section>
+
   <section class='payment'>
     <div class='container'>
-      <div class='payment-content shadow'>
-        <img src='<?php echo get_field('payment_image') ?>' alt=''>
-        <h2>
-          <?php echo get_field('payment_text') ?>
-          <span>
-          <span><?php echo get_field('payment_bank') ?></span>
-          </span>
-        </h2>
-        <?php $link = get_field('payment_link'); ?>
-        <a
-          target='_blank'
-          class='btn btn-full'
-          href='<?php echo esc_url($link['url']) ?>' class='btn btn-full'>
-          <?php echo esc_html($link['title']) ?>
-        </a>
+      <div class='payment-content'>
+        <h2><?php echo get_field('payment_text') ?></h2>
+        <div class='banks'>
+          <?php if (have_rows('payment_banks')) :
+            while (have_rows('payment_banks')) :
+              the_row(); ?>
+              <a
+                target='_blank'
+                href='<?php echo get_sub_field('link') ?>'>
+                <div>
+                  <img src='<?php echo get_sub_field('logotype') ?>' alt=''>
+                </div>
+                <?php echo get_sub_field('title') ?>
+              </a>
+            <?php endwhile;
+          endif; ?>
+        </div>
       </div>
     </div>
   </section>

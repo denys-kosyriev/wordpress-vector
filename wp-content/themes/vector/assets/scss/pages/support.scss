@@ -124,10 +124,10 @@
 @media(min-width: 1024px) {
   .support {
     .possibilities {
-      padding: 85px 0 0;
+      padding: 65px 0 0;
       h2 {
         text-align: start;
-        margin:     0 28px 91px;
+        margin:     0 28px 71px;
       }
       .swiper-pagination {
         bottom: 0;
@@ -145,6 +145,9 @@
         h3 {
           font-size:     24px;
           margin-bottom: 2px;
+        }
+        p {
+          font-size: 20px;
         }
       }
     }

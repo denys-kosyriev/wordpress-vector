@@ -3,18 +3,23 @@
   width:            100%;
   padding:          26px 21px 24px;
   background-color: #fff;
-  border-radius:    20px 20px 0 0;
+  border-radius:    20px 20px;
   border:           1px solid #03bf6a;
+  overflow:         hidden;
+  display:          inline-block;
+  vertical-align:   middle;
   h3 {
     padding-bottom: 25px;
     text-align:     center;
   }
+  .router {
+    display:    none;
+    text-align: start;
+  }
   label {
     white-space: nowrap;
     &:nth-of-type(4) {
-      input {
-        margin-bottom: 13px;
-      }
+      margin-bottom: 13px;
     }
     input {
       &::placeholder {
@@ -40,13 +45,6 @@
           margin:           0 15px 0 30px;
           font-size:        16px;
         }
-      }
-    }
-    &.download-receipt {
-      display: inline-flex;
-      label {
-        color:  #03BF6A;
-        cursor: pointer;
       }
     }
   }
@@ -92,26 +90,47 @@
     }
   }
 
-  button {
+  .btn {
     width:         100%;
     margin-bottom: 15px;
+    &:hover {
+      border-width: 2px;
+    }
   }
 
   .download-receipt {
-    display:     inline-flex;
-    margin-left: 50%;
-    transform:   translateX(-50%);
-
+    display: inline-flex;
     label {
-      cursor:     pointer;
-      transition: .2s linear;
-      font-size:  14px;
-      color:      #03BF6A;
-      &:hover {
-        color: #006939;
+      cursor:         pointer;
+      display:        flex;
+      flex-direction: column;
+      align-items:    center;
+      margin:         0;
+      .flex {
+        display:     flex;
+        align-items: flex-end;
+        &:hover {
+          .change-file-btn {
+            color: #03bf6a;
+          }
+        }
+        &:active {
+          p, .change-file-btn {
+            color: #006939;
+          }
+        }
       }
-      &:active {
-        color: #029c56;
+      p {
+        color:       #03BF6A;
+        margin:      0;
+        line-height: 1;
+        transition:  .2s linear;
+      }
+      .change-file-btn {
+        margin-left: 10px;
+        color:       #324035;
+        font-size:   14px;
+        transition:  .2s linear;
       }
     }
   }
@@ -131,6 +150,13 @@
         padding: 1px 8px;
       }
     }
+    .download-receipt {
+      label {
+        .change-file-btn {
+          font-size: 18px;
+        }
+      }
+    }
   }
 }
 
@@ -145,9 +171,7 @@
     }
     &.form-tv, &.form-all {
       label:nth-of-type(4) {
-        input {
-          margin-bottom: 30px;
-        }
+        margin-bottom: 30px;
       }
     }
     .block-checkbox {
@@ -181,13 +205,9 @@
       }
     }
     label {
+      margin-bottom: 21px;
       &:nth-of-type(4) {
-        input {
-          margin-bottom: 27px;
-        }
-      }
-      input {
-        margin-bottom: 21px;
+        margin-bottom: 27px;
       }
       &:last-of-type {
         font-size: 24px;
@@ -196,6 +216,22 @@
     .btn {
       padding:       23px 20px;
       margin-bottom: 25px;
+    }
+    .download-receipt {
+      margin-bottom: 10px;
+      label {
+        .change-file-btn {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+  .tariffs-form {
+    .btn:hover {
+      border-width: 4px;
     }
   }
 }

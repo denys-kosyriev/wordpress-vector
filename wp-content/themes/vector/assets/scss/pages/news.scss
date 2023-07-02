@@ -38,6 +38,7 @@
       transition: .2s linear;
     }
     .content {
+      width:          100%;
       padding:        0 19px 16px;
       font-weight:    400;
       line-height:    1.5;
@@ -135,7 +136,7 @@
 @media(min-width: 1200px) {
   .news {
     section {
-      padding: 79px 0 100px;
+      padding: 59px 0 100px;
     }
   }
 }

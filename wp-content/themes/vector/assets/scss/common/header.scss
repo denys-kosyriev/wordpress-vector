@@ -5,18 +5,24 @@
   left:             0;
   z-index:          1000;
   background-color: #F2F8F8;
-  .active {
-    color: #03BF6A;
-  }
   .top {
     display: none;
   }
   .main {
+    position: relative;
+    top:      0;
+    left:     0;
+    z-index:  1000;
     .content {
       min-height:      52px;
       display:         flex;
       justify-content: space-between;
       align-items:     center;
+    }
+    .current-menu-item {
+      a {
+        color: #03BF6A;
+      }
     }
     .logo {
       transition: .3s linear;
@@ -30,6 +36,29 @@
       &:active {
         opacity: .5;
       }
+    }
+    .burger-btn {
+      svg:nth-of-type(1) {
+        display: block;
+      }
+      svg:nth-of-type(2) {
+        display: none;
+      }
+      &.active {
+        svg:nth-of-type(1) {
+          display: none;
+        }
+        svg:nth-of-type(2) {
+          display: block;
+        }
+      }
+    }
+    .burger-open {
+      height: 30px;
+      width:  35px;
+    }
+    .burger-close {
+      margin-right: 5px;
     }
     ul {
       display: none;
@@ -55,13 +84,24 @@
     }
   }
   .burger-menu {
-    height:         calc(100vh - 52px);
-    display:        flex;
-    flex-direction: column;
-    align-items:    center;
-    padding:        3px 0 0;
-    overflow:       auto;
-    text-align:     center;
+    height:           100vh;
+    width:            100%;
+    display:          flex;
+    flex-direction:   column;
+    align-items:      center;
+    padding:          52px 0 30px;
+    overflow:         auto;
+    text-align:       center;
+    position:         fixed;
+    top:              0;
+    left:             0;
+    z-index:          900;
+    background-color: #F2F8F8;
+    transition:       .3s linear;
+    transform:        translateY(calc(-100% - 52px));
+    &.open-burger {
+      transform: translateY(0);
+    }
     svg {
       margin-right: 8px;
     }
@@ -81,8 +121,18 @@
     .user {
       min-width:     271px;
       margin-bottom: 20px;
+      &:hover {
+        svg {
+          path {
+            fill: #03bf6a;
+          }
+        }
+      }
       svg {
         width: 13px;
+        path {
+          transition: .3s linear;
+        }
       }
     }
     .btn-payment {
@@ -98,8 +148,13 @@
       }
     }
     .phones {
-      display:     flex;
-      align-items: start;
+      display:       flex;
+      align-items:   start;
+      margin-bottom: 20px;
+      div {
+        display:        flex;
+        flex-direction: column;
+      }
       svg {
         width: 14px;
       }
@@ -110,16 +165,9 @@
         margin-bottom: 10px;
       }
       a {
-        font-size: 14px;
-        color:     #03bf6a;
-      }
-    }
-    .language {
-      display:      flex;
-      margin-right: 8px;
-      color:        #03bf6a;
-      svg {
-        width: 13px;
+        font-size:      14px;
+        color:          #03bf6a;
+        padding-bottom: 8px;
       }
     }
   }
@@ -180,6 +228,7 @@
         }
       }
       .right {
+        gap: 20px;
         svg {
           width:        18px;
           margin-right: 7px;
@@ -212,67 +261,6 @@
             }
             &:active {
               color: #029c56;
-            }
-          }
-        }
-        .language {
-          margin:      0 33px;
-          display:     flex;
-          align-items: center;
-          cursor:      pointer;
-          p {
-            color:      #03BF6A;
-            transition: .2s linear;
-            font-size:  18px;
-          }
-          svg {
-            path {
-              transition: .2s linear;
-            }
-          }
-          &:hover {
-            p {
-              color: #029c56;
-            }
-            svg {
-              path {
-                fill: #029c56;
-              }
-            }
-          }
-          &:active {
-            p {
-              color: #006939;
-            }
-            svg {
-              path {
-                fill: #006939;
-              }
-            }
-          }
-          .languages-list {
-            width:            76px;
-            position:         absolute;
-            top:              120%;
-            left:             50%;
-            z-index:          1;
-            transform:        translateX(-50%);
-            border:           2px solid #03BF6A;
-            border-radius:    7px;
-            background-color: #fff;
-            padding:          10px;
-            text-align:       center;
-            li {
-              cursor:        pointer;
-              overflow:      hidden;
-              text-overflow: ellipsis;
-              transition:    .2s linear;
-              &:not(&:last-of-type) {
-                padding-bottom: 10px;
-              }
-              &:hover {
-                color: #03BF6A;
-              }
             }
           }
         }
@@ -338,10 +326,7 @@
           }
         }
       }
-      .burger {
-        display: none;
-      }
-      .burger-open {
+      .burger-btn {
         display: none;
       }
       .btn {

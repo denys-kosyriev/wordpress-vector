@@ -1,25 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  // Work channel list changes
+  // Work channels list changes
 
-  const btnAnalog = document.getElementsByClassName('btn-analog')[0];
-  const btnDigital = document.getElementsByClassName('btn-digital')[0];
-  const analogChannels = document.getElementsByClassName('analog-channels')[0];
-  const digitalChannels = document.getElementsByClassName('digital-channels')[0];
-  document.addEventListener('click', (e) => {
-    const clickBtnAnalog = e.composedPath().includes(btnAnalog);
-    const clickBtnDigital = e.composedPath().includes(btnDigital);
-    if (clickBtnAnalog) {
-      btnAnalog.classList.add('active');
-      btnDigital.classList.remove('active');
-      analogChannels.classList.remove('d-none');
-      digitalChannels.classList.add('d-none');
-    } else if (clickBtnDigital) {
-      btnAnalog.classList.remove('active');
-      btnDigital.classList.add('active');
-      digitalChannels.classList.remove('d-none');
-      analogChannels.classList.add('d-none');
-    }
-  })
+  const buttons = document.getElementsByClassName('btn-switch');
+  const tableChannels = document.getElementsByClassName('scroll');
+  tableChannels[0].classList.remove('d-none')
+
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', () => {
+        for (let t = 0; t < buttons.length; t++) {
+          buttons[t].classList.remove('active');
+          tableChannels[t].classList.add('d-none')
+        }
+        buttons[i].classList.add('active');
+        if (buttons[i].className.includes('analog-btn active')) {
+          tableChannels[i].classList.remove('d-none')
+        } else if (buttons[i].className.includes('digital-btn active')) {
+          tableChannels[i].classList.remove('d-none')
+        }
+      }
+    )
+  }
 
 });

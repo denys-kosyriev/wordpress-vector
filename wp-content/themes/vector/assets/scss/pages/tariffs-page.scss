@@ -1,0 +1,161 @@
+.tariffs-page {
+  .top-radio-buttons {
+    padding: 41px 0 20px;
+  }
+  .top-radio-buttons, div {
+    .container {
+      max-width: 1504px;
+    }
+  }
+  .buttons {
+    padding-bottom: 10px;
+  }
+  h3 {
+    padding-bottom: 25px;
+    text-align:     center;
+    span {
+      color:          #03BF6A;
+      text-transform: uppercase;
+    }
+  }
+  .action-price {
+    display: none;
+  }
+  .description {
+    margin-bottom: 42px;
+    .container {
+      max-width: 996px;
+      padding:   0;
+    }
+    .description-content {
+      padding:          27px 24px;
+      display:          flex;
+      align-items:      start;
+      gap:              8px;
+      border-radius:    15px;
+      background-color: #F2F8F8;
+      div {
+        border-radius:    50%;
+        color:            #fff;
+        background-color: #03BF6A;
+        display:          flex;
+        justify-content:  center;
+        align-items:      center;
+        padding:          3px 10px;
+        font-size:        16px;
+        margin-right:     8px;
+      }
+      p {
+        margin: 0;
+      }
+    }
+    ul {
+      font-size:   14px;
+      font-weight: 400;
+      color:       #7A8781;
+    }
+    li {
+      margin-bottom: 15px;
+      line-height:   1.3;
+      color:         #7A8781;
+    }
+  }
+  .connection-tv {
+    padding: 0 0 52px;
+  }
+}
+
+@media(min-width: 567px) {
+  .tariffs-page {
+    .buttons {
+      padding-bottom: 20px;
+    }
+    h3 {
+      p {
+        font-size: 28px;
+      }
+    }
+    .description {
+      ul {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+@media(min-width: 1024px) {
+  .tariffs-page {
+    h2 {
+      padding-bottom: 45px;
+    }
+    .top {
+      .buttons {
+        padding-bottom: 106px;
+      }
+    }
+    .description {
+      margin-bottom: 67px;
+      .description-content {
+        gap: 22px;
+        div {
+          padding:   4px 12px;
+          font-size: 18px;
+        }
+      }
+      ul {
+        font-size: 20px;
+      }
+      li {
+        line-height: 1.5;
+      }
+    }
+    h3 {
+      padding:    15px 0 40px;
+      text-align: start;
+      p {
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+  .tariffs-page {
+    .top-radio-buttons {
+      padding: 80px 0 30px;
+    }
+  }
+}
+
+@media(min-width: 1440px) {
+  .tariffs-page {
+    .buttons {
+      padding-bottom: 0;
+    }
+    h3 {
+      padding: 0 0 40px;
+    }
+    .top-radio-buttons {
+      .selected {
+        padding: 0;
+        p {
+          font-size: 24px;
+        }
+      }
+    }
+    .flex {
+      .wrapper {
+        display:         flex;
+        flex-wrap:       wrap;
+        justify-content: space-between;
+        align-items:     center;
+        .buttons {
+          width: 50%;
+        }
+      }
+    }
+    .connection-tv {
+      padding: 40px 0 80px;
+    }
+  }
+}

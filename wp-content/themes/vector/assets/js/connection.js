@@ -1,22 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  // Work radio-buttons 'connection' page
-  const connection = document.getElementsByClassName('connection')[0];
-  const buttonsBlock = document.getElementsByClassName('buttons')[0];
-  const buttons = buttonsBlock.getElementsByClassName('btn');
+  // Switching form and tabs
 
-  Array.from(buttons).map(btn => {
-    btn.addEventListener('click', () => {
-      connection.classList.remove('net');
-      connection.classList.remove('tv');
-      connection.classList.remove('all');
-      if (btn.className.includes('btn-net')) {
-        connection.classList.add('net');
-      } else if (btn.className.includes('btn-tv')) {
-        connection.classList.add('tv');
-      } else if (btn.className.includes('btn-all')) {
-        connection.classList.add('all');
+  const tariffsForm = document.getElementsByClassName('tariffs-form')[0];
+  const buttons = document.getElementsByClassName('btn-switch');
+
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', () => {
+        for (let t = 0; t < buttons.length; t++) {
+          buttons[t].classList.remove('active');
+        }
+        buttons[i].classList.add('active');
+        if (buttons[i].innerHTML === 'Інтернет') {
+          tariffsForm.classList.remove('form-tv');
+        } else if (buttons[i].innerHTML === 'Телебачення') {
+          tariffsForm.classList.add('form-tv')
+        }
       }
-    })
-  })
+    )
+  }
+
 })
