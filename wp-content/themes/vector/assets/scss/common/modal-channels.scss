@@ -7,6 +7,8 @@
     background:         #FFFFFF;
     border-radius:      20px;
     overflow:           auto;
+    display:            inline-block;
+    vertical-align:     middle;
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width:    none; /* Firefox */
@@ -46,7 +48,6 @@
     font-size: 12px;
   }
   .scroll {
-    //display: none;
     padding: 1px 21px 0 25px;
   }
   .title-channels {

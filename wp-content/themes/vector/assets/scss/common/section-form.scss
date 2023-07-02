@@ -1,5 +1,5 @@
 .section-form {
-  overflow: hidden;
+  overflow: auto;
   &.block-form {
     padding: 20px 0 60px;
     .container {
@@ -8,6 +8,7 @@
     }
     .wrapper-form {
       padding: 58px 20px 0;
+      display: flex;
       .tariffs-form {
         margin: 0 auto;
       }
@@ -43,14 +44,6 @@
       border-radius:   20px;
       border:          1px solid #03BF6A;
       margin:          0 auto;
-    }
-  }
-}
-
-@media(min-width: 567px) {
-  .section-form {
-    &.modal-form {
-      align-items: center;
     }
   }
 }

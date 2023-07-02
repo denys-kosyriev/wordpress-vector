@@ -83,8 +83,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const tariffNetBtn = document.getElementsByClassName('open-connect-net-modal-js');
   const titleTariffForModal = document.getElementsByClassName('title-tariff-for-modal');
   const titleTariffModal = document.getElementsByClassName('title-tariff-modal');
+  console.log(tariffNetBtn)
 
   for (let i = 0; i < tariffNetBtn.length; i++) {
+    console.log(tariffNetBtn[i])
     tariffNetBtn[i].addEventListener('click', function () {
       modalContent.classList.remove('form-tv');
       modalForm.classList.remove('d-none');

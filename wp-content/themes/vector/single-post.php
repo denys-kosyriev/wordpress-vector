@@ -1,13 +1,13 @@
-<?php get_header(); ?>
+<?php get_header();
+  wp_enqueue_script('date-js', get_template_directory_uri() . '/assets/js/date.js');
+?>
 
 <main class='blog'>
   <section class='top'>
     <div class='container'>
       <div class='content'>
         <h1><?php the_title() ?></h1>
-        <div class='date'>
-          <?php echo get_the_date() ?>
-        </div>
+        <div class='date d-none'><?php echo get_field('date') ?></div>
       </div>
     </div>
   </section>

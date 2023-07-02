@@ -121,8 +121,18 @@
     .user {
       min-width:     271px;
       margin-bottom: 20px;
+      &:hover {
+        svg {
+          path {
+            fill: #03bf6a;
+          }
+        }
+      }
       svg {
         width: 13px;
+        path {
+          transition: .3s linear;
+        }
       }
     }
     .btn-payment {

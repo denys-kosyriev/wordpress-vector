@@ -97,7 +97,7 @@ li {
 
 label {
   width:         100%;
-  display:       inline-flex;
+  display:       block;
   margin-bottom: 11px;
 }
 
@@ -324,9 +324,14 @@ button, .btn {
   top:              0;
   left:             0;
   z-index:          1000;
-  display:          flex;
-  justify-content:  center;
-  align-items:      center;
+  text-align:       center;
+  &::after {
+    display:        inline-block;
+    vertical-align: middle;
+    width:          0;
+    height:         100%;
+    content:        '';
+  }
 }
 
 .close-modal {
@@ -354,6 +359,125 @@ button, .btn {
 .d-none {
   display: none !important;
 }
+
+@media(min-width: 567px) {
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size:     18px;
+    margin-bottom: 15px;
+  }
+  input, select, textarea {
+    font-size: 18px;
+  }
+  .btn, button {
+    min-width: 0;
+    padding:   19px 50px;
+    font-size: 20px;
+  }
+  .btn-switch {
+    font-size: 18px;
+  }
+  .tel-link {
+    a {
+      img, svg {
+        width: 18px;
+      }
+    }
+  }
+  .close-modal {
+    width: 26px;
+    right: 22px;
+  }
+
+}
+
+@media(min-width: 768px) {
+  label {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 56px;
+  }
+
+  h3 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size:     24px;
+    line-height:   1.5;
+    margin-bottom: 20px;
+  }
+
+  button, .btn {
+    border-width: 4px;
+    font-size:    24px;
+    padding:      19px 66px;
+  }
+
+  .btn-switch {
+    font-size: 24px;
+    padding:   16px 42px;
+  }
+
+  input, select, textarea {
+    padding:       21px 32px;
+    border:        2px solid #d2dbdb;
+    border-radius: 40px;
+    color:         #324035;
+    font-size:     24px;
+    font-weight:   500;
+    &:hover {
+      border: 2px solid #03BF6A;
+    }
+  }
+
+  label {
+    margin-bottom: 21px;
+  }
+
+  select {
+    background-position-x: 90%;
+    background-position-y: 54%;
+    background-size:       13px;
+  }
+
+  .swiper {
+    & &-pagination.swiper-pagination-bullets {
+      margin-bottom: 10px;
+      span {
+        height: 20px;
+        width:  20px;
+        margin: 0 15px;
+      }
+    }
+  }
+
+  .close-modal {
+    width: 35px;
+    top:   82px;
+    right: 44px;
+  }
+
+}
+
+@media(min-width: 1200px) {
+  main {
+    padding-top: 139px;
+  }
+}
+
+// ACF styles
 
 .wpcf7-list-item.first.last {
   margin: 0 0 0 21px;
@@ -426,45 +550,17 @@ button, .btn {
 .wpcf7 form .wpcf7-response-output,
 .wpcf7 form.failed .wpcf7-response-output {
   padding:       10px;
-  border-radius: 20px;
+  border-radius: 100px;
   margin:        10px 0;
   font-size:     16px;
+  text-align:    center;
+}
+
+.wpcf7-not-valid-tip {
+  margin-left: 10px;
 }
 
 @media(min-width: 567px) {
-  h2 {
-    font-size: 36px;
-  }
-
-  h3 {
-    font-size: 32px;
-  }
-
-  p {
-    font-size:     18px;
-    margin-bottom: 15px;
-  }
-  input, select, textarea {
-    font-size: 18px;
-  }
-  .btn, button {
-    min-width: 0;
-    padding:   19px 50px;
-    font-size: 20px;
-  }
-  .btn-switch {
-    font-size: 18px;
-  }
-  .tel-link {
-    a {
-      img, svg {
-        width: 18px;
-      }
-    }
-  }
-  .close-modal {
-    width: 26px;
-  }
   .wpcf7-list-item-label {
     padding-left: 16px;
     font-size:    16px;
@@ -483,87 +579,27 @@ button, .btn {
   .wpcf7 form.failed .wpcf7-response-output {
     font-size: 20px;
   }
+
+  .wpcf7-not-valid-tip {
+    margin-left: 15px;
+    font-size:   18px;
+  }
 }
 
 @media(min-width: 768px) {
-  label {
-    margin-bottom: 15px;
-  }
   .wpcf7 form .wpcf7-response-output,
   .wpcf7 form.failed .wpcf7-response-output {
     font-size: 24px;
   }
 }
 
-@media (min-width: 1024px) {
-  h2 {
-    font-size: 56px;
-  }
-
-  h3 {
-    font-size: 40px;
-  }
-
-  p {
-    font-size:     24px;
-    line-height:   1.5;
-    margin-bottom: 20px;
-  }
-
-  button, .btn {
-    border-width: 4px;
-    font-size:    24px;
-    padding:      19px 66px;
-  }
-
-  .btn-switch {
-    font-size: 24px;
-    padding:   16px 42px;
-  }
-
-  input, select, textarea {
-    padding:       21px 32px;
-    border:        2px solid #d2dbdb;
-    border-radius: 40px;
-    color:         #324035;
-    font-size:     24px;
-    font-weight:   500;
-    &:hover {
-      border: 2px solid #03BF6A;
-    }
-  }
-
-  label {
-    margin-bottom: 21px;
-  }
-
-  select {
-    background-position-x: 90%;
-    background-position-y: 54%;
-    background-size:       13px;
-  }
-
-  .swiper {
-    & &-pagination.swiper-pagination-bullets {
-      span {
-        height: 20px;
-        width:  20px;
-        margin: 0 15px;
-      }
-    }
-  }
-
-  .close-modal {
-    width: 35px;
-    top:   82px;
-    right: 44px;
-  }
+@media(min-width: 1024px) {
   .wpcf7-list-item-label {
     padding-left: 20px;
     font-size:    20px;
     &::before {
-      height: 17px;
-      width:  17px;
+      height: 19px;
+      width:  19px;
       top:    4px;
     }
     &::after {
@@ -577,11 +613,10 @@ button, .btn {
     padding:   20px;
     font-size: 28px;
   }
-}
 
-@media(min-width: 1200px) {
-  main {
-    padding-top: 139px;
+  .wpcf7-not-valid-tip {
+    margin-left: 20px;
+    font-size:   24px;
   }
 }
 
@@ -602,3 +637,4 @@ button, .btn {
     }
   }
 }
+

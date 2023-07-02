@@ -37,13 +37,13 @@
       font-size:   18px;
       font-weight: 600;
       line-height: 1;
+      margin:      0;
     }
     .icon-select {
       width:      10px;
       transition: .2s linear;
       &.open {
         transform: rotate(90deg);
-        //padding:   0 0 19px;
       }
     }
   }
