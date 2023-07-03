@@ -280,6 +280,10 @@ button, .btn {
       width: 20px;
     }
   }
+  &-button-next::after, &-button-prev::after {
+    color:       #03BF6A;
+    font-weight: 900;
+  }
 }
 
 .tel-link {
@@ -313,7 +317,7 @@ button, .btn {
 }
 
 .shadow {
-  box-shadow: 0 40px 80px rgba(3, 191, 106, .2);
+  box-shadow: 0 40px 40px rgba(3, 191, 106, .2);
 }
 
 .modal {

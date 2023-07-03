@@ -277,6 +277,10 @@ button, .btn {
 .swiper .swiper-button-prev:hover, .swiper .swiper-button-prev:hover, .swiper .swiper-button-next:hover, .swiper .swiper-button-next:hover {
   width: 20px;
 }
+.swiper-button-next::after, .swiper-button-prev::after {
+  color: #03BF6A;
+  font-weight: 900;
+}
 
 .tel-link {
   border: 2px solid transparent;
@@ -309,7 +313,7 @@ button, .btn {
 }
 
 .shadow {
-  box-shadow: 0 40px 80px rgba(3, 191, 106, 0.2);
+  box-shadow: 0 40px 40px rgba(3, 191, 106, 0.2);
 }
 
 .modal {
@@ -721,16 +725,32 @@ button, .btn {
   min-width: 271px;
   margin-bottom: 42px;
 }
-.header .burger-menu .left {
+.header .burger-menu .location {
   font-size: 14px;
   margin-bottom: 21px;
   color: #03bf6a;
 }
-.header .burger-menu .left svg {
+.header .burger-menu .location:hover {
+  color: #006939;
+}
+.header .burger-menu .location:hover svg path {
+  fill: #006939;
+}
+.header .burger-menu .location:active {
+  color: #029c56;
+}
+.header .burger-menu .location:active svg path {
+  fill: #029c56;
+}
+.header .burger-menu .location svg {
   width: 13px;
+}
+.header .burger-menu .location svg path {
+  transition: 0.3s linear;
 }
 .header .burger-menu .phones {
   display: flex;
+  flex-direction: row-reverse;
   align-items: start;
   margin-bottom: 20px;
 }
@@ -740,6 +760,9 @@ button, .btn {
 }
 .header .burger-menu .phones svg {
   width: 14px;
+}
+.header .burger-menu .phones svg path {
+  transition: 0.3s linear;
 }
 .header .burger-menu .phones ul {
   margin-bottom: 7px;
@@ -751,6 +774,15 @@ button, .btn {
   font-size: 14px;
   color: #03bf6a;
   padding-bottom: 8px;
+}
+.header .burger-menu .phones div:hover ~ svg path, .header .top .phones div:hover ~ svg path {
+  fill: #006939;
+}
+.header .burger-menu .phones a:hover, .header .top .phones a:hover {
+  color: #006939;
+}
+.header .burger-menu .phones a:active, .header .top .phones a:active {
+  color: #029c56;
 }
 
 @media (min-width: 1200px) {
@@ -812,12 +844,13 @@ button, .btn {
   }
   .header .top .right .phones {
     display: flex;
+    flex-direction: row-reverse;
+  }
+  .header .top .right .phones div {
+    display: flex;
   }
   .header .top .right .phones svg path {
     transition: 0.2s linear;
-  }
-  .header .top .right .phones:hover svg path {
-    fill: #006939;
   }
   .header .top .right .phones ul {
     display: flex;
@@ -901,6 +934,9 @@ button, .btn {
     display: inline-flex;
     padding: 12px 44px;
   }
+  .header .burger-menu {
+    display: none;
+  }
 }
 @media (min-width: 1440px) {
   .header .main .logo {
@@ -922,10 +958,6 @@ button, .btn {
 }
 .swiper.tariffs-slider .swiper-wrapper.center {
   justify-content: center;
-}
-.swiper.tariffs-slider .swiper-button-next::after, .swiper.tariffs-slider .swiper-button-prev::after {
-  color: #03BF6A;
-  font-weight: 1000;
 }
 .swiper.tariffs-slider .tariff {
   height: 100%;
@@ -1371,12 +1403,13 @@ button, .btn {
   }
 }
 .footer {
+  top: -1px;
   overflow: hidden;
   margin-top: auto;
+  background: linear-gradient(114.04deg, #03BF6A 24.98%, #6AE37E 101.83%);
 }
 .footer .content {
   padding: 34px 0 34px;
-  background: linear-gradient(114.04deg, #03BF6A 24.98%, #6AE37E 101.83%);
 }
 .footer .container {
   max-width: 1480px;
@@ -1551,6 +1584,9 @@ button, .btn {
   }
 }
 @media (min-width: 1024px) {
+  .footer {
+    top: -2px;
+  }
   .footer .content {
     padding: 44px 0 60px;
   }
@@ -2431,7 +2467,7 @@ button, .btn {
   margin-bottom: 22px;
 }
 .blog .top .date {
-  background: #F3F8F8;
+  background: rgba(3, 191, 106, 0.3);
   border-radius: 43px;
   font-size: 14px;
   padding: 10px 27px;
@@ -2735,7 +2771,7 @@ button, .btn {
   transition: 0.3s linear;
 }
 .home .banners .swiper-banners .swiper-slide p {
-  width: 75%;
+  width: 65%;
   font-size: 12px;
   font-weight: 400;
   color: #fff;
@@ -2841,22 +2877,26 @@ button, .btn {
   bottom: 0;
   left: 0;
   z-index: -1;
-  background: #03bf6a;
+  background: rgba(3, 191, 93, 0.8901960784);
 }
 .home .payment .swiper {
   border-radius: 20px;
 }
 .home .payment .payment-content {
+  height: 100%;
   padding: 20px 27px 41px;
   background-color: #F2F8F8;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .home .payment h2 {
   font-weight: 700;
   font-size: 28px;
   margin: 0 11px 37px;
   line-height: 1.2;
-  text-align: start;
+  text-align: center;
 }
 .home .payment h2 span {
   color: #03bf6a;
@@ -2868,10 +2908,10 @@ button, .btn {
   gap: 15px;
 }
 .home .payment .content {
-  height: calc(100% - 261px);
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1 0 auto;
 }
 .home .payment a {
   font-size: 24px;
@@ -2882,7 +2922,7 @@ button, .btn {
   align-items: center;
   justify-content: space-between;
   transition: 0.3s linear;
-  margin-top: auto;
+  margin: auto 0 20px;
 }
 .home .payment a div {
   height: 100%;
@@ -2890,7 +2930,7 @@ button, .btn {
   align-items: center;
 }
 .home .payment img {
-  max-width: 160px;
+  width: 90%;
   height: 185px;
   margin: 0 0 15px;
   object-fit: contain;
@@ -2917,11 +2957,11 @@ button, .btn {
     transform: translateX(50%);
   }
   .home .payment h2 {
-    text-align: center;
+    font-size: 36px;
   }
   .home .payment img {
-    max-width: 200px;
-    max-height: 200px;
+    width: 80%;
+    height: 200px;
   }
 }
 @media (min-width: 768px) {
@@ -2939,21 +2979,32 @@ button, .btn {
     transform: translateX(0);
   }
   .home .payment::before {
-    background: linear-gradient(114.04deg, #03BF6A 24.98%, #6AE37E 101.83%);
+    background: linear-gradient(39deg, #03BF6A 24.98%, #6AE37E 101.83%);
   }
   .home .payment .container {
     max-width: 900px;
   }
   .home .payment .payment-content {
     padding: 41px 20px 41px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .home .payment h2 {
+    font-size: 40px;
   }
   .home .payment a {
     font-size: 30px;
     padding: 20px 30px;
   }
   .home .payment img {
-    max-width: 300px;
-    max-height: 300px;
+    height: 300px;
+  }
+  .home .payment .swiper-button-prev {
+    left: 30px;
+  }
+  .home .payment .swiper-button-next {
+    right: 30px;
   }
 }
 @media (min-width: 1024px) {
@@ -3010,19 +3061,17 @@ button, .btn {
     height: 31vw;
   }
   .home .payment h2 {
-    font-size: 40px;
+    font-size: 44px;
   }
   .home .payment .banks {
     gap: 30px;
   }
   .home .payment a {
     font-size: 40px;
-    padding: 20px 40px;
+    padding: 16px 45px;
     border-width: 4px;
   }
   .home .payment img {
-    max-width: 300px;
-    max-height: 300px;
     margin: auto 0 20px;
   }
 }
@@ -3070,12 +3119,18 @@ button, .btn {
     max-width: 778px;
     height: 554px;
   }
+  .home .payment::before {
+    height: 49%;
+  }
   .home .payment .container {
     max-width: 1480px;
   }
+  .home .payment .swiper {
+    border-radius: 40px;
+  }
   .home .payment .payment-content {
-    padding: 50px 100px 60px 140px;
-    display: flex;
+    padding: 40px 100px 30px 140px;
+    flex-direction: row;
   }
   .home .payment h2 {
     font-size: 59px;
@@ -3086,18 +3141,29 @@ button, .btn {
     gap: 40px;
   }
   .home .payment a {
-    font-size: 44px;
+    margin: 0;
+    font-size: 34px;
   }
   .home .payment img {
-    max-height: 400px;
-    max-width: 40%;
-    margin: auto 60px 30px 0;
+    max-height: 310px;
+    max-width: 43%;
+    margin: 0 60px 0 0;
   }
   .home .payment .content {
     align-items: start;
+    padding-top: 25px;
+    flex: 1 1 auto;
   }
   .home .payment h2 {
     text-align: start;
+  }
+  .home .payment .swiper-button-prev {
+    top: 48%;
+    left: 56px;
+  }
+  .home .payment .swiper-button-next {
+    top: 48%;
+    right: 56px;
   }
 }
 @media (min-width: 1800px) {
@@ -3238,6 +3304,7 @@ button, .btn {
   display: flex;
   flex-direction: column;
   align-items: start;
+  background: #fff;
 }
 .news .cart:hover img {
   scale: 1.1;
@@ -3687,7 +3754,7 @@ button, .btn {
   }
   .advertising .billboard img {
     width: 50%;
-    height: 29vw;
+    height: 30vw;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -3746,14 +3813,14 @@ button, .btn {
     font-size: 24px;
     margin-bottom: 29px;
   }
-  .advertising a {
+  .advertising .billboard a {
     min-width: 385px;
     margin: 0;
     transform: translateX(0);
-    padding: 33px 15px;
+    padding: 23px 15px;
   }
-  .advertising img {
-    height: 32vw;
+  .advertising .billboard img {
+    height: 31vw;
   }
 }
 @media (min-width: 1200px) {

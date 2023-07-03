@@ -26,7 +26,7 @@
           transition:     .3s linear;
         }
         p {
-          width:         75%;
+          width:         65%;
           font-size:     12px;
           font-weight:   400;
           color:         #fff;
@@ -134,22 +134,26 @@
       bottom:     0;
       left:       0;
       z-index:    -1;
-      background: #03bf6a;
+      background: #03bf5de3;
     }
     .swiper {
       border-radius: 20px;
     }
     .payment-content {
+      height:           100%;
       padding:          20px 27px 41px;
       background-color: #F2F8F8;
       text-align:       center;
+      display:          flex;
+      flex-direction:   column;
+      align-items:      center;
     }
     h2 {
       font-weight: 700;
       font-size:   28px;
       margin:      0 11px 37px;
       line-height: 1.2;
-      text-align:  start;
+      text-align:  center;
       span {
         color: #03bf6a;
       }
@@ -161,10 +165,10 @@
       gap:             15px;
     }
     .content {
-      height:         calc(100% - 261px);
       display:        flex;
       flex-direction: column;
       align-items:    center;
+      flex:           1 0 auto;
     }
     a {
       font-size:       24px;
@@ -175,7 +179,7 @@
       align-items:     center;
       justify-content: space-between;
       transition:      .3s linear;
-      margin-top:      auto;
+      margin:          auto 0 20px;
       div {
         height:      100%;
         display:     flex;
@@ -183,7 +187,7 @@
       }
     }
     img {
-      max-width:  160px;
+      width:      90%;
       height:     185px;
       margin:     0 0 15px;
       object-fit: contain;
@@ -231,11 +235,11 @@
     }
     .payment {
       h2 {
-        text-align: center;
+        font-size: 36px;
       }
       img {
-        max-width:  200px;
-        max-height: 200px;
+        width:  80%;
+        height: 200px;
       }
     }
   }
@@ -260,21 +264,32 @@
     }
     .payment {
       &::before {
-        background: linear-gradient(114.04deg, #03BF6A 24.98%, #6AE37E 101.83%);
+        background: linear-gradient(39deg, #03BF6A 24.98%, #6AE37E 101.83%);;
       }
       .container {
         max-width: 900px;
       }
       .payment-content {
-        padding: 41px 20px 41px;
+        padding:        41px 20px 41px;
+        display:        flex;
+        flex-direction: column;
+        align-items:    center;
+      }
+      h2 {
+        font-size: 40px;
       }
       a {
         font-size: 30px;
         padding:   20px 30px;
       }
       img {
-        max-width:  300px;
-        max-height: 300px;
+        height: 300px;
+      }
+      .swiper-button-prev {
+        left: 30px;
+      }
+      .swiper-button-next {
+        right: 30px;
       }
     }
   }
@@ -340,20 +355,18 @@
     }
     .payment {
       h2 {
-        font-size: 40px;
+        font-size: 44px;
       }
       .banks {
         gap: 30px;
       }
       a {
         font-size:    40px;
-        padding:      20px 40px;
+        padding:      16px 45px;
         border-width: 4px;
       }
       img {
-        max-width:  300px;
-        max-height: 300px;
-        margin:     auto 0 20px;
+        margin: auto 0 20px;
       }
     }
   }
@@ -421,12 +434,18 @@
       }
     }
     .payment {
+      &::before {
+        height: 49%;
+      }
       .container {
         max-width: 1480px;
       }
+      .swiper {
+        border-radius: 40px;
+      }
       .payment-content {
-        padding: 50px 100px 60px 140px;
-        display: flex;
+        padding:        40px 100px 30px 140px;
+        flex-direction: row;
       }
       h2 {
         font-size:     59px;
@@ -437,18 +456,29 @@
         gap: 40px;
       }
       a {
-        font-size: 44px;
+        margin:    0;
+        font-size: 34px;
       }
       img {
-        max-height: 400px;
-        max-width:  40%;
-        margin:     auto 60px 30px 0;
+        max-height: 310px;
+        max-width:  43%;
+        margin:     0 60px 0 0;
       }
       .content {
         align-items: start;
+        padding-top: 25px;
+        flex:        1 1 auto;
       }
       h2 {
         text-align: start;
+      }
+      .swiper-button-prev {
+        top:  48%;
+        left: 56px;
+      }
+      .swiper-button-next {
+        top:   48%;
+        right: 56px;
       }
     }
   }

@@ -33,7 +33,7 @@
               </li>
             </ul>
           </div>
-          <?php get_template_part('./common/selected') ?>
+          <?php get_template_part('./common/locations-selected') ?>
         </div>
       </div>
     </div>
@@ -53,7 +53,7 @@
                 <h2><?php echo get_field('connecting_internet_title') ?></h2>
                 <?php echo get_field('connecting_internet_description') ?>
                 <button class='btn btn-full scroll-up'>
-                  <?php echo get_field('connecting_internet_button') ?>
+                  Показати тарифи
                 </button>
               </div>
             </div>
@@ -100,7 +100,7 @@
                 <?php echo get_field('connection_tv_description') ?>
               </p>
               <button class='btn btn-full scroll-up'>
-                <?php echo get_field('connection_tv_button') ?>
+                Показати тарифи
               </button>
             </div>
           </div>
@@ -113,12 +113,12 @@
         <div class='content'>
           <img src='<?php echo get_field('connection_tv_image') ?>' alt=''>
           <div>
-            <h2><?php echo get_field('connection_tv_title') ?></h2>
+            <?php echo get_field('connection_tv_title') ?>
             <p>
               <?php echo get_field('connection_tv_description') ?>
             </p>
             <button class='btn btn-full scroll-up'>
-              <?php echo get_field('connection_tv_button') ?>
+              Показати тарифи
             </button>
           </div>
         </div>

@@ -142,24 +142,43 @@
       min-width:     271px;
       margin-bottom: 42px;
     }
-    .left {
+    .location {
       font-size:     14px;
       margin-bottom: 21px;
       color:         #03bf6a;
+      &:hover {
+        color: #006939;
+        svg path {
+          fill: #006939;
+        }
+      }
+      &:active {
+        color: #029c56;
+        svg path {
+          fill: #029c56;
+        }
+      }
       svg {
         width: 13px;
+        path {
+          transition: .3s linear;
+        }
       }
     }
     .phones {
-      display:       flex;
-      align-items:   start;
-      margin-bottom: 20px;
+      display:        flex;
+      flex-direction: row-reverse;
+      align-items:    start;
+      margin-bottom:  20px;
       div {
         display:        flex;
         flex-direction: column;
       }
       svg {
         width: 14px;
+        path {
+          transition: .3s linear;
+        }
       }
       ul {
         margin-bottom: 7px;
@@ -172,6 +191,19 @@
         color:          #03bf6a;
         padding-bottom: 8px;
       }
+    }
+  }
+  .burger-menu .phones, .top .phones {
+    div:hover ~ svg {
+      path {
+        fill: #006939;
+      }
+    }
+    a:hover {
+      color: #006939;
+    }
+    a:active {
+      color: #029c56;
     }
   }
 }
@@ -237,17 +269,14 @@
           margin-right: 7px;
         }
         .phones {
-          display: flex;
+          display:        flex;
+          flex-direction: row-reverse;
+          div {
+            display: flex;
+          }
           svg {
             path {
               transition: .2s linear;
-            }
-          }
-          &:hover {
-            svg {
-              path {
-                fill: #006939;
-              }
             }
           }
           ul {
@@ -277,7 +306,6 @@
           transition:      .2s linear;
           background:      #03BF6A;
           color:           #fff;
-
           &:hover {
             background: #324035;
             color:      #fff;
@@ -337,6 +365,9 @@
         display:   inline-flex;
         padding:   12px 44px;
       }
+    }
+    .burger-menu {
+      display: none;
     }
   }
 }

@@ -18,7 +18,7 @@
                 setup_postdata($post);
                 $have_location = false;
                 $tariffs_selected_location = get_field('tariffs_selected_location');
-                if ($_GET['location']) {
+                if (isset($_GET['location'])) {
                   foreach ($tariffs_selected_location as $location) {
                     if (get_field('select_location', $location->ID) === $_GET['location']) {
                       $have_location = true;

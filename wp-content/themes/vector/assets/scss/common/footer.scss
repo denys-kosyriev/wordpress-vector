@@ -1,9 +1,10 @@
 .footer {
+  top:        -1px;
   overflow:   hidden;
   margin-top: auto;
+  background: linear-gradient(114.04deg, #03BF6A 24.98%, #6AE37E 101.83%);
   .content {
-    padding:    34px 0 34px;
-    background: linear-gradient(114.04deg, #03BF6A 24.98%, #6AE37E 101.83%);
+    padding: 34px 0 34px;
   }
   .container {
     max-width: 1480px;
@@ -194,6 +195,7 @@
 
 @media(min-width: 1024px) {
   .footer {
+    top: -2px;
     .content {
       padding: 44px 0 60px;
     }
