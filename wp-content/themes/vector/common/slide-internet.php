@@ -1,5 +1,6 @@
 <div class='swiper-slide '>
   <div class='tariff tariff-internet'>
+    <p class='title-tariff'><?php echo get_the_title() ?></p>
     <h4 class='title title-tariff-for-modal'>
       <?php echo get_field('tariffs_select_type_tariff') ?>
     </h4>
@@ -42,7 +43,7 @@
         <span class='action-price'><?php echo get_field('tariffs_action_price') ?></span>
         <?php echo get_field('currency_term') ?>
       </div>
-      <button class='btn btn-full open-connect-net-modal-js'>
+      <button class='btn btn-full open-connect-net-modal-js get-title-tariff'>
         <?php echo get_field('tariffs_button') ?>
       </button>
       <div class='open-details-tv-block'>

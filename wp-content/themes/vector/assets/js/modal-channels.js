@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Work channels list changes
 
-  const buttons = document.getElementsByClassName('btn-switch');
+  const buttons = document.getElementsByClassName('btn-switch-channels');
   const tableChannels = document.getElementsByClassName('scroll');
   tableChannels[0].classList.remove('d-none')
 

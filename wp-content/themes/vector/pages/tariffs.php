@@ -10,10 +10,11 @@
   <div class='modal section-form modal-form d-none'>
     <?php get_template_part('./common/tariffs-form') ?>
   </div>
+  <?php get_template_part('./modals/modal-channels') ?>
   <section class='top-radio-buttons'>
     <div>
       <div class='container'>
-        <h2><?php echo get_field('slider_tariffs_title') ?></h2>
+        <h2><?php echo get_the_title() ?></h2>
       </div>
     </div>
     <div class='flex'>
@@ -22,72 +23,17 @@
           <div class='buttons'>
             <ul>
               <li>
-                <div class='btn btn-switch btn-net'>Інтернет</div>
+                <div class='btn btn-switch btn-switch-tariffs btn-net'>Інтернет</div>
               </li>
               <li>
-                <div class='btn btn-switch btn-tv'>Телебачення</div>
+                <div class='btn btn-switch btn-switch-tariffs btn-tv'>Телебачення</div>
               </li>
               <li>
-                <div class='btn btn-switch btn-all'>Все разом</div>
+                <div class='btn btn-switch btn-switch-tariffs btn-all'>Все разом</div>
               </li>
             </ul>
           </div>
-          <div class='selected'>
-            <?php
-              $locations = [];
-              if (have_rows('slider_tariffs')) :
-                while (have_rows('slider_tariffs')) :
-                  the_row(); ?>
-                  <?php $tariffs_posts = get_sub_field('selected_tariff');
-                  if ($tariffs_posts): ?>
-                    <?php foreach ($tariffs_posts as $post):
-                      setup_postdata($post);
-                      $locations_posts = get_field('tariffs_selected_location');
-                      if (get_field('tariffs_select_type_tariff') === 'Інтернет' ||
-                        get_field('tariffs_select_type_tariff') === 'Інтернет GPON'):
-                        ?>
-                        <?php
-                        if ($locations_posts): ?>
-                          <?php foreach ($locations_posts as $post):
-                            setup_postdata($post); ?>
-                            <?php array_push($locations, ["title" => get_the_title(), "link" => get_field('select_location')]) ?>
-                          <?php endforeach; ?>
-                          <?php wp_reset_postdata(); ?>
-                        <?php endif; ?>
-                      <?php endif; ?>
-                    <?php endforeach; ?>
-                    <?php wp_reset_postdata(); ?>
-                  <?php endif; ?>
-                <?php endwhile;
-              endif;
-            ?>
-            <div class='select'>
-              <p>Для мешканців</p>
-              <label>
-                <?php
-                  $titles = [];
-                  $newLocations = [];
-                  foreach ($locations as $location) {
-                    if (!in_array($location['title'], $titles)) {
-                      $newLocations[] = $location;
-                      $titles[] = $location['title'];
-                    }
-                  }
-                ?>
-                <select class='change-location' name='address'>
-                  <option value=''>Всі локації</option>
-                  <?php foreach ($newLocations as $location) { ?>
-                    <option <?php
-                      if (isset($_GET['location']) && $_GET['location'] === $location['link']) {
-                        echo 'selected';
-                      } ?> value='<?php echo $location['link']; ?>'>
-                      <?php echo $location['title']; ?>
-                    </option>
-                  <?php } ?>
-                </select>
-              </label>
-            </div>
-          </div>
+          <?php get_template_part('./common/selected') ?>
         </div>
       </div>
     </div>

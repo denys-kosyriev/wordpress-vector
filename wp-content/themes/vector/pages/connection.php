@@ -22,9 +22,6 @@
               <li>
                 <button class='btn btn-switch'>Телебачення</button>
               </li>
-              <li>
-                <button class='btn btn-switch'>Все разом</button>
-              </li>
             </ul>
           </div>
         </div>

@@ -1,17 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  //   Change location
-
-  const locationSelect = document.getElementsByClassName('change-location')[0];
-
-  locationSelect.addEventListener('change', function () {
-    let url = new URL(window.location.href);
-    url.searchParams.delete('location');
-    url.searchParams.append('location', `${locationSelect.options[locationSelect.selectedIndex].value}`);
-    window.location.href = `./${url}`
-  })
-
-  const buttons = document.getElementsByClassName('btn-switch');
+  const buttons = document.getElementsByClassName('btn-switch-tariffs');
 
   for (let i = 0; i < buttons.length; i++) {
     if (window.location.search.includes('type=%D0%86%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82') && buttons[i].innerHTML === 'Інтернет' ||
@@ -37,8 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   for (let i = 0; i < sliders.length; i++) {
     const swiperTariffs = swipers[i].querySelectorAll('.swiper-slide');
-    if (window.location.search.length === 0 && i !== 0 ||
-      swiperTariffs.length === 0) {
+    if (swiperTariffs.length === 0) {
       sliders[i].classList.add('d-none');
       swipers[i].classList.add('d-none');
       description[i].classList.add('d-none');

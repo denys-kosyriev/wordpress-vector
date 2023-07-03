@@ -332,6 +332,9 @@ button, .btn {
     height:         100%;
     content:        '';
   }
+  span {
+    text-align: start;
+  }
 }
 
 .close-modal {
@@ -373,6 +376,9 @@ button, .btn {
     font-size:     18px;
     margin-bottom: 15px;
   }
+  label {
+    margin-bottom: 15px;
+  }
   input, select, textarea {
     font-size: 18px;
   }
@@ -396,12 +402,6 @@ button, .btn {
     right: 22px;
   }
 
-}
-
-@media(min-width: 768px) {
-  label {
-    margin-bottom: 15px;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -477,7 +477,7 @@ button, .btn {
   }
 }
 
-// ACF styles
+// ACF and Forms styles
 
 .wpcf7-list-item.first.last {
   margin: 0 0 0 21px;
@@ -550,14 +550,15 @@ button, .btn {
 .wpcf7 form .wpcf7-response-output,
 .wpcf7 form.failed .wpcf7-response-output {
   padding:       10px;
-  border-radius: 100px;
+  border-radius: 10px;
   margin:        10px 0;
-  font-size:     16px;
+  font-size:     18px;
   text-align:    center;
 }
 
 .wpcf7-not-valid-tip {
   margin-left: 10px;
+  font-size:   16px;
 }
 
 @media(min-width: 567px) {
@@ -575,21 +576,9 @@ button, .btn {
       top:    0;
     }
   }
-  .wpcf7 form .wpcf7-response-output,
-  .wpcf7 form.failed .wpcf7-response-output {
-    font-size: 20px;
-  }
 
   .wpcf7-not-valid-tip {
     margin-left: 15px;
-    font-size:   18px;
-  }
-}
-
-@media(min-width: 768px) {
-  .wpcf7 form .wpcf7-response-output,
-  .wpcf7 form.failed .wpcf7-response-output {
-    font-size: 24px;
   }
 }
 
@@ -610,13 +599,11 @@ button, .btn {
   }
   .wpcf7 form .wpcf7-response-output,
   .wpcf7 form.failed .wpcf7-response-output {
-    padding:   20px;
-    font-size: 28px;
+    padding: 20px;
   }
 
   .wpcf7-not-valid-tip {
     margin-left: 20px;
-    font-size:   24px;
   }
 }
 
@@ -624,7 +611,6 @@ button, .btn {
   .wpcf7-list-item-label,
   .wpcf7 form.failed .wpcf7-response-output {
     padding-left: 30px;
-    font-size:    24px;
     &::before {
       height: 22px;
       width:  22px;
