@@ -106,35 +106,35 @@
             <?php if (get_field('footer_facebook', 'option')) { ?>
               <li>
                 <a href='<?php echo get_sub_field('footer_facebook', 'option') ?>' target='_blank'>
-                  <img src='<?php echo get_template_directory_uri() ?>../assets/images/icons/facebook.svg' alt=''>
+                  <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/facebook.svg' alt=''>
                 </a>
               </li>
             <?php }
               if (get_field('footer_instagram', 'option')) { ?>
                 <li>
                   <a href='<?php echo get_sub_field('footer_instagram', 'option') ?>' target='_blank'>
-                    <img src='<?php echo get_template_directory_uri() ?>../assets/images/icons/instagram.svg' alt=''>
+                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/instagram.svg' alt=''>
                   </a>
                 </li>
               <?php }
               if (get_field('footer_telegram', 'option')) { ?>
                 <li>
                   <a href='<?php echo get_sub_field('footer_telegram', 'option') ?>' target='_blank'>
-                    <img src='<?php echo get_template_directory_uri() ?>../assets/images/icons/telegram.svg' alt=''>
+                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/telegram.svg' alt=''>
                   </a>
                 </li>
               <?php }
               if (get_field('footer_viber', 'option')) { ?>
                 <li>
                   <a href='<?php echo get_sub_field('footer_viber', 'option') ?>' target='_blank'>
-                    <img src='<?php echo get_template_directory_uri() ?>../assets/images/icons/viber.svg' alt=''>
+                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/viber.svg' alt=''>
                   </a>
                 </li>
               <?php }
               if (get_field('footer_youtube', 'option')) { ?>
                 <li>
                   <a href='<?php echo get_sub_field('footer_youtube', 'option') ?>' target='_blank'>
-                    <img src='<?php echo get_template_directory_uri() ?>../assets/images/icons/youtube.svg' alt=''>
+                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/youtube.svg' alt=''>
                   </a>
                 </li>
               <?php } ?>

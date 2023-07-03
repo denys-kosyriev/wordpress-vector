@@ -148,6 +148,9 @@
     ]);
   }
 
+  add_theme_support('post-thumbnails', array('shares'));
+
+
   add_theme_support('post-thumbnails', array('locations'));
 
   // add custom type "Shares"
