@@ -76,33 +76,26 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
-  // Open modal tariff
+  // Open modal form and get title tariff
 
   const modalForm = document.getElementsByClassName('modal-form')[0];
   const modalContent = document.getElementsByClassName('modal-content')[0];
-  const tariffNetBtn = document.getElementsByClassName('open-connect-net-modal-js');
+  const titleTariffModal = document.getElementsByClassName('title-tariff-modal')[0];
   const titleTariffForModal = document.getElementsByClassName('title-tariff-for-modal');
-  const titleTariffModal = document.getElementsByClassName('title-tariff-modal');
-  console.log(tariffNetBtn)
+  const getTitleTariffBtn = document.getElementsByClassName('get-title-tariff');
+  const titleTariff = document.getElementsByClassName('title-tariff');
+  const inputTitle = document.getElementsByClassName('input-title')[0];
 
-  for (let i = 0; i < tariffNetBtn.length; i++) {
-    console.log(tariffNetBtn[i])
-    tariffNetBtn[i].addEventListener('click', function () {
-      modalContent.classList.remove('form-tv');
+  for (let i = 0; i < getTitleTariffBtn.length; i++) {
+    getTitleTariffBtn[i].addEventListener('click', function () {
+      inputTitle.value = titleTariff[i].innerHTML;
       modalForm.classList.remove('d-none');
-      titleTariffModal[i].innerHTML = titleTariffForModal[i].innerHTML
-    })
-  }
-
-  // Open modal form TV and All
-
-  const tariffTVBtn = document.getElementsByClassName('open-connect-tv-modal-js');
-
-  for (let i = 0; i < tariffTVBtn.length; i++) {
-    tariffTVBtn[i].addEventListener('click', function () {
-      modalContent.classList.add('form-tv');
-      modalForm.classList.remove('d-none');
-      titleTariffModal[i].innerHTML = titleTariffForModal[i].innerHTML
+      if (getTitleTariffBtn[i].className.includes('open-connect-tv-modal-js')) {
+        modalContent.classList.add('form-tv');
+      } else {
+        modalContent.classList.remove('form-tv');
+      }
+      titleTariffModal.innerHTML = titleTariffForModal[i].innerHTML
     })
   }
 

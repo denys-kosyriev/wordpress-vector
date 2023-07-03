@@ -67,6 +67,9 @@
       width:      24px;
       cursor:     pointer;
       transition: .2s linear;
+      &:nth-of-type(2) {
+        width: 20px;
+      }
       path {
         transition: .2s linear;
       }

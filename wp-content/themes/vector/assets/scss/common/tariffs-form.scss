@@ -18,7 +18,7 @@
   }
   label {
     white-space: nowrap;
-    &:nth-of-type(4) {
+    &:nth-of-type(5) {
       margin-bottom: 13px;
     }
     input {
@@ -50,7 +50,7 @@
   }
 
   &.form-tv, &.form-all {
-    label:nth-of-type(4) {
+    label:nth-of-type(5) {
       input {
         margin-bottom: 11px;
       }
@@ -99,25 +99,20 @@
   }
 
   .download-receipt {
-    display: inline-flex;
     label {
       cursor:         pointer;
       display:        flex;
       flex-direction: column;
       align-items:    center;
       margin:         0;
-      .flex {
-        display:     flex;
-        align-items: flex-end;
-        &:hover {
-          .change-file-btn {
-            color: #03bf6a;
-          }
+      &:hover {
+        .change-file-btn {
+          color: #03bf6a;
         }
-        &:active {
-          p, .change-file-btn {
-            color: #006939;
-          }
+      }
+      &:active {
+        p, .change-file-btn {
+          color: #006939;
         }
       }
       p {
@@ -127,10 +122,10 @@
         transition:  .2s linear;
       }
       .change-file-btn {
-        margin-left: 10px;
-        color:       #324035;
-        font-size:   14px;
-        transition:  .2s linear;
+        margin-top: 10px;
+        color:      #324035;
+        font-size:  14px;
+        transition: .2s linear;
       }
     }
   }
@@ -139,6 +134,7 @@
 @media(min-width: 567px) {
   .tariffs-form {
     border-radius: 40px;
+    padding:       34px 27px 34px;
     label {
       &:last-of-type {
         font-size: 16px;
@@ -170,7 +166,7 @@
       font-size:      45px;
     }
     &.form-tv, &.form-all {
-      label:nth-of-type(4) {
+      label:nth-of-type(5) {
         margin-bottom: 30px;
       }
     }
@@ -206,7 +202,7 @@
     }
     label {
       margin-bottom: 21px;
-      &:nth-of-type(4) {
+      &:nth-of-type(5) {
         margin-bottom: 27px;
       }
       &:last-of-type {

@@ -52,16 +52,17 @@
     }
     label {
       max-width: 306px;
+      margin:    0;
       &::after {
         content:             '';
         width:               30px;
         height:              30px;
         position:            absolute;
-        bottom:              25px;
-        right:               29px;
+        bottom:              11px;
+        right:               12px;
         z-index:             1;
         background-image:    url("../images/icons/search.svg");
-        background-size:     31px;
+        background-size:     contain;
         background-repeat:   no-repeat;
         background-position: center;
       }
@@ -72,7 +73,7 @@
       border-radius: 40px;
       margin-top:    20px;
       font-size:     18px;
-      padding:       18px;
+      padding:       15px 45px 15px 18px;
       color:         #fff;
       &:hover, &:focus {
         border-color: #006939;
@@ -140,11 +141,6 @@
         flex-direction:  row;
         justify-content: space-around;
       }
-      label {
-        &::after {
-          bottom: 13px;
-        }
-      }
       input {
         margin: 0;
       }
@@ -192,17 +188,15 @@
       label {
         max-width: 335px;
         &::after {
-          width:           40px;
-          height:          40px;
-          bottom:          17px;
-          right:           35px;
-          background-size: 41px;
+          width:  40px;
+          height: 40px;
+          bottom: 17px;
+          right:  22px;
         }
       }
       input {
         font-size: 24px;
-        padding:   23px;
-
+        padding:   20px 70px 20px 23px;
       }
       li {
         .number-error {

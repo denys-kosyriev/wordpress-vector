@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (inputFile.files.length > 0) {
       console.log(inputFile.files)
       let file = inputFile.files[0].name;
-      fileName.innerHTML = file.slice(0, 30) + '...';
+      fileName.innerHTML = file.slice(0, 50) + '...';
       changeFile.classList.remove('d-none');
     } else {
       fileName.innerHTML = 'Завантажити квитанцію';

@@ -39,7 +39,7 @@
   </section>
   <section class='action'>
     <div class='container'>
-      <h2><?php echo get_field('slider_tariffs_title') ?></h2>
+      <h2><?php echo get_the_title() ?></h2>
       <?php get_template_part('./common/slider-tariffs') ?>
     </div>
   </section>
@@ -135,29 +135,58 @@
       </ul>
     </div>
   </section>
-
   <section class='payment'>
     <div class='container'>
-      <div class='payment-content'>
-        <h2><?php echo get_field('payment_text') ?></h2>
-        <div class='banks'>
+      <div class='swiper swiper-payment'>
+        <div class='swiper-wrapper'>
           <?php if (have_rows('payment_banks')) :
             while (have_rows('payment_banks')) :
               the_row(); ?>
-              <a
-                target='_blank'
-                href='<?php echo get_sub_field('link') ?>'>
-                <div>
-                  <img src='<?php echo get_sub_field('logotype') ?>' alt=''>
+              <div class='payment-content swiper-slide'>
+                <img src='<?php echo get_sub_field('logotype') ?>' alt=''>
+                <div class='content'>
+                  <h2>
+                    Оплатити онлайн через
+                    <span>
+          <span><?php echo get_sub_field('title') ?></span>
+          </span>
+                  </h2>
+                  <a
+                    target='_blank'
+                    class='btn btn-full'
+                    href='<?php echo get_sub_field('link') ?>'>
+                    Оплатити
+                  </a>
                 </div>
-                <?php echo get_sub_field('title') ?>
-              </a>
+              </div>
             <?php endwhile;
           endif; ?>
         </div>
       </div>
     </div>
   </section>
+  <!--  <section class='payment'>-->
+  <!--    <div class='container'>-->
+  <!--      <div class='payment-content'>-->
+  <!--        <h2>--><?php //echo get_field('payment_text') ?><!--</h2>-->
+  <!--        <div class='banks'>-->
+  <!--          --><?php //if (have_rows('payment_banks')) :
+    //            while (have_rows('payment_banks')) :
+    //              the_row(); ?>
+  <!--              <a-->
+  <!--                target='_blank'-->
+  <!--                href='--><?php //echo get_sub_field('link') ?><!--'>-->
+  <!--                <div>-->
+  <!--                  <img src='--><?php //echo get_sub_field('logotype') ?><!--' alt=''>-->
+  <!--                </div>-->
+  <!--                --><?php //echo get_sub_field('title') ?>
+  <!--              </a>-->
+  <!--            --><?php //endwhile;
+    //          endif; ?>
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </section>-->
 </main>
 
 <?php get_footer(); ?>

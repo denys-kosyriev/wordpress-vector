@@ -19,12 +19,12 @@
       <h2><?php echo get_field('modal_channels_title', 'option') ?></h2>
       <ul class='buttons'>
         <li>
-          <button class='btn btn-switch analog-btn active'>
+          <button class='btn btn-switch-channels analog-btn active'>
             Аналогові канали
           </button>
         </li>
         <li>
-          <button class='btn btn-switch digital-btn'>
+          <button class='btn btn-switch-channels digital-btn'>
             Цифрові канали
           </button>
         </li>
