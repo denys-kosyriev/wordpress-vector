@@ -16,26 +16,38 @@
             if ($featured_posts): ?>
               <?php foreach ($featured_posts as $post):
                 setup_postdata($post);
-                if (isset($_GET['type'])) {
-                  if ((get_field('tariffs_select_type_tariff') === $_GET['type'] &&
-                      get_field('tariffs_select_type_tariff') === 'Інтернет') ||
-                    ($_GET['type'] === 'Інтернет' &&
-                      get_field('tariffs_select_type_tariff') === 'Інтернет GPON')): ?>
-                    <?php get_template_part('./common/slide-internet') ?>
-                  <?php elseif (get_field('tariffs_select_type_tariff') === $_GET['type'] &&
-                    get_field('tariffs_select_type_tariff') === 'Телебачення'): ?>
-                    <?php get_template_part('./common/slide-tv') ?>
-                  <?php endif ?>
-                  <?php
+                $have_location = false;
+                $tariffs_selected_location = get_field('tariffs_selected_location');
+                if ($_GET['location']) {
+                  foreach ($tariffs_selected_location as $location) {
+                    if (get_field('select_location', $location->ID) === $_GET['location']) {
+                      $have_location = true;
+                    }
+                  }
                 } else {
-                  if (get_field('tariffs_select_type_tariff') === 'Інтернет' ||
-                    get_field('tariffs_select_type_tariff') === 'Інтернет GPON'):?>
-                    <?php get_template_part('./common/slide-internet') ?>
-                  <?php elseif (get_field('tariffs_select_type_tariff') === 'Телебачення'): ?>
-                    <?php get_template_part('./common/slide-tv') ?>
-                  <?php endif;
+                  $have_location = true;
                 }
-              endforeach; ?>
+                if ($have_location) {
+                  if (isset($_GET['type'])) {
+                    if ((get_field('tariffs_select_type_tariff') === $_GET['type'] &&
+                        get_field('tariffs_select_type_tariff') === 'Інтернет') ||
+                      ($_GET['type'] === 'Інтернет' &&
+                        get_field('tariffs_select_type_tariff') === 'Інтернет GPON')): ?>
+                      <?php get_template_part('./common/slide-internet') ?>
+                    <?php elseif (get_field('tariffs_select_type_tariff') === $_GET['type'] &&
+                      get_field('tariffs_select_type_tariff') === 'Телебачення'): ?>
+                      <?php get_template_part('./common/slide-tv') ?>
+                    <?php endif ?>
+                    <?php
+                  } else {
+                    if (get_field('tariffs_select_type_tariff') === 'Інтернет' ||
+                      get_field('tariffs_select_type_tariff') === 'Інтернет GPON'):?>
+                      <?php get_template_part('./common/slide-internet') ?>
+                    <?php elseif (get_field('tariffs_select_type_tariff') === 'Телебачення'): ?>
+                      <?php get_template_part('./common/slide-tv') ?>
+                    <?php endif;
+                  }
+                } endforeach; ?>
               <?php
               wp_reset_postdata(); ?>
             <?php endif; ?>
