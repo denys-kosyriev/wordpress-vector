@@ -586,6 +586,8 @@ button, .btn {
 .swiper-payment .swiper-pagination.swiper-pagination-bullets span {
   background-color: #fff;
   opacity: 1;
+  height: 12px;
+  width: 12px;
 }
 .swiper-payment .swiper-pagination.swiper-pagination-bullets .swiper-pagination-bullet-active {
   background-color: #006939;
