@@ -9,7 +9,7 @@
 <main class='connection net'>
   <section class='top-radio-buttons'>
     <div class='container'>
-      <h2><?php echo get_field('connection_title') ?></h2>
+      <h2>Підключення тарифу</h2>
     </div>
     <div class='flex'>
       <div class='container'>

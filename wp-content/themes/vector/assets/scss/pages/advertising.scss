@@ -245,7 +245,7 @@
       }
       img {
         width:       50%;
-        height:      29vw;
+        height:      30vw;
         position:    absolute;
         bottom:      0;
         right:       0;
@@ -323,15 +323,15 @@
         font-size:     24px;
         margin-bottom: 29px;
       }
-    }
-    a {
-      min-width: 385px;
-      margin:    0;
-      transform: translateX(0);
-      padding:   33px 15px;
-    }
-    img {
-      height: 32vw;
+      a {
+        min-width: 385px;
+        margin:    0;
+        transform: translateX(0);
+        padding:   23px 15px;
+      }
+      img {
+        height: 31vw;
+      }
     }
   }
 }

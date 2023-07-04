@@ -150,9 +150,6 @@
 
   add_theme_support('post-thumbnails', array('shares'));
 
-
-  add_theme_support('post-thumbnails', array('locations'));
-
   // add custom type "Shares"
   add_action('init', 'register_post_types_locations');
   function register_post_types_locations() {
