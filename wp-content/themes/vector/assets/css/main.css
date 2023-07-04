@@ -1035,11 +1035,19 @@ button, .btn {
   align-items: flex-end;
   justify-content: center;
 }
+.swiper.tariffs-slider .tariff .price .price-container {
+  display: flex;
+  align-items: flex-end;
+}
 .swiper.tariffs-slider .tariff .price span {
   font-weight: 700;
   font-size: 32px;
   line-height: 0.8;
   padding-right: 5px;
+}
+.swiper.tariffs-slider .tariff .price span.relevant-price {
+  font-size: 24px;
+  position: relative;
 }
 .swiper.tariffs-slider .tariff button {
   width: 90%;
@@ -1165,6 +1173,9 @@ button, .btn {
   .swiper.tariffs-slider .tariff .price span {
     font-size: 40px;
   }
+  .swiper.tariffs-slider .tariff .price span.relevant-price {
+    font-size: 30px;
+  }
   .swiper.tariffs-slider .tariff .open-details-tv {
     font-size: 16px;
   }
@@ -1245,6 +1256,9 @@ button, .btn {
   .swiper.tariffs-slider .tariff .price span {
     font-size: 50px;
     line-height: 0.8;
+  }
+  .swiper.tariffs-slider .tariff .price span.relevant-price {
+    font-size: 42px;
   }
   .swiper.tariffs-slider .tariff .open-details-tv {
     margin-top: 23px;
@@ -2818,7 +2832,8 @@ button, .btn {
   text-align: center;
 }
 .home .action .relevant-price {
-  display: none;
+  text-decoration: line-through;
+  color: #03bf6a;
 }
 .home .action .description-content {
   display: none;

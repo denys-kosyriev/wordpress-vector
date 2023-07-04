@@ -39,12 +39,22 @@
         <span><?php echo get_field('tariffs_package_home_net') ?></span>
       </div>
       <div class='price'>
-        <span class='relevant-price'><?php echo get_field('tariffs_price') ?></span>
-        <span class='action-price'><?php echo get_field('tariffs_action_price') ?></span>
-        <?php echo get_field('currency_term') ?>
+        <div class='price-container'>
+          <?php if (get_field('tariffs_price')) { ?>
+            <span class='action-price <?php if (get_field('tariffs_action_price')) {
+              echo "relevant-price";
+            } ?>'>
+              <?php echo get_field('tariffs_price') ?>
+            </span>
+          <?php } ?>
+          <span class='action-price'>
+            <?php echo get_field('tariffs_action_price') ?>
+          </span>
+        </div>
+        грн/міс
       </div>
       <button class='btn btn-full open-connect-net-modal-js get-title-tariff'>
-        <?php echo get_field('tariffs_button') ?>
+        Підключити
       </button>
       <div class='open-details-tv-block'>
         <p class='open-details-tv'>Детальніше</p>

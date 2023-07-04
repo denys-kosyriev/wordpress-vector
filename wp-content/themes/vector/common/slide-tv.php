@@ -17,11 +17,21 @@
         Цифрове
         <span> <?php echo get_field('tariffs_tv_digital') ?></span>
       </div>
-      <p class='price'>
-        <span class='relevant-price'><?php echo get_field('tariffs_price') ?></span>
-        <span class='action-price'><?php echo get_field('tariffs_action_price') ?></span>
+      <div class='price'>
+        <div class='price-container'>
+          <?php if (get_field('tariffs_price')) { ?>
+            <span class='action-price <?php if (get_field('tariffs_action_price')) {
+              echo "relevant-price";
+            } ?>'>
+              <?php echo get_field('tariffs_price') ?>
+            </span>
+          <?php } ?>
+          <span class='action-price'>
+            <?php echo get_field('tariffs_action_price') ?>
+          </span>
+        </div>
         грн/міс
-      </p>
+      </div>
       <button class='btn btn-full open-connect-tv-modal-js get-title-tariff'>
         Підключити
       </button>

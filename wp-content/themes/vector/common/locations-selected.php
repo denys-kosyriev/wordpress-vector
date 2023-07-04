@@ -45,7 +45,7 @@
         }
       ?>
       <select class='change-location' name='address'>
-        <option value=''>Всі локації</option>
+        <option value='all'>Всі локації</option>
         <?php foreach ($newLocations as $location) { ?>
           <option <?php
             if (isset($_GET['location']) && $_GET['location'] === $location['link']) {

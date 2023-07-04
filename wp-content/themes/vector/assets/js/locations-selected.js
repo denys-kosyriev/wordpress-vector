@@ -4,10 +4,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const locationSelect = document.getElementsByClassName('change-location')[0];
 
-  locationSelect.addEventListener('change', function () {
+  locationSelect.addEventListener('change', function (e) {
     let url = new URL(window.location.href);
-    url.searchParams.delete('location');
-    url.searchParams.append('location', `${locationSelect.options[locationSelect.selectedIndex].value}`);
+    if (e.target.value === 'all') {
+      url.searchParams.delete('location');
+    } else {
+      url.searchParams.delete('location');
+      url.searchParams.append('location', `${locationSelect.options[locationSelect.selectedIndex].value}`);
+    }
     window.location.href = `./${url}`
   })
 

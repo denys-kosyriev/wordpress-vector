@@ -60,7 +60,8 @@
       text-align:    center;
     }
     .relevant-price {
-      display: none;
+      text-decoration: line-through;
+      color: #03bf6a;
     }
     .description-content {
       display: none;
