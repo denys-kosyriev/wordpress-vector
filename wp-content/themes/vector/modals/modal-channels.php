@@ -60,7 +60,6 @@
                     while (have_rows('channels', 'option')) :
                       the_row(); ?>
                       <div class='table-row'>
-                        <div><span>1.</span></div>
                         <div><span><?php echo get_sub_field('title_channel') ?></span></div>
                         <div><span><?php echo get_sub_field('code_channel') ?></span></div>
                       </div>

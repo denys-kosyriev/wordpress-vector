@@ -1,5 +1,6 @@
 .modal-channels {
   padding: 10px 0;
+  counter-reset: section;
   .channels {
     max-height:         100%;
     max-width:          1416px;
@@ -94,6 +95,15 @@
   .table-body {
     padding: 0 0 21px 6px;
     .table-row {
+      &:before {
+        counter-increment: section;
+        content:           counter(section);
+        min-width:    37px;
+        font-size:    13px;
+        font-weight:  500;
+        border-right: 1px solid rgba(#03BF9D, .2);
+        margin-right: 14px;
+      }
       &:first-of-type {
         div {
           &:last-of-type {
@@ -120,7 +130,6 @@
             min-width:    37px;
             font-size:    13px;
             font-weight:  500;
-            text-align:   center;
             border-right: 1px solid rgba(#03BF9D, .2);
             margin-right: 14px;
           }
@@ -163,6 +172,9 @@
     }
     .table-body {
       .table-row {
+        &:before {
+          font-size: 18px;
+        }
         div {
           &:first-of-type {
             span {
@@ -238,6 +250,10 @@
     .table-body {
       padding: 0 0 63px;
       .table-row {
+        &:before {
+          min-width: 50px;
+          font-size: 24px;
+        }
         &:first-of-type {
           div {
             &:last-of-type {

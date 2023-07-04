@@ -20,13 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
     )
-
-    const tableRowNumber = tableChannels[i].querySelectorAll('.table-body .table-row');
-    for (let k = 1; k <= tableRowNumber.length; k++) {
-      const div = tableRowNumber[k].querySelectorAll('div')[0];
-      const tableChannelNum = div.querySelector('span');
-      tableChannelNum.innerHTML = `${k}.`;
-    }
   }
 
 });
