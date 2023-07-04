@@ -14,16 +14,14 @@
     <div class='flex'>
       <div class='container'>
         <div class='wrapper'>
-          <div class='buttons'>
-            <ul>
-              <li>
-                <button class='btn btn-switch active'>Інтернет</button>
-              </li>
-              <li>
-                <button class='btn btn-switch'>Телебачення</button>
-              </li>
-            </ul>
-          </div>
+          <ul class='buttons'>
+            <li>
+              <button class='btn btn-switch active'>Інтернет</button>
+            </li>
+            <li>
+              <button class='btn btn-switch'>Телебачення</button>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

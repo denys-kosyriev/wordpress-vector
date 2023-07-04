@@ -20,19 +20,17 @@
     <div class='flex'>
       <div class='container'>
         <div class='wrapper'>
-          <div class='buttons'>
-            <ul>
-              <li>
-                <div class='btn btn-switch btn-switch-tariffs btn-net'>Інтернет</div>
-              </li>
-              <li>
-                <div class='btn btn-switch btn-switch-tariffs btn-tv'>Телебачення</div>
-              </li>
-              <li>
-                <div class='btn btn-switch btn-switch-tariffs btn-all'>Все разом</div>
-              </li>
-            </ul>
-          </div>
+          <ul class='buttons'>
+            <li>
+              <div class='btn btn-switch btn-switch-tariffs btn-net'>Інтернет</div>
+            </li>
+            <li>
+              <div class='btn btn-switch btn-switch-tariffs btn-tv'>Телебачення</div>
+            </li>
+            <li>
+              <div class='btn btn-switch btn-switch-tariffs btn-all'>Все разом</div>
+            </li>
+          </ul>
           <?php get_template_part('./common/locations-selected') ?>
         </div>
       </div>

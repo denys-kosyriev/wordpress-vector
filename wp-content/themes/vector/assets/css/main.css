@@ -701,14 +701,14 @@ button, .btn {
   text-align: center;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 900;
   background-color: #F2F8F8;
   transition: 0.3s linear;
-  transform: translateY(calc(-100% - 52px));
+  transform: translateX(100%);
 }
 .header .burger-menu.open-burger {
-  transform: translateY(0);
+  transform: translateX(0);
 }
 .header .burger-menu svg {
   margin-right: 8px;
@@ -1816,16 +1816,17 @@ button, .btn {
 }
 .section-form {
   overflow: auto;
+  padding-left: 4px;
 }
 .section-form.block-form {
-  padding: 20px 0 60px;
+  padding: 0 0 60px;
 }
 .section-form.block-form .container {
   max-width: 1345px;
   padding: 0;
 }
 .section-form.block-form .wrapper-form {
-  padding: 58px 20px 0;
+  padding: 38px 20px 0;
   display: flex;
 }
 .section-form.block-form .wrapper-form .tariffs-form {
@@ -1891,7 +1892,7 @@ button, .btn {
     padding: 0 0 80px;
   }
   .section-form.block-form .wrapper-form {
-    padding: 81px 20px 0;
+    padding: 61px 20px 0;
   }
   .section-form.block-form .circle:nth-of-type(2) {
     width: 253px;
@@ -1914,6 +1915,7 @@ button, .btn {
   text-align: center;
   font-size: 14px;
   font-weight: 400;
+  padding-bottom: 15px;
 }
 .top-radio-buttons .selected .select {
   display: flex;
@@ -1941,6 +1943,7 @@ button, .btn {
   display: flex;
   overflow: auto;
   gap: 10px;
+  padding-bottom: 15px;
 }
 .top-radio-buttons li:first-child {
   margin-left: 20px;
@@ -1954,11 +1957,8 @@ button, .btn {
     padding-bottom: 41px;
     text-align: start;
   }
-  .top-radio-buttons .buttons {
-    padding-bottom: 0;
-  }
   .top-radio-buttons .selected {
-    padding: 24px 0 0;
+    padding: 24px 0 15px;
   }
   .top-radio-buttons .selected p {
     padding-right: 24px;
@@ -1984,7 +1984,7 @@ button, .btn {
 }
 @media (min-width: 1440px) {
   .top-radio-buttons .selected {
-    padding: 0 20px 0 0;
+    padding: 0 20px 15px 0;
   }
 }
 .connection-internet {
@@ -2359,7 +2359,7 @@ button, .btn {
 }
 .tariffs-form {
   max-width: 566px;
-  width: 100%;
+  width: 98%;
   padding: 26px 21px 24px;
   background-color: #fff;
   border-radius: 20px 20px;
@@ -2581,7 +2581,7 @@ button, .btn {
   top: 0;
   left: 0;
   z-index: 0;
-  padding: 28px 0 0;
+  padding: 28px 0 13px;
   background-color: #fff;
 }
 .modal-channels h2 {
@@ -2591,7 +2591,7 @@ button, .btn {
   display: flex;
   overflow: auto;
   gap: 9px;
-  padding-bottom: 28px;
+  padding-bottom: 15px;
 }
 .modal-channels .buttons li:first-of-type {
   margin-left: 30px;
@@ -2612,6 +2612,7 @@ button, .btn {
   font-weight: 700;
   margin: 0 0 17px 8px;
   text-align: start;
+  padding: 0;
 }
 .modal-channels .table-row {
   display: flex;
@@ -2727,7 +2728,7 @@ button, .btn {
     padding: 0 50px 0;
   }
   .modal-channels .modal-channels-header {
-    padding: 67px 0 0;
+    padding: 67px 0 13px;
   }
   .modal-channels .buttons {
     gap: 44px;
@@ -3453,13 +3454,10 @@ button, .btn {
   }
 }
 .tariffs-page .top-radio-buttons {
-  padding: 41px 0 20px;
+  padding: 41px 0 5px;
 }
 .tariffs-page .top-radio-buttons .container, .tariffs-page div .container {
   max-width: 1504px;
-}
-.tariffs-page .buttons {
-  padding-bottom: 10px;
 }
 .tariffs-page h3 {
   padding-bottom: 25px;
@@ -3513,9 +3511,6 @@ button, .btn {
 }
 
 @media (min-width: 567px) {
-  .tariffs-page .buttons {
-    padding-bottom: 20px;
-  }
   .tariffs-page h3 p {
     font-size: 28px;
   }
@@ -3555,18 +3550,12 @@ button, .btn {
 }
 @media (min-width: 1200px) {
   .tariffs-page .top-radio-buttons {
-    padding: 80px 0 30px;
+    padding: 80px 0 5px;
   }
 }
 @media (min-width: 1440px) {
-  .tariffs-page .buttons {
-    padding-bottom: 0;
-  }
   .tariffs-page h3 {
     padding: 0 0 40px;
-  }
-  .tariffs-page .top-radio-buttons .selected {
-    padding: 0;
   }
   .tariffs-page .top-radio-buttons .selected p {
     font-size: 24px;

@@ -6,9 +6,11 @@
       <div class='wrapper'>
         <div class='flex'>
           <div class='navigation'>
-            <img src='<?php echo get_field('footer_logotype', 'option') ?>'
-                 alt=''
-                 class='logo'>
+            <a href='./index.php'>
+              <img src='<?php echo get_field('footer_logotype', 'option') ?>'
+                   alt=''
+                   class='logo'>
+            </a>
             <?php
               wp_nav_menu([
                 'theme_location' => 'footer-navigation',

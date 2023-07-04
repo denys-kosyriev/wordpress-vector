@@ -1,14 +1,11 @@
 .tariffs-page {
   .top-radio-buttons {
-    padding: 41px 0 20px;
+    padding: 41px 0 5px;
   }
   .top-radio-buttons, div {
     .container {
       max-width: 1504px;
     }
-  }
-  .buttons {
-    padding-bottom: 10px;
   }
   h3 {
     padding-bottom: 25px;
@@ -64,9 +61,6 @@
 
 @media(min-width: 567px) {
   .tariffs-page {
-    .buttons {
-      padding-bottom: 20px;
-    }
     h3 {
       p {
         font-size: 28px;
@@ -118,22 +112,18 @@
 @media(min-width: 1200px) {
   .tariffs-page {
     .top-radio-buttons {
-      padding: 80px 0 30px;
+      padding: 80px 0 5px;
     }
   }
 }
 
 @media(min-width: 1440px) {
   .tariffs-page {
-    .buttons {
-      padding-bottom: 0;
-    }
     h3 {
       padding: 0 0 40px;
     }
     .top-radio-buttons {
       .selected {
-        padding: 0;
         p {
           font-size: 24px;
         }

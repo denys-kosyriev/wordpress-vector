@@ -23,7 +23,7 @@
     top:              0;
     left:             0;
     z-index:          0;
-    padding:          28px 0 0;
+    padding:          28px 0 13px;
     background-color: #fff;
   }
   h2 {
@@ -33,7 +33,7 @@
     display:        flex;
     overflow:       auto;
     gap:            9px;
-    padding-bottom: 28px;
+    padding-bottom: 15px;
     li {
       &:first-of-type {
         margin-left: 30px;
@@ -56,6 +56,7 @@
     font-weight: 700;
     margin:      0 0 17px 8px;
     text-align:  start;
+    padding:     0;
   }
   .table-row {
     display:     flex;
@@ -207,7 +208,7 @@
       padding:       0 50px 0;
     }
     .modal-channels-header {
-      padding: 67px 0 0;
+      padding: 67px 0 13px;
     }
     .buttons {
       gap: 44px;

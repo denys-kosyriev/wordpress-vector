@@ -1,13 +1,14 @@
 .section-form {
-  overflow: auto;
+  overflow:     auto;
+  padding-left: 4px;
   &.block-form {
-    padding: 20px 0 60px;
+    padding: 0 0 60px;
     .container {
       max-width: 1345px;
       padding:   0;
     }
     .wrapper-form {
-      padding: 58px 20px 0;
+      padding: 38px 20px 0;
       display: flex;
       .tariffs-form {
         margin: 0 auto;
@@ -82,7 +83,7 @@
     &.block-form {
       padding: 0 0 80px;
       .wrapper-form {
-        padding: 81px 20px 0;
+        padding: 61px 20px 0;
       }
       .circle {
         &:nth-of-type(2) {

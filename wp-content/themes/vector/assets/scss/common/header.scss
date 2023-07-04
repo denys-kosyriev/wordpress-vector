@@ -97,13 +97,13 @@
     text-align:       center;
     position:         fixed;
     top:              0;
-    left:             0;
+    right:            0;
     z-index:          900;
     background-color: #F2F8F8;
     transition:       .3s linear;
-    transform:        translateY(calc(-100% - 52px));
+    transform:        translateX(100%);
     &.open-burger {
-      transform: translateY(0);
+      transform: translateX(0);
     }
     svg {
       margin-right: 8px;
