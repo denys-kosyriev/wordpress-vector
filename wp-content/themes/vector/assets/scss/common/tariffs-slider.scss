@@ -78,6 +78,8 @@
         &.relevant-price {
           font-size: 24px;
           position:  relative;
+          text-decoration: line-through;
+          color: #03bf6a;
         }
       }
     }

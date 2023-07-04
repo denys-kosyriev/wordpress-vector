@@ -1048,6 +1048,8 @@ button, .btn {
 .swiper.tariffs-slider .tariff .price span.relevant-price {
   font-size: 24px;
   position: relative;
+  text-decoration: line-through;
+  color: #03bf6a;
 }
 .swiper.tariffs-slider .tariff button {
   width: 90%;
@@ -2847,10 +2849,6 @@ button, .btn {
   margin-bottom: 24px;
   text-align: center;
 }
-.home .action .relevant-price {
-  text-decoration: line-through;
-  color: #03bf6a;
-}
 .home .action .description-content {
   display: none;
 }
@@ -3470,9 +3468,6 @@ button, .btn {
 .tariffs-page h3 span {
   color: #03BF6A;
   text-transform: uppercase;
-}
-.tariffs-page .action-price {
-  display: none;
 }
 .tariffs-page .description {
   margin-bottom: 42px;
