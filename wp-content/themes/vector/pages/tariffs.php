@@ -90,40 +90,10 @@
         </div>
       </section>
     <?php else: ?>
-      <section class='connection-tv'>
-        <div class='container'>
-          <div class='content'>
-            <img src='<?php echo get_field('connection_tv_image') ?>' alt=''>
-            <div>
-              <h2><?php echo get_field('connection_tv_title') ?></h2>
-              <p>
-                <?php echo get_field('connection_tv_description') ?>
-              </p>
-              <button class='btn btn-full scroll-up'>
-                Показати тарифи
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <?php get_template_part('./common/connection-tv') ?>
     <?php endif; ?>
   <?php } else { ?>
-    <section class='connection-tv'>
-      <div class='container'>
-        <div class='content'>
-          <img src='<?php echo get_field('connection_tv_image') ?>' alt=''>
-          <div>
-            <?php echo get_field('connection_tv_title') ?>
-            <p>
-              <?php echo get_field('connection_tv_description') ?>
-            </p>
-            <button class='btn btn-full scroll-up'>
-              Показати тарифи
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
+    <?php get_template_part('./common/connection-tv') ?>
   <?php } ?>
 </main>
 

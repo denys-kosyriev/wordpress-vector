@@ -141,21 +141,19 @@
           <?php if (have_rows('payment_banks')) :
             while (have_rows('payment_banks')) :
               the_row(); ?>
-              <div class='swiper-slide'>
-                <div class='payment-content'>
-                  <img src='<?php echo get_sub_field('logotype') ?>' alt=''>
-                  <div class='content'>
-                    <h2>
-                      Оплатити онлайн через
-                      <span><?php echo get_sub_field('title') ?></span>
-                    </h2>
-                    <a
-                      target='_blank'
-                      class='btn btn-full'
-                      href='<?php echo get_sub_field('link') ?>'>
-                      Оплатити
-                    </a>
-                  </div>
+              <div class='swiper-slide payment-content'>
+                <img src='<?php echo get_sub_field('logotype') ?>' alt=''>
+                <div class='content'>
+                  <h2>
+                    Оплатити онлайн через
+                    <span><?php echo get_sub_field('title') ?></span>
+                  </h2>
+                  <a
+                    target='_blank'
+                    class='btn btn-full'
+                    href='<?php echo get_sub_field('link') ?>'>
+                    Оплатити
+                  </a>
                 </div>
               </div>
             <?php endwhile;
@@ -163,6 +161,7 @@
         </div>
         <div class='swiper-button-prev swiper-button-tariffs'></div>
         <div class='swiper-button-next swiper-button-tariffs'></div>
+        <div class='swiper-pagination'></div>
       </div>
     </div>
   </section>

@@ -237,53 +237,11 @@ button, .btn {
   object-fit: cover;
 }
 
-.swiper-button-prev.d-none,
-.swiper-button-next.d-none,
-.d-none {
-  display: none;
-}
-
 .p-relative {
   position: relative;
   top:      0;
   left:     0;
   z-index:  0;
-}
-
-.swiper {
-  &-wrapper {
-    .swiper-slide {
-      height:   auto;
-      position: relative;
-      top:      0;
-      left:     0;
-      z-index:  0;
-    }
-  }
-  & &-pagination.swiper-pagination-bullets {
-    bottom: 6px;
-    span {
-      cursor:           pointer;
-      height:           8px;
-      width:            8px;
-      background-color: #03BF6A;
-      margin:           0 5px;
-      transition:       .2s linear;
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
-  & &-button-prev, & &-button-next {
-    transition: .2s linear;
-    &:hover, &:hover {
-      width: 20px;
-    }
-  }
-  &-button-next::after, &-button-prev::after {
-    color:       #03BF6A;
-    font-weight: 900;
-  }
 }
 
 .tel-link {
@@ -456,17 +414,6 @@ button, .btn {
     background-size:       13px;
   }
 
-  .swiper {
-    & &-pagination.swiper-pagination-bullets {
-      margin-bottom: 10px;
-      span {
-        height: 20px;
-        width:  20px;
-        margin: 0 15px;
-      }
-    }
-  }
-
   .close-modal {
     width: 35px;
     top:   82px;
@@ -627,4 +574,84 @@ button, .btn {
     }
   }
 }
+
+// Swiper styles
+
+.swiper {
+  &-wrapper {
+    .swiper-slide {
+      height:   auto;
+      position: relative;
+      top:      0;
+      left:     0;
+      z-index:  0;
+    }
+  }
+  & &-pagination.swiper-pagination-bullets {
+    bottom: 6px;
+    span {
+      cursor:           pointer;
+      height:           8px;
+      width:            8px;
+      background-color: #03BF6A;
+      margin:           0 5px;
+      transition:       .2s linear;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  & &-button-prev, & &-button-next {
+    transition: .2s linear;
+    &:hover, &:hover {
+      width: 20px;
+    }
+  }
+  &-button-next::after, &-button-prev::after {
+    color:       #03BF6A;
+    font-weight: 900;
+  }
+  &-button-prev.d-none,
+  &-button-next.d-none,
+  .d-none {
+    display: none;
+  }
+
+  &-payment {
+    .swiper-button-tariffs {
+      display: none;
+    }
+    .swiper-pagination.swiper-pagination-bullets {
+      span {
+        background-color: #fff;
+        opacity:          1;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: #006939;
+      }
+    }
+  }
+}
+
+@media(min-width: 1024px) {
+  .swiper {
+    & &-pagination.swiper-pagination-bullets {
+      margin-bottom: 10px;
+      span {
+        height: 20px;
+        width:  20px;
+        margin: 0 15px;
+      }
+    }
+    &-payment {
+      .swiper-button-tariffs {
+        display: block;
+      }
+      .swiper-pagination {
+        display: none;
+      }
+    }
+  }
+}
+
 

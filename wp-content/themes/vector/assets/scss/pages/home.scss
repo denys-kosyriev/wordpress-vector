@@ -9,11 +9,13 @@
         padding-bottom: 38px;
       }
       .swiper-slide {
-        min-height:    66vw;
-        background:    linear-gradient(114.04deg, #03BF6A 24.98%, #6AE37E 101.83%);
-        border-radius: 20px;
-        padding:       68px 23px 28px;
-        overflow:      hidden;
+        background:      linear-gradient(114.04deg, #03BF6A 24.98%, #6AE37E 101.83%);
+        border-radius:   20px;
+        padding:         10% 25px;
+        overflow:        hidden;
+        display:         flex;
+        flex-direction:  column;
+        justify-content: center;
         div {
           z-index: 2;
         }
@@ -134,19 +136,20 @@
       bottom:     0;
       left:       0;
       z-index:    -1;
-      background: #03bf5de3;
+      background: linear-gradient(24deg, #03BF6A 24.98%, #6AE37E 101.83%);
     }
-    .swiper {
-      border-radius: 20px;
+    .swiper-wrapper {
+      margin-bottom: 30px;
     }
     .payment-content {
       height:           100%;
       padding:          20px 27px 41px;
-      background-color: #F2F8F8;
       text-align:       center;
       display:          flex;
       flex-direction:   column;
       align-items:      center;
+      background-color: #F2F8F8;
+      border-radius:    20px;
     }
     h2 {
       font-weight: 700;
@@ -195,23 +198,12 @@
   }
 }
 
-@media(min-width: 400px) {
-  .home {
-    .banners {
-      .swiper-banners {
-        .swiper-slide {
-          min-height: 32vw;
-        }
-      }
-    }
-  }
-}
-
 @media(min-width: 567px) {
   .home {
     .banners {
       .swiper-banners {
         .swiper-slide {
+          padding: 8% 30px;
           h2 {
             font-size: 42px;
           }
@@ -283,7 +275,7 @@
         padding:   20px 30px;
       }
       img {
-        height: 300px;
+        height: 240px;
       }
       .swiper-button-prev {
         left: 30px;
@@ -303,8 +295,7 @@
           margin-bottom: 35px;
         }
         .swiper-slide {
-          min-height: 521px;
-          padding:    88px 127px 87px;
+          padding: 4% 107px;
           h2 {
             margin-bottom: 26px;
             font-size:     64px;
@@ -387,7 +378,7 @@
 @media(min-width: 1200px) {
   .home {
     .banners {
-      padding: 70px 0 34px;
+      padding: 30px 0 34px;
     }
     .about-internet {
       .wrapper {
@@ -406,10 +397,9 @@
 @media(min-width: 1440px) {
   .home {
     .banners {
-      padding: 107px 0 34px;
+      padding: 47px 0 34px;
     }
     .action {
-      padding: 80px 0 0;
       h2 {
         margin: 0 99px 56px;
       }
@@ -440,7 +430,7 @@
       .container {
         max-width: 1480px;
       }
-      .swiper {
+      .wrapper {
         border-radius: 40px;
       }
       .payment-content {
