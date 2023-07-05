@@ -79,9 +79,9 @@
     h2 {
       padding-bottom: 45px;
     }
-    .top {
-      .buttons {
-        padding-bottom: 106px;
+    .top-radio-buttons {
+      .flex {
+        margin-bottom: 15px;
       }
     }
     .description {
@@ -123,6 +123,9 @@
       padding: 0 0 40px;
     }
     .top-radio-buttons {
+      .flex {
+        margin-bottom: 20px;
+      }
       .selected {
         p {
           font-size: 24px;

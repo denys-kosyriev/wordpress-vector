@@ -602,10 +602,17 @@ button, .btn {
     }
   }
   & &-button-prev, & &-button-next {
+    display:    none;
     transition: .2s linear;
     &:hover, &:hover {
-      width: 20px;
+
     }
+  }
+  & &-button-next:hover {
+    right: 0;
+  }
+  & &-button-prev:hover {
+    left: 0;
   }
   &-button-next::after, &-button-prev::after {
     color:       #03BF6A;
@@ -652,6 +659,14 @@ button, .btn {
       .swiper-pagination {
         display: none;
       }
+    }
+  }
+}
+
+@media(min-width: 1440px) {
+  .swiper {
+    & &-button-prev, & &-button-next {
+      display: block;
     }
   }
 }

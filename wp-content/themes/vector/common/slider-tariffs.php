@@ -4,9 +4,7 @@
       the_row(); ?>
       <div class='sliders-js'>
         <div class='container'>
-          <h3 class='title-slider'>
-            <?php echo get_sub_field('title') ?>
-          </h3>
+          <?php echo get_sub_field('title') ?>
         </div>
       </div>
       <div class='swiper tariffs-slider action-section'>
@@ -18,7 +16,7 @@
                 setup_postdata($post);
                 $have_location = false;
                 $tariffs_selected_location = get_field('tariffs_selected_location');
-                if (isset($_GET['location'])) {
+                if ($tariffs_selected_location && isset($_GET['location'])) {
                   foreach ($tariffs_selected_location as $location) {
                     if (get_field('select_location', $location->ID) === $_GET['location']) {
                       $have_location = true;

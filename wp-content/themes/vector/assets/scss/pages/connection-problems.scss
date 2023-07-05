@@ -1,7 +1,7 @@
 .connection-problems {
   overflow: hidden;
   .error {
-    padding: 32px 0 0;
+    padding: 41px 0 0;
     .container {
       max-width: 1320px;
     }
@@ -120,7 +120,7 @@
 @media(min-width: 768px) {
   .connection-problems {
     .error {
-      padding: 42px 0 43px;
+      padding: 41px 0 43px;
       .flex {
         display:         flex;
         justify-content: space-between;
@@ -161,7 +161,7 @@
 @media(min-width: 1024px) {
   .connection-problems {
     .error {
-      padding: 52px 0 81px;
+      padding: 41px 0 81px;
       .flex {
         div {
           font-size: 20px;
@@ -215,7 +215,7 @@
 @media(min-width: 1200px) {
   .connection-problems {
     .error {
-      padding: 77px 0 81px;
+      padding: 80px 0 81px;
     }
   }
 }
