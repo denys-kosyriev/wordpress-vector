@@ -43,16 +43,9 @@
               <div class='table'>
                 <div class='table-header'>
                   <div class='table-row'>
-                    <?php if (have_rows('title_columns')) :
-                      while (have_rows('title_columns')) :
-                        the_row();
-                        ?>
-                        <div>
-                          <span><?php echo get_sub_field('title_column') ?></span>
-                        </div>
-                      <?php endwhile;
-                    endif;
-                    ?>
+                    <div class='symbol-number'><span>№</span></div>
+                    <div class='title-channel'><span>Назва</span></div>
+                    <div class='code-channel'><span>канал</span></div>
                   </div>
                 </div>
                 <div class='table-body'>
@@ -60,8 +53,8 @@
                     while (have_rows('channels', 'option')) :
                       the_row(); ?>
                       <div class='table-row'>
-                        <div><span><?php echo get_sub_field('title_channel') ?></span></div>
-                        <div><span><?php echo get_sub_field('code_channel') ?></span></div>
+                        <div class='title-channel'><span><?php echo get_sub_field('title_channel') ?></span></div>
+                        <div class='code-channel'><span><?php echo get_sub_field('code_channel') ?></span></div>
                       </div>
                     <?php endwhile;
                   endif; ?>

@@ -1,8 +1,9 @@
 <div class='swiper-slide'>
   <div class='tariff tariff-tv'>
     <p class='title-tariff'><?php echo get_the_title() ?></p>
-    <h4 class='title title-tariff-for-modal'
-    ><?php echo get_field('tariffs_select_type_tariff') ?></h4>
+    <h4 class='title title-tariff-for-modal'>
+      <?php echo get_field('tariffs_select_type_tariff') ?>
+    </h4>
     <p class='desc'><?php echo get_field('tariffs_package_tv') ?></p>
     <div class='bottom'>
       <div class='header-network'>

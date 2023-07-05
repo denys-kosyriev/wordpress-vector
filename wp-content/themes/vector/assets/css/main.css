@@ -567,10 +567,14 @@ button, .btn {
   opacity: 1;
 }
 .swiper .swiper-button-prev, .swiper .swiper-button-next {
+  display: none;
   transition: 0.2s linear;
 }
-.swiper .swiper-button-prev:hover, .swiper .swiper-button-prev:hover, .swiper .swiper-button-next:hover, .swiper .swiper-button-next:hover {
-  width: 20px;
+.swiper .swiper-button-next:hover {
+  right: 0;
+}
+.swiper .swiper-button-prev:hover {
+  left: 0;
 }
 .swiper-button-next::after, .swiper-button-prev::after {
   color: #03BF6A;
@@ -607,6 +611,11 @@ button, .btn {
   }
   .swiper-payment .swiper-pagination {
     display: none;
+  }
+}
+@media (min-width: 1440px) {
+  .swiper .swiper-button-prev, .swiper .swiper-button-next {
+    display: block;
   }
 }
 .header {
@@ -2268,7 +2277,7 @@ button, .btn {
   margin: 0 auto 20px;
 }
 .blog .top {
-  padding: 35px 0 30px;
+  padding: 41px 0 30px;
 }
 .blog .top .container {
   max-width: 1307px;
@@ -2305,7 +2314,7 @@ button, .btn {
 
 @media (min-width: 567px) {
   .blog .top {
-    padding: 35px 0 35px;
+    padding: 41px 0 35px;
   }
   .blog .top .date {
     font-size: 16px;
@@ -2325,7 +2334,7 @@ button, .btn {
     margin: 20px auto 40px;
   }
   .blog .top {
-    padding: 50px 0;
+    padding: 41px 0 52px;
   }
   .blog .top h1 {
     font-size: 75px;
@@ -2345,7 +2354,7 @@ button, .btn {
 }
 @media (min-width: 1200px) {
   .blog .top {
-    padding: 60px 0 50px;
+    padding: 80px 0 50px;
   }
   .blog .bottom {
     padding: 0 0 47px;
@@ -2622,13 +2631,13 @@ button, .btn {
   display: flex;
   align-items: center;
 }
-.modal-channels .table-row div:first-of-type span {
+.modal-channels .table-row .symbol-number span {
   min-width: 20px;
 }
-.modal-channels .table-row div:nth-of-type(2) {
+.modal-channels .table-row .title-channel {
   padding-left: 13px;
 }
-.modal-channels .table-row div:last-of-type {
+.modal-channels .table-row .code-channel {
   margin-left: auto;
 }
 .modal-channels .table-header {
@@ -2656,31 +2665,24 @@ button, .btn {
   border-right: 1px solid rgba(3, 191, 157, 0.2);
   margin-right: 14px;
 }
-.modal-channels .table-body .table-row:first-of-type div:last-of-type {
+.modal-channels .table-body .table-row:first-of-type .code-channel {
   border-radius: 6px 6px 0 0;
 }
 .modal-channels .table-body .table-row:nth-of-type(2n) {
   background-color: #f9f9f9;
 }
-.modal-channels .table-body .table-row:nth-of-type(2n) div:last-of-type {
+.modal-channels .table-body .table-row:nth-of-type(2n) .code-channel {
   background-color: rgba(3, 191, 106, 0.5);
 }
-.modal-channels .table-body .table-row:last-of-type div:last-of-type {
+.modal-channels .table-body .table-row:last-of-type .code-channel {
   border-radius: 0 0 6px 6px;
 }
-.modal-channels .table-body .table-row div:first-of-type span {
-  min-width: 37px;
-  font-size: 13px;
-  font-weight: 500;
-  border-right: 1px solid rgba(3, 191, 157, 0.2);
-  margin-right: 14px;
-}
-.modal-channels .table-body .table-row div:nth-of-type(2) {
+.modal-channels .table-body .table-row .title-channel {
   font-size: 13px;
   font-weight: 400;
   padding: 5px 0;
 }
-.modal-channels .table-body .table-row div:last-of-type {
+.modal-channels .table-body .table-row .code-channel {
   min-height: 27px;
   width: 35px;
   justify-content: center;
@@ -2703,13 +2705,10 @@ button, .btn {
   .modal-channels .table-body .table-row:before {
     font-size: 18px;
   }
-  .modal-channels .table-body .table-row div:first-of-type span {
-    font-size: 18px;
-  }
-  .modal-channels .table-body .table-row div:nth-of-type(2) {
+  .modal-channels .table-body .table-row .title-channel {
     font-size: 16px;
   }
-  .modal-channels .table-body .table-row div:last-of-type {
+  .modal-channels .table-body .table-row .code-channel {
     min-height: 48px;
     font-size: 18px;
     padding: 13px 30px;
@@ -2757,30 +2756,26 @@ button, .btn {
   .modal-channels .table-header .table-row div span {
     font-size: 24px;
   }
-  .modal-channels .table-row div:nth-of-type(2) {
+  .modal-channels .table-row .title-channel {
     padding-left: 56px;
   }
   .modal-channels .table-body {
-    padding: 0 0 63px;
+    padding: 0 0 33px;
   }
   .modal-channels .table-body .table-row:before {
     min-width: 50px;
     font-size: 24px;
   }
-  .modal-channels .table-body .table-row:first-of-type div:last-of-type {
+  .modal-channels .table-body .table-row:first-of-type .code-channel {
     border-radius: 20px 20px 0 0;
   }
-  .modal-channels .table-body .table-row:last-of-type div:last-of-type {
+  .modal-channels .table-body .table-row:last-of-type .code-channel {
     border-radius: 0 0 20px 20px;
   }
-  .modal-channels .table-body .table-row div:first-of-type span {
-    min-width: 50px;
+  .modal-channels .table-body .table-row .title-channel {
     font-size: 24px;
   }
-  .modal-channels .table-body .table-row div:nth-of-type(2) {
-    font-size: 24px;
-  }
-  .modal-channels .table-body .table-row div:last-of-type {
+  .modal-channels .table-body .table-row .code-channel {
     min-height: 65px;
     font-size: 24px;
     padding: 19px 51px;
@@ -3046,12 +3041,6 @@ button, .btn {
   .home .payment img {
     height: 240px;
   }
-  .home .payment .swiper-button-prev {
-    left: 30px;
-  }
-  .home .payment .swiper-button-next {
-    right: 30px;
-  }
 }
 @media (min-width: 1024px) {
   .home .banners .swiper-banners .swiper-wrapper {
@@ -3118,6 +3107,18 @@ button, .btn {
   }
   .home .payment img {
     margin: auto 0 20px;
+  }
+  .home .payment .swiper-button-prev {
+    left: 30px;
+  }
+  .home .payment .swiper-button-prev:hover {
+    left: 25px;
+  }
+  .home .payment .swiper-button-next {
+    right: 30px;
+  }
+  .home .payment .swiper-button-next:hover {
+    right: 25px;
   }
 }
 @media (min-width: 1125px) {
@@ -3203,9 +3204,15 @@ button, .btn {
     top: 48%;
     left: 56px;
   }
+  .home .payment .swiper-button-prev:hover {
+    left: 48px;
+  }
   .home .payment .swiper-button-next {
     top: 48%;
     right: 56px;
+  }
+  .home .payment .swiper-button-next:hover {
+    right: 48px;
   }
 }
 @media (min-width: 1800px) {
@@ -3312,7 +3319,7 @@ button, .btn {
 }
 @media (min-width: 1200px) {
   .shares section {
-    padding: 60px 0 84px;
+    padding: 80px 0 84px;
   }
   .shares .cart {
     width: 31%;
@@ -3325,7 +3332,7 @@ button, .btn {
   }
 }
 .news section {
-  padding: 42px 0;
+  padding: 41px 0;
 }
 .news .container {
   max-width: 1482px;
@@ -3445,7 +3452,7 @@ button, .btn {
 }
 @media (min-width: 1200px) {
   .news section {
-    padding: 59px 0 100px;
+    padding: 80px 0 100px;
   }
 }
 @media (min-width: 1440px) {
@@ -3522,8 +3529,8 @@ button, .btn {
   .tariffs-page h2 {
     padding-bottom: 45px;
   }
-  .tariffs-page .top .buttons {
-    padding-bottom: 106px;
+  .tariffs-page .top-radio-buttons .flex {
+    margin-bottom: 15px;
   }
   .tariffs-page .description {
     margin-bottom: 67px;
@@ -3556,6 +3563,9 @@ button, .btn {
 @media (min-width: 1440px) {
   .tariffs-page h3 {
     padding: 0 0 40px;
+  }
+  .tariffs-page .top-radio-buttons .flex {
+    margin-bottom: 20px;
   }
   .tariffs-page .top-radio-buttons .selected p {
     font-size: 24px;
@@ -3852,7 +3862,7 @@ button, .btn {
 }
 @media (min-width: 1200px) {
   .advertising .advertising-services {
-    padding: 84px 0 0;
+    padding: 80px 0 0;
   }
   .advertising .billboard .left {
     width: 40%;
@@ -3984,9 +3994,6 @@ button, .btn {
   }
 }
 @media (min-width: 1024px) {
-  .support .possibilities {
-    padding: 65px 0 0;
-  }
   .support .possibilities h2 {
     text-align: start;
     margin: 0 28px 71px;
@@ -4022,6 +4029,11 @@ button, .btn {
   .support .help a {
     font-size: 24px;
     padding: 26px 63px;
+  }
+}
+@media (min-width: 1200px) {
+  .support .possibilities {
+    padding: 80px 0 0;
   }
 }
 .documents section {
@@ -4172,7 +4184,7 @@ button, .btn {
   }
 }
 .settings section {
-  padding: 43px 0 10px;
+  padding: 41px 0 10px;
 }
 .settings .container {
   max-width: 1466px;
@@ -4228,7 +4240,7 @@ button, .btn {
 }
 @media (min-width: 1200px) {
   .settings section {
-    padding: 63px 0 75px;
+    padding: 80px 0 75px;
   }
   .settings h2 {
     margin-bottom: 76px;
@@ -4250,7 +4262,7 @@ button, .btn {
   }
 }
 .connection .top-radio-buttons {
-  padding: 23px 0 0;
+  padding: 41px 0 0;
 }
 .connection .top-radio-buttons .container {
   max-width: 1500px;
@@ -4304,6 +4316,11 @@ button, .btn {
     border-radius: 40px;
   }
 }
+@media (min-width: 1200px) {
+  .connection .top-radio-buttons {
+    padding: 80px 0 0;
+  }
+}
 .error-404 section {
   padding-top: 10%;
 }
@@ -4342,7 +4359,7 @@ button, .btn {
   overflow: hidden;
 }
 .connection-problems .error {
-  padding: 32px 0 0;
+  padding: 41px 0 0;
 }
 .connection-problems .error .container {
   max-width: 1320px;
@@ -4452,7 +4469,7 @@ button, .btn {
 }
 @media (min-width: 768px) {
   .connection-problems .error {
-    padding: 42px 0 43px;
+    padding: 41px 0 43px;
   }
   .connection-problems .error .flex {
     display: flex;
@@ -4484,7 +4501,7 @@ button, .btn {
 }
 @media (min-width: 1024px) {
   .connection-problems .error {
-    padding: 52px 0 81px;
+    padding: 41px 0 81px;
   }
   .connection-problems .error .flex div {
     font-size: 20px;
@@ -4527,7 +4544,7 @@ button, .btn {
 }
 @media (min-width: 1200px) {
   .connection-problems .error {
-    padding: 77px 0 81px;
+    padding: 80px 0 81px;
   }
 }
 @media (min-width: 1440px) {

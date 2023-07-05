@@ -1,6 +1,6 @@
 .connection {
   .top-radio-buttons {
-    padding: 23px 0 0;
+    padding: 41px 0 0;
     .container {
       max-width: 1500px;
     }
@@ -81,6 +81,14 @@
     }
     .tariffs-form {
       border-radius: 40px;
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+  .connection {
+    .top-radio-buttons {
+      padding: 80px 0 0;
     }
   }
 }

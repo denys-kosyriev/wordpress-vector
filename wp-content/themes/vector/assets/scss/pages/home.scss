@@ -274,12 +274,6 @@
       img {
         height: 240px;
       }
-      .swiper-button-prev {
-        left: 30px;
-      }
-      .swiper-button-next {
-        right: 30px;
-      }
     }
   }
 }
@@ -355,6 +349,18 @@
       }
       img {
         margin: auto 0 20px;
+      }
+      .swiper-button-prev {
+        left: 30px;
+        &:hover {
+          left: 25px;
+        }
+      }
+      .swiper-button-next {
+        right: 30px;
+        &:hover {
+          right: 25px;
+        }
       }
     }
   }
@@ -462,10 +468,16 @@
       .swiper-button-prev {
         top:  48%;
         left: 56px;
+        &:hover {
+          left: 48px;
+        }
       }
       .swiper-button-next {
         top:   48%;
         right: 56px;
+        &:hover {
+          right: 48px;
+        }
       }
     }
   }
