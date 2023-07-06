@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
     )
   }
 
+  // Hide empty slider
+
   const sliders = document.getElementsByClassName('sliders-js');
   const swipers = document.getElementsByClassName('swiper');
   const description = document.getElementsByClassName('description');
@@ -33,4 +35,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Click scroll top
+
+  const scrollUpBtn = document.getElementsByClassName('scroll-up')[0];
+  if (scrollUpBtn) {
+    scrollUpBtn.addEventListener('click', () => {
+      window.scrollTo(0, 0);
+    });
+  }
 });

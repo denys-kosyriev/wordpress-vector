@@ -1,3 +1,5 @@
+@import "../common/animations";
+
 .settings {
   section {
     padding: 41px 0 10px;
@@ -47,6 +49,17 @@
   }
 }
 
+// animations
+.settings {
+  .block-settings {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+}
+
+
 @media(min-width: 567px) {
   .settings {
     .setting {
@@ -54,6 +67,24 @@
     }
     h2 {
       margin-bottom: 37px;
+    }
+  }
+}
+
+@media(min-width: 1024px) {
+  .settings {
+    .block-settings {
+      padding-bottom: 30px;
+    }
+  }
+
+  // animations
+  .settings {
+    .block-settings {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromBottom;
+      }
     }
   }
 }

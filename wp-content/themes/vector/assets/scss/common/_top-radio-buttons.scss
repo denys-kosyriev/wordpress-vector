@@ -1,3 +1,5 @@
+@import "../common/animations";
+
 .top-radio-buttons {
   h2 {
     padding-bottom: 32px;
@@ -44,6 +46,13 @@
     &:last-child {
       margin-right: 20px;
     }
+  }
+}
+
+.top-radio-buttons {
+  opacity: 0;
+  &.animation {
+    animation: $animationFromLeft;
   }
 }
 

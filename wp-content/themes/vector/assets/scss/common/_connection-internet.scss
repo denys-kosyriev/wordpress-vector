@@ -1,3 +1,5 @@
+@import "../common/animations";
+
 .connection-internet {
   padding:  14px 0 0;
   overflow: hidden;
@@ -81,6 +83,22 @@
     }
     a {
       padding: 9px;
+    }
+  }
+}
+
+//animations
+.connection-internet {
+  .left {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+  .right {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
     }
   }
 }
@@ -170,6 +188,24 @@
       }
       a {
         font-size: 20px;
+      }
+    }
+  }
+}
+
+//animations
+@media(min-width: 1024px) {
+  .connection-internet {
+    .left {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromLeft;
+      }
+    }
+    .right {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromRight;
       }
     }
   }

@@ -1,3 +1,5 @@
+@import "../common/animations";
+
 .header {
   width:            100vw;
   position:         fixed;
@@ -14,7 +16,7 @@
     left:     0;
     z-index:  1000;
     .content {
-      min-height:      52px;
+      min-height:      70px;
       display:         flex;
       justify-content: space-between;
       align-items:     center;
@@ -92,7 +94,7 @@
     display:          flex;
     flex-direction:   column;
     align-items:      center;
-    padding:          52px 0 30px;
+    padding:          70px 0 30px;
     overflow:         auto;
     text-align:       center;
     position:         fixed;
@@ -208,9 +210,25 @@
   }
 }
 
+// animations
+#header {
+  opacity: 0;
+  &.animation {
+    animation: $animationFromTop;
+  }
+}
+
 @media(min-width: 1200px) {
   .header {
     border-bottom: 1px solid #324035;
+    &.scroll {
+      .top {
+        height: 0;
+      }
+      .main .content {
+        min-height: 78px;
+      }
+    }
     a {
       font-size: 18px;
     }
@@ -229,6 +247,7 @@
     .top {
       display:     flex;
       align-items: center;
+      transition:  .2s linear;
       .container {
         max-width: 2500px;
         padding:   0 0 0 38px;

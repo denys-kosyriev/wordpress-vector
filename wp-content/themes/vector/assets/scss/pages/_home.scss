@@ -1,6 +1,8 @@
+@import "../common/animations";
+
 .home {
   .banners {
-    padding: 25px 0 34px;
+    padding: 41px 0 34px;
     .container {
       max-width: 1488px;
     }
@@ -195,6 +197,76 @@
   }
 }
 
+// animations
+.home {
+  #banners {
+    opacity: 0;
+    &.animation {
+      animation: $animationFadeIn;
+    }
+  }
+  #action {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+  #show-all-tariffs {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+  #about-company {
+    .left {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromLeft;
+      }
+    }
+    .right {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromLeft;
+      }
+    }
+  }
+  #about-internet {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+  #about-tv {
+    .left {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromLeft;
+      }
+    }
+    .right {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromLeft;
+      }
+    }
+  }
+  #accordion {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+  #payment {
+    .swiper {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromLeft;
+      }
+    }
+  }
+}
+
 @media(min-width: 567px) {
   .home {
     .banners {
@@ -360,6 +432,64 @@
         right: 30px;
         &:hover {
           right: 25px;
+        }
+      }
+    }
+  }
+
+  // animations
+  .home {
+    #show-all-tariffs {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromBottom;
+      }
+    }
+    #about-company {
+      .left {
+        opacity: 0;
+        &.animation {
+          animation: $animationFromLeft;
+        }
+      }
+      .right {
+        opacity: 0;
+        &.animation {
+          animation: $animationFromRight;
+        }
+      }
+    }
+    #about-internet {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromBottom;
+      }
+    }
+    #about-tv {
+      .left {
+        opacity: 0;
+        &.animation {
+          animation: $animationFromLeft;
+        }
+      }
+      .right {
+        opacity: 0;
+        &.animation {
+          animation: $animationFromRight;
+        }
+      }
+    }
+    #accordion {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromBottom;
+      }
+    }
+    #payment {
+      .swiper {
+        opacity: 0;
+        &.animation {
+          animation: $animationFromBottom;
         }
       }
     }

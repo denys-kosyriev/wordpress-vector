@@ -1,3 +1,5 @@
+@import "../common/animations";
+
 .swiper.tariffs-slider {
   max-width:     1573px;
   margin-bottom: 30px;
@@ -76,10 +78,10 @@
         line-height:   .8;
         padding-right: 5px;
         &.relevant-price {
-          font-size: 24px;
-          position:  relative;
+          font-size:       24px;
+          position:        relative;
           text-decoration: line-through;
-          color: #03bf6a;
+          color:           #03bf6a;
         }
       }
     }
@@ -186,6 +188,14 @@
         line-height: 1.8;
       }
     }
+  }
+}
+
+//animations
+.swiper.tariffs-slider {
+  opacity: 0;
+  &.animation {
+    animation: $animationFromLeft;
   }
 }
 
@@ -340,6 +350,7 @@
       }
     }
   }
+
 }
 
 @media(min-width: 1440px) {

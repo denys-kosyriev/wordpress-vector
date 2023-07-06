@@ -1,3 +1,5 @@
+@import "../common/animations";
+
 .connection-problems {
   overflow: hidden;
   .error {
@@ -17,10 +19,10 @@
         line-height:    1.3;
         padding-bottom: 18px;
       }
-      img {
+      .right {
         max-width:  264px;
-        margin:     46px 0 53px 50%;
-        transform:  translateX(-50%);
+        display:    flex;
+        margin:     32px auto 33px;
         padding:    0 20px;
         object-fit: cover;
       }
@@ -98,6 +100,36 @@
   }
 }
 
+// animations
+.connection-problems {
+  .left {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+  .right {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromBottom;
+    }
+  }
+  .accordion {
+    .search {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromLeft;
+      }
+    }
+    .questions-list {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromLeft;
+      }
+    }
+  }
+}
+
 @media(min-width: 567px) {
   .connection-problems {
     .flex {
@@ -128,7 +160,7 @@
         div {
           width: 50%;
         }
-        img {
+        .right {
           height:    210px;
           max-width: 320px;
           margin:    0;
@@ -156,6 +188,23 @@
       }
     }
   }
+
+  // animations
+  .connection-problems {
+    .left {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromLeft;
+      }
+    }
+    .right {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromRight;
+      }
+    }
+  }
+
 }
 
 @media(min-width: 1024px) {
@@ -170,7 +219,7 @@
           font-size:      40px;
           padding-bottom: 26px;
         }
-        img {
+        .right {
           height:    310px;
           max-width: 468px;
         }
@@ -180,6 +229,7 @@
       font-size: 30px;
     }
     .accordion {
+      padding: 0 0 60px;
       .search {
         padding:   67px 10px 72px;
         font-size: 32px;
@@ -224,14 +274,27 @@
   .connection-problems {
     .error {
       .flex {
-        img {
+        .right {
           height:    380px;
           max-width: 552px;
         }
       }
     }
     .accordion {
-      padding: 0 0 60px;
+      padding: 0 0 90px;
     }
   }
+
+  // animations
+  .connection-problems {
+    .accordion {
+      .questions-list {
+        opacity: 0;
+        &.animation {
+          animation: $animationFromBottom;
+        }
+      }
+    }
+  }
+
 }

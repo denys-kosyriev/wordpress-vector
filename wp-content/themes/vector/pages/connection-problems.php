@@ -10,13 +10,13 @@
   <section class='error'>
     <div class='container'>
       <div class='flex'>
-        <div>
+        <div class='left'>
           <h2>
             <?php echo get_field('connection_problems_title') ?>
           </h2>
           <?php echo get_field('connection_problems_description') ?>
         </div>
-        <img src='<?php echo get_field('connection_problems_image') ?>' alt=''>
+        <img class='right' src='<?php echo get_field('connection_problems_image') ?>' alt=''>
       </div>
     </div>
   </section>

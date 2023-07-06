@@ -1,6 +1,6 @@
 <?php wp_footer(); ?>
 
-<footer class="footer p-relative">
+<footer class="footer p-relative" id='footer'>
   <div class='content'>
     <div class="container">
       <div class='wrapper'>

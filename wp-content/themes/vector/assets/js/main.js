@@ -24,11 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 
-  // Show the current year
-
-  const currentYear = new Date;
-  document.getElementsByClassName('currentYear')[0].textContent = `${currentYear.getFullYear()}`;
-
   // Slider 'tariffs-slider'
 
   if (document.getElementsByClassName('tariffs-slider')[0]) {
@@ -127,24 +122,5 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
   })
-
-  // Open and close burger menu
-
-  const burgerBtn = document.getElementsByClassName('burger-btn')[0];
-  const burgerMenu = document.getElementsByClassName('burger-menu')[0];
-
-  burgerBtn.addEventListener('click', () => {
-    burgerBtn.classList.toggle('active');
-    burgerMenu.classList.toggle('open-burger');
-  })
-
-  // Click scroll top
-
-  const scrollUpBtn = document.getElementsByClassName('scroll-up')[0];
-  if (scrollUpBtn) {
-    scrollUpBtn.addEventListener('click', () => {
-      window.scrollTo(0, 0);
-    });
-  }
 
 });

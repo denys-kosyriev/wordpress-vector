@@ -1,3 +1,5 @@
+@import "../common/animations";
+
 .connection-tv {
   padding:  8px 0 52px;
   overflow: hidden;
@@ -24,6 +26,22 @@
   button {
     margin-left: 50%;
     transform:   translateX(-50%);
+  }
+}
+
+// animations
+.connection-tv {
+  .left {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+  .right {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
   }
 }
 
@@ -67,6 +85,22 @@
       margin:    0;
       transform: translateX(0);
       padding:   23px 10px;
+    }
+  }
+
+  // animations
+  .connection-tv {
+    .left {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromLeft;
+      }
+    }
+    .right {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromRight;
+      }
     }
   }
 }

@@ -13,7 +13,7 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header class="header">
+<header class="header" id='header'>
   <div class='top '>
     <div class='container'>
       <div class='content'>
