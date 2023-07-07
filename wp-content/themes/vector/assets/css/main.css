@@ -5239,12 +5239,6 @@ button, .btn {
   .settings .block-settings {
     padding-bottom: 30px;
   }
-  .settings .block-settings {
-    opacity: 0;
-  }
-  .settings .block-settings.animation {
-    animation: fadeInFromBottom 1s ease 0s forwards;
-  }
 }
 @media (min-width: 1200px) {
   .settings section {
@@ -5580,7 +5574,7 @@ button, .btn {
   opacity: 0;
 }
 .connection-problems .right.animation {
-  animation: fadeInFromBottom 1s ease 0s forwards;
+  animation: fadeInFromLeft 1s ease 0s forwards;
 }
 .connection-problems .accordion .search {
   opacity: 0;
@@ -5639,12 +5633,6 @@ button, .btn {
   }
   .connection-problems .accordion li h3 {
     font-size: 24px;
-  }
-  .connection-problems .left {
-    opacity: 0;
-  }
-  .connection-problems .left.animation {
-    animation: fadeInFromLeft 1s ease 0s forwards;
   }
   .connection-problems .right {
     opacity: 0;

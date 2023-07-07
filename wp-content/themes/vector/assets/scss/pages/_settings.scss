@@ -77,16 +77,6 @@
       padding-bottom: 30px;
     }
   }
-
-  // animations
-  .settings {
-    .block-settings {
-      opacity: 0;
-      &.animation {
-        animation: $animationFromBottom;
-      }
-    }
-  }
 }
 
 @media(min-width: 1200px) {
