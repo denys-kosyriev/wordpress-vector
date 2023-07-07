@@ -76,7 +76,7 @@
         transform: rotate(-45deg) translateY(-50%);
       }
       &.active::after {
-        bottom:    50%;
+        bottom:    46%;
         transform: rotate(45deg) translateY(50%);
       }
     }
@@ -219,13 +219,13 @@
 
 @media(min-width: 1200px) {
   .header {
-    border-bottom: 1px solid #324035;
+    background-color: transparent;
     &.scroll {
       .top {
-        height: 0;
+        transform: translateY(-40px);
       }
-      .main .content {
-        min-height: 78px;
+      .main {
+        transform: translateY(-139px);
       }
     }
     a {
@@ -244,9 +244,10 @@
       margin-right: 7px;
     }
     .top {
-      display:     flex;
-      align-items: center;
-      transition:  .2s linear;
+      display:          flex;
+      align-items:      center;
+      transition:       .2s linear;
+      background-color: #F2F8F8;
       .container {
         max-width: 2500px;
         padding:   0 0 0 38px;
@@ -338,7 +339,15 @@
       }
     }
     .main {
-      background: #fff;
+      background:    #fff;
+      transition:    .2s linear;
+      border-bottom: 1px solid #324035;
+      &.open {
+        transform: translateY(-40px);
+      }
+      &.hover {
+        transform: translateY(-40px);
+      }
       .container {
         max-width: 1861px;
       }

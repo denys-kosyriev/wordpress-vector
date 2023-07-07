@@ -78,7 +78,7 @@
       </div>
     </div>
   </div>
-  <div class='main'>
+  <div class='main p-relative'>
     <div class='container'>
       <div class='content'>
         <div class='left'>

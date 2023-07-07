@@ -743,7 +743,7 @@ button, .btn {
   transform: rotate(-45deg) translateY(-50%);
 }
 .header .main .burger-btn.active::after {
-  bottom: 50%;
+  bottom: 46%;
   transform: rotate(45deg) translateY(50%);
 }
 .header .main ul {
@@ -874,13 +874,13 @@ button, .btn {
 
 @media (min-width: 1200px) {
   .header {
-    border-bottom: 1px solid #324035;
+    background-color: transparent;
   }
   .header.scroll .top {
-    height: 0;
+    transform: translateY(-40px);
   }
-  .header.scroll .main .content {
-    min-height: 78px;
+  .header.scroll .main {
+    transform: translateY(-139px);
   }
   .header a {
     font-size: 18px;
@@ -901,6 +901,7 @@ button, .btn {
     display: flex;
     align-items: center;
     transition: 0.2s linear;
+    background-color: #F2F8F8;
   }
   .header .top .container {
     max-width: 2500px;
@@ -985,6 +986,14 @@ button, .btn {
   }
   .header .main {
     background: #fff;
+    transition: 0.2s linear;
+    border-bottom: 1px solid #324035;
+  }
+  .header .main.open {
+    transform: translateY(-40px);
+  }
+  .header .main.hover {
+    transform: translateY(-40px);
   }
   .header .main .container {
     max-width: 1861px;
@@ -1711,6 +1720,7 @@ button, .btn {
 .footer .addresses li {
   margin-bottom: 27px;
   display: flex;
+  flex-direction: row-reverse;
   align-items: start;
 }
 .footer .addresses li svg {
@@ -1719,8 +1729,8 @@ button, .btn {
 .footer .addresses li svg path {
   transition: 0.2s linear;
 }
-.footer .addresses li:hover svg, .footer .addresses li:hover path {
-  fill: #324035;
+.footer .addresses li div:hover ~ svg path, .footer .addresses li a:hover ~ svg path {
+  fill: #006939;
 }
 .footer .addresses li div {
   display: flex;

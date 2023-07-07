@@ -97,18 +97,21 @@
     align-items:    start;
     padding-bottom: 17px;
     li {
-      margin-bottom: 27px;
-      display:       flex;
-      align-items:   start;
+      margin-bottom:  27px;
+      display:        flex;
+      flex-direction: row-reverse;
+      align-items:    start;
       svg {
         transition: .2s linear;
         path {
           transition: .2s linear;
         }
       }
-      &:hover {
-        svg, path {
-          fill: #324035;
+      div, a {
+        &:hover ~ svg {
+          path {
+            fill: #006939;
+          }
         }
       }
       div {
