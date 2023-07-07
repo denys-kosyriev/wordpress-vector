@@ -705,44 +705,49 @@ button, .btn {
 .header .main .logo:active {
   opacity: 0.5;
 }
-.header .main .burger-btn svg:nth-of-type(1) {
-  display: block;
+.header .main .burger-btn {
+  width: 30px;
+  height: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 5;
 }
-.header .main .burger-btn svg:nth-of-type(2) {
-  display: none;
+.header .main .burger-btn span, .header .main .burger-btn::after, .header .main .burger-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: 5;
+  height: 10%;
+  width: 100%;
+  transition: 0.3s linear;
+  background-color: #03bf6a;
 }
-.header .main .burger-btn.active svg:nth-of-type(1) {
-  display: none;
+.header .main .burger-btn::before {
+  top: 0;
 }
-.header .main .burger-btn.active svg:nth-of-type(2) {
-  display: block;
+.header .main .burger-btn::after {
+  bottom: 0;
 }
-.header .main .burger-open {
-  height: 30px;
-  width: 35px;
+.header .main .burger-btn span {
+  top: 50%;
+  transform: scale(1) translateY(-50%);
 }
-.header .main .burger-close {
-  margin-right: 5px;
+.header .main .burger-btn.active span {
+  transform: scale(0) translateY(-50%);
+}
+.header .main .burger-btn.active::before {
+  top: 50%;
+  transform: rotate(-45deg) translateY(-50%);
+}
+.header .main .burger-btn.active::after {
+  bottom: 50%;
+  transform: rotate(45deg) translateY(50%);
 }
 .header .main ul {
   display: none;
-}
-.header .main svg {
-  width: 24px;
-  cursor: pointer;
-  transition: 0.2s linear;
-}
-.header .main svg:nth-of-type(2) {
-  width: 20px;
-}
-.header .main svg path {
-  transition: 0.2s linear;
-}
-.header .main svg:hover path {
-  fill: #006939;
-}
-.header .main svg:active {
-  opacity: 0.5;
 }
 .header .main .btn {
   display: none;
@@ -2843,10 +2848,14 @@ button, .btn {
   color: #006939;
 }
 .tariffs-form .download-receipt label p {
+  max-width: 100%;
   color: #03BF6A;
   margin: 0;
   line-height: 1;
   transition: 0.2s linear;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .tariffs-form .download-receipt label .change-file-btn {
   margin-top: 10px;
