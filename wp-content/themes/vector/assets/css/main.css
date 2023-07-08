@@ -714,6 +714,7 @@ button, .btn {
   top: 0;
   left: 0;
   z-index: 5;
+  margin-right: 10px;
 }
 .header .main .burger-btn span, .header .main .burger-btn::after, .header .main .burger-btn::before {
   content: "";
@@ -3007,7 +3008,7 @@ button, .btn {
   padding: 11px 25px;
   font-size: 12px;
 }
-.modal-channels .scroll {
+.modal-channels .scroll-channels {
   padding: 1px 21px 0 25px;
 }
 .modal-channels .title-channels {
@@ -3133,7 +3134,7 @@ button, .btn {
   .modal-channels h2 {
     padding: 0 30px 48px;
   }
-  .modal-channels .scroll {
+  .modal-channels .scroll-channels {
     padding: 31px 21px 0 22px;
   }
   .modal-channels .table {
