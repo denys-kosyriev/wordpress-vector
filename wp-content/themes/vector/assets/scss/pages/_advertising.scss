@@ -1,3 +1,5 @@
+@import "../common/animations";
+
 .advertising {
   .advertising-services {
     padding: 41px 0 0;
@@ -102,6 +104,22 @@
     img {
       height:     60vw;
       object-fit: cover;
+    }
+  }
+}
+
+// animations
+.advertising {
+  .advertising-services {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+  .billboard {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
     }
   }
 }
@@ -334,6 +352,23 @@
       }
     }
   }
+
+  // animations
+  .advertising {
+    .advertising-services {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromBottom;
+      }
+    }
+    .billboard {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromBottom;
+      }
+    }
+  }
+
 }
 
 @media(min-width: 1200px) {

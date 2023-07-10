@@ -1,3 +1,5 @@
+@import "../common/animations";
+
 .news {
   section {
     padding: 41px 0;
@@ -81,6 +83,22 @@
   }
 }
 
+// animations
+.news {
+  h2 {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+  .cart {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+}
+
 @media(min-width: 567px) {
   .news {
     .cart {
@@ -104,6 +122,7 @@
     }
   }
 }
+
 
 @media(min-width: 1024px) {
   .news {

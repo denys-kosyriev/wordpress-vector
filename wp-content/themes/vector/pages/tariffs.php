@@ -36,7 +36,7 @@
       </div>
     </div>
   </section>
-  <section class='sliders '>
+  <section class='sliders'>
     <div class='container'>
       <?php get_template_part('./common/slider-tariffs') ?>
     </div>
@@ -48,7 +48,7 @@
           <div class='wrapper'>
             <div class='left'>
               <div class='content'>
-                <h2><?php echo get_field('connecting_internet_title') ?></h2>
+                <?php echo get_field('connecting_internet_title') ?>
                 <?php echo get_field('connecting_internet_description') ?>
                 <button class='btn btn-full scroll-up'>
                   Показати тарифи

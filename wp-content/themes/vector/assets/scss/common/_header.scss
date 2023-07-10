@@ -1,3 +1,5 @@
+@import "../common/animations";
+
 .header {
   width:            100vw;
   position:         fixed;
@@ -14,7 +16,7 @@
     left:     0;
     z-index:  1000;
     .content {
-      min-height:      52px;
+      min-height:      70px;
       display:         flex;
       justify-content: space-between;
       align-items:     center;
@@ -38,49 +40,49 @@
       }
     }
     .burger-btn {
-      svg:nth-of-type(1) {
-        display: block;
+      width:         30px;
+      height:        18px;
+      border-radius: 20px;
+      cursor:        pointer;
+      position:      relative;
+      top:           0;
+      left:          0;
+      z-index:       5;
+      margin-right:  10px;
+      span, &::after, &::before {
+        content:          '';
+        position:         absolute;
+        left:             0;
+        z-index:          5;
+        height:           10%;
+        width:            100%;
+        transition:       .3s linear;
+        background-color: #03bf6a;
       }
-      svg:nth-of-type(2) {
-        display: none;
+      &::before {
+        top: 0;
       }
-      &.active {
-        svg:nth-of-type(1) {
-          display: none;
-        }
-        svg:nth-of-type(2) {
-          display: block;
-        }
+      &::after {
+        bottom: 0;
       }
-    }
-    .burger-open {
-      height: 30px;
-      width:  35px;
-    }
-    .burger-close {
-      margin-right: 5px;
+      span {
+        top:       50%;
+        transform: scale(1) translateY(-50%);
+      }
+      &.active span {
+        transform: scale(0) translateY(-50%);
+      }
+      &.active::before {
+        top:       50%;
+        transform: rotate(-45deg) translateY(-50%);
+      }
+      &.active::after {
+        bottom:    46%;
+        transform: rotate(45deg) translateY(50%);
+      }
     }
     ul {
       display: none;
-    }
-    svg {
-      width:      24px;
-      cursor:     pointer;
-      transition: .2s linear;
-      &:nth-of-type(2) {
-        width: 20px;
-      }
-      path {
-        transition: .2s linear;
-      }
-      &:hover {
-        path {
-          fill: #006939;
-        }
-      }
-      &:active {
-        opacity: .5;
-      }
     }
     .btn {
       display: none;
@@ -92,7 +94,7 @@
     display:          flex;
     flex-direction:   column;
     align-items:      center;
-    padding:          52px 0 30px;
+    padding:          70px 0 30px;
     overflow:         auto;
     text-align:       center;
     position:         fixed;
@@ -208,9 +210,25 @@
   }
 }
 
+// animations
+#header {
+  opacity: 0;
+  &.animation {
+    animation: $animationFromTop;
+  }
+}
+
 @media(min-width: 1200px) {
   .header {
-    border-bottom: 1px solid #324035;
+    background-color: transparent;
+    &.scroll {
+      .top {
+        transform: translateY(-40px);
+      }
+      .main {
+        transform: translateY(-139px);
+      }
+    }
     a {
       font-size: 18px;
     }
@@ -227,8 +245,10 @@
       margin-right: 7px;
     }
     .top {
-      display:     flex;
-      align-items: center;
+      display:          flex;
+      align-items:      center;
+      transition:       .2s linear;
+      background-color: #F2F8F8;
       .container {
         max-width: 2500px;
         padding:   0 0 0 38px;
@@ -320,7 +340,15 @@
       }
     }
     .main {
-      background: #fff;
+      background:    #fff;
+      transition:    .2s linear;
+      border-bottom: 1px solid #324035;
+      &.open {
+        transform: translateY(-40px);
+      }
+      &.hover {
+        transform: translateY(-40px);
+      }
       .container {
         max-width: 1861px;
       }

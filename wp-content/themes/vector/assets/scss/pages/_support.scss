@@ -1,3 +1,5 @@
+@import "../common/animations";
+
 .support {
   .possibilities {
     padding: 41px 0 0;
@@ -99,6 +101,22 @@
   }
 }
 
+// animations
+.support {
+  .possibilities {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+  .help {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+}
+
 @media(min-width: 567px) {
   .support {
     .possibilities {
@@ -164,6 +182,23 @@
       }
     }
   }
+
+  // animations
+  .support {
+    .possibilities {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromBottom;
+      }
+    }
+    .help {
+      opacity: 0;
+      &.animation {
+        animation: $animationFromBottom;
+      }
+    }
+  }
+
 }
 
 @media(min-width: 1200px) {

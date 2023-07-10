@@ -1,3 +1,5 @@
+@import "../common/animations";
+
 .shares {
   section {
     padding: 41px 0 80px;
@@ -46,6 +48,22 @@
       font-size:  12px;
       padding:    12px 29px;
       margin-top: 5px;
+    }
+  }
+}
+
+// animations
+.shares {
+  h2 {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+  .cart {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
     }
   }
 }

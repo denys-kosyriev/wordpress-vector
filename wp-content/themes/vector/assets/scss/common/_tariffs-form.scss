@@ -116,10 +116,14 @@
         }
       }
       p {
-        color:       #03BF6A;
-        margin:      0;
-        line-height: 1;
-        transition:  .2s linear;
+        max-width:     100%;
+        color:         #03BF6A;
+        margin:        0;
+        line-height:   1;
+        transition:    .2s linear;
+        text-overflow: ellipsis;
+        white-space:   nowrap;
+        overflow:      hidden;
       }
       .change-file-btn {
         margin-top: 10px;

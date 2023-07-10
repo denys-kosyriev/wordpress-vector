@@ -2,7 +2,7 @@
   //Template Name: Home
 
   get_header();
-  wp_enqueue_script('home11111', get_stylesheet_directory_uri() . '/assets/js/home.js');
+  wp_enqueue_script('home', get_stylesheet_directory_uri() . '/assets/js/home.js');
 ?>
 
 <main class='home'>
@@ -10,7 +10,7 @@
     <?php get_template_part('./common/tariffs-form') ?>
   </div>
   <?php get_template_part('./modals/modal-channels') ?>
-  <section class='banners'>
+  <section class='banners' id='banners'>
     <div class="container">
       <div class='swiper swiper-banners'>
         <div class='swiper-wrapper'>
@@ -37,12 +37,12 @@
       </div>
     </div>
   </section>
-  <section class='action'>
+  <section class='action' id='action'>
     <div class='container'>
       <?php get_template_part('./common/slider-tariffs') ?>
     </div>
   </section>
-  <section class='show-all-tariffs'>
+  <section class='show-all-tariffs' id='show-all-tariffs'>
     <div class='container'>
       <div class='content '>
         <h2><?php echo get_field('fee_increase_title') ?></h2>
@@ -56,7 +56,7 @@
       </div>
     </div>
   </section>
-  <section class='about about-company'>
+  <section class='about about-company' id='about-company'>
     <div class='container'>
       <div class='content'>
         <div class='left p-relative'>
@@ -78,7 +78,7 @@
       </div>
     </div>
   </section>
-  <section class='about-internet'>
+  <section class='about-internet' id='about-internet'>
     <div class='container'>
       <div class='wrapper p-relative'>
         <div class='content bg-green'>
@@ -93,10 +93,10 @@
       </div>
     </div>
   </section>
-  <section class='about about-tv'>
+  <section class='about about-tv' id='about-tv'>
     <div class='container'>
       <div class='content'>
-        <img src='<?php echo get_field('tv_image') ?>' alt=''>
+        <img src='<?php echo get_field('tv_image') ?>' alt='' class='left'>
         <div class='right color-gray'>
           <h2><?php echo get_field('tv_title') ?></h2>
           <?php echo get_field('tv_description') ?>
@@ -108,7 +108,7 @@
       </div>
     </div>
   </section>
-  <section class='accordion'>
+  <section class='accordion' id='accordion'>
     <div class='container'>
       <h2><?php echo get_field('accordion_title') ?></h2>
       <ul class='questions-list'>
@@ -134,7 +134,7 @@
       </ul>
     </div>
   </section>
-  <section class='payment'>
+  <section class='payment' id='payment'>
     <div class='container'>
       <div class='swiper swiper-payment'>
         <div class='swiper-wrapper'>

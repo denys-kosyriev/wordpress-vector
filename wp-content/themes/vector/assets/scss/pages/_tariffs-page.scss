@@ -1,3 +1,5 @@
+@import "../common/animations";
+
 .tariffs-page {
   .top-radio-buttons {
     padding: 41px 0 5px;
@@ -56,6 +58,22 @@
   }
   .connection-tv {
     padding: 0 0 52px;
+  }
+}
+
+// animations
+.tariffs-page {
+  .description {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+  .sliders-js {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
   }
 }
 

@@ -1,3 +1,5 @@
+@import "../common/animations";
+
 .documents {
   section {
     padding: 40px 0 40px;
@@ -76,6 +78,22 @@
   }
 }
 
+// animations
+.documents {
+  h2 {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromBottom;
+    }
+  }
+  a {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+}
+
 @media(min-width: 567px) {
   .documents {
     h3 {
@@ -99,11 +117,13 @@
       width:          48%;
       display:        flex;
       flex-direction: column;
+      margin-bottom:  20px;
       div {
         margin-top: auto;
       }
     }
   }
+
 }
 
 @media(min-width: 1024px) {

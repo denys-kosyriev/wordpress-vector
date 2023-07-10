@@ -1,3 +1,5 @@
+@import "../common/animations";
+
 .contacts {
   overflow: hidden;
   .content {
@@ -112,6 +114,16 @@
     }
     .btn:hover {
       border-width: 2px;
+    }
+  }
+}
+
+// animations
+.contacts {
+  .content {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
     }
   }
 }

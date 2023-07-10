@@ -25,8 +25,13 @@
   function add_scripts_and_styles() {
     wp_enqueue_style('main-css', get_template_directory_uri() . '/assets/css/main.css', '', rand(1, 9999999));
     wp_enqueue_style('swiper-css', get_template_directory_uri() . '/assets/libs/swiper/swiper.css');
+
+    wp_enqueue_script('jquery');
     wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', '', rand(1, 9999999));
-    wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/libs/swiper/swiper.js');
+    wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/libs/swiper/swiper.js');
+    wp_enqueue_script('animation-js', get_stylesheet_directory_uri() . '/assets/js/animations.js');
+    wp_enqueue_script('header-js', get_stylesheet_directory_uri() . '/assets/js/header.js');
+    wp_enqueue_script('footer-js', get_stylesheet_directory_uri() . '/assets/js/footer.js');
   }
 
   // Connecting Munus
