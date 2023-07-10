@@ -19,9 +19,6 @@ jQuery(document).ready(function ($) {
     }
   }
 
-  // Header
-  const header = $('#header');
-
   // "Повторювані секції"
   const topRadioButtons = $(".top-radio-buttons");
 
@@ -85,9 +82,6 @@ jQuery(document).ready(function ($) {
   const footer = $('#footer');
 
   const runAnimations = () => {
-
-    // Header
-    isVisible(header);
 
     // "Повторювані секції"
     isVisible(topRadioButtons);

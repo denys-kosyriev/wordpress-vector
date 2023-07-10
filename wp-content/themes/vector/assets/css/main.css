@@ -618,54 +618,6 @@ button, .btn {
     display: block;
   }
 }
-@keyframes fadeInFromLeft {
-  from {
-    opacity: 0;
-    transform: translate(-200px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-}
-@keyframes fadeInFromRight {
-  from {
-    opacity: 0;
-    transform: translate(200px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-}
-@keyframes fadeInFromTop {
-  from {
-    opacity: 0;
-    transform: translate(0, -200px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-}
-@keyframes fadeInFromBottom {
-  from {
-    opacity: 0;
-    transform: translate(0, 200px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 .header {
   width: 100vw;
   position: fixed;
@@ -866,13 +818,6 @@ button, .btn {
   color: #029c56;
 }
 
-#header {
-  opacity: 0;
-}
-#header.animation {
-  animation: fadeInFromTop 1s ease 0s forwards;
-}
-
 @media (min-width: 1200px) {
   .header {
     background-color: transparent;
@@ -993,7 +938,7 @@ button, .btn {
   .header .main.open {
     transform: translateY(-40px);
   }
-  .header .main.hover {
+  .header .main.hover, .header .main.open-on-hover {
     transform: translateY(-40px);
   }
   .header .main .container {
@@ -5043,7 +4988,7 @@ button, .btn {
   opacity: 0;
 }
 .documents h2.animation {
-  animation: fadeInFromBottom 1s ease 0s forwards;
+  animation: fadeInFromLeft 1s ease 0s forwards;
 }
 .documents a {
   opacity: 0;
@@ -5311,6 +5256,9 @@ button, .btn {
   to {
     opacity: 1;
   }
+}
+.connection {
+  overflow: hidden;
 }
 .connection .top-radio-buttons {
   padding: 41px 0 0;
