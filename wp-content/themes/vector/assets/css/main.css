@@ -123,9 +123,15 @@ input:focus, select:focus, textarea:focus {
 input .error, select .error, textarea .error {
   border-color: #FF2F2F;
 }
+input::placeholder, select::placeholder, textarea::placeholder {
+  opacity: 0.5;
+}
 
 textarea {
   border-radius: 13px;
+}
+textarea::placeholder {
+  opacity: 0.4;
 }
 
 select {
@@ -2749,9 +2755,6 @@ button, .btn {
   margin: 0 15px 0 30px;
   font-size: 16px;
 }
-.tariffs-form.form-tv label:nth-of-type(5) input, .tariffs-form.form-all label:nth-of-type(5) input {
-  margin-bottom: 11px;
-}
 .tariffs-form.form-tv .router, .tariffs-form.form-all .router {
   display: block;
 }
@@ -2797,13 +2800,13 @@ button, .btn {
   align-items: center;
   margin: 0;
 }
-.tariffs-form .download-receipt label:hover .change-file-btn {
-  color: #03bf6a;
-}
-.tariffs-form .download-receipt label:active p, .tariffs-form .download-receipt label:active .change-file-btn {
+.tariffs-form .download-receipt label:hover span, .tariffs-form .download-receipt label:hover .change-file-btn {
   color: #006939;
 }
-.tariffs-form .download-receipt label p {
+.tariffs-form .download-receipt label:active span, .tariffs-form .download-receipt label:active .change-file-btn {
+  color: #029c56;
+}
+.tariffs-form .download-receipt label span {
   max-width: 100%;
   color: #03BF6A;
   margin: 0;
@@ -2881,9 +2884,6 @@ button, .btn {
   }
   .tariffs-form label {
     margin-bottom: 21px;
-  }
-  .tariffs-form label:nth-of-type(5) {
-    margin-bottom: 27px;
   }
   .tariffs-form label:last-of-type {
     font-size: 24px;
@@ -5806,12 +5806,11 @@ button, .btn {
   background-color: #fff;
 }
 .contacts .form h2 {
-  padding-bottom: 22px;
+  margin-bottom: 22px;
   text-align: center;
 }
 .contacts .form textarea {
   height: 87px;
-  margin-bottom: 20px;
   overflow: auto;
   border-radius: 10px;
   font-size: 16px;
@@ -5828,7 +5827,11 @@ button, .btn {
 }
 
 @media (min-width: 567px) {
+  .contacts .form {
+    padding: 34px 45px 40px;
+  }
   .contacts .form textarea {
+    height: 110px;
     font-size: 20px;
   }
 }
@@ -5871,9 +5874,6 @@ button, .btn {
     display: flex;
     align-items: start;
   }
-  .contacts .form {
-    padding: 44px 62px 46px;
-  }
   .contacts .form input {
     font-size: 20px;
     padding: 17px 24px;
@@ -5885,14 +5885,24 @@ button, .btn {
 }
 @media (min-width: 1024px) {
   .contacts .content {
-    padding: 395px 0 90px;
-  }
-  .contacts .back {
-    zoom: 1;
+    padding: 10% 0 130px;
   }
   .contacts .location {
+    top: 133px;
+    left: -500px;
+  }
+  .contacts .form {
+    max-width: 500px;
+    margin-right: 2%;
+    transform: translateX(230px);
+  }
+  .contacts .form h2 {
+    font-size: 39px;
+  }
+}
+@media (min-width: 1440px) {
+  .contacts .location {
     max-width: 436px;
-    top: -260px;
   }
   .contacts .location::before {
     width: 86px;
@@ -5923,11 +5933,11 @@ button, .btn {
     line-height: 1.4;
   }
   .contacts .form {
-    max-width: 744px;
+    max-width: 644px;
     border-radius: 40px;
   }
   .contacts .form h2 {
-    padding-bottom: 61px;
+    margin-bottom: 41px;
   }
   .contacts .form label {
     margin-bottom: 28px;
@@ -5946,33 +5956,24 @@ button, .btn {
 }
 @media (min-width: 1200px) {
   .contacts .content {
-    padding: 435px 0 70px;
+    padding: 6% 0 130px;
   }
   .contacts .content .form .btn:hover {
     border-width: 4px;
   }
 }
-@media (min-width: 1440px) {
-  .contacts .content {
-    padding: 135px 0 130px;
-    justify-content: flex-end;
-  }
-  .contacts .back {
-    zoom: 1;
-  }
-  .contacts .location {
-    top: 133px;
-    left: -495px;
-  }
-  .contacts .form {
-    margin-right: 2%;
-  }
-}
 @media (min-width: 1800px) {
+  .contacts .content {
+    padding: 5% 0 130px;
+  }
   .contacts .form {
-    max-width: 844px;
-    padding: 68px 125px 65px;
+    max-width: 744px;
+    padding: 48px 85px 55px;
     margin-right: 12%;
+    transform: translateX(360px);
+  }
+  .contacts .form h2 {
+    font-size: 56px;
   }
 }
 

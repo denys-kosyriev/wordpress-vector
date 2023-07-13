@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Download file
 
-  const fileName = document.querySelector('.download-receipt p');
+  const fileName = document.querySelector('.download-receipt .title');
   const changeFile = document.getElementsByClassName('change-file-btn')[0];
   const inputFile = document.getElementsByClassName('wpcf7-file')[0];
   inputFile.addEventListener('change', () => {

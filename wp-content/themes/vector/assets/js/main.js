@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
         modalContent.classList.remove('form-tv');
       }
       titleTariffModal.innerHTML = titleTariffForModal[i].innerHTML
+      console.log(inputTitle.value)
     })
   }
 
