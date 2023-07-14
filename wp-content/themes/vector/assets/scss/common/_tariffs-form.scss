@@ -1,5 +1,5 @@
 .tariffs-form {
-  max-width:        566px;
+  max-width:        466px;
   width:            98%;
   padding:          26px 21px 24px;
   background-color: #fff;
@@ -157,20 +157,23 @@
 
 @media(min-width: 1024px) {
   .tariffs-form {
-    max-width:    837px;
-    padding:      75px 120px 90px;
+    max-width:    737px;
+    padding:      65px 80px 60px;
     border-width: 2px;
     h3 {
-      padding-bottom: 64px;
+      padding-bottom: 54px;
       font-size:      45px;
     }
     &.form-tv, &.form-all {
       label:nth-of-type(5) {
-        margin-bottom: 30px;
+        margin-bottom: 25px;
       }
     }
     .block-checkbox {
       margin-bottom: 21px;
+      label {
+        margin: 0;
+      }
     }
     .checkbox {
       input {
@@ -193,7 +196,7 @@
     .price-router {
       font-size:     24px;
       padding:       21px 31px;
-      margin-bottom: 36px;
+      margin-bottom: 26px;
       div {
         padding:      1px 10px;
         margin-right: 21px;

@@ -2018,20 +2018,20 @@ button, .btn {
     width: 75px;
     height: 75px;
     top: 152px;
-    right: 19px;
+    right: 39px;
     opacity: 0.4;
   }
   .section-form.block-form .circle:nth-of-type(2) {
     width: 153px;
     height: 153px;
     top: 233px;
-    right: 55px;
+    right: 75px;
   }
   .section-form.block-form .circle:nth-of-type(3) {
     width: 260px;
     height: 260px;
     bottom: 86px;
-    left: -40px;
+    left: -10px;
     opacity: 0.4;
   }
 }
@@ -2709,7 +2709,7 @@ button, .btn {
   }
 }
 .tariffs-form {
-  max-width: 566px;
+  max-width: 466px;
   width: 98%;
   padding: 26px 21px 24px;
   background-color: #fff;
@@ -2843,19 +2843,22 @@ button, .btn {
 }
 @media (min-width: 1024px) {
   .tariffs-form {
-    max-width: 837px;
-    padding: 75px 120px 90px;
+    max-width: 737px;
+    padding: 65px 80px 60px;
     border-width: 2px;
   }
   .tariffs-form h3 {
-    padding-bottom: 64px;
+    padding-bottom: 54px;
     font-size: 45px;
   }
   .tariffs-form.form-tv label:nth-of-type(5), .tariffs-form.form-all label:nth-of-type(5) {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
   .tariffs-form .block-checkbox {
     margin-bottom: 21px;
+  }
+  .tariffs-form .block-checkbox label {
+    margin: 0;
   }
   .tariffs-form .checkbox input {
     margin: 0 26px;
@@ -2876,7 +2879,7 @@ button, .btn {
   .tariffs-form .price-router {
     font-size: 24px;
     padding: 21px 31px;
-    margin-bottom: 36px;
+    margin-bottom: 26px;
   }
   .tariffs-form .price-router div {
     padding: 1px 10px;
