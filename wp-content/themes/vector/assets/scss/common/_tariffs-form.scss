@@ -50,11 +50,6 @@
   }
 
   &.form-tv, &.form-all {
-    label:nth-of-type(5) {
-      input {
-        margin-bottom: 11px;
-      }
-    }
     .router {
       display: block;
     }
@@ -106,16 +101,16 @@
       align-items:    center;
       margin:         0;
       &:hover {
-        .change-file-btn {
-          color: #03bf6a;
-        }
-      }
-      &:active {
-        p, .change-file-btn {
+        span, .change-file-btn {
           color: #006939;
         }
       }
-      p {
+      &:active {
+        span, .change-file-btn {
+          color: #029c56;
+        }
+      }
+      span {
         max-width:     100%;
         color:         #03BF6A;
         margin:        0;
@@ -206,9 +201,6 @@
     }
     label {
       margin-bottom: 21px;
-      &:nth-of-type(5) {
-        margin-bottom: 27px;
-      }
       &:last-of-type {
         font-size: 24px;
       }

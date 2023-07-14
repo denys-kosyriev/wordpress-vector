@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  // Work tabs tariffs
+
   const buttons = document.getElementsByClassName('btn-switch-tariffs');
 
   for (let i = 0; i < buttons.length; i++) {

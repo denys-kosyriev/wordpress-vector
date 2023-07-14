@@ -122,10 +122,16 @@ input, select, textarea {
   .error {
     border-color: #FF2F2F;
   }
+  &::placeholder {
+    opacity: .5;
+  }
 }
 
 textarea {
   border-radius: 13px;
+  &::placeholder {
+    opacity: .4;
+  }
 }
 
 select {
